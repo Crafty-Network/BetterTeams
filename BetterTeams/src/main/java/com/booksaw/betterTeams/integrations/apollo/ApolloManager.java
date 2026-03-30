@@ -27,11 +27,20 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
+/**
+ * Integrates BetterTeams with the Apollo (Lunar Client) Team View module
+ * using the lightweight JSON plugin messaging API.
+ * <p>
+ * Detects players on Lunar Client via the {@code lunar:apollo} channel and
+ * sends periodic team-member location updates over the {@code apollo:json}
+ * channel so teammates appear as markers on the minimap and direction HUD.
+ */
 public class ApolloManager implements Listener {
 
 	private static final String APOLLO_CHANNEL = "apollo:json";
 	private static final String LUNAR_CHANNEL = "lunar:apollo";
 
+	/** UUIDs of online players confirmed to be running Lunar Client with Apollo. */
 	private static final Set<UUID> apolloPlayers = new HashSet<>();
 
 	public ApolloManager() {
@@ -55,6 +64,7 @@ public class ApolloManager implements Listener {
 		Player player = event.getPlayer();
 		apolloPlayers.add(player.getUniqueId());
 
+		// Instant refresh
 		Team team = Team.getTeam(player);
 		if (team != null) {
 			refreshTeam(team);
@@ -129,12 +139,10 @@ public class ApolloManager implements Listener {
 	private JsonObject createTeamMemberObject(Player member, Team team) {
 		JsonObject obj = new JsonObject();
 		obj.add("player_uuid", createUuidObject(member.getUniqueId()));
-		net.kyori.adventure.text.format.NamedTextColor teamColor =
-				team.getColor() != null ? team.getColor() : net.kyori.adventure.text.format.NamedTextColor.GOLD;
 		obj.addProperty("adventure_json_player_name", toJson(
-			Component.text(member.getName()).color(TextColor.color(teamColor.value()))
+			Component.text(member.getName()).color(TextColor.color(team.getColor().asBungee().getColor().getRGB()))
 		));
-		obj.add("marker_color", createColorObject(new java.awt.Color(teamColor.value())));
+		obj.add("marker_color", createColorObject(team.getColor().asBungee().getColor()));
 		obj.add("location", createLocationObject(member.getLocation()));
 		return obj;
 	}

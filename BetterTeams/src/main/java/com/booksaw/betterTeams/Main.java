@@ -192,7 +192,7 @@ public class Main extends JavaPlugin {
 			homeAnchorManagement = null;
 		}
 
-		HandlerList.unregisterAll(this); 
+		HandlerList.unregisterAll(this);
 		Bukkit.getServer().getMessenger().unregisterIncomingPluginChannel(this);
 
 		damageManagement = null;
