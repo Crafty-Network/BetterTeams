@@ -1,0 +1,385 @@
+# All translations in this file are community made, this means there may be errors / missed translations, if you are able to improve upon any translation it would be greatly appreciated
+
+# Able to help with translations? Either improving a already existing language, or adding a whole new one. Join the discord server: https://discord.gg/JF9DNs3 
+# or message me on spigot: https://www.spigotmc.org/members/booksaw123.120955/
+
+# Any placeholders from placeholder API will work in this file
+
+# Credit for contributions to this file: icloser
+
+invalidArg: '<dark_red>مدخلات غير صالحة, المساعدة'
+inTeam: '<dark_red>يجب أن تكون في فريق للقيام بذلك'
+internalError: '<dark_red>حدث خطأ ما أثناء تنفيذ الأمر, يرجى الإبلاغ عن ذلك لأصحاب الخادم'
+notInTeam: '<dark_red>يجب أن تغادر فريقك قبل القيام بذلك'
+needOwner: '<dark_red>يجب أن تكون مالك الفريق للقيام بذلك'
+needAdmin: '<dark_red>يجب أن تكون مسؤولًا أو مالك الفريق للقيام بذلك'
+needPlayer: '<dark_red>يجب أن تكون لاعبًا للقيام بذلك'
+noPlayer: '<dark_red>لم يتم العثور على اللاعب المحدد'
+notTeam: '<gold><dark_red>هذا الفريق غير موجود جرب <aqua>/team create <اسم>'
+needSameTeam: '<gold>أنت لست في نفس الفريق مثل هذا الشخص'
+noPerm: '<dark_red>ليس لديك الصلاحية للقيام بذلك'
+prefixSyntax: '<gray>[{0}<gray>] <reset>{1}'
+bannedChar: '<dark_red>الحرف الذي حاولت استخدامه ممنوع'
+noTeam: '<dark_red>هذا الفريق غير موجود'
+loading: '<gold>جار التحميل'
+cooldown.wait: '<dark_red>يجب عليك الانتظار {0} ثواني قبل تنفيذ ذلك!'
+cost.tooPoor: '<dark_red>أنت فقير جدًا لتشغيل هذا الأمر'
+cost.run: '<dark_red><bold>-{0}'
+placeholder.noTeam: ''
+placeholder.noDescription: ''
+placeholder.money: '{0}'
+placeholder.owner: Owner
+placeholder.admin: Admin
+placeholder.default: Default
+placeholder.name: '{0}'
+placeholder.tag: '{0}'
+placeholder.displayname: '{0}'
+placeholder.inteam: 'صحيح'
+placeholder.notinteam: 'خطأ'
+placeholder.noTitle: ''
+prefix.owner: ' **'
+prefix.admin: ' *'
+prefix.default: ' '
+create.exists: '<gold>هذا الفريق موجود بالفعل'
+create.success: '<gold>تم إنشاء فريقك بنجاح'
+create.banned: '<dark_red>اسم هذا الفريق محظور'
+create.maxLength: '<dark_red>اسم هذا الفريق طويل جدًا'
+leave.success: '<gold>لقد غادرت الفريق'
+leave.lastOwner: '<gold>أنت المسؤول الوحيد ضمن الفريق, قم بترقية شخص آخر أو استخدم <aqua>/team disband <gold>لحل الفريق'
+announce.join: '<dark_aqua>{0} <gray>انضم إلى فريق {1}'
+announce.leave: '<dark_aqua>{0} <gray>غادر فريق {1}'
+announce.disband: '<gray>تم حل الفريق {0}'
+rank.noTeam: '<dark_red>لم يتم العثور على الفريق'
+rank.info: '<gold>المركز في الفريق:'
+rank.infos: '<gold>الرتبة في الفريق: <aqua>{0} <gray>(النقاط المطلوبة للترقية إلى الرتبة التالية: {1})'
+rank.infom: '<gold>الرتبة في الفريق: <aqua>{0} <gray>(المال المطلوب للترقية إلى الرتبة التالية: ${1})'
+rank.infomm: '<gold>الرتبة في الفريق: <aqua>{0} <gray>(أنت في أعلى رتبة ممكنة)'
+rank.syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+delhome.success: '<gold>تم حذف منزل الفريق بنجاح'
+delhome.noHome: '<dark_red>لم يقم فريقك بتعيين منزل'
+disband.success: '<gold>لقد قمت بحل الفريق'
+disband.confirm: '<gold>اكتب <aqua>/team disband <gold>مرة أخرى للتأكيد'
+description.success: '<gold>لقد قمت بتغيير وصف الفريق'
+description.view: '<gold>وصف الفريق: {0}'
+description.noDesc: '<gold>لم يتم تعيين وصف الفريق'
+description.noPerm: '<dark_red>ليس لديك الصلاحية لتحرير الوصف'
+name.success: '<gold>لقد قمت بتغيير اسم الفريق'
+name.view: '<gold>اسم الفريق: {0}'
+name.exists: '<dark_red>هذا الفريق موجود بالفعل'
+name.noPerm: '<dark_red>ليس لديك الصلاحية لتغيير اسم الفريق'
+invite.success: '<gold>تمت دعوة هذا اللاعب بنجاح'
+invite.invite: '<gold>لقد تمت دعوتك للانضمام إلى فريق {0} اكتب <aqua>/team join <فريق> <gold>للانضمام للفريق'
+invite.inTeam: '<gold>هذا اللاعب بالفعل ضمن فريق'
+invite.banned: '<gold>هذا اللاعب محظور من فريقك'
+invite.full: '<gold>فريقك مكتمل العدد، قم بطرد شخص ما قبل دعوة المزيد من الأشخاص'
+invite.expired: '<dark_red>انتهت الدعوة من <aqua>{0}'
+join.success: '<gold>لقد انضممت إلى تلك الفريق'
+join.notify: '<gold>مرحبًا بك <aqua>{0} <gold>في الفريق!'
+join.notInvited: '<gold><dark_red>لم تتلق دعوة للانضمام إلى تلك الفريق'
+join.banned: '<gold><dark_red>أنت محظور من هذا الفريق'
+join.full: '<dark_red>هذا الفريق مكتمل العدد'
+open.successopen: '<gold>أصبح فريقك مفتوحًا للجميع'
+open.successclose: '<gold>أصبح فريقك بدعوة فقط'
+title.change: '<gold>لقد تم تغيير عنوانك إلى <aqua>{0}'
+title.remove: '<gold>لقد تمت إزالة عنوانك'
+title.success: '<gold>تم تغيير هذا العنوان بنجاح'
+title.tooLong: '<dark_red>هذا العنوان طويل جدًا'
+title.noFormat: '<dark_red>ليس لديك الصلاحية لتنسيق الألقاب'
+title.noColor: '<dark_red>ليس لديك الصلاحية لاستخدام الألوان في الألقاب'
+title.reset: '<gold>تم إعادة ضبط عنوانك'
+title.noPerm: '<dark_red>ليس لديك الصلاحية لتغيير عنوان الفريق'
+info.needTeam: '<gold>لم يتم العثور على فريق أو لاعب تحت هذا الاسم'
+info.name: '<gold>الاسم: <aqua>{0}'
+info.description: '<gold>الوصف: <aqua>{0}'
+info.open: '<gold>مفتوح: <aqua>{0}'
+info.level: '<gold>المستوى: <aqua>{0}'
+info.owner: '<gold>المالكين: <aqua>{0}'
+info.admin: '<gold>المسؤولين: <aqua>{0}'
+info.default: '<gold>الأعضاء: <aqua>{0}'
+info.tag: '<gold>الوسم: <aqua>{0}'
+info.fail: '<gold>لم يتم العثور على فريق أو لاعب تحت هذا الاسم'
+info.score: '<gold>النقاط: <aqua>{0}'
+info.money: '<gold>الرصيد: <aqua>{0}'
+info.ally: '<gold>الحلفاء: <aqua>{0}'
+kick.success: '<gold>تم طرد هذا اللاعب بنجاح'
+kick.notify: '<gold>لقد تم طردك من فريق {0}'
+kick.title: '<dark_red>لقد تم طردك من فريقك'
+kick.noPerm: '<gold>ليس لديك الصلاحية لطرد ذلك الشخص'
+ban.success: '<gold>تم حظر هذا اللاعب بنجاح'
+ban.notify: '<gold>لقد تم حظرك من فريق {0}'
+ban.title: '<dark_red>لقد تم حظرك من فريقك'
+ban.noPerm: '<gold>ليس لديك الصلاحية لحظر ذلك الشخص'
+ban.already: '<gold>هذا اللاعب محظور بالفعل'
+unban.success: '<gold>تم إلغاء حظر هذا اللاعب'
+unban.notify: '<gold>لقد تم إلغاء حظرك من فريق {0}'
+unban.noPerm: '<gold>ليس لديك الصلاحية لإلغاء حظر ذلك الشخص'
+unban.not: '<gold>هذا اللاعب لم يتم حظره'
+promote.success: '<gold>تم ترقية هذا اللاعب بنجاح'
+promote.noPerm: '<gold>ليس لديك الصلاحية لترقية ذلك الشخص'
+promote.max: '<gold>هذا الشخص مرقى بالفعل إلى أعلى رتبة!'
+promote.notify: '<gold>لقد تم ترقيتك!'
+promote.maxAdmins: '<dark_red>فريقك لديه بالفعل الحد الأقصى من المسؤولين، اقصِ شخصًا أو قم بترقية فريقك'
+promote.maxOwners: '<dark_red>فريقك لديه بالفعل الحد الأقصى من المالكين، اقصِ شخصًا أو قم بترقية فريقك'
+demote.success: '<gold>تم تنزيل هذا اللاعب بنجاح'
+demote.noPerm: '<gold>ليس لديك الصلاحية لتنزيل ذلك الشخص'
+demote.min: '<gold>هذا الشخص هو بالفعل في أدنى رتبة'
+demote.notify: '<gold>لقد تم تنزيلك'
+demote.lastOwner: '<gold>لا يمكنك تنزيل المالك النهائي، قم بترقية شخص آخر أولاً'
+demote.maxAdmins: '<dark_red>فريقك لديه بالفعل الحد الأقصى من المسؤولين، قم بإزالة مسؤول أو قم بترقية فريقك'
+home.success: '<gold>لقد تم نقلك'
+home.noHome: '<gold>لم يقم فريقك بتعيين منزل'
+home.world: '<dark_red>تعذر العثور على منزل الفريق'
+sethome.success: '<gold>تم تعيين منزل فريقك'
+sethome.noPerm: '<gold>أنت لست في مرتبة كافية لتعيين منزل الفريق'
+chat.enabled: '<gold>أصبحت رسائلك الآن في الدردشة الخاصة بالفريق'
+chat.disabled: '<gold>أصبحت رسائلك الآن في الدردشة العامة'
+color.success: '<gold>تم تغيير لون فريقك بنجاح'
+color.fail: '<gold>هذا ليس لون دردشة معترف به'
+color.banned: '<dark_red>يمكنك استخدام الألوان فقط، وليس رموز التنسيق'
+deposit.tooLittle: '<dark_red>لا يمكنك إيداع مبالغ سلبية'
+deposit.fail: '<dark_red>فشل الإيداع'
+deposit.success: '<gold>تم إيداع الأموال'
+deposit.max: '<dark_red>سيتجاوز ذلك الحد الأقصى المسموح به لرصيد الفريق'
+withdraw.tooLittle: '<dark_red>لا يمكنك سحب مبالغ سلبية'
+withdraw.fail: '<dark_red>فشل السحب'
+withdraw.success: '<gold>تم سحب الأموال'
+withdraw.notEnough: '<gold>فريقك ليس لديه ما يكفي من الأموال'
+ally.already: '<dark_red>أنت متحالف بالفعل'
+ally.success: '<gold>أصبحتما فرقًا متحالفتين الآن'
+ally.ally: '<gold>فريقك الآن متحالف مع <aqua>{0}'
+ally.requested: '<gold>تم إرسال طلب تحالف لتلك الفرقة'
+ally.request: '<aqua>{0} <gold>قام بإرسال طلب تحالف، استخدم <aqua>/team ally <فريق> <gold>للموافقة'
+ally.self: '<dark_red>لا يمكنك تحالف فريقك بنفسه'
+ally.from: '<gold>لديك طلبات تحالف من: {0}'
+ally.noRequests: '<dark_red>ليس لديك أي طلبات تحالف'
+ally.onJoin: '<gold>لديك طلبات تحالف جديدة، استخدم <aqua>/team ally <gold>لعرضها'
+ally.limit: '<dark_red>تم الوصول إلى الحد المسموح به للتحالف'
+ally.alreadyrequest: '<dark_red>لقد طلبت بالفعل أن تكون متحالفًا مع تلك الفرقة'
+allychat.disabled: '<gold>أصبحت رسائلك لا تذهب إلى الدردشة الخاصة بالتحالف'
+allychat.enabled: '<gold>أصبحت رسائلك الآن تذهب إلى الدردشة الخاصة بالتحالف'
+allychat.syntax: '<light_purple>[{0}]<white>{1}<white>: {2}'
+neutral.self: '<gold>هذا هو فريقك نفسه'
+neutral.requestremove: '<gold>تمت إزالة طلب التحالف'
+neutral.reject: '<dark_red>تم رفض طلب التحالف مع <aqua>{0}'
+neutral.notAlly: '<dark_red>أنت غير متحالف مع تلك الفرقة'
+neutral.success: '<dark_red>أنت لم تعد متحالفًا مع تلك الفرقة'
+neutral.remove: '<dark_red>أنت لم تعد متحالفًا مع <aqua>{0}'
+list.noPage: '<gold>لم يتم العثور على تلك الصفحة'
+list.header: '<gray>--- <aqua>قائمة الفرق الصفحة {0} <gray>---'
+list.body: '<gold>{0}: <aqua>{1}'
+list.footer: '<gray>--- <gold>استخدم <aqua>/team list [page] <gold>لعرض المزيد <gray>---'
+setowner.use: '<gold>لا يمكنك ترقية ذلك اللاعب، استخدم <aqua>/team setowner <لاعب> <gold>لترقية ذلك اللاعب إلى مالك'
+setowner.success: '<gold>هذا اللاعب هو الآن مالك'
+setowner.notify: '<gold>أنت مالك الفريق الآن'
+setowner.max: '<dark_red>هذا اللاعب مالك بالفعل'
+setwarp.exist: '<dark_red>هذا العلامة موجودة بالفعل'
+setwarp.max: '<dark_red>فريقك لديه بالفعل الحد الأقصى من العلامات المعينة'
+setwarp.success: '<gold>تم إنشاء تلك العلامة'
+setwarp.char: '<dark_red>اسم تلك العلامة يحتوي على أحرف محظورة'
+warp.nowarp: '<dark_red>تلك العلامة غير موجودة'
+warp.invalidPassword: '<dark_red>كلمة المرور غير صالحة لتلك العلامة'
+warp.success: '<gold>لقد تم نقلك'
+warps.syntax: '<gold>العلامات: <aqua>{0}'
+warps.none: '<dark_red>فريقك ليس لديه أي علامات معينة'
+warp.world: '<dark_red>تعذر العثور على موقع تلك العلامة'
+delwarp.success: '<dark_red>تم حذف تلك العلامة'
+chat.syntax: '<aqua>[الفريق]<white>{0}<white>: {1}'
+teleport.fail: '<dark_red>فشلت عملية النقل'
+teleport.wait: '<gold>انتظر <aqua>{0} <gold>ثواني'
+chest.claim.noChest: '<dark_red>أنت لا تقف على صندوق'
+chest.claim.limit: '<dark_red>فريقك قد ادعى الحد الأقصى لعدد الصناديق'
+chest.claim.claimed: '<dark_red>تم ادعاء تلك الصندوق بالفعل'
+chest.claim.success: '<gold>تم ادعاء تلك الصندوق'
+chest.remove.noChest: '<dark_red>أنت لا تقف على صندوق'
+chest.remove.notClaimed: '<dark_red>فريقك لم يدعي تلك الصندوق'
+chest.remove.success: '<dark_red>لم يعد فريقك يدعي تلك الصندوق'
+chest.all.success: '<gold>تم إلغاء الادعاء لكل الصناديق'
+chest.claimed: '<dark_red>تم ادعاء تلك الصندوق بواسطة <green>{0}'
+
+echest.echest: 'Enderchest'
+
+pvp.enabled: '<gold>تم تفعيل Pvp لفريقك'
+pvp.disabled: '<gold>تم تعطيل Pvp لفريقك'
+
+rankup.max: '<dark_red>أنت بالفعل في أعلى رتبة'
+rankup.score: '<dark_red>تحتاج إلى {0} نقاط للترقية'
+rankup.money: '<dark_red>تحتاج إلى {0} من المال في رصيد الفريق للترقية'
+rankup.success: '<gold>تم تطوير فريقك'
+
+tag.banned: '<dark_red>تم حظر تلك الوسم'
+tag.success: '<gold>تم تغيير الوسم بنجاح'
+tag.maxLength: '<dark_red>تلك الوسم طويلة جداً'
+tag.noPerm: '<dark_red>ليس لديك الصلاحية لتغيير وسم الفريق'
+admin.cancel: '<dark_red>تم إلغاء الأمر بواسطة إضافة أخرى'
+admin.tag.success: '<gold>تم تغيير الوسم للفرق بنجاح'
+admin.setrank.success: '<gold>تم تعيين رتبة الفريق بنجاح'
+admin.setrank.no: '<dark_red>تلك الرتبة إما غير موجودة أو ليست معينة بشكل صحيح'
+
+admin.config.reload: '<gold>تم إعادة تحميل BetterTeams (إذا كنت تواجه مشكلات عند استخدام هذا الأمر، أعد تشغيل الخادم)'
+admin.holo.create.success: '<gold>تم إنشاء الهولوجرام'
+admin.holo.remove.noHolo: '<dark_red>لم يتم العثور على أي هولوجرام'
+admin.holo.remove.success: '<gold>تم حذف الهولوجرام'
+admin.title.success: '<gold>تم تغيير اللقب لهذا اللاعب'
+admin.title.reset: '<gold>تم إعادة تعيين اللقب لهذا اللاعب'
+admin.version: '<gold>إصدار البرنامج المساعد الحالي: <aqua>{0}'
+admin.versionstorage: '<gold>طريقة التخزين: <aqua>{0}'
+admin.versionversion: '<gold>نسخة Minecraft: <aqua>{0}'
+admin.versionlanguage: '<gold>اللغة المحددة: <aqua>{0}'
+admin.noTeam: '<dark_red>هذا ليس فريقاً'
+admin.home.success: '<gold>تم نقلك إلى منزل فريق آخر'
+admin.home.noHome: '<dark_red>هذا الفريق لم يعين منزلاً'
+admin.name.success: '<gold>تم تغيير اسم الفريق'
+admin.description.success: '<gold>تم تغيير اسم الفريق'
+admin.open.successopen: '<gold>هذا الفريق مفتوح للجميع الآن'
+admin.open.successclose: '<gold>هذا الفريق مغلق الآن'
+admin.invite.success: '<gold>تم دعوة اللاعب للانضمام للفريق'
+admin.create.success: '<gold>تم إنشاء الفريق'
+admin.join.banned: '<dark_red>تم حظر اللاعب من الانضمام للفريق'
+admin.join.success: '<gold>تم انضمام اللاعب للفريق'
+admin.join.notify: '<gold>انضممت للفريق <aqua>{0}'
+admin.join.full: '<dark_red>هذا الفريق مكتمل العدد'
+admin.notInTeam: '<gold>لا يمكن لللاعب أن يكون في فريق قبل أداء ذلك'
+admin.inTeam: '<dark_red>هذا اللاعب ليس في فريق'
+admin.leave.success: '<gold>تم ترك اللاعب للفريق'
+admin.leave.notify: '<gold>تركت هذا الفريق'
+admin.demote.notify: '<gold>تم تنزيلك'
+admin.demote.success: '<gold>تم تنزيل اللاعب بنجاح'
+admin.demote.min: '<dark_red>لا يمكن تنزيل اللاعب بالمزيد'
+admin.demote.maxAdmins: '<dark_red>الفريق بالفعل يحتوي على الحد الأقصى من الإداريين، قم بإزالة أحدهم قبل تنزيل هذا اللاعب'
+admin.promote.max: '<gold>اللاعب بالفعل في أعلى رتبة'
+admin.promote.notify: '<gold>تم ترقيتك'
+admin.promote.success: '<gold>تم ترقية اللاعب بنجاح'
+admin.promote.owner: '<gold>تم تكوين أن الفرق يمكن أن تحتوي فقط على مالك واحد، استخدم <aqua>/teama setowner <لاعب> <gold>لتعيين اللاعب كمالك'
+admin.promote.maxAdmins: '<dark_red>الفريق بالفعل يحتوي على الحد الأقصى من الإداريين، قم بإزالة أحدهم قبل ترقية اللاعب'
+admin.promote.maxOwners: '<dark_red>الفريق بالفعل يحتوي على الحد الأقصى من المالكين، قم بإزالة أحدهم قبل ترقية اللاعب'
+admin.setowner.already: '<dark_red>اللاعب مالك بالفعل'
+admin.setowner.nonotify: '<gold>أنت لم تعد مالك الفريق'
+admin.setowner.success: '<gold>تم تعيين اللاعب كمالك للفريق'
+admin.setowner.notify: '<gold>أنت مالك الفريق الآن'
+admin.warps.none: '<dark_red>لم يعين الفريق أي علامات'
+admin.setwarp.success: '<gold>تم تعيين العلامة'
+admin.setwarp.max: '<gold>الفريق قد عين الحد الأقصى من العلامات'
+admin.purge.confirm: '<gold>قم بتشغيل الأمر خلال الـ 10 ثواني القادمة للتأكيد، <dark_red>لن يمكن التراجع وستتم إعادة تعيين النقاط لجميع الفرق'
+admin.purge.success: '<gold>تم حذف الفرق بنجاح'
+admin.score.tooSmall: '<dark_red>يجب أن تكون النقاط أكبر من 0'
+admin.score.success: '<gold>تم تغيير نقاط الفريق بنجاح'
+admin.bal.toSmall: '<dark_red>يجب أن يكون الرصيد أكبر من 0'
+admin.bal.success: '<gold>تم تغيير رصيد الفريق بنجاح'
+admin.update: '<dark_red>هناك إصدار جديد من Better Teams، حدث من هنا: https://www.spigotmc.org/resources/better-teams.17129/'
+admin.disband.success: '<gold>تم حل الفريق بنجاح'
+admin.color.success: '<gold>تم تغيير لون الفريق بنجاح'
+admin.chest.claim.success: '<gold>لقد ادعيت تلك الصندوق نيابة عن الفريق'
+admin.chest.remove.success: '<gold>تم إزالة ادعاء التلك الصندوق بنجاح'
+admin.chest.all.success: '<gold>تم إزالة جميع الادعاءات عن الفريق'
+admin.chest.remove.notClaimed: '<dark_red>لم يدعي أي فريق ذلك الصندوق'
+admin.chest.disable.already: '<dark_red>أدعاءات الصناديق معطلة بالفعل'
+admin.chest.disable.success: '<gold>تم تعطيل ادعاءات الصناديق بنجاح'
+admin.chest.disabled.bc: '<gold><bold>يمكن الآن فتح جميع الصناديق المدعومة'
+admin.chest.enable.already: '<dark_red>أدعاءات الصناديق مفعلة بالفعل'
+admin.chest.enable.success: '<gold>تم تفعيل ادعاءات الصناديق بنجاح'
+admin.chest.enabled.bc: '<gold><bold>الصناديق المدعومة الآن مؤمنة'
+admin.teleport.success: '<gold>تم نقل جميع أعضاء الفريق الحاليين'
+admin.teleport.noWorld: '<dark_red>العالم المحدد غير موجود'
+admin.teleport.all.success: '<gold>تم نقل جميع الأعضاء المتصلين في جميع الفرق'
+admin.teleport.all.home.success: '<gold>تم نقل جميع الأعضاء المتصلين في جميع الفرق الذين لديهم منزل'
+
+nametag.syntax: '<gold><bold>{0}<reset> '
+holo.leaderboard: '<gold>قائمة المتصدرين'
+holo.syntax: '<gold>{0}: <aqua>{1}'
+holo.msyntax: '<gold>{0}: <aqua>${1}'
+top.leaderboard: '<gold>قائمة المتصدرين'
+top.syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+top.divide: '<white>...'
+baltop.leaderboard: '<gold>قائمة المتصدرين'
+baltop.syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+baltop.divide: '<white>...'
+spy.stop: '<gold>أنت لم تعد تجسس على رسائل الفريق'
+spy.start: '<gold>أنت الآن تجسس على رسائل الفريق'
+spy.team: '<gray>[<aqua>{0}<gray>]<white>{1}<white>: {2}'
+spy.ally: '<gray>[<light_purple>{0}<gray>]<white>{1}<white>: {2}'
+
+uclaim.team: '<dark_red>يجب أن تكون في فريق لإنشاء ادعاء'
+uclaim.member: '<dark_red>لا يمكنك ترك ادعاء الفريق'
+uclaim.kick: '<dark_red>لا يمكنك طرد أعضاء فريقك من الادعاء'
+uclaim.ban: '<dark_red>لا يمكنك حظر أعضاء فريقك من الادعاء'
+uclaim.dissolve: '<dark_red>تم حل فريقك لذلك تم حل ادعاءك'
+
+help.description: عرض وتغيير وصف فريقك
+help.ban: يحظر اللاعب المحدد من فريقك
+help.home: ينقلك إلى منزل فريقك
+help.help: عرض صفحة المساعدة هذه
+help.promote: ترقية اللاعب المحدد داخل فريقك
+help.demote: تنزيل اللاعب المحدد داخل فريقك
+help.unban: يلغي حظر اللاعب المحدد من فريقك
+help.kick: طرد تلك اللاعب من فريقك
+help.leave: مغادرة فريقك الحالي
+help.chat: إرسال رسالة فقط إلى فريقك
+help.name: عرض وتغيير اسم فريقك
+help.sethome: تعيين منزل فريقك
+help.create: إنشاء فريق بالاسم المحدد
+help.invite: دعوة اللاعب المحدد لفريقك
+help.disband: حل فريقك الحالي
+help.open: تبديل حالة الفريق إذا كان مفتوحًا للدعوات فقط
+help.info: عرض معلومات حول اللاعب / الفريق المحدد
+help.color: تغيير لون فريقك
+help.deposit: إيداع الأموال في رصيد الفريق
+help.bal: عرض رصيد فريقك
+help.withdraw: سحب الأموال من رصيد الفريق
+help.title: تغيير عنوان ذلك اللاعب داخل الفريق
+help.top: عرض أفضل الفرق
+help.rank: عرض تصنيف الفريق
+help.join: الانضمام إلى الفريق المحدد
+help.delhome: حذف منزل فريقك
+help.ally: يستخدم لطلب تحالف مع فريق آخر
+help.neutral: إزالة الحلفاء ورفض طلبات التحالف
+help.allychat: إرسال رسالة فقط للحلفاء
+
+command.create: create
+command.leave: leave
+command.disband: disband
+command.description: description
+command.invite: invite
+command.join: join
+command.name: name
+command.open: open
+command.info: info
+command.kick: kick
+command.promote: promote
+command.demote: demote
+command.home: home
+command.sethome: sethome
+command.ban: ban
+command.unban: unban
+command.chat: chat
+command.color: color
+command.title: title
+command.top: top
+command.baltop: baltop
+command.rank: rank
+command.delhome: delhome
+command.ally: ally
+command.neutral: neutral
+command.allychat: allychat
+command.list: list
+command.warp: warp
+command.setwarp: setwarp
+command.delwarp: delwarp
+command.warps: warps
+command.echest: echest
+command.rankup: rankup
+command.tag: tag
+command.pvp: pvp
+command.claim: claim
+command.remove: remove
+command.removeall: removeall
+command.chest: chest
+command.reload: reload
+command.chatspy: chatspy
+command.version: version
+command.purge: purge
+command.setrank: setrank
+command.add: add
+command.set: set
+command.score: score
+command.enableclaims: enableclaims
+command.disableclaims: disableclaims

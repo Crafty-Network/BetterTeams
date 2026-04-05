@@ -1,0 +1,506 @@
+# All translations in this file are community made, this means there may be errors / missed translations, if you are able to improve upon any translation it would be greatly appreciated
+
+# Able to help with translations? Either improving a already existing language, or adding a whole new one. Join the discord server: https://discord.gg/JF9DNs3 
+# or message me on spigot: https://www.spigotmc.org/members/booksaw123.120955/
+
+# Any placeholders from placeholder API will work in this file
+
+# Credit for contributions to this file: xTomikk
+
+invalidArg: '<dark_red>Neplatne argumenty, napoveda'
+inTeam: '<dark_red>Musis byt v tymu, abys to mohl provest'
+internalError: '<dark_red>Pri provadeni tohoto prikazu doslo k chybe, prosim nahlaste to vlastnikum
+  serveru'
+notInTeam: '<dark_red>Musis opustit svuj tym predtim, nez toto provedes'
+needOwner: '<dark_red>Musis byt majitelem tymu, abys toto mohl udelat'
+needAdmin: '<dark_red>Musis byt adminem nebo majitelem tymu, abys toto mohl udelat'
+needPlayer: '<dark_red>Musis byt hracem, abys toto mohl udelat'
+noPlayer: '<dark_red>Zadany hrac nebyl nalezen'
+notTeam: '<gold><dark_red>Tento tym neexistuje, zkus <aqua>/team create <jmeno>'
+needSameTeam: '<gold>Nejsi ve stejnem tymu jako tato osoba'
+noPerm: '<dark_red>Nemas opravneni to udelat'
+prefixSyntax: '<gray>[{0}<gray>] <reset>{1}'
+bannedChar: '<dark_red>Znak, ktery jsi se pokusil pouzit, je zakazan'
+noTeam: '<dark_red>Tento tym neexistuje'
+loading: '<gold>Nacitani'
+cooldown:
+  wait: '<dark_red>Musis pockat dalsich {0} sekund, nez to znovu zkusis!'
+cost:
+  tooPoor: '<dark_red>Jsi prilis chudy na to, abys mohl provest tento prikaz'
+  run: '<dark_red><bold>-{0}'
+placeholder:
+  noTeam: ''
+  noDescription: ''
+  money: '{0}'
+  owner: Owner
+  admin: Admin
+  default: Default
+  name: '{0}'
+  tag: '{0}'
+  displayname: '{0}'
+  inteam: 'true'
+  notinteam: 'false'
+  noTitle: ''
+prefix:
+  owner: ' **'
+  admin: ' *'
+  default: ' '
+create:
+  exists: '<gold>Tento tym jiz existuje'
+  success: '<gold>Vas tym byl vytvoren'
+  banned: '<dark_red>Tento nazev tymu je zakazan'
+  maxLength: '<dark_red>Tento nazev tymu je prilis dlouhy'
+leave:
+  success: '<gold>Opustil jsi tym'
+  lastOwner: '<gold>Jsi jedinym majitelem tymu. Bud povys nekoho jineho nebo pouzij <aqua>/team
+    disband <gold>pro rozpusteni tymu.'
+announce:
+  join: '<dark_aqua>{0} <gray>se připojil k týmu {1}'
+  leave: '<dark_aqua>{0} <gray>opustil tým {1}'
+  disband: '<gray>Tým {0} <gray>byl rozpuštěn'
+rank:
+  noTeam: '<dark_red>Tym nenalezen'
+  info: '<gold>Pozice tymu:'
+  infos: '<gold>Hodnost tymu: <aqua>{0} <gray>(Potrebne body: {1} pro dalsi postup)'
+  infom: '<gold>Hodnost tymu: <aqua>{0} <gray>(Penize: ${1} potrebne pro dalsi postup)'
+  infomm: '<gold>Hodnost tymu: <aqua>{0} <gray>(Jsi na nejvyssi mozne hodnosti)'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+delhome:
+  success: '<gold>Domov vaseho tymu byl odstranen'
+  noHome: '<dark_red>Vas tym nema nastaveny domov'
+disband:
+  success: '<gold>Rozpustil jsi tym'
+  confirm: '<gold>Zadej <aqua>/team disband <gold>znovu pro potvrzeni'
+description:
+  success: '<gold>Zmenil jsi popis tymu'
+  view: '<gold>Popis tymu: {0}'
+  noDesc: '<gold>Popis tymu neni nastaven'
+  noPerm: '<dark_red>Nemas opravneni upravovat popis'
+name:
+  success: '<gold>Zmenil jsi nazev tymu'
+  view: '<gold>Nazev tymu: {0}'
+  exists: '<dark_red>Tento tym jiz existuje'
+  noPerm: '<dark_red>Nemas opravneni zmenit nazev tymu'
+invite:
+  success: '<gold>Hrac byl pozvan'
+  invite: '<gold>Byl jsi pozvan k pripojeni se k tymu {0}. Napis <aqua>/team join <tym> <gold>pro
+    pripojeni k tymu.'
+  inTeam: '<gold>Tento hrac jiz je v tymu'
+  banned: '<gold>Tento hrac je z vaseho tymu zakazan'
+  full: '<gold>Vas tym ma maximalni pocet hracu, vyhodte nekoho pred pozvanim dalsich
+    lidi'
+  expired: '<dark_red>Pozvanka od hrace <aqua>{0} <dark_red>vyprsela'
+join:
+  success: '<gold>Pripojil jsi se k tomuto tymu'
+  notify: '<gold>Vitej, <aqua>{0} <gold>v tymu!'
+  notInvited: '<gold><dark_red>Nejsi pozvan do tohoto tymu'
+  banned: '<gold><dark_red>Jsi zakazan v tomto tymu'
+  full: '<dark_red>Tym je plny'
+open:
+  successopen: '<gold>Vas tym je nyni otevreny pro kazdeho'
+  successclose: '<gold>Vas tym je nyni pouze na pozvani'
+title:
+  change: '<gold>Nazev titulu byl zmenen na <aqua>{0}'
+  remove: '<gold>Nazev titulu byl odebran'
+  success: '<gold>Tento titul byl zmenen'
+  tooLong: '<dark_red>Tento titul je prilis dlouhy'
+  noFormat: '<dark_red>Nemas opravneni formatovat tituly'
+  noColor: '<dark_red>Nemas opravneni pouzivat barvy v titulech'
+  reset: '<gold>Tvuj titul byl obnoven'
+  noPerm: '<dark_red>Nemas opravneni zmenit titul tymu'
+info:
+  needTeam: '<gold>Tym nebo hrac s timto jmenem nebyl nalezen'
+  name: '<gold>Jmeno: <aqua>{0}'
+  description: '<gold>Popis: <aqua>{0}'
+  open: '<gold>Otevreny: <aqua>{0}'
+  level: '<gold>Uroven: <aqua>{0}'
+  owner: '<gold>Vlastnici: <aqua>{0}'
+  admin: '<gold>Admini: <aqua>{0}'
+  default: '<gold>Clenove: <aqua>{0}'
+  tag: '<gold>Tag: <aqua>{0}'
+  fail: '<gold>Tym nebo hrac s timto jmenem nebyl nalezen'
+  score: '<gold>Skore: <aqua>{0}'
+  money: '<gold>Stav uctu: <aqua>{0}'
+  ally: '<gold>Spojenci: <aqua>{0}'
+kick:
+  success: '<gold>Tento hrac byl vyhozen'
+  notify: '<gold>Byl jsi vyhozen z tymu {0}'
+  title: '<dark_red>Byl jsi vyhozen z tymu'
+  noPerm: '<gold>Nemas opravneni vyhodit tuto osobu'
+ban:
+  success: '<gold>Tento hrac byl zabanovan'
+  notify: '<gold>Byl jsi zabanovan z tymu {0}'
+  title: '<dark_red>Byl jsi zabanovan z tymu'
+  noPerm: '<gold>Nemas opravneni zabanovat tuto osobu'
+  already: '<gold>Tento hrac je jiz zabanovan'
+unban:
+  success: '<gold>Tento hrac byl odbanovan'
+  notify: '<gold>Byl jsi odbanovan z tymu {0}'
+  noPerm: '<gold>Nemas opravneni odbanovat tuto osobu'
+  not: '<gold>Tento hrac neni zabanovan'
+promote:
+  success: '<gold>Tento hrac byl povysen'
+  noPerm: '<gold>Nemas opravneni povysit tuto osobu'
+  max: '<gold>Tato osoba je jiz povysena na maximum!'
+  notify: '<gold>Byl jsi povysen!'
+  maxAdmins: '<dark_red>Vas tym jiz dosahl maximalniho poctu adminu, povys nekoho nebo zvys
+    uroven tymu'
+  maxOwners: '<dark_red>Vas tym jiz dosahl maximalniho poctu majitelu, povys nekoho nebo zvys
+    uroven tymu'
+demote:
+  success: '<gold>Tento hrac byl degradovan'
+  noPerm: '<gold>Nemas opravneni degradovat tuto osobu'
+  min: '<gold>Tato osoba je jiz na nejnizsi urovni'
+  notify: '<gold>Byl jsi degradovan'
+  lastOwner: '<gold>Nemuzes degradovat posledniho majitele, nejprve povys nekoho dalsiho'
+  maxAdmins: '<dark_red>Vas tym jiz dosahl maximalniho poctu adminu, odeber nektereho z adminu
+    nebo zvys uroven tymu'
+home:
+  success: '<gold>Byl jsi prenesen'
+  noHome: '<gold>Vas tym nema nastaveny domov'
+  world: '<dark_red>Misto tohoto domova vaseho tymu nebylo nalezeno'
+sethome:
+  success: '<gold>Domov vaseho tymu byl nastaven'
+  noPerm: '<gold>Nemas dostatecnou uroven opravneni pro nastaveni domova tymu'
+chat:
+  enabled: '<gold>Tva zprava nyni jde do tymoveho chatu'
+  disabled: '<gold>Tva zprava nyni jde do globalniho chatu'
+  syntax: '<aqua>[Tym]<white>{0}<white>: {1}'
+color:
+  success: '<gold>Barva vaseho tymu byla zmenena'
+  fail: '<gold>Toto neni rozpoznana barva chatu'
+  banned: '<dark_red>Muzes pouzivat pouze barvy, ne formatovaci kody'
+deposit:
+  tooLittle: '<dark_red>Nelze vkladat zaporne castky'
+  fail: '<dark_red>Vkladani selhalo'
+  success: '<gold>Penize byly vlozeny'
+  max: '<dark_red>Tim byste prekrocil vas maximalni povoleny zustatek tymu'
+withdraw:
+  tooLittle: '<dark_red>Nelze vybrat zaporne castky'
+  fail: '<dark_red>Vyber selhal'
+  success: '<gold>Penize vybrany'
+  notEnough: '<gold>Vas tym nema dostatek penez'
+ally:
+  already: '<dark_red>Jiz jste spojenci'
+  success: '<gold>Vase tymy jsou nyni spojenci'
+  ally: '<gold>Vas tym je nyni spojen s tymem <aqua>{0}'
+  requested: '<gold>Byla odeslana zadost o spojenectvi tomuto tymu'
+  request: '<aqua>{0} <gold>odeslal zadost o spojenectvi, pouzij <aqua>/team ally <tym> <gold>pro
+    akceptaci'
+  self: '<dark_red>Nemuzete byt spojenci se svym vlastnim tymem'
+  from: '<gold>Mate zadosti o spojenectvi od: {0}'
+  noRequests: '<dark_red>Nemate zadne zadosti o spojenectvi'
+  onJoin: '<gold>Mate nove zadosti o spojenectvi, pouzijte <aqua>/team ally <gold>pro zobrazeni'
+  limit: '<dark_red>Dosahli jste limitu spojencu'
+  alreadyrequest: '<dark_red>Jiz jste pozadali o spojenectvi s timto tymem'
+allychat:
+  disabled: '<gold>Tva zprava jiz nebudou posilany do spojeneckeho chatu'
+  enabled: '<gold>Tva zprava nyni budou posilany do spojeneckeho chatu'
+  syntax: '<light_purple>[{0}]<white>{1}<white>: {2}'
+neutral:
+  self: '<gold>To je vas vlastni tym'
+  requestremove: '<gold>Tato zadost o spojenectvi byla odstranena'
+  reject: '<dark_red>Vase zadost o spojenectvi s <aqua>{0} <dark_red>byla odmitnuta'
+  notAlly: '<dark_red>Nejste spojenci s timto tymem'
+  success: '<dark_red>Uz nejste spojenci s timto tymem'
+  remove: '<dark_red>Uz nejste spojenci s tymem <aqua>{0}'
+list:
+  noPage: '<gold>Tato stranka nebyla nalezena'
+  header: '<gray>--- <aqua>Stranka seznamu tymu {0} <gray>---'
+  body: '<gold>{0}: <aqua>{1}'
+  footer: '<gray>--- <gold>Napis <aqua>/team list [stranka] <gold>pro zobrazeni vice <gray>---'
+setowner:
+  use: '<gold>Nemuzes povysit tohoto hrace, pouzij <aqua>/team setowner <hrac> <gold>pro povyseni
+    tohoto hrace na majitele'
+  success: '<gold>Tento hrac je nyni majitelem'
+  notify: '<gold>Stal jsi se majitelem sveho tymu'
+  max: '<dark_red>Tento hrac je jiz majitelem'
+setwarp:
+  exist: '<dark_red>Tento warp jiz existuje'
+  max: '<dark_red>Vas tym jiz ma nastaven maximalni pocet warpu'
+  success: '<gold>Tento warp byl vytvoren'
+  char: '<dark_red>Nazev warpu obsahuje zakazane znaky'
+warp:
+  nowarp: '<dark_red>Tento warp neexistuje'
+  invalidPassword: '<dark_red>Neplatne heslo pro tento warp'
+  success: '<gold>Byl jsi prenesen'
+  world: '<dark_red>Misto tohoto warp nebylo nalezeno'
+warps:
+  syntax: '<gold>Warpy: <aqua>{0}'
+  none: '<dark_red>Vas tym nema nastavene zadne warpy'
+delwarp:
+  success: '<dark_red>Tento warp byl smazan'
+teleport:
+  fail: '<dark_red>Teleportace selhala'
+  wait: '<gold>Pockej <aqua>{0} <gold>sekund'
+chest:
+  claim:
+    noChest: '<dark_red>Nestojis na truhle'
+    limit: '<dark_red>Vas tym dosahl maximalniho poctu obsazenych truhel'
+    claimed: '<dark_red>Tato truhla byla jiz obsazena'
+    success: '<gold>Obsadil jsi tuto truhlu'
+  remove:
+    noChest: '<dark_red>Nestojis na truhle'
+    notClaimed: '<dark_red>Vas tym tuto truhlu neobsadil'
+    success: '<dark_red>Vas tym jiz nema narok na tuto truhlu'
+  all:
+    success: '<gold>Zrusena narokovani vsech truhel'
+  claimed: '<dark_red>Tato truhla je narokovana hracem <green>{0}'
+echest:
+  
+  echest: Enderchest
+pvp:
+  
+  enabled: '<gold>PvP bylo povoleno pro vas tym'
+  disabled: '<gold>PvP bylo zakazano pro vas tym'
+rankup:
+  
+  max: '<dark_red>Jiz jsi na nejvyssi urovni'
+  score: '<dark_red>Potrebujes {0} skore pro postup na dalsi uroven'
+  money: '<dark_red>Potrebujes {0} penez na uctu tymu pro postup na dalsi uroven'
+  success: '<gold>Vas tym se posunul na dalsi uroven'
+tag:
+  
+  banned: '<dark_red>Tento tag je zakazan'
+  success: '<gold>Tvuj tag byl uspesne zmenen'
+  maxLength: '<dark_red>Tento tag je prilis dlouhy'
+  noPerm: '<dark_red>Nemas opravneni zmenit tag tymu'
+admin:
+  cancel: '<dark_red>Prikaz byl zrusen jinym pluginem'
+  tag:
+    success: '<gold>Tag tohoto tymu byl uspesne zmenen'
+  setrank:
+    success: '<gold>Hodnost tohoto tymu byla nastavena'
+    'no': '<dark_red>Tato hodnost bud neexistuje, nebo neni spravne nastavena'
+  config:
+    
+    reload: '<gold>Byl proveden restart BetterTeams (Pokud mate problemy pri pouziti tohoto
+      prikazu, restartujte server)'
+  holo:
+    create:
+      success: '<gold>Hologram vytvoren'
+    remove:
+      noHolo: '<dark_red>Nebyly nalezeny zadne hologramy'
+      success: '<gold>Hologram byl smazan'
+  title:
+    success: '<gold>Nazev titulu teto osoby byl zmenen'
+    reset: '<gold>Titul teto osoby byl obnoven'
+  version: '<gold>Soucasna verze pluginu: <aqua>{0}'
+  versionstorage: '<gold>Zpusob ulozeni dat: <aqua>{0}'
+  versionversion: '<gold>Verze Minecraftu: <aqua>{0}'
+  versionlanguage: '<gold>Vybrany jazyk: <aqua>{0}'
+  noTeam: '<dark_red>To neni tym'
+  home:
+    success: '<gold>Byl jsi prenesen na domov tohoto tymu'
+    noHome: '<dark_red>Tento tym nema nastaveny domov'
+  name:
+    success: '<gold>Nazev tymu byl zmenen'
+  description:
+    success: '<gold>Nazev tohoto tymu byl zmenen'
+  open:
+    successopen: '<gold>Tento tym je nyni otevreny pro kazdeho'
+    successclose: '<gold>Tento tym je nyni pouze na pozvani'
+  invite:
+    success: '<gold>Tento hrac byl pozvan do tohoto tymu'
+  create:
+    success: '<gold>Tento tym byl vytvoren'
+  join:
+    banned: '<dark_red>Tento hrac je zakazan v tomto tymu'
+    success: '<gold>Tento hrac se pripojil k tymu'
+    notify: '<gold>Pripojil jsi se k tymu <aqua>{0}'
+    full: '<dark_red>Tym je plny'
+  notInTeam: '<gold>Tento hrac nemuze byt v tymu, nez toto provede'
+  inTeam: '<dark_red>Tento hrac neni v tymu'
+  leave:
+    success: '<gold>Tento hrac opustil tym'
+    notify: '<gold>Opustil jsi tento tym'
+  demote:
+    notify: '<gold>Byl jsi degradovan'
+    success: '<gold>Tento hrac byl degradovan'
+    min: '<dark_red>Tento hrac nemuze byt degradovan vice'
+    maxAdmins: '<dark_red>Tym jiz dosahl maximalniho poctu adminu, odeber jednoho pred degradaci
+      tohoto hrace'
+  promote:
+    max: '<gold>Tento hrac je jiz na nejvyssi urovni'
+    notify: '<gold>Byl jsi povysen'
+    success: '<gold>Tento hrac byl povysen'
+    owner: '<gold>Je nastaveno, ze tymy mohou mit pouze jednoho majitele, pouzij <aqua>/teama
+      setowner <hrac> <gold>pro nastaveni hrace jako majitele'
+    maxAdmins: '<dark_red>Tym jiz dosahl maximalniho poctu adminu, odeber jednoho pred povysenim
+      tohoto hrace'
+    maxOwners: '<dark_red>Tym jiz dosahl maximalniho poctu majitelu, odeber jednoho pred povysenim
+      tohoto hrace'
+  setowner:
+    already: '<dark_red>Tento hrac je jiz majitelem'
+    nonotify: '<gold>Jiz nejsi majitelem tymu'
+    success: '<gold>Tento hrac je novym majitelem tymu'
+    notify: '<gold>Jsi nyni majitelem tymu'
+  warps:
+    none: '<dark_red>Tym nema nastaveny zadne warpy'
+  setwarp:
+    success: '<gold>Tento warp byl uspesne vytvoren'
+    max: '<gold>Tym jiz dosahl maximalniho poctu nastavenych warpu'
+  purge:
+    confirm: '<gold>Pro potvrzeni spust tento prikaz behem nasledujicich 10 sekund, <dark_red>TOTO
+      NELZE VRATIT A RESETUJE SKORE VSECH TYMU'
+    success: '<gold>Tymy byly uspesne vycisteny'
+  score:
+    tooSmall: '<dark_red>Skore musi byt vetsi nez 0'
+    success: '<gold>Skore tohoto tymu bylo zmeneno'
+  bal:
+    toSmall: '<dark_red>Zustatek musi byt vetsi nez 0'
+    success: '<gold>Zustatek tohoto tymu byl zmenen'
+  update: '<dark_red>Je dostupna nova verze pluginu BetterTeams. Aktualizujte zde: https://www.spigotmc.org/resources/better-teams.17129/'
+  disband:
+    success: '<gold>Tym byl uspesne rozpusten'
+  color:
+    success: '<gold>Barva tohoto tymu byla zmenena'
+  chest:
+    claim:
+      success: '<gold>Tuto truhlu jste zabrali jmenem tymu'
+    remove:
+      success: '<gold>Tato truhla byla uspesne odebrana'
+      notClaimed: '<dark_red>Zadny tym nezabral tuto truhlu'
+    all:
+      success: '<gold>Vsechny naroky byly odebrany tymu'
+    disable:
+      already: '<dark_red>Naroky na truhly jsou jiz zakazany'
+      success: '<gold>Naroky na truhly byly zakazany'
+    disabled:
+      bc: '<gold><bold>Vsechny zabrane truhly jsou nyni otevreny'
+    enable:
+      already: '<dark_red>Naroky na truhly jsou jiz povoleny'
+      success: '<gold>Naroky na truhly byly povoleny'
+    enabled:
+      bc: '<gold><bold>Vsechny zabrane truhly jsou nyni zamcene'
+  teleport:
+    success: '<gold>Vsichni online clenove tohoto tymu byli preneseni'
+    noWorld: '<dark_red>Specifikovaný svět nenalezen'
+    all.success: '<gold>Všichni online členové všech týmů byli teleportováni'
+    all.home.success: '<gold>Všichni online členové všech týmů s domovem byli teleportováni'
+nametag:
+  
+  syntax: '<gold><bold>{0}<reset> '
+holo:
+  leaderboard: '<gold>Zebricek'
+  syntax: '<gold>{0}: <aqua>{1}'
+  msyntax: '<gold>{0}: <aqua>${1}'
+top:
+  leaderboard: '<gold>Zebricek'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+  divide: '<white>...'
+baltop:
+  leaderboard: '<gold>Zebricek'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+  divide: '<white>...'
+spy:
+  stop: '<gold>Uz nesledujes zpravy tymu'
+  start: '<gold>Nyni sledujes zpravy tymu'
+  team: '<gray>[<aqua>{0}<gray>]<white>{1}<white>: {2}'
+  ally: '<gray>[<light_purple>{0}<gray>]<white>{1}<white>: {2}'
+uclaim:
+  
+  team: '<dark_red>Musis byt v tymu, aby sis mohl vytvorit narok'
+  member: '<dark_red>Nemuzes opustit narok sveho tymu'
+  kick: '<dark_red>Nemuzes vyhodit cleny sveho tymu z naroku'
+  ban: '<dark_red>Nemuzes zakazat cleny sveho tymu z naroku'
+  dissolve: '<dark_red>Tvuj tym byl rozpusten, takze se tvuj narok zrusil'
+help:
+  
+  description: Zobrazuje a meni popis vaseho tymu
+  ban: Zabanuje urceneho hrace z vaseho tymu
+  home: Teleportuje vas k domovu vaseho tymu
+  help: Zobrazi tuto stranku napovedy
+  promote: Povysi urceneho hrace ve vasem tymu
+  demote: Degraduje urceneho hrace ve vasem tymu
+  unban: Odbanuje urceneho hrace z vaseho tymu
+  kick: Vyhodi hrace z vaseho tymu
+  leave: Opusti vas soucasny tym
+  chat: Posle zpravu pouze do vaseho tymu
+  name: Zobrazuje a meni jmeno vaseho tymu
+  sethome: Nastavuje domov vaseho tymu
+  create: Vytvori tym s urcenym jmenem
+  invite: Pozve urceneho hrace do vaseho tymu
+  disband: Rozpusti vas soucasny tym
+  open: Prepne rezim tymu na pouze na pozvani
+  info: Zobrazuje informace o urcenem hraci / tymu
+  color: Meni barvu vaseho tymu
+  deposit: Vklada penize na ucet tymu
+  bal: Zobrazuje zustatek vaseho tymu
+  withdraw: Vybere penize z uctu tymu
+  title: Meni titul hrace ve vasem tymu
+  top: Zobrazuje nejlepsi tymy
+  rank: Zobrazuje hodnost tymu
+  join: Pripoji se k urcenemu tymu
+  delhome: Smaze domov vaseho tymu
+  ally: Slouzi k zadosti o spojenectvi s jinym tymem
+  neutral: Zrusi spojenectvi a odmitne zadosti o spojenectvi
+  allychat: Posle zpravu pouze vasim spojencum
+  echest: View your teams ender chest
+  setwarp: Set a warp for the rest of your team
+  warps: View a list of your teams warps
+  rankup: Rank your team up to get more perks
+  tag: Set your teams tag
+  delwarp: Delete that warp from your team
+  chest: ''
+  pvp: Toggle if pvp is enabled for your team
+  baltop: View the richest teams
+  list: Get a list of all teams on the server
+  warp: Warp to a location set by your team
+command:
+  
+  create: create
+  leave: leave
+  disband: disband
+  description: description
+  invite: invite
+  join: join
+  name: name
+  open: open
+  info: info
+  kick: kick
+  promote: promote
+  demote: demote
+  home: home
+  sethome: sethome
+  ban: ban
+  unban: unban
+  chat: chat
+  color: color
+  title: title
+  top: top
+  baltop: baltop
+  rank: rank
+  delhome: delhome
+  ally: ally
+  neutral: neutral
+  allychat: allychat
+  list: list
+  warp: warp
+  setwarp: setwarp
+  delwarp: delwarp
+  warps: warps
+  echest: echest
+  rankup: rankup
+  tag: tag
+  pvp: pvp
+  claim: claim
+  remove: remove
+  removeall: removeall
+  chest: chest
+  reload: reload
+  chatspy: chatspy
+  version: version
+  purge: purge
+  setrank: setrank
+  add: add
+  set: set
+  score: score
+  enableclaims: enableclaims
+  disableclaims: disableclaims
+  teleport: teleport
+  money: money
+  holo: holo
+  deposit: deposit
+  bal: bal
+  withdraw: withdraw

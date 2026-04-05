@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.booksaw.betterteams</groupId>
+    <artifactId>betterteams-parent</artifactId>
+    <version>5.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>BetterTeams</name>
+    <description>Create teams to fight to be the best</description>
+    <url>https://www.spigotmc.org/resources/better-teams.17129/</url>
+
+    <modules>
+        <module>BetterTeams</module>
+        <module>extensions</module>
+    </modules>
+
+    <scm>
+        <connection>scm:git:git://github.com/booksaw/BetterTeams.git</connection>
+        <developerConnection>scm:git:ssh://github.com:booksaw/BetterTeams.git</developerConnection>
+        <url>http://github.com/booksaw/BetterTeams/tree/master</url>
+    </scm>
+    <developers>
+        <developer>
+            <name>booksaw</name>
+            <email>about@booksaw.dev</email>
+            <organization>Booksaw Development</organization>
+            <organizationUrl>https://www.booksaw.dev</organizationUrl>
+        </developer>
+    </developers>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <java.version>21</java.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Maven Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+        <repository>
+            <id>papermc</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+        <repository>
+            <id>mvnrepository</id>
+            <url>https://mvnrepository.com/</url>
+        </repository>
+    </repositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.booksaw.betterteams</groupId>
+                <artifactId>betterteams</artifactId>
+                <version>5.0.0</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>io.papermc.paper</groupId>
+                <artifactId>paper-api</artifactId>
+                <version>1.21.4-R0.1-SNAPSHOT</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>6.0.3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/booksaw/BetterTeams</url>
+        </repository>
+    </distributionManagement>
+</project>

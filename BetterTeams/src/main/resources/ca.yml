@@ -1,0 +1,464 @@
+# All translations in this file are community made, this means there may be errors / missed translations, if you are able to improve upon any translation it would be greatly appreciated
+
+# Able to help with translations? Either improving a already existing language, or adding a whole new one. Join the discord server: https://discord.gg/JF9DNs3 
+# or message me on spigot: https://www.spigotmc.org/members/booksaw123.120955/
+
+# Any placeholders from placeholder API will work in this file
+
+# Credit for contributions to this file: Twaia
+
+invalidArg: "<dark_red>Argument invalid, escriu /help"
+inTeam: "<dark_red>Has d'estar dins un equip per poder fer aix�"
+notInTeam: "<dark_red>Per fer-ho, heu d'estar en equip"
+needOwner: "<dark_red>Per fer-ho, heu de ser el propietari de l'equip"
+needAdmin: "<dark_red>Per fer-ho, heu de ser administrador o propietari de l'equip"
+needPlayer: "<dark_red>Heu de ser un jugador per fer-ho"
+noPlayer: "<dark_red>No s'ha trobat el jugador especificat"
+notTeam: "<gold><dark_red>Aquest equip no existeix, prova <aqua>/team create <nom>"
+needSameTeam: "<gold>No formeu part del mateix equip que aquella persona"
+noPerm: "<dark_red>No teniu perm�s per fer-ho"
+prefixSyntax: "<gray>[{0}<gray>] <reset>{1}"
+bannedChar: "<dark_red>Un car�cter que heu intentat utilitzar est� prohibit"
+noTeam: "<dark_red>Aquest equip no existeix"
+loading: "<gold>Carregant"
+cooldown:
+  wait: "<dark_red>Cal esperar {0} segons abans d'executar-lo!"
+cost:
+  tooPoor: "<dark_red>Ets massa pobre per executar aquesta ordre"
+  run: "<dark_red><bold>-{0}"
+placeholder:
+  noTeam: ""
+  noDescription: ""
+  money: "{0}"
+  owner: Propietari
+  admin: Admin
+  default: Default
+  name: "{0}"
+  tag: "{0}"
+  displayname: "{0}"
+prefix:
+  owner: " **"
+  admin: " *"
+  default: " "
+create:
+  exists: "<gold>Aquest equip ja existeix"
+  success: "<gold>El vostre equip s'ha creat"
+  banned: "<dark_red>Aquest nom d'equip est� prohibit"
+  maxLength: "<dark_red>Aquest nom d'equip �s massa llarg"
+leave:
+  success: "<gold>Has deixat l'equip"
+  lastOwner: "<gold>Ets l'�nic rang de propietari de l'equip, o b� promociona alg�
+    altre o usa <aqua>/team disband <gold>per dissoldre l'equip"
+announce:
+  join: "<dark_aqua>{0} <gray>s'ha unit a l'equip {1}"
+  leave: "<dark_aqua>{0} <gray>ha deixat l'equip {1}"
+  disband: "<gray>L'equip {0} <gray>s'ha desmantellat"
+rank:
+  noTeam: "<dark_red>No s'ha trobat l'equip"
+  info: "<gold>Posici� de l'equip:"
+  infos: "<gold>Rang de l'equip: <aqua>{0} <gray>({1} puntuaci� necess�ria per al seg�ent nivell)"
+  infom: "<gold>Rang de l'equip: <aqua>{0} <gray>(${1} necessari per a la seg�ent nivell)"
+  infomm: "<gold>Rang de l'equip: <aqua>{0} <gray>(Has arribat al rang m�xim)"
+  syntax: "<aqua>{0}: <gold>{1} <gray>({2})"
+delhome:
+  success: "<gold>S'ha suprimit la casa del teu equip"
+  noHome: "<dark_red>El vostre equip no s'ha establert cap 'home'"
+disband:
+  success: "<gold>Heu dissolt l'equip"
+  confirm: "<yellow>scriu <aqua>/team disband <gold>de nou per confirmar"
+description:
+  success: "<gold>Heu canviat la descripci� de l'equip"
+  view: "<gold>Descripci� de l'equip: {0}"
+  noDesc: "<gold>No s'ha definit cap descripci� de l'equip"
+  noPerm: "<dark_red>No teniu perm�s per editar la descripci�"
+name:
+  success: "<gold>Heu canviat el nom de l'equip"
+  view: "<gold>Nom de l'equip: {0}"
+  exists: "<dark_red>Aquest equip ja existeix"
+  noPerm: "<dark_red>No teniu perm�s per canviar el nom del vostre equip"
+invite:
+  success: "<gold>Aquest jugador ha estat convidat"
+  invite: "<gold>Us han convidat a unir-vos a l'equip {0} fes <aqua>/team join <team> <gold> per unir-se a l'equip"
+  inTeam: "<gold>Aquest jugador ja forma part d'un equip"
+  banned: "<gold>Aquest jugador est� prohibit al teu equip"
+  full: "<gold>El vostre equip t� la mida m�xima, expulseu alg� abans de convidar m�s persones"
+  expired: "<dark_red>La invitaci� de <aqua>{0} ha caducat"
+join:
+  success: "<gold>T'has unit a aquest equip"
+  notify: "<aqua>envingut <aqua>{0} <gold>a l'equip!"
+  notInvited: "<gold><dark_red>No us han convidat a aquest equip"
+  banned: "<gold><dark_red>Tens prohibit aquest equip"
+  full: "<dark_red>Aquell equip est� ple"
+open:
+  successopen: "<gold>El vostre equip est� obert a tothom"
+  successclose: "<gold>El vostre equip ara nom�s �s a partir de invitaci�"
+title:
+  change: "<gold>El vostre t�tol s'ha canviat a <aqua>{0}"
+  remove: "<gold>El vostre t�tol s'ha eliminat"
+  success: "<gold>Aquest t�tol s'ha canviat"
+  tooLong: "<dark_red>Aquest t�tol �s massa llarg"
+  noFormat: "<dark_red>No teniu perm�s per formatar t�tols"
+  noColor: "<dark_red>No teniu perm�s per acolorir t�tols"
+  reset: "<gold>El vostre t�tol s'ha restablert"
+  noPerm: "<dark_red>No teniu perm�s per canviar el t�tol del vostre equip"
+info:
+  needTeam: "<gold>No s'ha trobat cap equip ni cap jugador amb aquest nom"
+  name: "<gold>Nom: <aqua>{0}"
+  description: "<gold>Descripci�: <aqua>{0}"
+  open: "<gold>Obert? <aqua>{0}"
+  level: "<gold>Nivell: <aqua>{0}"
+  owner: "<gold>Propietaris: <aqua>{0}"
+  admin: "<gold>Admins: <aqua>{0}"
+  default: "<gold>Membres: <aqua>{0}"
+  tag: "<gold>Etiqueta: <aqua>{0}"
+  fail: "<gold>No s'ha trobat cap equip ni cap jugador amb aquest nom"
+  score: "<gold>Puntuaci�: <aqua>{0}"
+  money: "<gold>Dep�sit: <aqua>{0}"
+  ally: "<gold>Aliats: <aqua>{0}"
+kick:
+  success: "<gold>Aquest jugador ha estat expulsat"
+  notify: "<gold>Us han expulsat de l'equip {0}"
+  noPerm: "<gold>No teniu perm�s per expulsar a aquesta persona"
+ban:
+  success: "<gold>Aquest jugador ha estat prohibit"
+  notify: "<gold>T'han prohibit l'equip {0}"
+  noPerm: "<gold>No teniu perm�s per prohibir aquesta persona"
+  already: "<gold>TAquest jugador ja est� prohibit"
+unban:
+  success: "<gold>Aquest jugador ha deixat d'estar prohibit"
+  notify: "<gold>Ja no est�s prohibit a l'equip {0}"
+  noPerm: "<gold>No tens permisos per fer aquest moviment"
+  not: "<gold>El jugador no est� prohibit"
+promote:
+  success: "<gold>Aquest jugador ha estat ascendit"
+  noPerm: "<gold>No teniu permisos per promocionar aquesta persona"
+  max: "<gold>Aquesta persona ja ha ascendit al m�xim!"
+  notify: "<gold>T'han promocionat!"
+demote:
+  success: "<gold>Aquest jugador ha estat degradat"
+  noPerm: "<gold>No teniu permisos per degradar aquesta persona"
+  min: "<gold>Aquesta persona ja �s el m�s baix"
+  notify: "<gold>Has estat degradat"
+  lastOwner: "<gold>No podeu degradar el propietari final, promocionar primer una altra persona"
+home:
+  success: "<gold>Us heu teletransportat"
+  noHome: "<gold>El vostre equip no s'ha establert cap 'home'"
+  world: "<dark_red>El vostre 'home' d'equip no s'ha pogut trobar"
+sethome:
+  success: "<gold>La 'home' del vostre equip s'ha establert"
+  noPerm: "<gold>No teniu un rang prou alt per establir el vostre 'home' d'equip"
+chat:
+  enabled: "<gold>Els vostres missatges ara van al xat d'equip"
+  disabled: "<gold>Els vostres missatges ara van al xat global"
+  syntax: "<aqua>[Equip]<white>{0}<white>: {1}"
+color:
+  success: "<gold>S'ha canviat el color del vostre equip"
+  fail: "<gold>Aquest no �s un color de xat reconegut"
+  banned: "<dark_red>Nom�s podeu utilitzar colors, no codis de format"
+deposit:
+  tooLittle: "<dark_red>No podeu ingressar quantitats negatives"
+  fail: "<dark_red>El dip�sit ha fallat"
+  success: "<gold>Diners dipositats"
+  max: "<dark_red>Aix� superaria el vostre saldo m�xim perm�s per equips"
+withdraw:
+  tooLittle: "<dark_red>No es poden retirar quantitats negatives"
+  fail: "<dark_red>La retirada ha fallat"
+  success: "<gold>Diners retirats"
+  notEnough: "<gold>El vostre equip no t� prou diners"
+ally:
+  already: "<dark_red>Ja sou aliats"
+  success: "<gold>Els vostres equips s�n ara aliats"
+  ally: "<gold>Ara el vostre equip est� aliat amb <aqua>{0}"
+  requested: "<gold>S'ha enviat una sol�licitud d'aliat a aquest equip"
+  request: "<aqua>{0} <gold>t'ha enviat una sol�licitud d'aliat, fes <aqua>/team ally <equip> <gold>per acceptar"
+  self: "<dark_red>No es pot aliar el seu propi equip"
+  from: "<gold>Teniu sol�licituds d'aliats de: {0}"
+  noRequests: "<dark_red>No teniu cap sol�licitud d'aliat"
+  onJoin: "<gold>Teniu noves sol�licituds d'aliats, fes <aqua>/team ally <gold>per veure-la"
+  limit: "<dark_red>S'ha arribat al l�mit d'aliats"
+  alreadyrequest: "<dark_red>Ja heu sol�licitat ser aliats amb aquest equip"
+allychat:
+  disabled: "<gold>Els vostres missatges ja no aniran al xat aliat"
+  enabled: "<gold>Els vostres missatges ara aniran al xat aliat"
+  syntax: "<light_purple>[{0}]<white>{1}<white>: {2}"
+neutral:
+  self: "<gold>Aquest �s el vostre propi equip"
+  requestremove: "<gold>Aquesta sol�licitud d'aliat s'ha eliminat"
+  reject: "<dark_red>La vostra sol�licitud d'aliat amb <aqua>{0} <dark_red> s'ha rebutjat"
+  notAlly: "<dark_red>No esteu aliat amb aquest equip"
+  success: "<dark_red>Ja no esteu aliat amb aquest equip"
+  remove: "<dark_red>Ja no esteu aliats amb <aqua>{0}"
+list:
+  noPage: "<gold>No es troba la p�gina"
+  header: "<gray>--- <aqua>P�gina de llista d'equips {0} <gray>---"
+  body: "<gold>{0}: <aqua>{1}"
+  footer: "<gray>--- <gold>fes <aqua>/team list [page] <gold>per veure m�s <gray>---"
+setowner:
+  use: "<gold>No podeu promocionar aquest jugador, fes <aqua>/team setowner <jugador> <gold>per promocionar aquest jugador a propietari"
+  success: "<gold>Aquest jugador ara �s propietari"
+  notify: "<gold>Ara sou propietari del vostre equip"
+  max: "<dark_red>Aquest jugador ja �s propietari"
+setwarp:
+  exist: "<dark_red>That warp already exists"
+  max: "<dark_red>Your team already has the maximum number of warps set"
+  success: "<gold>That warp has been created"
+  char: "<dark_red>That warp name includes banned characters"
+warp:
+  nowarp: "<dark_red>That warp does not exist"
+  invalidPassword: "<dark_red>Invalid password for that warp"
+  success: "<gold>You have been teleported"
+  world: "<dark_red>The location of that warp could not be found"
+warps:
+  syntax: "<gold>Warps: <aqua>{0}"
+  none: "<dark_red>Your team has no warps set"
+delwarp:
+  success: "<dark_red>That warp has been deleted"
+teleport:
+  fail: "<dark_red>La teleportaci� ha fallat"
+  wait: "<gold>Espera <aqua>{0} <gold>segons"
+chest:
+  claim:
+    noChest: "<dark_red>No esteu parat sobre un cofre"
+    limit: "<dark_red>El vostre equip ha reclamat el nombre m�xim de cofres"
+    claimed: "<dark_red>Aquest cofre ja s'ha demanat"
+    success: "<gold>Heu reclamat aquest cofre"
+  remove:
+    noChest: "<dark_red>No esteu parat sobre un cofre"
+    notClaimed: "<dark_red>El vostre equip no ha reclamat aquest cofre"
+    success: "<dark_red>El vostre equip ja no t� cap reclamaci� sobre aquest cofre"
+  all:
+    success: "<gold>S'han reclamat tots els cofres"
+  claimed: "<dark_red>Aquest cofre �s reclamat per <green>{0}"
+echest:
+  echest: Enderchest
+pvp:
+  enabled: "<gold>S'ha habilitat PVP per al vostre equip"
+  disabled: "<gold>El vostre equip ha desactivat el PVP"
+rankup:
+  max: "<dark_red>Ja sou el m�xim nivell"
+  score: "<dark_red>Necessites {0} puntuaci� per pujar de nivell"
+  money: "<dark_red>Necessites {0} diners en el saldo de l'equip fins a la classificaci�"
+  success: "<gold>El vostre equip ha pujat de nivell"
+tag:
+  banned: "<dark_red>Aquesta etiqueta est� prohibida"
+  success: "<gold>La vostra etiqueta ha canviat correctament"
+  maxLength: "<dark_red>Aquesta etiqueta �s massa llarga"
+  noPerm: "<dark_red>No teniu perm�s per canviar l'etiqueta de l'equip"
+admin:
+  cancel: "<dark_red>The command was cancelled by another plugin"
+  tag:
+    success: "<gold>That teams tag successfully changed"
+  setrank:
+    success: "<gold>That teams rank has been set"
+    "no": "<dark_red>That rank either does not exist or is not setup correctly"
+  config:
+    reload: "<gold>BetterTeams has been reloaded (If you are having problems when using
+      this command, restart the server)"
+  holo:
+    create:
+      success: "<gold>Hologram created"
+    remove:
+      noHolo: "<dark_red>No holograms found"
+      success: "<gold>Hologram deleted"
+  title:
+    success: "<gold>that players title has been changed"
+    reset: "<gold>That players title has been reset"
+  version: "<gold>Current plugin version: {0}"
+  noTeam: "<dark_red>That is not a team"
+  home:
+    success: "<gold>You have been teleported to that teams home"
+    noHome: "<dark_red>That team does not have a home set"
+  name:
+    success: "<gold>The team name has been changed"
+  description:
+    success: "<gold>That teams name has been changed"
+  open:
+    successopen: "<gold>That team is now open for everyone"
+    successclose: "<gold>That team is now invite only"
+  invite:
+    success: "<gold>That player has been invited to that team"
+  create:
+    success: "<gold>That team has been created"
+  join:
+    banned: "<dark_red>That player is banned from that team"
+    success: "<gold>That player has joined the team"
+    notify: "<gold>You have joined the team <aqua>{0}"
+    full: "<dark_red>That team is full"
+  notInTeam: "<gold>That player cannot be in a team before doing that"
+  inTeam: "<dark_red>That player is not in a team"
+  leave:
+    success: "<gold>That player has left that team"
+    notify: "<gold>You have left that team"
+  demote:
+    notify: "<gold>You have been demoted"
+    success: "<gold>That player has been demoted"
+    min: "<dark_red>That player cannot be demoted any more"
+  promote:
+    max: "<gold>That player is already the maximum rank"
+    notify: "<gold>You have been promoted"
+    success: "<gold>That player has been promoted"
+    owner: "<gold>It is configured that teams can only have a single owner, do <aqua>/teama
+      setowner <player> <gold>to set the player as the owner"
+  setowner:
+    already: "<dark_red>That player is already an owner"
+    nonotify: "<gold>You are no longer owner of the team"
+    success: "<gold>That player is the new team owner"
+    notify: "<gold>You are now the owner of your team"
+  warps:
+    none: "<dark_red>That team has not set any warps"
+  setwarp:
+    success: "<gold>That warp has been set"
+    max: "<gold>That team has already set the maximum number of warps"
+  purge:
+    confirm: "<gold>Run that command in the next 10 seconds to confirm, <dark_red>THIS CANNOT
+      BE UNDONE AND WILL RESET SCORES FOR ALL TEAMS"
+    success: "<gold>The teams have been purged"
+  score:
+    tooSmall: "<dark_red>The score must be greater than 0"
+    success: "<gold>That teams score has been changed"
+  update: "<dark_red>There is a new version of better teams released update here: https://www.spigotmc.org/resources/better-teams.17129/"
+  disband:
+    success: "<gold>That team has been disbanded successfully"
+  color:
+    success: "<gold>That teams color has been changed"
+  chest:
+    claim:
+      success: "<gold>You have claimed that chest on behalf of the team"
+    remove:
+      success: "<gold>You have successfully removed the claim from that chest"
+      notClaimed: "<dark_red>No team has claimed that chest"
+    all:
+      success: "<gold>All claims removed from that team"
+    disable:
+      already: "<dark_red>Chest claims are already disabled"
+      success: "<gold>Chest claiming has been disabled"
+    disabled:
+      bc: "<gold><bold>All claimed chests are able to be opened"
+    enable:
+      already: "<dark_red>Chest claims are already enabled"
+      success: "<gold>Chest claiming has been enabled"
+    enabled:
+      bc: "<gold><bold>All claimed chests are locked"
+  teleport.noWorld: "<dark_red>No s'ha trobat el món especificat"
+  teleport.all.success: "<gold>Tots els membres en línia de tots els equips han estat teleportats"
+  teleport.all.home.success: "<gold>Tots els membres en línia de tots els equips amb una llar han estat teleportats"
+nametag:
+  syntax: "<gold><bold>{0}<reset> "
+holo:
+  leaderboard: "<gold>Taula de classificaci�"
+  syntax: "<gold>{0}: <aqua>{1}"
+  msyntax: "<gold>{0}: <aqua>${1}"
+top:
+  leaderboard: "<gold>Taula de classificaci�"
+  syntax: "<aqua>{0}: <gold>{1} <gray>({2})"
+  divide: "<white>..."
+baltop:
+  leaderboard: "<gold>Taula de classificaci�"
+  syntax: "<aqua>{0}: <gold>{1} <gray>({2})"
+  divide: "<white>..."
+spy:
+  stop: "<gold>Ja no espieu els missatges de l'equip"
+  start: "<gold>Ara esteu espiant missatges d'equip"
+  team: "<gray>[<aqua>{0}<gray>]<white>{1}<white>: {2}"
+  ally: "<gray>[<light_purple>{0}<gray>]<white>{1}<white>: {2}"
+uclaim:
+  team: "<dark_red>Heu d'estar en equip per crear una reclamaci�"
+  member: "<dark_red>No podeu deixar la reclamaci� dels vostres equips"
+  kick: "<dark_red>No podeu expulsar els membres del vostre propi equip de la vostra reclamaci�"
+  ban: "<dark_red>No podeu prohibir la reclamaci� dels membres del vostre propi equip"
+  dissolve: "<dark_red>El vostre equip s'ha dissolt, de manera que la vostra reclamaci� s'ha dissolt"
+help:
+  description: Consulteu i canvieu la descripci� del vostre equip
+  ban: Prohibeix el jugador especificat del vostre equip
+  home: Us teletransporta a \'home\' del vostre equip
+  help: Consulteu aquesta p�gina d\'ajuda
+  promote: Promou el jugador especificat dins del seu equip
+  demote: Redueix el jugador especificat dins del teu equip
+  unban: Deixa l\'entrada al jugador especificat del vostre equip
+  kick: Pateu a aquest jugador del vostre equip
+  leave: Deixa el teu equip actual
+  chat: Envieu un missatge nom�s al vostre equip
+  name: Consulteu i canvieu el nom del vostre equip
+  sethome: Estableix la \'home\' del vostre equip
+  create: Creeu un equip amb el nom especificat
+  invite: Convida el jugador especificat al teu equip
+  disband: Dissoleu el vostre equip actual
+  open: Commuta si l\'equip nom�s �s per a convidats
+  info: Veure informaci� sobre el jugador / equip especificat
+  color: Canvieu el color dels vostres equips
+  deposit: Dipositeu diners al saldo dels equips
+  bal: Consulteu el saldo dels vostres equips
+  withdraw: Traieu diners del saldo dels equips
+  title: Canvieu el t�tol dels jugadors dins de l''equip
+  top: Veure els millors equips
+  rank: Veure el rang d\'un equip
+  join: Uniu-vos a l\'equip especificat
+  delhome: Suprimeix la \'home\' del teu equip
+  ally: Solia sol�licitar una alian�a amb un altre equip
+  neutral: Elimineu els aliats i rebutgeu les sol�licituds d\'aliats
+  allychat: Envieu un missatge nom�s als vostres aliats
+  tag: Establiu l\'etiqueta dels vostres equips
+  chest: ''
+  pvp: Commuta si el pvp est� habilitat per al teu equip
+  baltop: Veure els equips m�s rics
+  list: Obteniu una llista de tots els equips del servidor
+  echest: Mira els teus cofres de l\'equip
+  setwarp: Estableix un \'warp\' per a la resta del teu equip
+  warps: Consulteu una llista de les \'warps\' dels vostres equips
+  rankup: Classifiqueu el vostre equip per obtenir m�s avantatges
+  delwarp: Suprimiu aquesta \'warp\' del vostre equip
+  warp: \'Warpea\' una ubicaci� definida pel teu equip
+command:
+  create: create
+  leave: leave
+  disband: disband
+  description: description
+  invite: invite
+  join: join
+  name: name
+  open: open
+  info: info
+  kick: kick
+  promote: promote
+  demote: demote
+  home: home
+  sethome: sethome
+  ban: ban
+  unban: unban
+  chat: chat
+  color: color
+  title: title
+  top: top
+  baltop: baltop
+  rank: rank
+  delhome: delhome
+  ally: ally
+  neutral: neutral
+  allychat: allychat
+  list: list
+  warp: warp
+  setwarp: setwarp
+  delwarp: delwarp
+  warps: warps
+  echest: echest
+  rankup: rankup
+  tag: tag
+  pvp: pvp
+  claim: claim
+  remove: remove
+  removeall: removeall
+  chest: chest
+  reload: reload
+  chatspy: chatspy
+  version: version
+  purge: purge
+  setrank: setrank
+  add: add
+  set: set
+  score: score
+  enableclaims: enableclaims
+  disableclaims: disableclaims
+  holo: holo
+  deposit: deposit
+  bal: bal
+  withdraw: withdraw

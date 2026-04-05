@@ -1,0 +1,615 @@
+# All translations in this file are community made, this means there may be errors / missed translations, if you are able to improve upon any translation it would be greatly appreciated
+
+# Able to help with translations? Either improving a already existing language, or adding a whole new one. Join the discord server: https://discord.gg/JF9DNs3
+# or message me on spigot: https://www.spigotmc.org/members/booksaw123.120955/
+
+# Any placeholders from placeholder API will work in this file
+
+# Credit for contributions to this file: Minecraft0122
+
+# 此文件中的任何 Placeholder API 占位符都将起作用
+invalidArg: '<dark_red>参数无效，请查看帮助'
+inTeam: '<dark_red>您必须在一个团队中才能执行此操作'
+internalError: '<dark_red>执行该命令时出现错误，请向服务器管理员报告'
+notInTeam: '<dark_red>执行此操作前您必须离开当前团队'
+needOwner: '<dark_red>您必须是团队的所有者才能执行此操作'
+needAdmin: '<dark_red>您必须是团队的管理员或所有者才能执行此操作'
+needPlayer: '<dark_red>您必须是一名玩家才能执行此操作'
+noPlayer: '<dark_red>未找到指定玩家'
+notTeam: '<gold><dark_red>该团队不存在，请尝试 <aqua>/team create <名称>'
+needSameTeam: '<gold>您与该玩家不在同一团队'
+noPerm: '<dark_red>您没有权限执行此操作'
+prefixSyntax: '<gray>[{0}<gray>] <reset>{1}'
+bannedChar: '<dark_red>您尝试使用的字符已被禁止'
+noTeam: '<dark_red>该团队不存在'
+loading: '<gold>加载中'
+cooldown:
+  wait: '<dark_red>您需要再等待 {0} 秒才能运行该命令！'
+cost:
+  tooPoor: '<dark_red>您的资金不足，无法运行该命令'
+  run: '<dark_red><bold>-{0}'
+placeholder:
+  noTeam: ''
+  noMeta: ''
+  noDescription: ''
+  money: '{0}'
+  owner: 所有者
+  admin: 管理员
+  default: 默认
+  name: '{0}'
+  tag: '{0}'
+  displayname: '{0}'
+  inteam: 'true'
+  notinteam: 'false'
+  noTitle: ''
+  hasHome: 'true'
+  noHome: 'false'
+  teamChat: 团队聊天
+  globalChat: 全局聊天
+  allyChat: 盟友聊天
+prefix:
+  owner: ' **'
+  admin: ' *'
+  default: ' '
+create:
+  exists: '<gold>该团队已存在'
+  success: '<gold>您的团队 {0} 已创建'
+  banned: '<dark_red>该团队名称已被禁止'
+  maxLength: '<dark_red>团队名称过长'
+  minLength: '<dark_red>团队名称过短'
+leave:
+  success: '<gold>您已离开团队'
+  lastOwner: '<gold>您是团队中唯一的所有者，请先提升其他人或使用 <aqua>/team disband <gold>解散团队'
+announce:
+  join: '<dark_aqua>{0} <gray>已加入团队 {1}'
+  leave: '<dark_aqua>{0} <gray>已离开团队 {1}'
+  disband: '<gray>团队 {0} <gray>已被解散'
+rank:
+  noTeam: '<dark_red>未找到团队'
+  info: '<gold>团队位置：'
+  infos: '<gold>团队等级：<aqua>{0} <gray>(需要 {1} 分数以升级到下一等级)'
+  infom: '<gold>团队等级：<aqua>{0} <gray>(需要 ${1} 以升级到下一等级)'
+  infomm: '<gold>团队等级：<aqua>{0} <gray>(您已达到最高等级)'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+delhome:
+  success: '<gold>您的团队家园已被删除'
+  noHome: '<dark_red>您的团队尚未设置家园'
+disband:
+  success: '<gold>您已解散团队'
+  confirm: '<gold>再次输入 <aqua>/team disband <gold>以确认'
+description:
+  success: '<gold>您已更改团队描述'
+  view: '<gold>团队描述：{0}'
+  noDesc: '<gold>未设置团队描述'
+  noPerm: '<dark_red>您没有权限编辑描述'
+name:
+  success: '<gold>您已更改团队名称'
+  view: '<gold>团队名称：{0}'
+  exists: '<dark_red>该团队已存在'
+  noPerm: '<dark_red>您没有权限更改团队名称'
+invite:
+  success: '<gold>已邀请该玩家'
+  invite: '<gold>您已被邀请加入团队 {0}，输入 <aqua>/team join {0} <gold>以加入团队'
+  hover: '<gold>点击加入 <aqua>{0}'
+  inTeam: '<gold>该玩家已在一个团队中'
+  banned: '<gold>该玩家已被您的团队封禁'
+  full: '<gold>您的团队已满员，请在邀请更多人之前踢出某人'
+  expired: '<dark_red>来自 <aqua>{0} <dark_red>的邀请已过期'
+join:
+  success: '<gold>您已加入该团队'
+  notify: '<gold>欢迎 <aqua>{0} <gold>加入团队！'
+  notInvited: '<gold><dark_red>您未被邀请加入该团队'
+  banned: '<gold><dark_red>您已被该团队封禁'
+  full: '<dark_red>该团队已满员'
+open:
+  successopen: '<gold>您的团队现在对所有人开放'
+  successclose: '<gold>您的团队现在仅限邀请加入'
+title:
+  change: '<gold>您的头衔已更改为 <aqua>{0}'
+  remove: '<gold>您的头衔已被移除'
+  success: '<gold>该头衔已更改'
+  tooLong: '<dark_red>头衔过长'
+  noFormat: '<dark_red>您没有权限格式化头衔'
+  noColor: '<dark_red>您没有权限为头衔着色'
+  reset: '<gold>您的头衔已重置'
+  noPerm: '<dark_red>您没有权限更改团队头衔'
+info:
+  needTeam: '<gold>未找到该名称的团队或玩家'
+  name: '<gold>名称：<aqua>{0}'
+  description: '<gold>描述：<aqua>{0}'
+  open: '<gold>开放：<aqua>{0}'
+  level: '<gold>等级：<aqua>{0}'
+  owner: '<gold>所有者：<aqua>{0}'
+  admin: '<gold>管理员：<aqua>{0}'
+  default: '<gold>成员：<aqua>{0}'
+  tag: '<gold>标签：<aqua>{0}'
+  anchor: '<gold>锚点：<aqua>{0}'
+  fail: '<gold>未找到该名称的团队或玩家'
+  score: '<gold>分数：<aqua>{0}'
+  money: '<gold>余额：<aqua>{0}'
+  ally: '<gold>盟友：<aqua>{0}'
+  online: '<green>'
+  offline: '<red>'
+  onlinePlayer: '<green>{0}</green>'
+  offlinePlayer: '<red>{0}</red>'
+  playerListSpace: ' '
+kick:
+  success: '<gold>已踢出该玩家'
+  notify: '<gold>您已被踢出团队 {0}'
+  title: '<dark_red>您已被踢出团队'
+  noPerm: '<gold>您没有权限踢出该玩家'
+ban:
+  success: '<gold>已封禁该玩家'
+  notify: '<gold>您已被团队 {0} 封禁'
+  title: '<dark_red>您已被团队封禁'
+  noPerm: '<gold>您没有权限封禁该玩家'
+  already: '<gold>该玩家已被封禁'
+unban:
+  success: '<gold>已解封该玩家'
+  notify: '<gold>您已被团队 {0} 解封'
+  noPerm: '<gold>您没有权限解封该玩家'
+  not: '<gold>该玩家未被封禁'
+promote:
+  success: '<gold>已提升该玩家'
+  noPerm: '<gold>您没有权限提升该玩家'
+  max: '<gold>该玩家已被提升至最高等级！'
+  notify: '<gold>您已被提升！'
+  maxAdmins: '<dark_red>您的团队已达到最大管理员数量，请降级某人或升级团队'
+  maxOwners: '<dark_red>您的团队已达到最大所有者数量，请降级某人或升级团队'
+demote:
+  success: '<gold>已降级该玩家'
+  noPerm: '<gold>您没有权限降级该玩家'
+  min: '<gold>该玩家已是最低等级'
+  notify: '<gold>您已被降级'
+  lastOwner: '<gold>您不能降级最后一位所有者，请先提升其他人'
+  maxAdmins: '<dark_red>您的团队已达到最大管理员数量，请移除一位管理员或升级团队'
+home:
+  success: '<gold>您已被传送'
+  noHome: '<gold>您的团队尚未设置家园'
+  world: '<dark_red>无法找到您的团队家园'
+sethome:
+  success: '<gold>您的团队家园已设置'
+  noPerm: '<gold>您的等级不足以设置团队家园'
+anchor:
+  enabled: '<gold>您现在允许在团队家园重生'
+  disabled: '<gold>您现在不允许在团队家园重生'
+  noHome: '<gold>您的团队必须设置团队家园并启用团队锚点'
+setanchor:
+  enabled: '<gold>团队锚点已启用'
+  disabled: '<gold>团队锚点已禁用'
+  notifyEnable: '<gold>团队锚点已被 {0} 启用'
+  notifyDisable: '<gold>团队锚点已被 {0} 禁用'
+  noHome: '<dark_red>必须先设置团队家园'
+  noPerm: '<dark_red>您没有权限设置团队的锚点状态'
+  noBool: '<dark_red>团队锚点状态只能为 true 或 false'
+chat:
+  enabled: '<gold>您的消息现在将发送到团队聊天'
+  disabled: '<gold>您的消息现在将发送到全局聊天'
+  syntax: '<aqua>[团队]<white>{0}<white>: {1}'
+color:
+  success: '<gold>您的团队颜色已更改'
+  fail: '<gold>这不是可识别的聊天颜色'
+  banned: '<dark_red>该颜色代码已被禁止'
+deposit:
+  tooLittle: '<dark_red>您不能存入负数金额'
+  fail: '<dark_red>存款失败'
+  success: '<gold>存款成功'
+  max: '<dark_red>这将超过您团队允许的最大余额'
+withdraw:
+  tooLittle: '<dark_red>您不能取出负数金额'
+  fail: '<dark_red>取款失败'
+  success: '<gold>取款成功'
+  notEnough: '<gold>您的团队资金不足'
+ally:
+  already: '<dark_red>你们已经是盟友'
+  success: '<gold>你们的团队现在结为盟友'
+  ally: '<gold>您的团队现在与 <aqua>{0} 结盟'
+  ally_title: '<gold>您的团队现在与 <aqua>{0} 结盟'
+  requested: '<gold>已向该团队发送盟友请求'
+  request: '<aqua>{0} <gold>发送了盟友请求，使用 <aqua>/team ally <团队> <gold>接受'
+  self: '<dark_red>您不能与自己团队结盟'
+  from: '<gold>您收到来自以下团队的盟友请求：{0}'
+  noRequests: '<dark_red>您没有任何盟友请求'
+  onJoin: '<gold>您有新的盟友请求，请使用 <aqua>/team ally <gold>查看'
+  limit: '<dark_red>已达到盟友数量限制'
+  alreadyrequest: '<dark_red>您已经请求与该团队结盟'
+allychat:
+  disabled: '<gold>您的消息不再发送到盟友聊天'
+  enabled: '<gold>您的消息现在将发送到盟友聊天'
+  syntax: '<light_purple>[{0}]<white>{1}<white>: {2}'
+neutral:
+  self: '<gold>那是您自己的团队'
+  requestremove: '<gold>该盟友请求已被移除'
+  reject: '<dark_red>您与 <aqua>{0} <dark_red>的盟友请求已被拒绝'
+  notAlly: '<dark_red>您未与该团队结盟'
+  success: '<dark_red>您不再与该团队结盟'
+  remove: '<dark_red>您不再与 <aqua>{0} 结盟'
+  remove_title: '<dark_red>您不再与 <aqua>{0} 结盟'
+list:
+  noPage: '<gold>未找到该页面'
+  header: '<gray>--- <aqua>团队列表第 {0} 页 <gray>---'
+  body: '<gold>{0}: <aqua>{1}'
+  footer: '<gray>--- <gold>输入 <aqua>/team list [页码] <gold>查看更多 <gray>---'
+setowner:
+  use: '<gold>您不能提升该玩家，请使用 <aqua>/team setowner <玩家> <gold>将该玩家提升为所有者'
+  success: '<gold>该玩家现在是所有者'
+  notify: '<gold>您现在是自己团队的所有者'
+  max: '<dark_red>该玩家已经是所有者'
+setwarp:
+  exist: '<dark_red>该传送点已存在'
+  max: '<dark_red>您的团队已设置最大数量的传送点'
+  success: '<gold>该传送点已创建'
+  char: '<dark_red>该传送点名称包含被禁止的字符'
+warp:
+  nowarp: '<dark_red>该传送点不存在'
+  invalidPassword: '<dark_red>该传送点的密码无效'
+  success: '<gold>您已被传送'
+  world: '<dark_red>无法找到该传送点的位置'
+warps:
+  syntax: '<gold>传送点：<aqua>{0}'
+  none: '<dark_red>您的团队未设置任何传送点'
+delwarp:
+  success: '<dark_red>该传送点已被删除'
+teleport:
+  fail: '<dark_red>传送失败'
+  wait: '<gold>静止站立 <aqua>{0} <gold>秒以进行传送'
+  bypass: '<gold>由于您的权限，您已绕过传送延迟！'
+chest:
+  claim:
+    noChest: '<dark_red>您未站在箱子上'
+    limit: '<dark_red>您的团队已达到最大认领箱子数量'
+    claimed: '<dark_red>该箱子已被认领'
+    success: '<gold>您已认领该箱子'
+  remove:
+    noChest: '<dark_red>您未站在箱子上'
+    notClaimed: '<dark_red>您的团队未认领该箱子'
+    success: '<dark_red>您的团队不再认领该箱子'
+  all:
+    success: '<gold>取消认领所有箱子'
+  claimed: '<dark_red>该箱子已被 <green>{0} <dark_red>认领'
+  check:
+    self: '<gold>您的团队已认领该箱子'
+    notClaimed: '<gold>该箱子未被认领'
+    claimed: '<gold>该箱子已被 <green>{0} <gold>认领'
+echest:
+  echest: 末影箱
+pvp:
+  enabled: '<gold>您的团队已启用 PvP'
+  disabled: '<gold>您的团队已禁用 PvP'
+rankup:
+  max: '<dark_red>您已是最高等级'
+  score: '<dark_red>您需要 {0} 分数来升级'
+  money: '<dark_red>您需要团队余额中有 {0} 资金来升级'
+  success: '<gold>您的团队已升级'
+tag:
+  banned: '<dark_red>该标签已被禁止'
+  success: '<gold>您的标签已成功更改'
+  maxLength: '<dark_red>标签过长'
+  noPerm: '<dark_red>您没有权限更改团队标签'
+admin:
+  cancel: '<dark_red>该命令已被其他插件取消'
+  tag:
+    success: '<gold>该团队的标签已成功更改'
+  setrank:
+    success: '<gold>该团队的等级已设置'
+    'no': '<dark_red>该等级不存在或未正确设置'
+  config:
+    reload: '<gold>BetterTeams 已重新加载（如果您在使用此命令时遇到问题，请重启服务器）'
+  holo:
+    create:
+      success: '<gold>全息图已创建'
+    remove:
+      noHolo: '<dark_red>未找到全息图'
+      success: '<gold>全息图已删除'
+  title:
+    success: '<gold>该玩家的头衔已更改'
+    reset: '<gold>该玩家的头衔已重置'
+  version: '<gold>当前插件版本：<aqua>{0}'
+  versionstorage: '<gold>存储方法：<aqua>{0}'
+  versionversion: '<gold>Minecraft 版本：<aqua>{0}'
+  versionlanguage: '<gold>选择的语言：<aqua>{0}'
+  versiononline: '<gold>在线模式：<aqua>{0}'
+  versionplayers: '<gold>玩家数量：<aqua>{0}'
+  versionplugins: '<gold>插件集成：<aqua>{0}'
+  versionconflicts: '<gold>潜在冲突：<aqua>{0}'
+  noTeam: '<dark_red>这不是一个团队'
+  home:
+    success: '<gold>您已被传送到该团队的家园'
+    noHome: '<dark_red>该团队未设置家园'
+  anchor:
+    enabled: '<gold>已强制该玩家允许在其团队家园重生'
+    disabled: '<gold>已强制该玩家不允许在其团队家园重生'
+  setanchor:
+    enabled: '<gold>该团队的锚点状态已启用'
+    disabled: '<gold>该团队的锚点状态已禁用'
+    noHome: '<dark_red>该团队必须先设置家园'
+  name:
+    success: '<gold>团队名称已更改'
+  description:
+    success: '<gold>该团队的描述已更改'
+  open:
+    successopen: '<gold>该团队现在对所有人开放'
+    successclose: '<gold>该团队现在仅限邀请加入'
+  invite:
+    success: '<gold>已邀请该玩家加入该团队'
+  create:
+    success: '<gold>该团队已创建'
+  join:
+    banned: '<dark_red>该玩家已被该团队封禁'
+    success: '<gold>该玩家已加入团队'
+    notify: '<gold>您已加入团队 <aqua>{0}'
+    full: '<dark_red>该团队已满员'
+  notInTeam: '<gold>执行此操作前该玩家不能在团队中'
+  inTeam: '<dark_red>该玩家不在团队中'
+  leave:
+    success: '<gold>该玩家已离开该团队'
+    notify: '<gold>您已离开该团队'
+  demote:
+    notify: '<gold>您已被降级'
+    success: '<gold>该玩家已被降级'
+    min: '<dark_red>该玩家无法再被降级'
+    maxAdmins: '<dark_red>该团队已达到最大管理员数量，请在降级此玩家前移除一位'
+  promote:
+    max: '<gold>该玩家已是最高等级'
+    notify: '<gold>您已被提升'
+    success: '<gold>该玩家已被提升'
+    owner: '<gold>配置为团队只能有一个所有者，请使用 <aqua>/teama setowner <玩家> <gold>将该玩家设为所有者'
+    maxAdmins: '<dark_red>该团队已达到最大管理员数量，请在提升该玩家前移除一位'
+    maxOwners: '<dark_red>该团队已达到最大所有者数量，请在提升该玩家前移除一位'
+  setowner:
+    already: '<dark_red>该玩家已经是所有者'
+    nonotify: '<gold>您不再是团队的所有者'
+    success: '<gold>该玩家是新的团队所有者'
+    notify: '<gold>您现在是自己团队的所有者'
+  warps:
+    none: '<dark_red>该团队未设置任何传送点'
+  setwarp:
+    success: '<gold>该传送点已设置'
+    max: '<gold>该团队已设置最大数量的传送点'
+  purge:
+    confirm: '<gold>在接下来 10 秒内再次运行该命令以确认，<dark_red>此操作无法撤销并将重置所有团队的分数'
+    success: '<gold>团队已被清除'
+  score:
+    tooSmall: '<dark_red>分数必须大于 0'
+    success: '<gold>该团队的分数已更改'
+  bal:
+    toSmall: '<dark_red>余额必须大于 0'
+    success: '<gold>该团队的余额已更改'
+  update: '<dark_red>BetterTeams 有新版本发布，请在此更新：https://www.spigotmc.org/resources/better-teams.17129/'
+  disband:
+    success: '<gold>该团队已成功解散'
+  color:
+    success: '<gold>该团队的颜色已更改'
+  chest:
+    claim:
+      success: '<gold>您已代表团队认领该箱子'
+    remove:
+      success: '<gold>您已成功移除该箱子的认领'
+      notClaimed: '<dark_red>没有团队认领该箱子'
+    all:
+      success: '<gold>已移除该团队的所有认领'
+    disable:
+      already: '<dark_red>箱子认领已禁用'
+      success: '<gold>箱子认领已禁用'
+    disabled:
+      bc: '<gold><bold>所有被认领的箱子都可以被打开'
+    enable:
+      already: '<dark_red>箱子认领已启用'
+      success: '<gold>箱子认领已启用'
+    enabled:
+      bc: '<gold><bold>所有被认领的箱子已上锁'
+  teleport:
+    noWorld: '<dark_red>未找到指定世界'
+    success: '<gold>该团队的所有在线成员已被传送'
+    player:
+      success: '<gold>该玩家已被传送'
+    all:
+      success: '<gold>所有团队的所有在线成员已被传送'
+      home:
+        success: '<gold>所有有家园的团队的所有在线成员已被传送'
+  ally:
+    same: '<dark_red>您不能使团队与自己结盟'
+    already: '<dark_red>这些团队已经是盟友'
+    success: '<gold>这两个团队现在结为盟友'
+  neutral:
+    same: '<dark_red>您不能输入相同的团队两次'
+    not: '<dark_red>这些团队不是盟友'
+    success: '<gold>这些团队不再是盟友'
+  import:
+    fail: '<dark_red>消息导入失败，请检查控制台中的错误'
+    success: '<gold>消息已成功导入'
+  meta:
+    get:
+      noMetaData: '<red>此团队没有元数据条目。'
+      allMetaData: '<green>此团队的元数据：<yellow>{0}'
+      specificMetaData: '<green>元数据键 "<yellow>{0}<green>" 的值为："<yellow>{1}<green>"'
+      noexist: '<red>指定的元数据键在此团队中不存在。'
+    set:
+      needsValue: '<red>您必须为元数据键提供一个值。'
+      success: '<green>成功设置元数据键'
+    remove:
+      success: '<green>成功从团队中移除元数据键 "<yellow>{0}<green>"'
+nametag:
+  syntax: '<gold><bold>{0}<reset> '
+holo:
+  leaderboard: '<gold>排行榜'
+  syntax: '<gold>{0}: <aqua>{1}'
+  msyntax: '<gold>{0}: <aqua>${1}'
+top:
+  leaderboard: '<gold>排行榜'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+  divide: '<white>...'
+baltop:
+  leaderboard: '<gold>排行榜'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+  divide: '<white>...'
+spy:
+  stop: '<gold>您不再监视团队消息'
+  start: '<gold>您现在正在监视团队消息'
+  team: '<gray>[<aqua>{0}<gray>]<white>{1}<white>: {2}'
+  ally: '<gray>[<light_purple>{0}<gray>]<white>{1}<white>: {2}'
+uclaim:
+  team: '<dark_red>您必须在一个团队中才能创建认领'
+  member: '<dark_red>您不能离开自己团队的认领'
+  kick: '<dark_red>您不能从认领中踢出自己团队的成员'
+  ban: '<dark_red>您不能从认领中封禁自己团队的成员'
+  dissolve: '<dark_red>您的团队已被解散，因此您的认领已被解除'
+help:
+  header: '<gold>---- <aqua>BetterTeams 帮助 <gold>----'
+  footer: '<gold>---- <aqua>第 {0}/{1} 页 - /{2} help <页码> <gold>----'
+  wrong: '<dark_red>出现错误，请通知服务器管理员'
+  description: 查看和更改团队的描述
+  ban: 将指定玩家封禁出您的团队
+  home: 将您传送到团队的家园
+  help: 查看此帮助页面
+  promote: 在团队中提升指定玩家
+  demote: 在团队中降级指定玩家
+  unban: 将指定玩家从团队封禁中解封
+  kick: 将指定玩家踢出团队
+  leave: 离开当前团队
+  chat: 仅向您的团队发送消息
+  name: 查看和更改团队的名称
+  sethome: 设置团队的家园
+  create: 使用指定名称创建团队
+  invite: 邀请指定玩家加入您的团队
+  disband: 解散当前团队
+  open: 切换团队是否仅限邀请加入
+  info: 查看指定玩家/团队的信息
+  color: 更改团队的颜色
+  deposit: 将资金存入团队余额
+  bal: 查看团队的余额
+  withdraw: 从团队余额中取出资金
+  title: 更改团队中该玩家的头衔
+  top: 查看顶级团队
+  rank: 查看团队的等级
+  join: 加入指定团队
+  delhome: 删除团队的家园
+  ally: 用于请求与另一团队结盟
+  neutral: 移除盟友并拒绝盟友请求
+  allychat: 仅向您的盟友发送消息
+  anchor: 切换是否要在团队家园重生
+  setanchor: 设置团队家园作为重生点的能力
+  echest: 查看团队的末影箱
+  setwarp: 为团队其他成员设置传送点
+helpArg:
+  delhome: ''
+  echest: ''
+  color: <颜色代码>
+  allychat: '[消息]'
+  description: '[描述]'
+  setwarp: <名称> [密码]
+  title: '[玩家/我] [头衔]'
+  bal: ''
+  ban: <玩家>
+  promote: <玩家>
+  warps: ''
+  top: ''
+  ally: <团队>
+  rankup: ''
+  leave: ''
+  sethome: ''
+  create: <名称> [标签]
+  rank: '[团队]'
+  join: <团队>
+  tag: '[标签]'
+  disband: ''
+  info: '[团队/玩家]'
+  delwarp: <名称> [密码]
+  chest: ''
+  neutral: <团队>
+  pvp: ''
+  baltop: ''
+  list: '[页码]'
+  home: ''
+  help: ''
+  unban: <玩家>
+  demote: <玩家>
+  kick: <玩家>
+  chat: '[消息]'
+  name: <名称>
+  deposit: <金额>
+  invite: <玩家>
+  open: ''
+  warp: <名称>
+  withdraw: <金额>
+  anchor: ''
+  setanchor: <true/false>
+command:
+  create: 创建
+  leave: 离开
+  disband: 解散
+  description: 描述
+  invite: 邀请
+  join: 加入
+  name: 名称
+  open: 开放
+  info: 信息
+  kick: 踢出
+  promote: 提升
+  demote: 降级
+  home: 家园
+  sethome: 设置家园
+  ban: 封禁
+  unban: 解封
+  chat: 聊天
+  color: 颜色
+  title: 头衔
+  top: 顶级
+  baltop: 余额排行
+  rank: 等级
+  delhome: 删除家园
+  ally: 盟友
+  neutral: 中立
+  allychat: 盟友聊天
+  list: 列表
+  warp: 传送点
+  setwarp: 设置传送点
+  delwarp: 删除传送点
+  warps: 传送点列表
+  echest: 末影箱
+  rankup: 升级
+  tag: 标签
+  pvp: PvP
+  claim: 认领
+  remove: 移除
+  removeall: 全部移除
+  chest: 箱子
+  reload: 重载
+  chatspy: 聊天监视
+  version: 版本
+  purge: 清除
+  setrank: 设置等级
+  add: 添加
+  set: 设置
+  score: 分数
+  enableclaims: 启用认领
+  disableclaims: 禁用认领
+  anchor: 锚点
+  setanchor: 设置锚点
+  check: 检查
+  debug: 调试
+  teleport: 传送
+  importmessages: 导入消息
+  money: 资金
+  meta: 元数据
+  get: 获取
+  deposit: 存款
+  bal: 余额
+  withdraw: 取款
+webhook:
+  unknownPlayer: 未知玩家
+  create:
+    title: 新团队已创建 - {0}
+    description: 一个名为 **{0}** 的团队已被 **{1}** 创建
+  disband:
+    title: 团队已解散 - {0}
+    description: 一个名为 **{0}** 的团队已被 **{1}** 解散
+  leave:
+    title: 团队成员离开 - {0}
+    description: 名为 **{0}** 的用户已离开团队 **{1}**
+  rename:
+    title: 团队名称更改 - {0}
+    description: 一个名为 **{0}** 的团队已被 **{2}** 将其名称更改为 **{1}**
+  chat:
+    title: '团队消息：{0} [{1}]'
+    description: '{0}'

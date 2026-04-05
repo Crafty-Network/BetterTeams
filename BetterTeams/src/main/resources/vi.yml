@@ -1,0 +1,603 @@
+# All translations in this file are community made, this means there may be errors / missed translations, if you are able to improve upon any translation it would be greatly appreciated
+
+# Able to help with translations? Either improving a already existing language, or adding a whole new one. Join the discord server: https://discord.gg/JF9DNs3 
+# or message me on spigot: https://www.spigotmc.org/members/booksaw123.120955/
+
+# Any placeholders from placeholder API will work in this file
+
+# Credit for contributions to this file: Shelly, Kitohazu, Iamsad_VN, maiminhdung
+
+invalidArg: '<dark_red>Sai câu lệnh kìa'
+inTeam: '<dark_red>Bạn cần phải ở trong team để làm vậy'
+internalError: '<dark_red>Hình như bị lỗi rồi, hãy report lỗi này cho Admin hay Owner đi nào!'
+notInTeam: '<dark_red>Bạn phải rời khỏi team để làm điều này'
+needOwner: '<dark_red>Bạn phải là Owner của Team để làm điều này'
+needAdmin: '<dark_red>Bạn phải là Admin hoặc Owner của Team để làm điều này'
+needPlayer: '<dark_red>Bạn phải là Player để làm điều này'
+noPlayer: '<dark_red>Không tìm thấy người chơi'
+notTeam: '<gold><dark_red>Team đó không tồn tại, dùng <aqua>/team create <name>'
+needSameTeam: '<gold>Bạn không cùng team với người chơi đó'
+noPerm: '<dark_red>Ơ, Mất quyền công dân kìa :>'
+prefixSyntax: '<gray>[{0}<gray>] <reset>{1}'
+bannedChar: '<dark_red>Ui chà, đừng có chửi thề chứ. Văn minh nào bạn ơi!'
+noTeam: '<dark_red>Team đó không tồn tại'
+loading: '<gold>Đang tải....'
+cooldown:
+  wait: '<dark_red>Bạn cần đợi thêm {0} giây để làm vậy!'
+cost:
+  tooPoor: '<dark_red>Xem lại ví của bạn đi'
+  run: '<dark_red><bold>-{0}'
+placeholder:
+  noTeam: ''
+  noDescription: ''
+  money: '{0}'
+  owner: Owner
+  admin: Admin
+  default: Default
+  name: '{0}'
+  tag: '{0}'
+  displayname: '{0}'
+  inteam: 'true'
+  notinteam: 'false'
+  noTitle: ''
+prefix:
+  owner: ' **'
+  admin: ' *'
+  default: ' '
+create:
+  exists: '<gold>Team đó đã tồn tại rồi'
+  success: '<gold>Team của bạn đã được tạo'
+  banned: '<dark_red>Tên Team đó bị cấm rồi, trí tưởng tượng của bạn thật là phongs phús'
+  maxLength: '<dark_red>Tên dài lằng nhằng quá, lấy tên gì đó ngắn hơn đi.'
+leave:
+  success: '<gold>Bạn đã rời khỏi team'
+  lastOwner: '<gold>Bạn là Owner cuối cùng của team, hoặc là bạn thăng chức ai đó hoặc
+    là bạn dùng <aqua>/team disband <gold> để Giải Tán Team'
+announce:
+  join: '<dark_aqua>{0} <gray>đã tham gia đội {1}'
+  leave: '<dark_aqua>{0} <gray>đã rời khỏi đội {1}'
+  disband: '<gray>Đội {0} đã bị giải tán'
+rank:
+  noTeam: '<dark_red>Không tìm thấy Team'
+  info: '<gold>Team position:'
+  infos: '<gold>Team rank: <aqua>{0} <gray>({1} Điểm để rankup)'
+  infom: '<gold>Team rank: <aqua>{0} <gray>(${1} Cần để rankup)'
+  infomm: '<gold>Team rank: <aqua>{0} <gray>(Bạn max rank rồi)'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+delhome:
+  success: '<gold>Căn cứ của team đã bị xoá'
+  noHome: '<dark_red>Team của bạn chưa căn cứ, hãy dùng /ta'
+disband:
+  success: '<gold>Team của bạn đã giải tán..... Tạm biệt'
+  confirm: '<gold>Dùng <aqua>/team disband <gold>thêm một lần nữa để chắc chắn rằng, bạn muốn
+    giải tán team này...'
+description:
+  success: '<gold>Bạn đã thay đổi mô tả của Team '
+  view: '<gold>Mô tả của Team: {0}'
+  noDesc: '<gold>Bạn chưa tạo mô tả của Team'
+  noPerm: '<dark_red>Bạn mất quyền công dâ-... À nhầm nhầm, bạn không có quyền đổi miêu tả
+    của Team'
+name:
+  success: '<gold>Bạn đã đổi tên team'
+  view: '<gold>Tên Team: {0}'
+  exists: '<dark_red>Team đó đã tồn tại'
+  noPerm: '<dark_red>Bạn không có quyền đổi tên Team, đi mà hỏi thằng Owner hay Admin của
+    team á'
+invite:
+  success: '<gold>Người chơi đó đã được mời'
+  invite: '<gold>Bạn đã được mời vào team của {0} dùng <aqua>/team join <team> <gold> để vào team
+    đó'
+  inTeam: '<gold>Người chơi đó đã có Team'
+  banned: '<gold>Người chơi đó đã bay màu khỏi team của bạn, và có vẻ như không còn lần
+    2 để tham gia mất rồi'
+  full: '<gold>Team đầy rồi, kick đứa nào đó ra khỏi team đi rồi mời vào'
+  expired: '<dark_red>Team của <aqua>{0} <dark_red>đã hết hạn'
+  hover: '<gold>Bấm để vào <aqua>{0}'
+join:
+  success: '<gold>Bạn đã vào team đó'
+  notify: '<gold>Chào mừng, <aqua>{0} <gold>đến Team của chúng ta!'
+  notInvited: '<gold><dark_red>Bạn đã được mời đâu mà vô cái team đấy'
+  banned: '<gold><dark_red>Bạn bị pay màu khỏi team đó rồi mà, quên à :>'
+  full: '<dark_red>Đất chật người đông, bạn không được vào'
+open:
+  successopen: '<gold>Giờ ai cũng sẽ vào được team của bạn'
+  successclose: '<gold>Giờ team của bạn chỉ có mời mới được vào'
+title:
+  change: '<gold>Danh hiệu của bạn đã đổi thành <aqua>{0}'
+  remove: '<gold>Danh hiệu của bạn bị xoá'
+  success: '<gold>Đặt danh hiệu thành công'
+  tooLong: '<dark_red>Danh hiệu đó quá dài'
+  noFormat: '<dark_red>Bạn không có quyền để chỉnh title'
+  noColor: '<dark_red>Bạn không có quyền để chỉnh màu của danh hiệu'
+  reset: '<gold>Bạn đã reset danh hiệu'
+  noPerm: '<dark_red>bạn không có quyền để chỉnh danh hiệu'
+info:
+  needTeam: '<gold>Không có team hoặc tên người chơi có tên đó'
+  name: '<gold>Name: <aqua>{0}'
+  description: '<gold>Mô tả: <aqua>{0}'
+  open: '<gold>Cổng: <aqua>{0}'
+  level: '<gold>Cấp của team: <aqua>{0}'
+  owner: '<gold>Chủ team: <aqua>{0}'
+  admin: '<gold>Quản lý của team: <aqua>{0}'
+  default: '<gold>Thành viên: <aqua>{0}'
+  tag: '<gold>Thẻ: <aqua>{0}'
+  fail: '<gold>Không có team hoặc tên người chơi có tên đó'
+  score: '<gold>Số điểm: <aqua>{0}'
+  money: '<gold>Quỹ của team: <aqua>{0}'
+  ally: '<gold>Đồng minh: <aqua>{0}'
+  online: '<green>'
+  offline: '<red>'
+kick:
+  success: '<gold>Người chơi đó bị kick'
+  notify: '<gold>Bạn đã bị kick khỏi team {0}'
+  title: '<dark_red>bạn đã bị kick khỏi team của bạn'
+  noPerm: '<gold>Bạn không có quyền để kick'
+ban:
+  success: '<gold>Người chơi đó đã pay màu khỏi team của bạn'
+  notify: '<gold>Bạn đã bị pay màu khỏi team đó {0}'
+  title: '<dark_red>Bạn đã bị pay màu khỏi team của bạn'
+  noPerm: '<gold>Bạn không có quyền để ban người chơi'
+  already: '<gold>Bạn đã bị pay màu từ trước đó rồi còn đâu?'
+unban:
+  success: '<gold>Người chơi đó đã có màu trở lại'
+  notify: '<gold>Bạn đã có màu trở lại từ team {0}'
+  noPerm: '<gold>Bạn không có quyền để unban'
+  not: '<gold>Người chơi đó còn màu'
+promote:
+  success: '<gold>Người chơi đó lên chức'
+  noPerm: '<gold>Bạn không có quyền lên chức người khác'
+  max: '<gold>Người chơi đó đã lên chức cao nhất rồi!'
+  notify: '<gold>Bạn đã được thăng chức, sướng quá!'
+  maxAdmins: '<dark_red>Team bạn đầy Admin rồi, hạ cấp ai đó hoặc rank up team bạn'
+  maxOwners: '<dark_red>Team bạn đầy Owner rồi, hạ cấp ai đó hoặc rank up team bạn'
+demote:
+  success: '<gold>Người chơi đó đã bị hạ cấp'
+  noPerm: '<gold>Bạn không thể hạ cấp người chơi đó được'
+  min: '<gold>Người chơi đó fan MU dưới đáy xã hội rồi :/'
+  notify: '<gold>Ôi không, bạn đã bị hạ cấp'
+  lastOwner: '<gold>Bạn không thể hạ cấp Owner được, phải hạ cấp ai đó trước'
+  maxAdmins: '<dark_red>Team đầy admin rồi, xoá admin khác hoặc nâng cấp team của bạn'
+home:
+  success: '<gold>Bạn được dịch chuyển'
+  noHome: '<gold>Team của bạn chưa có căn cứ, dùng /team sethome để có căn cứ cho team'
+  world: '<dark_red>Không thể tìm thấy căn cứ của team ở trong cái thế giới này'
+sethome:
+  success: '<gold>Đặt căn cứ thành công'
+  noPerm: '<gold>Bạn không đủ quyền để có thể đặt căn cứ cho team mình'
+chat:
+  enabled: '<gold>Giờ bạn đang chat với team của bạn'
+  disabled: '<gold>Giờ bạn đang chat thì ai cũng nghe được'
+  syntax: '<aqua>[Team]<white>{0}<white>: {1}'
+color:
+  success: '<gold>Team bạn đã đổi màu'
+  fail: '<gold>Không có màu này đâu'
+  banned: '<dark_red>Chỉ được dùng màu, không phải kí tự đổi màu'
+deposit:
+  tooLittle: '<dark_red>Bạn không có đủ tiền để bỏ vào team'
+  fail: '<dark_red>Nạp tiền thất bại'
+  success: '<gold>Nạp tiền thành công'
+  max: '<dark_red>Team giàu thế, đầy tiền luôn rồi'
+withdraw:
+  tooLittle: '<dark_red>Team nghèo thế, không đủ rút luôn'
+  fail: '<dark_red>Rút tiền thất bại'
+  success: '<gold>Rút tiền thành công'
+  notEnough: '<gold>Team không có đủ tiền'
+ally:
+  already: '<dark_red>Bạn đã là đồng minh với team đấy rồi'
+  success: '<gold>Giờ bạn là đồng minh của họ'
+  ally: '<gold>Giờ Team của bạn là đồng minh của <aqua>{0}'
+  requested: '<gold>Có một lời đề nghị đồng minh'
+  request: '<aqua>{0} <gold>đã gửi lời đề nghị đồng minh, dùng <aqua>/team ally <team> <gold>để chấp
+    nhận'
+  self: '<dark_red>Team mình đồng minh chính team mình???'
+  from: '<gold>Bạn có lời đề nghị đồng minh từ {0}'
+  noRequests: '<dark_red>Bạn không có lời đề nghị nào'
+  onJoin: '<gold>Bạn có lời đề nghị đồng minh mới, dùng <aqua>/team ally <gold>để xem nó'
+  limit: '<dark_red>Thích hoà bình nhưng rất tiếc đầy đồng minh rồi'
+  alreadyrequest: '<dark_red>Bạn đã gửi lời đề nghị đến team đó rồi'
+allychat:
+  disabled: '<gold>Giờ bạn không còn chat với đồng minh'
+  enabled: '<gold>Giờ bạn đang chat với đồng minh'
+  syntax: '<light_purple>[{0}]<white>{1}<white>: {2}'
+neutral:
+  self: '<gold>Đó là team của bạn mà??'
+  requestremove: '<gold>Lời đề nghị bị xoá'
+  reject: '<dark_red>Lời đề nghị từ <aqua>{0} <dark_red>đã bị từ chối'
+  notAlly: '<dark_red>Bạn không phải đồng minh với team đó'
+  success: '<dark_red>Bạn không còn là đồng minh với team đó'
+  remove: '<dark_red>Bạn không còn là đồng minh với team <aqua>{0}'
+list:
+  noPage: '<gold>Lỗi, không có trang đó'
+  header: '<gray>--- <aqua> Danh Sách Team {0} <gray>---'
+  body: '<gold>{0}: <aqua>{1}'
+  footer: '<gray>--- <gold>dùng <aqua>/team list [Trang] <gold>để xem thêm <gray>---'
+setowner:
+  use: '<gold>Không thể thăng chức người chơi đó, dùng <aqua>/team setowner <player> <gold>để
+    thăng chức nó lên Owner'
+  success: '<gold>Giờ người chơi đó là Owner của team'
+  notify: '<gold>Bạn là Owner của team bạn'
+  max: '<dark_red>Người chơi đó đã là Owner của team rồi'
+setwarp:
+  exist: '<dark_red>Cái /team warp đó đã tồn tại'
+  max: '<dark_red>Team bạn /team setwarp nhiều quá, đầy rồi'
+  success: '<gold>/team warp đó đã được tạo'
+  char: '<dark_red>Cái /team warp đó tên độc lạ Bình Dương vậy, ai cho :>'
+warp:
+  nowarp: '<dark_red>/team warp đó không tồn tại'
+  invalidPassword: '<dark_red>Sai pass của /team warp đó rồi'
+  success: '<gold>Bạn đã được dịch chuyển'
+  world: '<dark_red>Không thể tìm thấy ./team warp đó'
+warps:
+  syntax: '<gold>Warps: <aqua>{0}'
+  none: '<dark_red>Team của bạn chưa /team setwarp một cái warp nào cả'
+delwarp:
+  success: '<dark_red>Cái /team warp đó đã bị xoá'
+teleport:
+  fail: '<dark_red>Dịch chuyển thất bại'
+  wait: '<gold>Chờ thêm <aqua>{0} <gold>giây coi'
+chest:
+  claim:
+    noChest: '<dark_red>Bạn không có đứng trên cái chest nào cả'
+    limit: '<dark_red>Team của bạn nhiều chest được claim quá'
+    claimed: '<dark_red>Chest đó bị claim rồi'
+    success: '<gold>Bạn đã claim cái chest đó'
+  remove:
+    noChest: '<dark_red>Bạn có đứng trên cái rương nào bị claim đâu'
+    notClaimed: '<dark_red>Team của bạn chưa claim cái chest này'
+    success: '<dark_red>Team của bạn không còn claim cái chest này nữa'
+  all:
+    success: '<gold>Unclaim tất cả các chest'
+  claimed: '<dark_red>Cái chest đó bị claim bới <green>{0}'
+echest:
+  echest: Enderchest
+pvp:
+  enabled: '<gold>Team của bạn bật pvp'
+  disabled: '<gold>Team của bạn tắt pvp'
+rankup:
+  max: '<dark_red>Team bạn là chúa rồi, thăng hạng team gì nữa'
+  score: '<dark_red>Bạn cần có {0} điểm để rankup team bạn'
+  money: '<dark_red>Bạn cần có {0} tiền trong team để rankup team của bạn'
+  success: '<gold>Xin chúc mừng! Team của bạn đã thăng chức thành công!'
+tag:
+  banned: '<dark_red>Cái thẻ tag đó cấm rồi'
+  success: '<gold>Thay thẻ tag thành công'
+  maxLength: '<dark_red>Cái thẻ tag đó dài quá'
+  noPerm: '<dark_red>Bạn không có quyền để thay thẻ tag'
+admin:
+  cancel: '<dark_red>Lệnh đã bị hủy bởi plugin khác'
+  tag:
+    success: '<gold>Tag của nhóm đó đã được thay đổi thành công'
+  setrank:
+    success: '<gold>Hạng của nhóm đó đã được đặt'
+    'no': '<dark_red>Hạng đó không tồn tại hoặc không được thiết lập đúng'
+  config:
+    reload: '<gold>BetterTeams đã được tải lại (Nếu bạn gặp vấn đề khi sử dụng lệnh này,
+      hãy khởi động lại máy chủ)'
+  holo:
+    create:
+      success: '<gold>Hologram đã được tạo'
+    remove:
+      noHolo: '<dark_red>Không tìm thấy hologram'
+      success: '<gold>Hologram đã bị xóa'
+  title:
+    success: '<gold>Tiêu đề của người chơi đó đã được thay đổi'
+    reset: '<gold>Tiêu đề của người chơi đó đã được đặt lại'
+  version: '<gold>Phiên bản plugin hiện tại: <aqua>{0}'
+  versionstorage: '<gold>Phương pháp lưu trữ: <aqua>{0}'
+  versionversion: '<gold>Phiên bản Minecraft: <aqua>{0}'
+  versionlanguage: '<gold>Ngôn ngữ đã chọn: <aqua>{0}'
+  versiononline: '<gold>Chế độ trực tuyến: <aqua>{0}'
+  versionplayers: '<gold>Số lượng người chơi: <aqua>{0}'
+  noTeam: '<dark_red>Đó không phải là một nhóm'
+  home:
+    success: '<gold>Bạn đã được dịch chuyển đến nhà của nhóm đó'
+    noHome: '<dark_red>Nhóm đó không có nhà nào được đặt'
+  name:
+    success: '<gold>Tên nhóm đã được thay đổi'
+  description:
+    success: '<gold>Mô tả của nhóm đó đã được thay đổi'
+    successopen: '<gold>Team đó đã mở cổng cho bất kì ai có thể vào'
+    successclose: '<gold>Team đó đã đóng cổng chỉ được mời mới được vào'
+  invite:
+    success: '<gold>Người chơi đó đã được mời vào nhóm đó'
+  create:
+    success: '<gold>Nhóm đó đã được tạo'
+  join:
+    banned: '<dark_red>Người chơi đó bị cấm khỏi nhóm đó'
+    success: '<gold>Người chơi đó đã tham gia nhóm'
+    notify: '<gold>Bạn đã tham gia nhóm <aqua>{0}'
+    full: '<dark_red>Nhóm đó đã đầy'
+  notInTeam: '<gold>Người chơi đó không thể ở trong một nhóm trước khi làm điều đó'
+  inTeam: '<dark_red>Người chơi đó không ở trong một nhóm'
+  leave:
+    success: '<gold>Người chơi đó đã rời khỏi nhóm đó'
+    notify: '<gold>Bạn đã rời khỏi nhóm đó'
+  demote:
+    notify: '<gold>Bạn đã bị hạ cấp'
+    success: '<gold>Người chơi đó đã bị hạ cấp'
+    min: '<dark_red>Người chơi đó không thể bị hạ cấp thêm'
+    maxAdmins: '<dark_red>Nhóm đó đã có số lượng quản trị viên tối đa, loại bỏ một quản trị
+      viên trước khi hạ cấp người chơi này'
+  promote:
+    max: '<gold>Người chơi đó đã đạt cấp tối đa'
+    notify: '<gold>Bạn đã được thăng cấp'
+    success: '<gold>Người chơi đó đã được thăng cấp'
+    owner: '<gold>Đã cấu hình rằng nhóm chỉ có thể có một chủ sở hữu, làm <aqua>/teama setowner
+      <player> <gold>để đặt người chơi làm chủ sở hữu'
+    maxAdmins: '<dark_red>Nhóm đó đã có số lượng quản trị viên tối đa, loại bỏ một trước khi
+      thăng cấp người chơi đó'
+    maxOwners: '<dark_red>Nhóm đó đã có số lượng chủ sở hữu tối đa, loại bỏ một trước khi
+      thăng cấp người chơi đó'
+  setowner:
+    already: '<dark_red>Người chơi đó đã là chủ sở hữu'
+    nonotify: '<gold>Bạn không còn là chủ sở hữu của nhóm'
+    success: '<gold>Người chơi đó là chủ sở hữu mới của nhóm'
+    notify: '<gold>Bạn hiện là chủ sở hữu của nhóm bạn'
+  warps:
+    none: '<dark_red>Nhóm đó không có điểm dịch chuyển nào'
+  setwarp:
+    success: '<gold>Điểm dịch chuyển đó đã được đặt'
+    max: '<gold>Nhóm đó đã đặt số lượng điểm dịch chuyển tối đa'
+  purge:
+    confirm: '<gold>Chạy lệnh đó trong 10 giây tới để xác nhận, <dark_red>ĐIỀU NÀY KHÔNG THỂ HOÀN
+      TÁC VÀ SẼ ĐẶT LẠI ĐIỂM CHO TẤT CẢ CÁC NHÓM'
+    success: '<gold>Các nhóm đã bị xóa'
+  score:
+    tooSmall: '<dark_red>Điểm phải lớn hơn 0'
+    success: '<gold>Điểm của nhóm đó đã được thay đổi'
+  bal:
+    toSmall: '<dark_red>Số dư phải lớn hơn 0'
+    success: '<gold>Số dư của nhóm đó đã được thay đổi'
+  update: '<dark_red>Có phiên bản mới của better teams đã được phát hành, cập nhật tại đây:
+    https://www.spigotmc.org/resources/better-teams.17129/'
+  disband:
+    success: '<gold>Nhóm đó đã được giải tán thành công'
+  color:
+    success: '<gold>Màu của nhóm đó đã được thay đổi'
+  chest:
+    claim:
+      success: '<gold>Bạn đã chiếm rương đó thay mặt cho nhóm'
+    remove:
+      success: '<gold>Bạn đã gỡ bỏ thành công claim từ rương đó'
+      notClaimed: '<dark_red>Không có nhóm nào chiếm rương đó'
+    all:
+      success: '<gold>Đã gỡ bỏ tất cả claim từ nhóm đó'
+    disable:
+      already: '<dark_red>claim rương đã bị vô hiệu hóa'
+      success: '<gold>claim rương đã được vô hiệu hóa'
+    disabled:
+      bc: '<gold><bold>Tất cả các rương đã chiếm có thể được mở'
+    enable:
+      already: '<dark_red>claim rương đã được kích hoạt'
+      success: '<gold>claim rương đã được kích hoạt'
+    enabled:
+      bc: '<gold><bold>Tất cả các rương đã chiếm bị khóa'
+  teleport:
+    noWorld: '<dark_red>Không tìm thấy thế giới được chỉ định'
+    success: '<gold>Tất cả thành viên trực tuyến của nhóm đó đã được dịch chuyển'
+    all:
+      success: '<gold>Tất cả thành viên trực tuyến của tất cả các đội đã được di chuyển'
+      home:
+        success: '<gold>Tất cả thành viên trực tuyến của tất cả các đội có nhà đã được
+          di chuyển'
+    player:
+      success: '<gold>Người chơi đó đã được dịch chuyển'
+  ally:
+    same: '<dark_red>Bạn không thể biến một đội thành đồng minh của chính nó'
+    already: '<dark_red>Những đội đó đã là đồng minh'
+    success: '<gold>Hai đội đó bây giờ là đồng minh'
+  neutral:
+    same: '<dark_red>Bạn không thể vào cùng một đội hai lần'
+    not: '<dark_red>Những đội đó không phải là đồng minh'
+    success: '<gold>Những đội đó không còn là đồng minh'
+nametag:
+  
+  syntax: '<gold><bold>{0}<reset> '
+holo:
+  leaderboard: '<gold>Bảng xếp hạng'
+  syntax: '<gold>{0}: <aqua>{1}'
+  msyntax: '<gold>{0}: <aqua>${1}'
+top:
+  leaderboard: '<gold>Bảng xếp hạng điểm của team'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+  divide: '<white>...'
+baltop:
+  leaderboard: '<gold>Bảng xếp hạng team giàu nhất'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+  divide: '<white>...'
+spy:
+  stop: "<gold>Bạn không còn theo dõi tin nhắn nhóm"
+  start: "<gold>Bạn hiện đang theo dõi tin nhắn nhóm"
+  team: "<gray>[<aqua>{0}<gray>]<white>{1}<white>: {2}"
+  ally: "<gray>[<light_purple>{0}<gray>]<white>{1}<white>: {2}"
+uclaim:
+  team: "<dark_red>Bạn phải ở trong một nhóm để tạo một claim"
+  member: "<dark_red>Bạn không thể rời khỏi claim của nhóm mình"
+  kick: "<dark_red>Bạn không thể đuổi thành viên của nhóm mình khỏi claim của bạn"
+  ban: "<dark_red>Bạn không thể cấm thành viên của nhóm mình khỏi claim của bạn"
+  dissolve: "<dark_red>Nhóm của bạn đã bị giải tán nên claim của bạn đã bị giải thể"
+help:
+  header: '<gold>---- <aqua>ᴅᴀɴʜ sáᴄʜ ʟệɴʜ ᴛᴇᴀᴍ <gold>----'
+  footer: '<gold>---- <aqua>Trang {0}/{1} - /{2} help <page> <gold>----'
+  description: Xem và thay đổi miêu tả Team bạn
+  ban: Làm pay màu người chơi khỏi team bạn
+  home: Dịch chuyển đến căn cứ của Team
+  help: Xem hướng dẫn
+  promote: Thăng chức người chơi trong team
+  demote: Hạ cấp người chơi trong team
+  unban: Gỡ cấm cho người chơi đó và giúp họ có màu lại
+  kick: Đá người chơi khỏi team bạn
+  leave: Rời khỏi Team
+  chat: Bật chế độ Chat trong Team, dùng lại để tắt
+  name: Xem và đổi tên Team của bạn
+  sethome: Đặt căn cứ cho Team bạn
+  create: Tạo Team với tên do bạn đặt
+  invite: Mời người chơi vào Team của bạn
+  disband: Giải tán Team của bạn
+  open: Bật/tắt chế độ ai cũng vào được Team của bạn
+  info: Xem thông tin của Người chơi / Team
+  color: Đổi màu Team
+  deposit: Bỏ tiền vào Team của Bạn
+  bal: Xem Tiền của Team
+  withdraw: Lấy tiền từ Team
+  title: Đổi danh hiệu người chơi TRONG team bạn
+  top: Xem Bảng xếp hạng Các Team
+  rank: Xem rank của Team
+  join: Join Team của ai đó
+  delhome: Xoá căn cứ của Team bạn
+  ally: Gửi lời mời Đồng Minh đến team người khác
+  neutral: Bỏ Đồng Minh với Team của ai đó
+  allychat: Bật/tắt Chat Đồng Minh
+  echest: Xem Ender Chest của Team bạn
+  setwarp: Đặt warp cho team cùng với tên warp
+  warps: Xem các warp của team
+  rankup: Thăng chức Team của bạn lên tầm cao mới
+  tag: Đặt tag của team bạn
+  delwarp: Xoá warp của team bạn
+  chest: ''
+  pvp: Bật PVP trong team
+  baltop: Xem các team đại gia, giới thượng lưu
+  list: Xem các team trong server
+  warp: Warp đến địa điểm của team bạn
+  removeall: Xoá tất cả các rương được chiếm (Không nên dùng)
+  claim: Claim chest mà bạn đang đứng (không nên dùng)
+  remove: Xoá team claim của bạn (không nên dùng)
+  teamadmin:
+    echest: Xem và chỉnh sửa ender chest của đội đó
+    color: Thay đổi màu của đội đó
+    teleport: Dịch chuyển mục tiêu được chỉ định đến vị trí được chỉ định (hoặc vị
+      trí của người dùng lệnh)
+    description: Thay đổi mô tả đội được chỉ định
+    setwarp: Đặt một warp cho đội đó
+    purge: Đặt lại điểm số và tiền cho tất cả các đội, nếu chỉ định một giá trị (VD
+      là tiền) thì giá trị đó sẽ được đặt lại
+    title: Thay đổi tiêu đề của người chơi thành tiêu đề được chỉ định
+    setrank: Đặt cấp độ của đội được chỉ định
+    promote: Thăng cấp người chơi trong đội của họ
+    score:
+      add: Thêm số tiền được chỉ định vào điểm của người chơi đó
+      help: Bạn đang xem cái này :)
+      set: Đặt điểm của đội được chỉ định
+      remove: Xóa số điểm được chỉ định khỏi điểm của người chơi
+    reload: Tải lại config của BetterTeams
+    setowner: Đặt người chơi trở thành Owner của team của họ
+    ally: Đặt hai đội làm đồng minh của nhau
+    leave: Bắt người chơi phải rời đội
+    neutral: Đặt hai đội không còn là đồng minh
+    chatspy: Theo dõi tin nhắn của team
+    version: Kiểm tra phiên bản Plugin
+    home: Dịch chuyển đến nhà của đội khác
+    help: Bạn đang xem cái này :)
+    demote: Hạ cấp một người chơi trong đội của họ
+    create: Tạo một đội mà không có Owner
+    join: Bắt người chơi phải vào đội
+    tag: Thay đổi tag của đội được chỉ định
+    disband: Giải tán đội được chỉ định<red> ĐIỀU NÀY KHÔNG THỂ KHÔI PHỤC!!!!!
+    delwarp: Xóa warp đó khỏi đội của bạn
+    debug: Kiểm tra phiên bản của plugin
+    name: Đặt tên cho đội được chỉ định
+    invite: Mời người chơi đến đội được chỉ định
+    open: Bật/Tắt trạng thái tham gia của team
+    warp: Dịch chuyển đến warp của team
+    chest: ''
+    money: ''
+command:
+  
+  create: create
+  leave: leave
+  disband: disband
+  description: description
+  invite: invite
+  join: join
+  name: name
+  open: open
+  info: info
+  kick: kick
+  promote: promote
+  demote: demote
+  home: home
+  sethome: sethome
+  ban: ban
+  unban: unban
+  chat: chat
+  color: color
+  title: title
+  top: top
+  baltop: baltop
+  rank: rank
+  delhome: delhome
+  ally: ally
+  neutral: neutral
+  allychat: allychat
+  list: list
+  warp: warp
+  setwarp: setwarp
+  delwarp: delwarp
+  warps: warps
+  echest: echest
+  rankup: rankup
+  tag: tag
+  pvp: pvp
+  claim: claim
+  remove: remove
+  removeall: removeall
+  chest: chest
+  reload: reload
+  chatspy: chatspy
+  version: version
+  purge: purge
+  setrank: setrank
+  add: add
+  set: set
+  score: score
+  enableclaims: enableclaims
+  disableclaims: disableclaims
+  teleport: teleport
+  money: money
+  deposit: deposit
+  bal: bal
+  withdraw: withdraw
+  debug: debug
+  help: help
+  holo: holo
+helpArg:
+  delhome: ''
+  echest: ''
+  color: <mã màu>
+  allychat: '[tin nhắn]'
+  description: '[mô tả]'
+  setwarp: <tên> [mật khẩu]
+  title: '[người chơi] [tiêu đề]'
+  bal: ''
+  ban: <người chơi>
+  promote: <người chơi>
+  warps: ''
+  top: ''
+  ally: <nhóm>
+  rankup: ''
+  leave: ''
+  sethome: ''
+  create: <tên> [tag]
+  rank: '[nhóm]'
+  join: <nhóm>
+  tag: '[tag]'
+  disband: ''
+  info: '[nhóm/người chơi]'
+  delwarp: <tên> [mật khẩu]
+  chest: ''
+  neutral: <nhóm>
+  pvp: ''
+  baltop: ''
+  list: '[trang]'
+  home: ''
+  help: ''
+  unban: <người chơi>
+  demote: <người chơi>
+  kick: <người chơi>
+  chat: '[tin nhắn]'
+  name: <tên>
+  deposit: <số tiền>
+  invite: <người chơi>
+  open: ''
+  warp: <tên>
+  withdraw: <số tiền>

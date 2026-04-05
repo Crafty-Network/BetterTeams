@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.booksaw.betterteams</groupId>
+        <artifactId>betterteams-parent</artifactId>
+        <version>5.0.0</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>extensions-parent</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>luckperms-extension</module>
+        <module>zkoth-extension</module>
+        <module>discord-extension</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.booksaw.betterteams</groupId>
+            <artifactId>betterteams</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <outputDirectory>
+                        ${maven.multiModuleProjectDirectory}/server/plugins/BetterTeams/extensions
+                    </outputDirectory>
+                    <finalName>${project.artifactId}</finalName>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/extension.yml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>**/extension.yml</exclude>
+                </excludes>
+            </resource>
+        </resources>
+    </build>
+
+
+</project>

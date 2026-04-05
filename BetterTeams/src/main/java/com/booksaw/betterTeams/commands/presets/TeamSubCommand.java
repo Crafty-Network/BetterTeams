@@ -1,0 +1,139 @@
+package com.booksaw.betterTeams.commands.presets;
+
+import com.booksaw.betterTeams.*;
+import com.booksaw.betterTeams.commands.SubCommand;
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
+import lombok.Getter;
+import lombok.Setter;
+import org.bukkit.OfflinePlayer;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+
+public abstract class TeamSubCommand extends SubCommand {
+
+	protected boolean checkRank = true;
+	@Setter
+	@Getter
+	PlayerRank requiredRank = getDefaultRank();
+
+	private final LoadingCache<CommandSender, Optional<Team>> teamCache =
+			CacheBuilder.newBuilder()
+					.maximumSize(300)
+					.expireAfterAccess(5, TimeUnit.MINUTES)
+					.build(CacheLoader.from(sender ->
+							Optional.ofNullable(getTeam(sender))
+					));
+
+	private Team getTeam(CommandSender sender) {
+		if (sender instanceof Player) {
+			return Team.getTeam((Player) sender);
+		}
+		return null;
+	}
+
+	protected @Nullable Team getMyTeam(CommandSender sender) {
+		if (!(sender instanceof Player)) return null;
+
+		try {
+			return teamCache.get(sender).orElse(null);
+		} catch (ExecutionException e) {
+			return null;
+		}
+	}
+
+	@Override
+	public CommandResponse onCommand(CommandSender sender, String label, String[] args) {
+		Player player = (Player) sender;
+		Team team = Team.getTeam(player);
+
+		if (team == null) {
+			return new CommandResponse("inTeam");
+		}
+		TeamPlayer teamPlayer = team.getTeamPlayer(player);
+
+		if (teamPlayer == null) {
+			Main.plugin.getLogger().severe("For some reason your storage has desynchronised, set `rebuildLookups` to true in config.yml and restart your server");
+			Main.plugin.getLogger().severe("If this keeps occuring after performing this change, please report it as a bug");
+		}
+
+		if (checkRank) {
+			CommandResponse response = checkRank(teamPlayer);
+			if (response != null) {
+				return response;
+			}
+		}
+
+		return onCommand(teamPlayer, label, args, team);
+	}
+
+	public abstract CommandResponse onCommand(TeamPlayer player, String label, String[] args, Team team);
+
+	@Override
+	public boolean needPlayer() {
+		return true;
+	}
+
+	public abstract PlayerRank getDefaultRank();
+
+	public CommandResponse checkRank(TeamPlayer player) {
+		return checkRank(player, requiredRank);
+	}
+
+	protected CommandResponse checkRank(@NotNull TeamPlayer player, PlayerRank rank) {
+
+		if (player.getRank() != PlayerRank.OWNER && rank != PlayerRank.DEFAULT) {
+			if (rank == PlayerRank.OWNER) {
+				return new CommandResponse("needOwner");
+			}
+
+			if (player.getRank() != PlayerRank.ADMIN) {
+				return new CommandResponse("needAdmin");
+			}
+		}
+
+		return null;
+	}
+
+	@Getter
+	protected static class TeamPlayerResult {
+		private final @Nullable CommandResponse cr;
+		private final @Nullable TeamPlayer player;
+
+		TeamPlayerResult(@NotNull String cr) {
+			this.cr = new CommandResponse(cr);
+			this.player = null;
+		}
+
+		TeamPlayerResult(@Nullable TeamPlayer player) {
+			this.cr = null;
+			this.player = player;
+		}
+
+		public boolean isCR() {
+			return cr != null;
+		}
+	}
+
+	protected TeamPlayerResult getTeamPlayer(final Team team, final String name) {
+		OfflinePlayer player = Utils.getOfflinePlayer(name);
+
+		if (player == null) {
+			return new TeamPlayerResult("noPlayer");
+		}
+
+		Team otherTeam = Team.getTeam(player);
+		if (team != otherTeam) {
+			return new TeamPlayerResult("needSameTeam");
+		}
+
+		return new TeamPlayerResult(team.getTeamPlayer(player));
+	}
+}

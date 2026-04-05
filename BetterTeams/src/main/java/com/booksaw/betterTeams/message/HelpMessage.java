@@ -1,0 +1,53 @@
+package com.booksaw.betterTeams.message;
+
+import com.booksaw.betterTeams.commands.HelpCommand;
+import com.booksaw.betterTeams.commands.ParentCommand;
+import com.booksaw.betterTeams.commands.SubCommand;
+
+import java.util.Collection;
+
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+public class HelpMessage implements Message {
+
+	final SubCommand command;
+	final ParentCommand parent;
+	final String label;
+
+	public HelpMessage(SubCommand command, String label, ParentCommand parent) {
+		this.command = command;
+		this.label = label;
+		this.parent = parent;
+	}
+
+	@Override
+	public void sendMessage(CommandSender sender) {
+		MessageManager.sendFullMessage(sender, createHelpMessage(label,
+				command.getCommand() + " " + command.getArgMessage(parent), command.getHelpMessage(parent)));
+	}
+
+	@Override
+	public void sendTitle(Player player) {
+		MessageManager.sendFullTitle(player, createHelpMessage(label,
+				command.getCommand() + " " + command.getArgMessage(parent), command.getHelpMessage(parent)));
+	}
+
+	@Override
+	public void sendMessage(Collection<? extends CommandSender> senders) {
+		MessageManager.sendFullMessage(senders, createHelpMessage(label,
+				command.getCommand() + " " + command.getArgMessage(parent), command.getHelpMessage(parent)));
+	}
+
+	@Override
+	public void sendTitle(Collection<Player> players) {
+		MessageManager.sendFullTitle(players, createHelpMessage(label,
+				command.getCommand() + " " + command.getArgMessage(parent), command.getHelpMessage(parent)));
+	}
+
+	public String createHelpMessage(String label, String commandPath, String description) {
+		return HelpCommand.prefix + "/" + label + " " + commandPath + "<white> - " + HelpCommand.description
+				+ description;
+	}
+
+}

@@ -1,0 +1,483 @@
+# All translations in this file are community made, this means there may be errors / missed translations, if you are able to improve upon any translation it would be greatly appreciated
+
+# Able to help with translations? Either improving a already existing language, or adding a whole new one. Join the discord server: https://discord.gg/JF9DNs3 
+# or message me on spigot: https://www.spigotmc.org/members/booksaw123.120955/
+
+# Any placeholders from placeholder API will work in this file
+
+# Credit for contributions to this file: Areanydd
+
+invalidArg: '<dark_red>Argumente invalide, ajutor.'
+inTeam: '<dark_red>Trebuie sa fii intr-o echipa pentru a face asta.'
+notInTeam: '<dark_red>Trebuie sa parasesti echipa ta inainte de a face asta.'
+needOwner: '<dark_red>Trebuie sa fii proprietarul echipei pentru a face asta.'
+needAdmin: '<dark_red>Trebuie sa fii admin sau proprietar al echipei pentru a face asta.'
+needPlayer: '<dark_red>Trebuie sa fii un jucator pentru a face asta.'
+noPlayer: '<dark_red>Jucatorul specificat nu a fost gasit'
+notTeam: '<gold><dark_red>Aceasta echipa nu exista, incearca <aqua>/team create <nume>'
+needSameTeam: '<gold>Nu esti in aceeasi echipa cu acea persoana.'
+noPerm: '<dark_red>Nu ai permisiunea de a face asta.'
+prefixSyntax: '<gray>[{0}<gray>] <reset>{1}'
+bannedChar: '<dark_red>Caracterul pe care ai incercat sa-l folosesti este interzis.'
+noTeam: '<dark_red>Aceasta echipa nu exista.'
+loading: '<gold>Incarcare'
+cooldown:
+  wait: '<dark_red>Trebuie sa mai astepti {0} secunde inainte de a rula asta!'
+cost:
+  tooPoor: '<dark_red>Esti prea sarac pentru a rula aceasta comanda.'
+  run: '<dark_red><bold>-{0}'
+placeholder:
+  noTeam: '<gray>Nicio echipa'
+  noDescription: ''
+  money: '{0}'
+  owner: Proprietar
+  admin: Admin
+  default: Implicit
+  name: '{0}'
+  tag: '{0}'
+  displayname: '{0}'
+  inteam: 'adevarat'
+  notinteam: 'fals'
+  noTitle: ''
+prefix:
+  owner: ' **'
+  admin: ' *'
+  default: ' '
+create:
+  exists: '<gold>Aceasta echipa exista deja.'
+  success: '<gold>Echipa ta a fost creata.'
+  banned: '<dark_red>Acest nume de echipa este interzis.'
+  maxLength: '<dark_red>Acest nume de echipa este prea lung.'
+leave:
+  success: '<gold>Ai parasit echipa.'
+  lastOwner: '<gold>Esti singurul proprietar al echipei. Promoveaza pe cineva altcineva sau foloseste <aqua>/team disband <gold>pentru a dizolva echipa.'
+announce:
+  join: '<dark_aqua>{0} <gray>juntou-se à equipa {1}'
+  leave: '<dark_aqua>{0} <gray>deixou a equipa {1}'
+  disband: '<gray>A equipa {0} foi dissolvida'
+rank:
+  noTeam: '<dark_red>Echipa nu a fost gasita.'
+  info: '<gold>Pozitia ta in echipa:'
+  infos: '<gold>Gradul echipei: <aqua>{0} <gray>(punctaj necesar pentru urmatorul grad)'
+  infom: '<gold>Gradul echipei: <aqua>{0} <gray>(${1} necesari pentru urmatorul grad)'
+  infomm: '<gold>Gradul echipei: <aqua>{0} <gray>(Esti deja la gradul maxim)'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+delhome:
+  success: '<gold>Locatia centrala a echipei tale a fost stearsa.'
+  noHome: '<dark_red>Echipa ta nu a stabilit o locatie centrala.'
+disband:
+  success: '<gold>Ai dizolvat echipa.'
+  confirm: '<gold>Scrie <aqua>/team disband <gold>din nou pentru a confirma.'
+description:
+  success: '<gold>Ai schimbat descrierea echipei.'
+  view: '<gold>Descrierea echipei: {0}'
+  noDesc: '<gold>Nu a fost stabilita o descriere pentru echipa.'
+  noPerm: '<dark_red>Nu ai permisiunea de a edita descrierea.'
+name:
+  success: '<gold>Ai schimbat numele echipei.'
+  view: '<gold>Numele echipei: {0}'
+  exists: '<dark_red>Aceasta echipa deja exista.'
+  noPerm: '<dark_red>Nu ai permisiunea de a schimba numele echipei tale.'
+invite:
+  success: '<gold>Acel jucator a fost invitat in echipa.'
+  invite: '<gold>Ai fost invitat sa te alaturi echipei {0}. Foloseste <aqua>/team join <nume_echipa> <gold>pentru a te alatura echipei.'
+  inTeam: '<gold>Acel jucator este deja intr-o echipa.'
+  banned: '<gold>Acel jucator este interzis in echipa ta.'
+  full: '<gold>Echipa ta a atins numarul maxim de membri. Elimina pe cineva inainte de a invita alti membri.'
+  expired: '<dark_red>Invitatia de la <aqua>{0} <dark_red>a expirat.'
+join:
+  success: '<gold>Ai aderat la echipa respectiva.'
+  notify: '<gold>Bine ai venit, <aqua>{0}, <gold>in echipa!'
+  notInvited: '<gold><dark_red>Nu ai fost invitat in acea echipa.'
+  banned: '<gold><dark_red>Esti interzis in acea echipa.'
+  full: '<dark_red>Echipa respectiva este plina.'
+open:
+  successopen: '<gold>Echipa ta este acum deschisa pentru toata lumea.'
+  successclose: '<gold>Echipa ta este acum doar cu invitatie.'
+title:
+  change: '<gold>Titlul tau a fost schimbat la <aqua>{0}'
+  remove: '<gold>Titlul tau a fost eliminat.'
+  success: '<gold>Acel titlu a fost schimbat'
+  tooLong: '<dark_red>Acel titlu este prea lung.'
+  noFormat: '<dark_red>Nu ai permisiunea de a formata titlurile.'
+  noColor: '<dark_red>Nu ai permisiunea de a colora titlurile.'
+  reset: '<gold>Titlul tau a fost resetat.'
+  noPerm: '<dark_red>Nu ai permisiunea de a-ti schimba titlul echipei.'
+info:
+  needTeam: '<gold>Nicio echipa sau jucator gasit sub acel nume.'
+  name: '<gold>Nume: <aqua>{0}'
+  description: '<gold>Descriere: <aqua>{0}'
+  open: '<gold>Deschis: <aqua>{0}'
+  level: '<gold>Nivel: <aqua>{0}'
+  owner: '<gold>Proprietari: <aqua>{0}'
+  admin: '<gold>Admini: <aqua>{0}'
+  default: '<gold>Membri: <aqua>{0}'
+  tag: '<gold>Tag: <aqua>{0}'
+  fail: '<gold>Nicio echipa sau jucator gasit sub acel nume'
+  score: '<gold>Puncte: <aqua>{0}'
+  money: '<gold>Sold: <aqua>{0}'
+  ally: '<gold>Aliante: <aqua>{0}'
+kick:
+  success: '<gold>Acel jucator a fost dat afara.'
+  notify: '<gold>Ai fost dat afara din echipa {0}'
+  title: '<dark_red>Ai fost dat afara din echipa ta.'
+  noPerm: '<gold>Nu ai permisiunea de a da afara acea persoana.'
+ban:
+  success: '<gold>Acel jucator a fost interzis.'
+  notify: '<gold>Ai fost interzis din echipa {0}'
+  title: '<dark_red>Ai fost interzis din echipa ta.'
+  noPerm: '<gold>Nu ai permisiunea de a interzice acea persoana.'
+  already: '<gold>Acel jucator este deja interzis.'
+unban:
+  success: '<gold>Acel jucator a fost reabilitat.'
+  notify: '<gold>Ai fost reabilitat din echipa {0}'
+  noPerm: '<gold>Nu ai permisiunea de a reabilita acea persoana.'
+  not: '<gold>Acel jucator nu este interzis.'
+promote:
+  success: '<gold>Acel jucator a fost promovat.'
+  noPerm: '<gold>Nu ai permisiunea de a promova acea persoana.'
+  max: '<gold>Aceasta persoana este deja promovata la maxim!'
+  notify: '<gold>Ai fost promovat!'
+  maxAdmins: '<dark_red>Echipa ta are deja numarul maxim de admini, retrogradeaza pe cineva sau urca-ti echipa de nivel.'
+  maxOwners: '<dark_red>Echipa ta are deja numarul maxim de proprietari, retrogradeaza pe cineva sau urca-ti echipa de nivel.'
+demote:
+  success: '<gold>Acel jucator a fost retrogradat.'
+  noPerm: '<gold>Nu ai permisiunea de a retrograda acea persoana.'
+  min: '<gold>Aceasta persoana are deja cel mai mic rang.'
+  notify: '<gold>Ai fost retrogradat.'
+  lastOwner: '<gold>Nu poti retrograda ultimul proprietar, promoveaza pe cineva altcineva mai intai.'
+  maxAdmins: '<dark_red>Echipa ta are deja numarul maxim de admini, elimina un admin sau urca-ti echipa de nivel.'
+home:
+  success: '<gold>Ai fost teleportat.'
+  noHome: '<gold>Echipa ta nu a stabilit un punct de intoarcere.'
+  world: '<dark_red>Punctul de intoarcere al echipei tale nu a putut fi gasit.'
+sethome:
+  success: '<gold>Punctul de intoarcere al echipei tale a fost setat.'
+  noPerm: '<gold>Nu ai un rang suficient de inalt pentru a seta punctul de intoarcere al echipei tale.'
+chat:
+  enabled: '<gold>Acum mesajele tale merg in chat-ul echipei.'
+  disabled: '<gold>Acum mesajele tale merg in chat-ul global.'
+  syntax: '<aqua>[Echipa]<white>{0}<white>: {1}'
+color:
+  success: '<gold>Culoarea echipei tale a fost schimbata.'
+  fail: '<gold>Aceea nu este o culoare de chat recunoscuta.'
+  banned: '<dark_red>Poti folosi doar culori, nu si coduri de formatare.'
+deposit:
+  tooLittle: '<dark_red>Nu poti depune sume negative.'
+  fail: '<dark_red>Depunerea a esuat!'
+  success: '<gold>Bani depusi.'
+  max: '<dark_red>Asta ar depasi soldul maxim permis al echipei tale.'
+withdraw:
+  tooLittle: '<dark_red>Nu poti retrage sume negative.'
+  fail: '<dark_red>Retragerea a esuat.'
+  success: '<gold>Bani retrasi.'
+  notEnough: '<gold>Echipa ta nu are suficienti bani.'
+ally:
+  already: '<dark_red>Sunteti deja aliati.'
+  success: '<gold>Echipele voastre sunt acum aliate.'
+  ally: '<gold>Echipa ta este acum aliata cu <aqua>{0}'
+  requested: '<gold>O cerere de aliere a fost trimisa acelei echipe.'
+  request: '<aqua>{0} <gold>a trimis o cerere de aliere, foloseste <aqua>/team ally <echipa> <gold>pentru a accepta.'
+  self: '<dark_red>Nu poti alia propria ta echipa.'
+  from: '<gold>Aveti cereri de alianta de la: {0}'
+  noRequests: '<dark_red>Nu ai cereri de alianta.'
+  onJoin: '<gold>Ai cereri de alianta noi, foloseste <aqua>/team ally <gold>pentru a le vedea.'
+  limit: '<dark_red>Limita pentru aliati a fost atinsa.'
+  alreadyrequest: '<dark_red>Ai trimis deja o cerere de alianta catre acea echipa.'
+allychat:
+  disabled: '<gold>Mesajele tale nu mai merg in chat-ul de alianta.'
+  enabled: '<gold>Mesajele tale merg acum in chat-ul de alianta.'
+  syntax: '<light_purple>[{0}]<white>{1}<white>: {2}'
+neutral:
+  self: '<gold>Asta este propria ta echipa.'
+  requestremove: '<gold>Cererea de alianta a fost eliminata.'
+  reject: '<dark_red>Cererea ta de alianta cu <aqua>{0} <dark_red>a fost respinsa.'
+  notAlly: '<dark_red>Nu esti aliat cu acea echipa.'
+  success: '<dark_red>Nu mai esti aliat cu acea echipa.'
+  remove: '<dark_red>Nu mai esti aliat cu <aqua>{0}'
+list:
+  noPage: '<gold>Aceasta pagina nu a fost gasita.'
+  header: '<gray>--- <aqua>Lista echipe pagina {0} <gray>---'
+  body: '<gold>{0}: <aqua>{1}'
+  footer: '<gray>--- <gold>foloseste <aqua>/team list [pagina] <gold>pentru a vedea mai mult <gray>---'
+setowner:
+  use: '<gold>Nu poti promova acel jucator, foloseste <aqua>/team setowner <jucator> <gold>pentru a-l promova la rangul de proprietar.'
+  success: '<gold>Acel jucator este acum proprietar.'
+  notify: '<gold>Acum esti proprietarul echipei tale.'
+  max: '<dark_red>Acel jucator este deja proprietar.'
+setwarp:
+  exist: '<dark_red>Acel punct de intoarcere exista deja'
+  max: '<dark_red>Echipa ta a ajuns la numarul maxim de puncte de intoarcere setate.'
+  success: '<gold>Acel punct de intoarcere a fost creat.'
+  char: '<dark_red>Numele acelui punct de intoarcere contine caractere interzise.'
+warp:
+  nowarp: '<dark_red>Acel punct de intoarcere nu exista.'
+  invalidPassword: '<dark_red>Parola invalida pentru acel punct de intoarcere.'
+  success: '<gold>Ai fost teleportat.'
+  world: '<dark_red>Locatia acelui punct de intoarcere nu a putut fi gasita.'
+warps:
+  syntax: '<gold>Puncte de intoarcere: <aqua>{0}'
+  none: '<dark_red>Echipa ta nu are niciun punct de intoarcere setat.'
+delwarp:
+  success: '<dark_red>Acel punct de intoarcere a fost sters.'
+teleport:
+  fail: '<dark_red>Teleportarea a esuat.'
+  wait: '<gold>Asteapta <aqua>{0} <gold>secunde.'
+chest:
+  claim:
+    noChest: '<dark_red>Nu stai pe un chest.'
+    limit: '<dark_red>Echipa ta a revendicat numarul maxim de lazi.'
+    claimed: '<dark_red>Acest chest a fost deja revendicata.'
+    success: '<gold>Ai revendicat acest chest.'
+  remove:
+    noChest: '<dark_red>Nu stai pe un chest.'
+    notClaimed: '<dark_red>Echipa ta nu a revendicat acest chest.'
+    success: '<dark_red>Team-ul tau nu mai trebuie sa ia acest chest.'
+  all:
+    success: '<gold>Toate cuferele au fost luate.'
+  claimed: '<dark_red>Acest chest este luat de <green>{0}'
+echest:
+  echest: Enderchest
+pvp:
+  enabled: '<gold>PvP a fost activat pentru echipa ta.'
+  disabled: '<gold>PvP a fost dezactivat pentru echipa ta.'
+rankup:
+  max: '<dark_red>Esti deja la rangul maxim.'
+  score: '<dark_red>Ai nevoie de {0} puncte pentru a urca in rang.'
+  money: '<dark_red>Ai nevoie de {0} bani in balanta echipei pentru a urca in rang.'
+  success: '<gold>Echipa ta s-a ridicat la un rang superior.'
+tag:
+  banned: '<dark_red>Aceasta eticheta este interzisa.'
+  success: '<gold>Eticheta echipei tale a fost schimbata cu succes.'
+  maxLength: '<dark_red>Aceasta eticheta este prea lunga.'
+  noPerm: '<dark_red>Nu ai permisiunea de a schimba eticheta echipei.'
+admin:
+  cancel: '<dark_red>Comanda a fost anulata de catre alt plugin.'
+  tag:
+    success: '<gold>Eticheta echipei a fost schimbata cu succes.'
+  setrank:
+    success: '<gold>Rangul echipei a fost setat cu succes.'
+    'no': '<dark_red>Acest rang nu exista sau nu este configurat corect.'
+  config:
+    reload: '<gold>BetterTeams a fost reincarcat. (Daca intampini probleme cand folosesti aceasta comanda, reporneste serverul!)'
+  holo:
+    create:
+      success: '<gold>Holograma a fost creata.'
+    remove:
+      noHolo: '<dark_red>Nu au fost gasite holograme.'
+      success: '<gold>Holograma a fost stearsa.'
+  title:
+    success: '<gold>Titlul jucatorului a fost schimbat.'
+    reset: '<gold>Titlul jucatorului a fost resetat.'
+  version: '<gold>Versiunea curenta a pluginului: <aqua>{0}'
+  versionstorage: '<gold>Metoda de stocare: <aqua>{0}'
+  versionversion: '<gold>Versiunea Minecraft: <aqua>{0}'
+  noTeam: '<dark_red>Aceasta nu este o echipa.'
+  home:
+    success: '<gold>Ai fost teleportat la baza echipei respective.'
+    noHome: '<dark_red>Echipa respectiva nu are o baza stabilita.'
+  name:
+    success: '<gold>Numele echipei a fost schimbat.'
+  description:
+    success: '<gold>Numele echipei respective a fost schimbat.'
+  open:
+    successopen: '<gold>Echipa este acum deschisa pentru toata lumea.'
+    successclose: '<gold>Echipa este acum doar pentru invitati.'
+  invite:
+    success: '<gold>Acel jucator a fost invitat in echipa respectiva.'
+  create:
+    success: '<gold>Echipa respectiva a fost creata.'
+  join:
+    banned: '<dark_red>Acel jucator este interzis in echipa respectiva.'
+    success: '<gold>Acel jucator s-a alaturat echipei.'
+    notify: '<gold>Ai intrat in echipa <aqua>{0}'
+    full: '<dark_red>Echipa este plina.'
+  notInTeam: '<gold>Acel jucator nu poate fi intr-o echipa inainte de a face asta.'
+  inTeam: '<dark_red>Acel jucator nu este intr-o echipa.'
+  leave:
+    success: '<gold>Acel jucator a parasit echipa respectiva.'
+    notify: '<gold>Ai parasit echipa respectiva.'
+  demote:
+    notify: '<gold>Ai fost retrogradat.'
+    success: '<gold>Acel jucator a fost retrogradat.'
+    min: '<dark_red>Acel jucator nu poate fi retrogradat mai mult.'
+    maxAdmins: '<dark_red>Echipa are deja numarul maxim de administratori, eliminati unul inainte de a retrograda acest jucator.'
+  promote:
+    max: '<gold>Acel jucator are deja rangul maxim.'
+    notify: '<gold>Ai fost promovat.'
+    success: '<gold>Acel jucator a fost promovat.'
+    owner: '<gold>Este configurat ca echipele sa aiba doar un singur proprietar, foloseste <aqua>/teama setowner <jucator> <gold>pentru a seta jucatorul ca proprietar.'
+    maxAdmins: '<dark_red>Echipa are deja numarul maxim de administratori, eliminati unul inainte de a promova acest jucator.'
+    maxOwners: '<dark_red>Echipa are deja numarul maxim de proprietari, eliminati unul inainte de a promova acest jucator.'
+  setowner:
+    already: '<dark_red>Acel jucator este deja proprietar.'
+    nonotify: '<gold>Nu mai esti proprietarul echipei.'
+    success: '<gold>Acel jucator este noul proprietar al echipei.'
+    notify: '<gold>Esti acum proprietarul echipei tale.'
+  warps:
+    none: '<dark_red>Echipa respectiva nu a stabilit nicio teleportare.'
+  setwarp:
+    success: '<gold>Aceasta teleportare a fost stabilita.'
+    max: '<gold>Echipa respectiva a atins deja numarul maxim de teleportari.'
+  purge:
+    confirm: '<gold>Ruleaza aceasta comanda in urmatoarele 10 secunde pentru a confirma, <dark_red>ACEASTA NU POATE FI ANULATa sI VA RESETA SCORURILE PENTRU TOATE ECHIPELE!'
+    success: '<gold>Echipele au fost curatate.'
+  score:
+    tooSmall: '<dark_red>Scorul trebuie sa fie mai mare de 0!'
+    success: '<gold>Scorul echipei respective a fost schimbat.'
+  bal:
+    toSmall: '<dark_red>Soldul trebuie sa fie mai mare de 0!'
+    success: '<gold>Soldul echipei respective a fost schimbat.'
+  update: '<dark_red>A fost lansata o noua versiune a pluginului Better Teams, actualizeaza aici: (https://www.spigotmc.org/resources/better-teams.17129/)'
+  disband:
+    success: '<gold>Echipa respectiva a fost desfiintata cu succes.'
+  color:
+    success: '<gold>Culoarea echipei respective a fost schimbata.'
+  chest:
+    claim:
+      success: '<gold>Ai revendicat acest chest in numele echipei.'
+    remove:
+      success: '<gold>Ai eliminat cu succes revendicarea de pe acest chest.'
+      notClaimed: '<dark_red>Nicio echipa nu a revendicat acest chest.'
+    all:
+      success: '<gold>Toate revendicarile au fost eliminate de pe echipa respectiva.'
+    disable:
+      already: '<dark_red>Revendicarea de lazi este deja dezactivata.'
+      success: '<gold>Revendicarea de lazi a fost dezactivata.'
+    disabled:
+      bc: '<gold><bold>Toate lazile revendicate pot fi deschise acum.'
+    enable:
+      already: '<dark_red>Revendicarea de lazi este deja activata.'
+      success: '<gold>Revendicarea de lazi a fost activata.'
+    enabled:
+      bc: '<gold><bold>Toate lazile revendicate sunt blocate acum.'
+  teleport:
+    success: '<gold>Toti membrii online ai echipei respective au fost teleportati.'
+    noWorld: '<dark_red>Lumea specificată nu a fost găsită'
+    all.success: '<gold>Toți membrii online ai tuturor echipelor au fost teleportați'
+    all.home.success: '<gold>Toți membrii online ai tuturor echipelor cu o casă au fost teleportați'
+  versionlanguage: '<gold>Limba selectata: <aqua>{0}'
+nametag:
+  
+  syntax: '<gold><bold>{0}<reset> '
+holo:
+  leaderboard: '<yellow>Leaderboard'
+  syntax: '<gold>{0}: <aqua>{1}'
+  msyntax: '<gold>{0}: <aqua>${1}'
+top:
+  leaderboard: '<yellow>Leaderboard'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+  divide: '<white>...'
+baltop:
+  leaderboard: '<yellow>Leaderboard'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+  divide: '<white>...'
+spy:
+  stop: '<gold>Nu mai spionezi mesajele echipei.'
+  start: '<gold>Acum spionezi mesajele echipei.'
+  team: '<gray>[<aqua>{0}<gray>]<white>{1}<white>: {2}'
+  ally: '<gray>[<light_purple>{0}<gray>]<white>{1}<white>: {2}'
+uclaim:
+  team: '<dark_red>Trebuie sa faci parte dintr-o echipa pentru a crea o revendicare.'
+  member: '<dark_red>Nu poti parasi revendicarea echipei tale.'
+  kick: '<dark_red>Nu poti exclude membri ai propriei echipe din revendicarea ta.'
+  ban: '<dark_red>Nu poti interzice membri ai propriei echipe din revendicarea ta.'
+  dissolve: '<dark_red>Echipa ta a fost desfiintata, asa ca revendicarea ta a fost dizolvata.'
+help:
+  description: Vezi si schimba descrierea echipei tale.
+  ban: Interzice jucatorul specificat din echipa ta.
+  home: Te teleporteaza la baza echipei tale.
+  help: Vezi aceasta pagina de ajutor.
+  promote: Promoveaza jucatorul specificat in echipa ta.
+  demote: Retrogradeaza jucatorul specificat in echipa ta.
+  unban: Ridica interdictia jucatorului specificat din echipa ta.
+  kick: Da afara jucatorul din echipa ta.
+  leave: Paraseste echipa curenta.
+  chat: Trimite un mesaj doar echipei tale.
+  name: Vezi si schimba numele echipei tale.
+  sethome: Stabileste baza echipei tale.
+  create: Creeaza o echipa cu numele specificat.
+  invite: Invita jucatorul specificat in echipa ta.
+  disband: Desfiinteaza echipa ta curenta.
+  open: Comuta daca echipa este doar pe baza de invitatii.
+  info: Vezi informatii despre jucatorul / echipa specificata.
+  color: Schimba culoarea echipei tale.
+  deposit: Depune bani in balanta echipei tale.
+  bal: Vezi balanta echipei tale.
+  withdraw: Retrage bani din balanta echipei tale.
+  title: Schimba titlul jucatorului in echipa ta.
+  top: Vezi primele echipe.
+  rank: Vezi rangul unei echipe.
+  join: Alatura-te echipei specificate.
+  delhome: Sterge baza echipei tale.
+  ally: Folosit pentru a solicita o alianta cu o alta echipa.
+  neutral: Elimina aliatii si respinge cererile de alianta.
+  allychat: Trimite un mesaj doar aliatilor tai.
+  echest: Vezi enderchest-ul echipei tale.
+  setwarp: Stabileste o teleportare pentru restul echipei tale.
+  warps: Vezi lista teleportarilor echipei tale.
+  rankup: Promoveaza echipa ta pentru a obtine mai multe avantaje.
+  tag: Stabileste eticheta echipei tale.
+  delwarp: Sterge acea teleportare din echipa ta.
+  chest: ''
+  pvp: Comuta daca pvp este activat pentru echipa ta.
+  baltop: Vezi cele mai bogate echipe.
+  list: Obtine o lista a tuturor echipelor de pe server.
+  warp: Teleporteaza-te la o locatie stabilita de echipa ta.
+command:
+  
+  create: create
+  leave: leave
+  disband: disband
+  description: description
+  invite: invite
+  join: join
+  name: name
+  open: open
+  info: info
+  kick: kick
+  promote: promote
+  demote: demote
+  home: home
+  sethome: sethome
+  ban: ban
+  unban: unban
+  chat: chat
+  color: color
+  title: title
+  top: top
+  baltop: baltop
+  rank: rank
+  delhome: delhome
+  ally: ally
+  neutral: neutral
+  allychat: allychat
+  list: list
+  warp: warp
+  setwarp: setwarp
+  delwarp: delwarp
+  warps: warps
+  echest: echest
+  rankup: rankup
+  tag: tag
+  pvp: pvp
+  claim: claim
+  remove: remove
+  removeall: removeall
+  chest: chest
+  reload: reload
+  chatspy: chatspy
+  version: version
+  purge: purge
+  setrank: setrank
+  add: add
+  set: set
+  score: score
+  enableclaims: enableclaims
+  disableclaims: disableclaims
+  teleport: teleport
+  money: money
+  deposit: deposit
+  bal: bal
+  withdraw: withdraw
+internalError: '<dark_red>Ceva nu a mers bine executand aceasta comanda, te rugam sa raportezi unu-i owner.'

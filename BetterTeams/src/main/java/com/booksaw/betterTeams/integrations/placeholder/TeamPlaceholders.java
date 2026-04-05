@@ -1,0 +1,193 @@
+package com.booksaw.betterTeams.integrations.placeholder;
+
+import com.booksaw.betterTeams.Team;
+import com.booksaw.betterTeams.TeamPlayer;
+import com.booksaw.betterTeams.Utils;
+import com.booksaw.betterTeams.message.MessageManager;
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
+import me.clip.placeholderapi.expansion.PlaceholderExpansion;
+import org.bukkit.OfflinePlayer;
+import org.bukkit.plugin.Plugin;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+
+public class TeamPlaceholders extends PlaceholderExpansion {
+	private final Plugin plugin;
+
+	private final LoadingCache<String, Optional<String>> placeholderCache;
+
+	public TeamPlaceholders(Plugin plugin) {
+		this.plugin = plugin;
+		int duration = plugin.getConfig().getInt("invalidateCacheSeconds", 60);
+		CacheBuilder<Object, Object> builder = CacheBuilder.newBuilder()
+				.maximumSize(300);
+
+		if (duration > 0) {
+			builder.expireAfterWrite(duration, TimeUnit.SECONDS);
+		}
+
+		placeholderCache = builder.build(
+				CacheLoader.from(key ->
+						Optional.ofNullable(getStaticPlaceholder(key))
+				)
+		);
+	}
+
+	public void invalidateCache() {
+		placeholderCache.invalidateAll();
+	}
+
+	@Override
+	public boolean persist() {
+		return true;
+	}
+
+	@Override
+	public boolean canRegister() {
+		return true;
+	}
+
+	@Override
+	public @NotNull String getAuthor() {
+		return plugin.getDescription().getAuthors().toString();
+	}
+
+	@Override
+	public @NotNull String getIdentifier() {
+		return "betterTeams";
+	}
+
+	@Override
+	public @NotNull String getVersion() {
+		return plugin.getDescription().getVersion();
+	}
+
+	@Override
+	public @Nullable String onRequest(OfflinePlayer player, @NotNull String identifier) {
+		String originalIdentifier = identifier;
+		identifier = identifier.toLowerCase();
+		String[] split = identifier.split("_");
+
+		try {
+			String cachedValue = placeholderCache.get(identifier).orElse(null);
+			if (cachedValue != null) return cachedValue;
+		} catch (ExecutionException ignored) {
+			return null;
+		}
+
+		if (player == null) return null;
+
+		if ("inteam".equalsIgnoreCase(split[0])) {
+			return Team.getTeamManager().isInTeam(player)
+					? MessageManager.getMessage("placeholder.inteam")
+					: MessageManager.getMessage("placeholder.notinteam");
+		}
+
+		Team team = Team.getTeam(player);
+		if (team == null) return MessageManager.getMessage("placeholder.noTeam");
+
+		TeamPlayer tp = team.getTeamPlayer(player);
+		if (tp == null) return MessageManager.getMessage("placeholder.noTeam");
+
+		String placeholderType = split[0];
+		if (TeamPlaceholderService.requiresData(placeholderType)) {
+			String data = originalIdentifier.substring(originalIdentifier.indexOf('_') + 1);
+			return TeamPlaceholderService.getPlaceholder(placeholderType, team, tp, data);
+		}
+		return TeamPlaceholderService.getPlaceholder(identifier, team, tp);
+	}
+
+	private String getStaticPlaceholder(String identifier) {
+		String[] split = identifier.split("_");
+
+		return switch (split[0]) {
+			case "position" -> processRankedTeamDataPlaceholder(identifier, SortType.SCORE);
+			case "balanceposition" -> processRankedTeamDataPlaceholder(identifier, SortType.BALANCE);
+			case "membersposition" -> processRankedTeamDataPlaceholder(identifier, SortType.MEMBERS);
+			case "static" -> processStaticTeamPlaceholder(split);
+			case "staticplayer" -> processStaticTeamPlayerPlaceholder(split);
+			default -> null;
+		};
+	}
+
+	private String processRankedTeamDataPlaceholder(String identifier, SortType type) {
+		String[] split = identifier.split("_");
+		if (split.length < 3) {
+			return null;
+		}
+
+		int value;
+		try {
+			value = Integer.parseInt(split[2]);
+		} catch (NumberFormatException e) {
+			return null;
+		}
+
+		if (value <= 0) {
+			return null;
+		}
+		String[] teams = switch (type) {
+			case BALANCE -> Team.getTeamManager().sortTeamsByBalance();
+			case MEMBERS -> Team.getTeamManager().sortTeamsByMembers();
+			default -> Team.getTeamManager().sortTeamsByScore();
+		};
+
+		Team team;
+		try {
+			team = Team.getTeam(teams[value - 1]);
+		} catch (ArrayIndexOutOfBoundsException e) {
+			return MessageManager.getMessage("placeholder.noTeam");
+		}
+
+		if (team == null) {
+			return MessageManager.getMessage("placeholder.noTeam");
+		}
+
+		return TeamPlaceholderService.getPlaceholder(split[1], team, null);
+	}
+
+	private String processStaticTeamPlaceholder(String[] split) {
+
+		if (split.length < 3) {
+			return null;
+		}
+
+		Team team = Team.getTeam(split[2]);
+		if (team == null) {
+			return MessageManager.getMessage("placeholder.noTeam");
+		}
+		return TeamPlaceholderService.getPlaceholder(split[1], team, null);
+	}
+
+	private String processStaticTeamPlayerPlaceholder(String[] split) {
+		if (split.length < 3) {
+			return null;
+		}
+		OfflinePlayer selectedPlayer = Utils.getOfflinePlayer(split[2]);
+		if (selectedPlayer == null) {
+			return MessageManager.getMessage("placeholder.noTeam");
+		}
+
+		Team team = Team.getTeam(selectedPlayer);
+		if (team == null) {
+			return MessageManager.getMessage("placeholder.noTeam");
+		}
+
+		TeamPlayer tp = team.getTeamPlayer(selectedPlayer);
+		if (tp == null) {
+			return MessageManager.getMessage("placeholder.noTeam");
+		}
+
+		return TeamPlaceholderService.getPlaceholder(split[1], team, tp);
+	}
+
+	private enum SortType {
+		SCORE, BALANCE, MEMBERS
+	}
+}

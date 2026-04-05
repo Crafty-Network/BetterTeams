@@ -1,0 +1,386 @@
+# All translations in this file are community made, this means there may be errors / missed translations, if you are able to improve upon any translation it would be greatly appreciated
+
+# Able to help with translations? Either improving a already existing language, or adding a whole new one. Join the discord server: https://discord.gg/JF9DNs3 
+# or message me on spigot: https://www.spigotmc.org/members/booksaw123.120955/
+
+# Any placeholders from placeholder API will work in this file
+
+# Credit for contributions to this file: kikalo, ramaziqadagishvili, icloser
+
+invalidArg: "<dark_red>Неправильні аргументи, допомога"
+inTeam: "<dark_red>Ви повинні бути в команді, щоб зробити це"
+internalError: "<dark_red>Щось пішло не так під час виконання команди, будь ласка, повідомте власникам сервера"
+notInTeam: "<dark_red>Ви повинні покинути свою команду перед тим, як зробити це"
+needOwner: "<dark_red>Ви повинні бути власником команди, щоб зробити це"
+needAdmin: "<dark_red>Ви повинні бути адміністратором або власником команди, щоб зробити це"
+needPlayer: "<dark_red>Ви повинні бути гравцем, щоб зробити це"
+noPlayer: "<dark_red>Вказаний гравець не знайдений"
+notTeam: "<gold><dark_red>Така команда не існує, спробуйте <aqua>/team create <ім'я>"
+needSameTeam: "<gold>Ви не в тій же команді, що і ця особа"
+noPerm: "<dark_red>У вас немає дозволу на це"
+prefixSyntax: "<gray>[{0}<gray>] <reset>{1}"
+bannedChar: "<dark_red>Використаний вами символ заборонений"
+noTeam: "<dark_red>Така команда не існує"
+loading: "<gold>Завантаження"
+cooldown.wait: "<dark_red>Вам потрібно зачекати {0} секунд, перш ніж повторити це!"
+cost.tooPoor: "<dark_red>Вам не вистачає коштів для виконання цієї команди"
+cost.run: "<dark_red><bold>-{0}"
+placeholder.noTeam: ""
+placeholder.noDescription: ""
+placeholder.money: "{0}"
+placeholder.owner: Власник
+placeholder.admin: Адміністратор
+placeholder.default: Звичайний
+placeholder.name: "{0}"
+placeholder.tag: "{0}"
+placeholder.displayname: "{0}"
+placeholder.inteam: "true"
+placeholder.notinteam: "false"
+placeholder.noTitle: ""
+prefix.owner: " **"
+prefix.admin: " *"
+prefix.default: " "
+create.exists: "<gold>Така команда вже існує"
+create.success: "<gold>Вашу команду створено"
+create.banned: "<dark_red>Це ім'я команди заборонено"
+create.maxLength: "<dark_red>Це ім'я команди занадто довге"
+leave.success: "<gold>Ви покинули команду"
+leave.lastOwner: "<gold>Ви є єдиним власником в команді. Або підвищіть когось ще або використайте <aqua>/team disband <gold>для розформування команди"
+announce.join: '<dark_aqua>{0} <gray>приєднався до команди {1}'
+announce.leave: '<dark_aqua>{0} <gray>покинув команду {1}'
+announce.disband: '<gray>Команда {0} була розпущена'
+rank.noTeam: "<dark_red>Команда не знайдена"
+rank.info: "<gold>Позиція в команді:"
+rank.infos: "<gold>Ранг команди: <aqua>{0} <gray>(необхідно {1} балів для підвищення рангу)"
+rank.infom: "<gold>Ранг команди: <aqua>{0} <gray>(необхідно ${1} для підвищення рангу)"
+rank.infomm: "<gold>Ранг команди: <aqua>{0} <gray>(ви досягли максимального рангу)"
+rank.syntax: "<aqua>{0}: <gold>{1} <gray>({2})"
+delhome.success: "<gold>Home команди успішно видалений"
+delhome.noHome: "<dark_red>Ваша команда не встановила home"
+disband.success: "<gold>Ви розформували команду"
+disband.confirm: "<gold>Введіть <aqua>/team disband <gold>ще раз для підтвердження"
+description.success: "<gold>Ви змінили опис команди"
+description.view: "<gold>Опис команди: {0}"
+description.noDesc: "<gold>Опис команди відсутній"
+description.noPerm: "<dark_red>У вас немає дозволу змінювати опис"
+name.success: "<gold>Ви змінили ім'я команди"
+name.view: "<gold>Ім'я команди: {0}"
+name.exists: "<dark_red>Така команда вже існує"
+name.noPerm: "<dark_red>У вас немає дозволу на зміну імені команди"
+invite.success: "<gold>Той гравець був запрошений"
+invite.invite: "<gold>Вас запросили приєднатися до команди {0}. Введіть <aqua>/team join <команда> <gold>щоб приєднатися"
+invite.inTeam: "<gold>Цей гравець вже в команді"
+invite.banned: "<gold>Цей гравець забанений в вашій команді"
+invite.full: "<gold>Ваша команда має максимальний розмір, видаліть гравця перед запрошенням нових"
+invite.expired: "<dark_red>Запрошення від <aqua>{0} <dark_red>закінчилося"
+join.success: "<gold>Ви приєдналися до команди"
+join.notify: "<gold>Ласкаво просимо до команди, <aqua>{0}<gold>!"
+join.notInvited: "<gold><dark_red>Вас не запрошено до цієї команди"
+join.banned: "<gold><dark_red>Вас забанили в цій команді"
+join.full: "<dark_red>Ця команда заповнена"
+open.successopen: "<gold>Ваша команда тепер відкрита для всіх"
+open.successclose: "<gold>Ваша команда тепер доступна лише за запрошенням"
+title.change: "<gold>Ваш заголовок змінено на <aqua>{0}"
+title.remove: "<gold>Ваш заголовок був видалений"
+title.success: "<gold>Цей заголовок був змінений"
+title.tooLong: "<dark_red>Цей заголовок занадто довгий"
+title.noFormat: "<dark_red>У вас немає дозволу на форматування заголовків"
+title.noColor: "<dark_red>У вас немає дозволу на використання кольорів у заголовках"
+title.reset: "<gold>Ваш заголовок скинутий"
+title.noPerm: "<dark_red>У вас немає дозволу змінювати заголовок команди"
+info.needTeam: "<gold>Команда або гравець з таким ім'ям не знайдений"
+info.name: "<gold>Ім'я: <aqua>{0}"
+info.description: "<gold>Опис: <aqua>{0}"
+info.open: "<gold>Відкрита: <aqua>{0}"
+info.level: "<gold>Рівень: <aqua>{0}"
+info.owner: "<gold>Власники: <aqua>{0}"
+info.admin: "<gold>Адміністратори: <aqua>{0}"
+info.default: "<gold>Учасники: <aqua>{0}"
+info.tag: "<gold>Тег: <aqua>{0}"
+info.fail: "<gold>Команда або гравець з таким ім'ям не знайдений"
+info.score: "<gold>Бали: <aqua>{0}"
+info.money: "<gold>Баланс: <aqua>{0}"
+info.ally: "<gold>Союзники: <aqua>{0}"
+kick.success: "<gold>Той гравець був вигнаний з команди"
+kick.notify: "<gold>Вас вигнали з команди {0}"
+kick.title: "<dark_red>Вас вигнали з вашої команди"
+kick.noPerm: "<gold>У вас немає дозволу виганяти цю людину"
+ban.success: "<gold>Той гравець заблокований"
+ban.notify: "<gold>Вас заблокували в команді {0}"
+ban.title: "<dark_red>Вас заблокували в вашій команді"
+ban.noPerm: "<gold>У вас немає дозволу блокувати цю людину"
+ban.already: "<gold>Той гравець вже заблокований"
+unban.success: "<gold>Той гравець був розблокований"
+unban.notify: "<gold>Вас розблокували в команді {0}"
+unban.noPerm: "<gold>У вас немає дозволу розблоковувати цю людину"
+unban.not: "<gold>Той гравець не заблокований"
+promote.success: "<gold>Той гравець отримав підвищення"
+promote.noPerm: "<gold>У вас немає дозволу підвищувати цю людину"
+promote.max: "<gold>Та людина вже максимального рангу"
+promote.notify: "<gold>Вас підвищено!"
+promote.maxAdmins: "<dark_red>Ваша команда має максимальну кількість адміністраторів, понизьте когось або підвищіть рівень команди"
+promote.maxOwners: "<dark_red>Ваша команда має максимальну кількість власників, понизьте когось або підвищіть рівень команди"
+demote.success: "<gold>Той гравець був понижений"
+demote.noPerm: "<gold>У вас немає дозволу понижувати цю людину"
+demote.min: "<gold>Та людина вже найнижчого рангу"
+demote.notify: "<gold>Вас понизили"
+demote.lastOwner: "<gold>Ви не можете понизити останнього власника, спочатку підвищіть когось іншого"
+demote.maxAdmins: "<dark_red>Ваша команда має максимальну кількість адміністраторів, видаліть адміністратора або підвищіть рівень команди"
+home.success: "<gold>Вас телепортовано"
+home.noHome: "<gold>Ваша команда не встановила home"
+home.world: "<dark_red>Home команди не знайдений"
+sethome.success: "<gold>Home команди встановлений"
+sethome.noPerm: "<gold>У вас недостатньо високий ранг для встановлення home команди"
+chat.enabled: "<gold>Тепер ваші повідомлення надсилаються в чат команди"
+chat.disabled: "<gold>Тепер ваші повідомлення надсилаються в глобальний чат"
+color.success: "<gold>Колір вашої команди був змінений"
+color.fail: "<gold>Цей колір не впізнається"
+color.banned: "<dark_red>Ви можете використовувати тільки кольори, а не коди форматування"
+deposit.tooLittle: "<dark_red>Ви не можете здійснити внесення негативних сум"
+deposit.fail: "<dark_red>Не вдалося здійснити внесення"
+deposit.success: "<gold>Гроші внесені"
+deposit.max: "<dark_red>Це перевищує максимальний дозволений баланс команди"
+withdraw.tooLittle: "<dark_red>Ви не можете здійснити зняття негативних сум"
+withdraw.fail: "<dark_red>Не вдалося здійснити зняття"
+withdraw.success: "<gold>Гроші зняті"
+withdraw.notEnough: "<gold>У вашої команди недостатньо грошей"
+ally.already: "<dark_red>Ви вже в союзі з цією командою"
+ally.success: "<gold>Ваші команди тепер у союзі"
+ally.ally: "<gold>Ваша команда тепер у союзі з <aqua>{0}"
+ally.requested: "<gold>Вам надіслано запит на союз"
+ally.request: "<aqua>{0} <gold>надіслав вам запит на союз. Використовуйте <aqua>/team ally <команда> <gold>для підтвердження"
+ally.self: "<dark_red>Ви не можете укласти союз із своєю власною командою"
+ally.from: "<gold>У вас є запити на союз від: {0}"
+ally.noRequests: "<dark_red>У вас немає запитів на союз"
+ally.onJoin: "<gold>У вас є нові запити на союз. Використовуйте <aqua>/team ally <gold>щоб переглянути їх"
+ally.limit: "<dark_red>Досягнуто обмеження на кількість союзників"
+ally.alreadyrequest: "<dark_red>Ви вже надіслали запит на союз з цією командою"
+allychat.disabled: "<gold>Ваші повідомлення тепер не надсилаються в чат союзників"
+allychat.enabled: "<gold>Ваші повідомлення тепер надсилаються в чат союзників"
+allychat.syntax: "<light_purple>[{0}]<white>{1}<white>: {2}"
+neutral.self: "<gold>Це ваша власна команда"
+neutral.requestremove: "<gold>Запит на союз був видалений"
+neutral.reject: "<dark_red>Ваш запит на союз з <aqua>{0} <dark_red>був відхилений"
+neutral.notAlly: "<dark_red>Ви не у союзі з цією командою"
+neutral.success: "<dark_red>Ви більше не у союзі з цією командою"
+neutral.remove: "<dark_red>Ви більше не у союзі з <aqua>{0}"
+list.noPage: "<gold>Така сторінка не знайдена"
+list.header: "<gray>--- <aqua>Список команд, сторінка {0} <gray>---"
+list.body: "<gold>{0}: <aqua>{1}"
+list.footer: "<gray>--- <gold>використайте <aqua>/team list [сторінка] <gold>для перегляду більше <gray>---"
+setowner.use: "<gold>Ви не можете підвищити цього гравця. Використайте <aqua>/team setowner <гравець> <gold>для надання прав власника"
+setowner.success: "<gold>Той гравець тепер власник"
+setowner.notify: "<gold>Ви тепер власник вашої команди"
+setowner.max: "<dark_red>Той гравець вже власник"
+setwarp.exist: "<dark_red>Такий варп вже існує"
+setwarp.max: "<dark_red>Ваша команда вже досягла максимальної кількості варпів"
+setwarp.success: "<gold>Той варп був створений"
+setwarp.char: "<dark_red>Це ім'я варпа містить заборонені символи"
+warp.nowarp: "<dark_red>Такого варпа не існує"
+warp.invalidPassword: "<dark_red>Неприпустимий пароль для цього варпу"
+warp.success: "<gold>Вас телепортовано"
+warps.syntax: "<gold>Варпи: <aqua>{0}"
+warps.none: "<dark_red>Ваша команда не має встановлених варпів"
+warp.world: "<dark_red>Місцезнаходження варпу не знайдено"
+delwarp.success: "<dark_red>Той варп був видалений"
+chat.syntax: "<aqua>[Команда]<white>{0}<white>: {1}"
+teleport.fail: "<dark_red>Телепортацію не вдалося здійснити"
+teleport.wait: "<gold>Зачекайте <aqua>{0} <gold>секунд"
+chest.claim.noChest: "<dark_red>Ви не стоїте на скриньці"
+chest.claim.limit: "<dark_red>Ваша команда вже зайняла максимальну кількість скриньок"
+chest.claim.claimed: "<dark_red>Ця скринька вже зайнята"
+chest.claim.success: "<gold>Ви зайняли цю скриньку"
+chest.remove.noChest: "<dark_red>Ви не стоїте на скриньці"
+chest.remove.notClaimed: "<dark_red>Ваша команда не зайняла цю скриньку"
+chest.remove.success: "<dark_red>Ваша команда більше не займає цю скриньку"
+chest.all.success: "<gold>Усі скриньки розібрані"
+chest.claimed: "<dark_red>Цю скриньку займає <green>{0}"
+
+echest.echest: 'Enderchest'
+
+pvp.enabled: "<gold>PvP активовано для вашої команди"
+pvp.disabled: "<gold>PvP вимкнено для вашої команди"
+
+rankup.max: "<dark_red>Ви вже досягли максимального рангу"
+rankup.score: "<dark_red>Для підвищення рангу вам потрібно набрати {0} балів"
+rankup.money: "<dark_red>Для підвищення рангу ваша команда має мати {0} грошей на балансі"
+rankup.success: "<gold>Ваша команда підвищила рівень"
+
+tag.banned: "<dark_red>Цей тег заборонений"
+tag.success: "<gold>Ваш тег успішно змінено"
+tag.maxLength: "<dark_red>Цей тег занадто довгий"
+tag.noPerm: "<dark_red>У вас немає дозволу змінювати тег команди"
+admin.cancel: "<dark_red>Команда була скасована іншим плагіном"
+admin.tag.success: "<gold>Тег цієї команди був успішно змінений"
+admin.setrank.success: "<gold>Рівень цієї команди був встановлений"
+admin.setrank.no: "<dark_red>Такий рівень не існує або не налаштований правильно"
+
+admin.config.reload: "<gold>Плагін BetterTeams був перезавантажений (Якщо у вас виникають проблеми при використанні цієї команди, перезапустіть сервер)"
+admin.holo.create.success: "<gold>Голограма створена"
+admin.holo.remove.noHolo: "<dark_red>Голограми не знайдено"
+admin.holo.remove.success: "<gold>Голограма видалена"
+admin.title.success: "<gold>Заголовок цього гравця був змінений"
+admin.title.reset: "<gold>Заголовок цього гравця скинутий"
+admin.version: "<gold>Поточна версія плагіна: <aqua>{0}"
+admin.versionstorage: "<gold>Метод зберігання: <aqua>{0}"
+admin.versionversion: "<gold>Версія Minecraft: <aqua>{0}"
+admin.versionlanguage: "<gold>Обрана мова: <aqua>{0}"
+admin.noTeam: "<dark_red>Це не команда"
+admin.home.success: "<gold>Вас телепортовано до домашньої точки команди"
+admin.home.noHome: "<dark_red>Ця команда не встановила домашньої точки"
+admin.name.success: "<gold>Ім'я команди було змінено"
+admin.description.success: "<gold>Опис цієї команди був змінений"
+admin.open.successopen: "<gold>Ця команда тепер відкрита для всіх"
+admin.open.successclose: "<gold>Ця команда тепер доступна лише за запрошенням"
+admin.invite.success: "<gold>Той гравець був запрошений до цієї команди"
+admin.create.success: "<gold>Ця команда була створена"
+admin.join.banned: "<dark_red>Той гравець заблокований в цій команді"
+admin.join.success: "<gold>Той гравець приєднався до команди"
+admin.join.notify: "<gold>Ви приєдналися до команди <aqua>{0}"
+admin.join.full: "<dark_red>Ця команда заповнена"
+admin.notInTeam: "<gold>Той гравець не може бути в команді, не беручи участь у діалогу"
+admin.inTeam: "<dark_red>Той гравець не в команді"
+admin.leave.success: "<gold>Той гравець покинув команду"
+admin.leave.notify: "<gold>Ви покинули команду"
+admin.demote.notify: "<gold>Вас понизили"
+admin.demote.success: "<gold>Той гравець був понижений"
+admin.demote.min: "<dark_red>Той гравець не може бути понижений далі"
+admin.demote.maxAdmins: "<dark_red>Та команда вже має максимальну кількість адміністраторів, видаліть одного перед тим, як понижувати цього гравця"
+admin.promote.max: "<gold>Той гравець вже максимального рангу"
+admin.promote.notify: "<gold>Вас підвищено"
+admin.promote.success: "<gold>Той гравець був підвищений"
+admin.promote.owner: "<gold>Конфігурація обмежує кожній команді мати лише одного власника, використайте <aqua>/teama setowner <гравець> <gold>для встановлення цього гравця в якості власника"
+admin.promote.maxAdmins: "<dark_red>Та команда вже має максимальну кількість адміністраторів, видаліть одного перед тим, як підвищувати цього гравця"
+admin.promote.maxOwners: "<dark_red>Та команда вже має максимальну кількість власників, видаліть одного перед тим, як підвищувати цього гравця"
+admin.setowner.already: "<dark_red>Той гравець вже є власником"
+admin.setowner.nonotify: "<gold>Вас більше не є власником команди"
+admin.setowner.success: "<gold>Той гравець є новим власником команди"
+admin.setowner.notify: "<gold>Ви тепер є власником вашої команди"
+admin.warps.none: "<dark_red>Ця команда не встановила жодних варпів"
+admin.setwarp.success: "<gold>Цей варп був встановлений"
+admin.setwarp.max: "<gold>Ця команда вже встановила максимальну кількість варпів"
+admin.purge.confirm: "<gold>Виконайте цю команду протягом наступних 10 секунд, щоб підтвердити, <dark_red>ЦЕ НЕ МОЖЛИВО ВІДМІНИТИ І ЗРЕШТОРЕНЕ ПОНИЖЕННЯ ДЛЯ ВСІХ КОМАНД"
+admin.purge.success: "<gold>Команди були очищені"
+admin.score.tooSmall: "<dark_red>Бал повинен бути більше 0"
+admin.score.success: "<gold>Бал команди був змінений"
+admin.bal.toSmall: "<dark_red>Баланс повинен бути більше 0"
+admin.bal.success: "<gold>Баланс команди був змінений"
+admin.update: "<dark_red>Доступна нова версія плагіна BetterTeams. Оновіться за посиланням: https://www.spigotmc.org/resources/better-teams.17129/"
+admin.disband.success: "<gold>Та команда була успішно розпущена"
+admin.color.success: "<gold>Колір цієї команди був змінений"
+admin.chest.claim.success: "<gold>Ви зайняли цей сундук від імені команди"
+admin.chest.remove.success: "<gold>Ви успішно видалили заявку на цей сундук"
+admin.chest.all.success: "<gold>Всі заявки видалені з цієї команди"
+admin.chest.remove.notClaimed: "<dark_red>Жодна команда не заявила цей сундук"
+admin.chest.disable.already: "<dark_red>Заявки на сундук вже вимкнені"
+admin.chest.disable.success: "<gold>Заявки на сундук були вимкнені"
+admin.chest.disabled.bc: "<gold><bold>Всі заявлені сундуки можна відкрити"
+admin.chest.enable.already: "<dark_red>Заявки на сундук вже ввімкнені"
+admin.chest.enable.success: "<gold>Заявки на сундук були увімкнені"
+admin.chest.enabled.bc: "<gold><bold>Всі заявлені сундуки заблоковані"
+admin.teleport.success: "<gold>Всі онлайн-учасники цієї команди були телепортовані"
+admin.teleport.noWorld: '<dark_red>Зазначений світ не знайдено'
+admin.teleport.all.success: '<gold>Всі онлайн-члени всіх команд були телепортовані'
+admin.teleport.all.home.success: '<gold>Всі онлайн-члени всіх команд з домом були телепортовані'
+
+nametag.syntax: "<gold><bold>{0}<reset> "
+holo.leaderboard: "<gold>Таблиця лідерів"
+holo.syntax: "<gold>{0}: <aqua>{1}"
+holo.msyntax: "<gold>{0}: <aqua>${1}"
+top.leaderboard: "<gold>Таблиця лідерів"
+top.syntax: "<aqua>{0}: <gold>{1} <gray>({2})"
+top.divide: "<white>..."
+baltop.leaderboard: "<gold>Таблиця лідерів"
+baltop.syntax: "<aqua>{0}: <gold>{1} <gray>({2})"
+baltop.divide: "<white>..."
+spy.stop: "<gold>Ви більше не шпигуєте за повідомленнями команди"
+spy.start: "<gold>Ви тепер шпигуєте за повідомленнями команди"
+spy.team: "<gray>[<aqua>{0}<gray>]<white>{1}<white>: {2}"
+spy.ally: "<gray>[<light_purple>{0}<gray>]<white>{1}<white>: {2}"
+
+uclaim.team: "<dark_red>Ви повинні бути в команді, щоб створити заявку"
+uclaim.member: "<dark_red>Ви не можете залишити заявку своєї команди"
+uclaim.kick: "<dark_red>Ви не можете вигнати учасників вашої власної команди із заявки"
+uclaim.ban: "<dark_red>Ви не можете заблокувати учасників вашої власної команди з заявки"
+uclaim.dissolve: "<dark_red>Ваша команда була розпущена, тому ваша заявка була розтрачена"
+
+
+help.description: View and change your team's description
+help.ban: Bans the specified player from your team
+help.home: Teleports you to your team's home
+help.help: View this help page
+help.promote: Promote the specified player within your team
+help.demote: Demote the specified player within your team
+help.unban: Unbans the specified player from your team
+help.kick: Kick that player from your team
+help.leave: Leave your current team
+help.chat: Send a message only to your team
+help.name: View and change your team's name
+help.sethome: Sets your team's home
+help.create: Create a team with the specified name
+help.invite: Invite the specified player to your team
+help.disband: Disband your current team
+help.open: Toggle if the team is invite only
+help.info: View information about the specified player / team
+help.color: Change your teams color
+help.deposit: Deposit money into the teams balance
+help.bal: View your teams balance
+help.withdraw: Withdraw money from the teams balance
+help.title: Change that players title within the team
+help.top: View the top teams
+help.rank: View the rank of a team
+help.join: Join the specified team
+help.delhome: Delete your team's home
+help.ally: Used to request an alliance with another team
+help.neutral: Remove allies and reject ally requests
+help.allychat: Send a message only to your allies
+
+command.create: create
+command.leave: leave
+command.disband: disband
+command.description: description
+command.invite: invite
+command.join: join
+command.name: name
+command.open: open
+command.info: info
+command.kick: kick
+command.promote: promote
+command.demote: demote
+command.home: home
+command.sethome: sethome
+command.ban: ban
+command.unban: unban
+command.chat: chat
+command.color: color
+command.title: title
+command.top: top
+command.baltop: baltop
+command.rank: rank
+command.delhome: delhome
+command.ally: ally
+command.neutral: neutral
+command.allychat: allychat
+command.list: list
+command.warp: warp
+command.setwarp: setwarp
+command.delwarp: delwarp
+command.warps: warps
+command.echest: echest
+command.rankup: rankup
+command.tag: tag
+command.pvp: pvp
+command.claim: claim
+command.remove: remove
+command.removeall: removeall
+command.chest: chest
+command.reload: reload
+command.chatspy: chatspy
+command.version: version
+command.purge: purge
+command.setrank: setrank
+command.add: add
+command.set: set
+command.score: score
+command.enableclaims: enableclaims
+command.disableclaims: disableclaims

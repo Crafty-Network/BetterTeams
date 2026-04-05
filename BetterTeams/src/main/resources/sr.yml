@@ -1,0 +1,483 @@
+# All translations in this file are community made, this means there may be errors / missed translations, if you are able to improve upon any translation it would be greatly appreciated
+
+# Able to help with translations? Either improving a already existing language, or adding a whole new one. Join the discord server: https://discord.gg/JF9DNs3 
+# or message me on spigot: https://www.spigotmc.org/members/booksaw123.120955/
+
+# Any placeholders from placeholder API will work in this file
+
+invalidArg: '<dark_red>Pogresan Argument, pomoc'
+inTeam: '<dark_red>Morate biti u timu da bi ste to uradili'
+notInTeam: '<dark_red>Morate prvo napustiti vas tim kako bi ste to uradili'
+needOwner: '<dark_red>Morate biti vlasnik tima kako bi ste to uradili'
+needAdmin: '<dark_red>Morate biti admin ili vlasnik tima kako bi ste to uradili'
+needPlayer: '<dark_red>Morate biti igrac kako bi ste to uradili'
+noPlayer: '<dark_red>Specificni igrac nije pronadjen'
+notTeam: '<gold><dark_red>Taj tim ne postoji pokusajte <aqua>/team create <name>'
+needSameTeam: '<gold>Niste u istom timu kao ta osoba'
+noPerm: '<dark_red>Nemate dozvolu da uradite to'
+prefixSyntax: '<gray>[{0}<gray>] <reset>{1}'
+bannedChar: '<dark_red>Karakter koji pokusavate da koristite je zabranjen'
+noTeam: '<dark_red>Taj tim ne postoji'
+loading: '<gold>Ucitavanje'
+cooldown:
+  wait: '<dark_red>Morate sacekati jos {0} sekundi pre pokretanja toga!'
+cost:
+  tooPoor: '<dark_red>Previse ste siromasni da bi ste koristili tu komandu'
+  run: '<dark_red><bold>-{0}'
+placeholder:
+  noTeam: ''
+  noDescription: ''
+  money: '{0}'
+  owner: Vlasnik
+  admin: Admin
+  default: Default
+  name: '{0}'
+  tag: '{0}'
+  displayname: '{0}'
+  inteam: 'true'
+  notinteam: 'false'
+  noTitle: ''
+prefix:
+  owner: ' **'
+  admin: ' *'
+  default: ' '
+create:
+  exists: '<gold>Taj tim vec postoji'
+  success: '<gold>Vas tim je kreiran'
+  banned: '<dark_red>Takvo ime tima je zabranjeno'
+  maxLength: '<dark_red>Ime tima je predugacko'
+leave:
+  success: '<gold>Napustili ste tim'
+  lastOwner: '<gold>Jedini ste vlasnik tima, Morate da promovisete nekoga
+    ili koristite <aqua>/team disband <gold>da obrisete tim'
+announce:
+  join: '<dark_aqua>{0} <gray>se pridružio timu {1}'
+  leave: '<dark_aqua>{0} <gray>je napustio tim {1}'
+  disband: '<gray>Tim {0} <gray>je raspušten'
+rank:
+  noTeam: '<dark_red>Tim nije pronadjen'
+  info: '<gold>Pozicija tima:'
+  infos: '<gold>Team rank: <aqua>{0} <gray>({1} bodova potrebno za iduce usavrsavanje)'
+  infom: '<gold>Team rank: <aqua>{0} <gray>(${1} potrebno za iduce promovisanje)'
+  infomm: '<gold>Team rank: <aqua>{0} <gray>(You je najveci rank)'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+delhome:
+  success: '<gold>Vasa tim kuca je obrisana'
+  noHome: '<dark_red>vas tim nema kucu'
+disband:
+  success: '<gold>Obrisali ste tim'
+  confirm: '<gold>Kucajte <aqua>/team disband <gold>ponovo da potvrdite'
+description:
+  success: '<gold>Promenili ste opis tima'
+  view: '<gold>Team Description: {0}'
+  noDesc: '<gold>Tim nema opis'
+  noPerm: '<dark_red>Nemate dozvolu da menjate opis'
+name:
+  success: '<gold>Promenili ste ime tima'
+  view: '<gold>Team name: {0}'
+  exists: '<dark_red>Taj tim vec postoji'
+  noPerm: '<dark_red>Nemate dozvolu da menjate ime tima'
+invite:
+  success: '<gold>Taj igrac je pozvan'
+  invite: '<gold>pozvani ste da se pridruzite timu {0} uradite <aqua>/team join <team> <gold> da se pridruzite
+    timu'
+  inTeam: '<gold>Taj igrac je vec u timu'
+  banned: '<gold>Taj igrac je zabranjen u vasem timu'
+  full: '<gold>Vas tim je put, izbacite nekoga kako bi ste pozvali jos ljudi'
+  expired: '<dark_red>Pozivnica <aqua>{0} je istekla'
+join:
+  success: '<gold>Pridruzili ste se tom timu'
+  notify: '<gold>Dobrodosao/la <aqua>{0} <gold>u tim!'
+  notInvited: '<gold><dark_red>Niste pozvani u taj tim'
+  banned: '<gold><dark_red>Zabranjen vam je ulaz u taj tim'
+  full: '<dark_red>Taj tim je pun'
+open:
+  successopen: '<gold>Vas tim je sada otvoren za svakoga'
+  successclose: '<gold>Ljude se sada mogu pridruziti vasem timu samo uz pozivnicu'
+title:
+  change: '<gold>Vas naslov je sada promenjen u <aqua>{0}'
+  remove: '<gold>Vas naslov je sklonjen'
+  success: '<gold>Vas naslov je promenjen'
+  tooLong: '<dark_red>Taj naslov je previse dugacak'
+  noFormat: '<dark_red>Nemate dozvolu da formatirate naslov'
+  noColor: '<dark_red>nemate dozvolu da bojite naslov'
+  reset: '<gold>Vas naslov je restartovan'
+  noPerm: '<dark_red>Nemate dozvolu da menjate naslov vaseg tima'
+info:
+  needTeam: '<gold>Nijedan igrac ili tim nije pronadjen pod tim imenom'
+  name: '<gold>Name: <aqua>{0}'
+  description: '<gold>Description: <aqua>{0}'
+  open: '<gold>Open: <aqua>{0}'
+  level: '<gold>Level: <aqua>{0}'
+  owner: '<gold>Owners: <aqua>{0}'
+  admin: '<gold>Admins: <aqua>{0}'
+  default: '<gold>Members: <aqua>{0}'
+  tag: '<gold>Tag: <aqua>{0}'
+  fail: '<gold>Nijedan igrac ili tim nije pronadjen pod tim imenom'
+  score: '<gold>Score: <aqua>{0}'
+  money: '<gold>Balance: <aqua>{0}'
+  ally: '<gold>Allies: <aqua>{0}'
+kick:
+  success: '<gold>Taj igrac je izbacen'
+  notify: '<gold>Izbaceni ste iz tima {0}'
+  title: '<dark_red>Izbaceni ste iz vaseg tima'
+  noPerm: '<gold>Nemate dozvolu da izbacite tu osobu'
+ban:
+  success: '<gold>Taj igrac je zabranjen'
+  notify: '<gold>Zabranjen vam je ulaz u tim {0}'
+  title: '<dark_red>Zabranjen vam je ulaz u vas tim'
+  noPerm: '<gold>Nemate dozvolu da izbacite tu osobu'
+  already: '<gold>Tom igracu je vec zabranjen ulazak'
+unban:
+  success: '<gold>Taj igrac ponovo moze da udje u tim'
+  notify: '<gold>Ponovo mozete da udjete u tim {0}'
+  noPerm: '<gold>Nemate dozvolu da dozvolite ulazak tom igracu'
+  not: '<gold>Taj igrac vec moze da udje u tim'
+promote:
+  success: '<gold>Taj igrac je promovisan'
+  noPerm: '<gold>Nemate dozvolu da promovisete tog igraca'
+  max: '<gold>Taj igrac je vec ima maksimalan cin!'
+  notify: '<gold>Promovisani ste!'
+  maxAdmins: '<dark_red>Vas tim ima maksimalan broj administratora, oduzmite cin nekome
+    ili povecajte nivo vaseg tima'
+  maxOwners: '<dark_red>Vas tim vec ima maksimalan broj vlasnika, oduzmite cin nekome
+    ili povecajte nivo vaseg tima'
+demote:
+  success: '<gold>Tom igracu je vec oduzet cin'
+  noPerm: '<gold>Nemate dozvolu da oduzmete cin tom igracu'
+  min: '<gold>Taj igrac vec ima najmanji cim'
+  notify: '<gold>Oduzet vam je cin'
+  lastOwner: '<gold>Ne mozete oduzeti cin glavnom vlasniku'
+  maxAdmins: '<dark_red>Vas tim ima maksimalan broj administratora, oduzmite cin nekome
+    ili povecajte nivo vaseg tima'
+home:
+  success: '<gold>Teleportovani ste'
+  noHome: '<gold>Vas tim nema kucu'
+  world: '<dark_red>Kuca vaseg tima ne moze biti nadjena'
+sethome:
+  success: '<gold>Kuca vaseg tima je postavljena'
+  noPerm: '<gold>Niste dovoljno velik cin kako bi ste postavili kucu tima'
+chat:
+  enabled: '<gold>Vase poruke sada odlaze u tim dopisivanje'
+  disabled: '<gold>Vase poruke sada odlaze u glavno dopisivanje'
+  syntax: '<aqua>[Team]<white>{0}<white>: {1}'
+color:
+  success: '<gold>Boja vaseg tima je promenjena'
+  fail: '<gold>To nije prepoznatljiva boja'
+  banned: '<dark_red>Mozete samo koristiti boje, ne kodove za formatiranje'
+deposit:
+  tooLittle: '<dark_red>ne mozete ubaciti negativnu kolicinu'
+  fail: '<dark_red>Depozit nije uspeo'
+  success: '<gold>Novac je prenet'
+  max: '<dark_red>To bi premasilo maksimalan tim balans'
+withdraw:
+  tooLittle: '<dark_red>Ne mozete podici negativnu kolicinu'
+  fail: '<dark_red>Podizanje nije uspelo'
+  success: '<gold>Novac je podignut'
+  notEnough: '<gold>Vas tim nema dovoljno novca'
+ally:
+  already: '<dark_red>Vec ste saradnici'
+  success: '<gold>Vasi timovi nisu saradnici'
+  ally: '<gold>Vas tim nije saradnik <aqua>{0}'
+  requested: '<gold>Zahtev za saradnju je poslat tom timu'
+  request: '<aqua>{0} <gold>je poslao zahtev za saradnju, koristite <aqua>/team ally <team> <gold>da prihvatite zahtev'
+  self: '<dark_red>Ne mozete saradjivati sa sopstvenim timom'
+  from: '<gold>You have ally requests from: {0}'
+  noRequests: '<dark_red>Nemate nikakvih zahteva za saradnju'
+  onJoin: '<gold>Imate novi zahtev za saranju uradite <aqua>/team ally <gold>da ih vidite'
+  limit: '<dark_red>Ogranicenje saradnika je dostignuto'
+  alreadyrequest: '<dark_red>Vec ste poslali zahtev za saranju tom timu'
+allychat:
+  disabled: '<gold>Vase poruke vise ne odlaze u dopisivanje saveznika'
+  enabled: '<gold>Vase poruke sada odlaze u dopisivanje saveznika'
+  syntax: '<light_purple>[{0}]<white>{1}<white>: {2}'
+neutral:
+  self: '<gold>Taj tim je vas tim'
+  requestremove: '<gold>Taj zahtev za saradnju je prekinut'
+  reject: '<dark_red>Vas zahtev za saradnju sa <aqua>{0} <dark_red>je odbijen'
+  notAlly: '<dark_red>Niste u saradnji sa tim timom'
+  success: '<dark_red>Vise niste saveznici sa tim timom'
+  remove: '<dark_red>Vise niste saveznici sa <aqua>{0}'
+list:
+  noPage: '<gold>Ta strana nije pronadjena'
+  header: '<gray>--- <aqua>Tim lista strana {0} <gray>---'
+  body: '<gold>{0}: <aqua>{1}'
+  footer: '<gray>--- <gold>uradite <aqua>/team list [page] <gold>da vidite vise <gray>---'
+setowner:
+  use: '<gold>Ne mozete promovisati tog igraca, koristite <aqua>/team setowner <player> <gold>da promovisete
+    tog igraca u vlasnika'
+  success: '<gold>Taj igrac je sada vlasnik'
+  notify: '<gold>Sada ste vlasnik vaseg tima'
+  max: '<dark_red>Taj igrac je vec vlasnik'
+setwarp:
+  exist: '<dark_red>Taj warp vec postoji'
+  max: '<dark_red>Vas tim vec ima maksimalan broj warpova'
+  success: '<gold>Warp je napravljen'
+  char: '<dark_red>To ime warpa sadrzi zabranjene karaktere'
+warp:
+  nowarp: '<dark_red>Taj warp ne postoji'
+  invalidPassword: '<dark_red>Pogresna sifra za taj warp'
+  success: '<gold>Teleportovani ste'
+  world: '<dark_red>Lokacija tog warpa nije pronadjena'
+warps:
+  syntax: '<gold>Warps: <aqua>{0}'
+  none: '<dark_red>Vas tim nema postavljene warpove'
+delwarp:
+  success: '<dark_red>Warp je obrisan'
+teleport:
+  fail: '<dark_red>Teleportacija nije uspela'
+  wait: '<gold>Sacekajte <aqua>{0} <gold>sekundi'
+chest:
+  claim:
+    noChest: '<dark_red>Ne stojite na kovcegu'
+    limit: '<dark_red>Vas tim je zauzeo maksimalan broj kovcega'
+    claimed: '<dark_red>Taj kovceg je vec pripojen'
+    success: '<gold>Pripojili ste taj kovceg'
+  remove:
+    noChest: '<dark_red>Ne stojite na kovcegu'
+    notClaimed: '<dark_red>Vas tim nije pripojio taj kovceg'
+    success: '<dark_red>Vas tim vise ne prisvojava taj kovceg'
+  all:
+    success: '<gold>Vise ne posedujete ni jedan kovceg'
+  claimed: '<dark_red>Taj kovceg je u posedu <green>{0}'
+echest:
+  
+  echest: Enderchest
+pvp:
+  
+  enabled: '<gold>PvP je ukljucen za vas tim'
+  disabled: '<gold>PvP je iskljucen za vas tim'
+rankup:
+  
+  max: '<dark_red>Vec imate maksimalan cin'
+  score: '<dark_red>Treba vam {0} poena da bi bili promovisani'
+  money: '<dark_red>Treba vam {0} novca u banci tima kako bi se promovisali'
+  success: '<gold>Vas tim se promovisao!'
+tag:
+  
+  banned: '<dark_red>Ta oznaka je zabranjena'
+  success: '<gold>Vasa oznaka je uspesno promenjena'
+  maxLength: '<dark_red>Ta oznaka je predugacka'
+  noPerm: '<dark_red>Nemate dozvolu da menjate oznaku tima'
+admin:
+  cancel: '<dark_red>Komanda je prekinuta zbog drugog dodatka (plugina)'
+  tag:
+    success: '<gold>Ta tim oznaka je uspesno promenjena'
+  setrank:
+    success: '<gold>Taj cin tima je postavljen'
+    'no': '<dark_red>Taj cin tima ne postoji ili nije postavljen pravilno'
+  config:
+    
+    reload: '<gold>BetterTeams je ponovo ucitan (ukoliko imate nekih problema pri koriscenju
+      komandi, restartujte server)'
+  holo:
+    create:
+      success: '<gold>Hologram je napravljen'
+    remove:
+      noHolo: '<dark_red>Hologram nije pronadjen'
+      success: '<gold>Hologram je obrisan'
+  title:
+    success: '<gold>Naslov tog igraca je promenjen'
+    reset: '<gold>Naslov tog igraca je restartovan'
+  version: '<gold>Current plugin version: <aqua>{0}'
+  versionstorage: '<gold>Storage Method: <aqua>{0}'
+  versionversion: '<gold>Minecraft Version: <aqua>{0}'
+  noTeam: '<dark_red>To nije tim'
+  home:
+    success: '<gold>Teleportovani ste do kuce tog tima'
+    noHome: '<dark_red>Taj tim nema postavljenu'
+  name:
+    success: '<gold>Ime tima je promenjeno'
+  description:
+    success: '<gold>Ime tog tima je promenjeno'
+  open:
+    successopen: '<gold>Taj tim jue sada otvoren za sve'
+    successclose: '<gold>U taj tim se sada moze uci samo uz pozivnicu'
+  invite:
+    success: '<gold>Taj igrac je sada pozvan u taj tim'
+  create:
+    success: '<gold>Taj tim je sada napravljen'
+  join:
+    banned: '<dark_red>Tom igracu je sada zabranjen ulaz u taj tim'
+    success: '<gold>Taj igrac se pridruzio timu'
+    notify: '<gold>Pridruzili ste se timu <aqua>{0}'
+    full: '<dark_red>Taj tim je pun'
+  notInTeam: '<gold>Taj igrac ne moze biti u timu pre toga'
+  inTeam: '<dark_red>Taj igrac nije u timu'
+  leave:
+    success: '<gold>Taj igrac je napustio tim'
+    notify: '<gold>Napustili ste taj tim'
+  demote:
+    notify: '<gold>Oduzet vam je cin'
+    success: '<gold>Tom igracu je oduzet cin'
+    min: '<dark_red>Tom igracu se vise ne moze oduzeti cin'
+    maxAdmins: '<dark_red>Taj tim vec ima maksimalan broj administratora, sklonite jednog pre
+      oduzimanja cina tom igracu'
+  promote:
+    max: '<gold>Taj igrac vec ima maksimalan cin'
+    notify: '<gold>Promovisani ste'
+    success: '<gold>Taj igrac je uspesno promovisan'
+    owner: '<gold>Namesteno je da tim moze imati samo jednog vlasnika, uradite <aqua>/teama
+      setowner <player> <gold>da bi postavili igraca kao vlasnika'
+    maxAdmins: '<dark_red>Taj tim vec ima maksimalan broj administratora, sklonite jednog pre
+      promovisanja tog igraca'
+    maxOwners: '<dark_red>Taj tim vec ima maksimalan broj vlasnika, sklonite jednog pre
+      promovisanja tog igraca'
+  setowner:
+    already: '<dark_red>Taj igrac je vec vlasnik'
+    nonotify: '<gold>Vise niste vlasnik tima'
+    success: '<gold>Taj igrac je novi vlasnik tima'
+    notify: '<gold>Sada ste vlasnik svog tima'
+  warps:
+    none: '<dark_red>Taj tim nije postavio ni jedan warp'
+  setwarp:
+    success: '<gold>Taj warp je sada postavljen'
+    max: '<gold>Taj tim je vec postavio maksimalan broj warpova'
+  purge:
+    confirm: '<gold>Pokrenite tu komandu u narednih 10 sekundi, <dark_red>OVO NE MOZE
+     BITI PREKINUTO I OBRISACE SVE POENE TIMOVA'
+    success: '<gold>Timovi su ocisceni'
+  score:
+    tooSmall: '<dark_red>Poeni moraju biti veci od 0'
+    success: '<gold>Poeni tog tima su uspesno promenjeni'
+  update: '<dark_red>Tu je nova verzija BetterTeams i mozete je preuzeti ovde: https://www.spigotmc.org/resources/better-teams.17129/'
+  disband:
+    success: '<gold>Taj tim je obrisan uspesno'
+  color:
+    success: '<gold>Boja tog tima je promenjena'
+  chest:
+    claim:
+      success: '<gold>Zauzeli ste taj kovceg u ime tima'
+    remove:
+      success: '<gold>Uspesno ste sklonili posedovanje sa tog kovcega'
+      notClaimed: '<dark_red>Nijedan tim nije zauzeo taj kovceg'
+    all:
+      success: '<gold>Sva zauzimanja su sklonjena iz tog tima'
+    disable:
+      already: '<dark_red>Zauzimanje kovcega je vec ugaseno'
+      success: '<gold>Zauzimanje kovcega je ugaseno'
+    disabled:
+      bc: '<gold><bold>Svi zauzeti kovcezi se sada mogu otvoriti'
+    enable:
+      already: '<dark_red>Zauzimanje kovcega je vec dozvoljeno'
+      success: '<gold>Zauzimanje kovcega je sada dozvoljeno'
+    enabled:
+      bc: '<gold><bold>Svi zauzeti kovcezi su sada zakljucani'
+  teleport:
+    success: '<gold>Svi aktivni igraci tog tima su teleportovani'
+    noWorld: '<dark_red>Navedeni svet nije pronađen'
+    all.success: '<gold>Svi online članovi svih timova su teleportovani'
+    all.home.success: '<gold>Svi online članovi svih timova sa domom su teleportovani'
+nametag:
+  
+  syntax: '<gold><bold>{0}<reset> '
+holo:
+  leaderboard: '<gold>Leaderboard'
+  syntax: '<gold>{0}: <aqua>{1}'
+  msyntax: '<gold>{0}: <aqua>${1}'
+top:
+  leaderboard: '<gold>Leaderboard'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+  divide: '<white>...'
+baltop:
+  leaderboard: '<gold>Leaderboard'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+  divide: '<white>...'
+spy:
+  stop: '<gold>Vise ne spijunirate poruke tog tima'
+  start: '<gold>Poceli ste da spijunirate poruke tog tima'
+  team: '<gray>[<aqua>{0}<gray>]<white>{1}<white>: {2}'
+  ally: '<gray>[<light_purple>{0}<gray>]<white>{1}<white>: {2}'
+uclaim:
+  
+  team: '<dark_red>You must be in a team to create a claim'
+  member: '<dark_red>You cannot leave your teams claim'
+  kick: '<dark_red>You cannot kick members of your own team from your claim'
+  ban: '<dark_red>You cannot ban members of your own team from your claim'
+  dissolve: '<dark_red>Your team has been disbanded so your claim has been dissolved'
+help:
+  
+  description: Pogledajte i promenite opis vaseg tima
+  ban: Zabranite ulaz u tim specificnom igracu
+  home: teleportujte se do kuce vaseg tima
+  help: Pogledajte ovu help stranicu
+  promote: Promovisite specificnog igraca iz vaseg tima
+  demote: Oduzmite cin odredjenom igracu iz vaseg tima
+  unban: Ponovo dozvolite ulaz u tim odredjenom igracu
+  kick: Izbacite igraca iz vaseg tima
+  leave: Napustite tim u kojem se trenutno nalazite
+  chat: Posaljite poruku samo vasem timu
+  name: Pogledajte i promenite ime vaseg ima
+  sethome: Postavite kucu vaseg tima
+  create: Napravite tim sa odredjenim imenom
+  invite: Pozovite odredjenog igraca u vas tim
+  disband: Obrisite vas trenutni tim
+  open: Ukljucite da vas tim bude moguce uci samo uz pozivnicu
+  info: Pogledajte informacije o odredjenom timu ili igracu
+  color: Promenite boju tima
+  deposit: Posaljite novac u sef tima
+  bal: Pogledajte sef vaseg tima
+  withdraw: Podignite novac iz sefa vaseg tima
+  title: Promenite naslov igraca iz tima
+  top: Pogledajte najvece timove
+  rank: Pogledajte cin tima
+  join: pridruzite se odredjenom timu
+  delhome: Obrisite kucu tima
+  ally: Posaljite zahtev za saradnju drugom timu
+  neutral: Sklonite saveznike i odbite sve zahteve za saveznistvo
+  allychat: Posaljite poruku samo vasim saveznicima
+command:
+  
+  create: create
+  leave: leave
+  disband: disband
+  description: description
+  invite: invite
+  join: join
+  name: name
+  open: open
+  info: info
+  kick: kick
+  promote: promote
+  demote: demote
+  home: home
+  sethome: sethome
+  ban: ban
+  unban: unban
+  chat: chat
+  color: color
+  title: title
+  top: top
+  baltop: baltop
+  rank: rank
+  delhome: delhome
+  ally: ally
+  neutral: neutral
+  allychat: allychat
+  list: list
+  warp: warp
+  setwarp: setwarp
+  delwarp: delwarp
+  warps: warps
+  echest: echest
+  rankup: rankup
+  tag: tag
+  pvp: pvp
+  claim: claim
+  remove: remove
+  removeall: removeall
+  chest: chest
+  reload: reload
+  chatspy: chatspy
+  version: version
+  purge: purge
+  setrank: setrank
+  add: add
+  set: set
+  score: score
+  enableclaims: enableclaims
+  disableclaims: disableclaims
+  teleport: teleport
+  deposit: deposit
+  bal: bal
+  withdraw: withdraw

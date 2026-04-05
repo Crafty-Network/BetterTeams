@@ -1,0 +1,534 @@
+# All translations in this file are community made, this means there may be errors / missed translations, if you are able to improve upon any translation it would be greatly appreciated
+
+# Able to help with translations? Either improving a already existing language, or adding a whole new one. Join the discord server: https://discord.gg/JF9DNs3 
+# or message me on spigot: https://www.spigotmc.org/members/booksaw123.120955/
+
+# Any placeholders from placeholder API will work in this file
+
+# Credit for contributions to this file: Bercyy, Config
+
+invalidArg: '<dark_red>Érvénytelen argumentumok, segítség'
+inTeam: '<dark_red>Csapatban kell lenned ahhoz, hogy ezt megtehesd'
+notInTeam: '<dark_red>Előbb el kell hagynod a csapatodat, mielőtt ezt megtennéd'
+needOwner: '<dark_red>Csapat tulajdonosának kell lenned ahhoz, hogy ezt megtehesd'
+needAdmin: '<dark_red>Adminnak vagy csapat tulajdonosnak kell lenned ahhoz, hogy ezt megtehesd'
+needPlayer: '<dark_red>Játékosnak kell lenned ahhoz, hogy ezt megtehesd'
+noPlayer: '<dark_red>A megadott játékos nem található'
+notTeam: '<gold><dark_red>Az a csapat nem létezik, próbáld meg a következőt: <aqua>/team create <név>'
+needSameTeam: '<gold>Nem ugyanabban a csapatban vagy, mint az a személy'
+noPerm: '<dark_red>Nincs jogosultságod ehhez'
+prefixSyntax: '<gray>[{0}<gray>] <reset>{1}'
+bannedChar: '<dark_red>Egy tiltott karaktert próbáltál használni'
+noTeam: '<dark_red>Az a csapat nem létezik'
+loading: '<gold>Betöltés'
+cooldown:
+  wait: '<dark_red>Még {0} másodpercet kell várnod, mielőtt újra futtathatod ezt!'
+cost:
+  tooPoor: '<dark_red>Túl szegény vagy ahhoz, hogy végrehajthasd ezt a parancsot'
+  run: '<dark_red><bold>-{0}'
+placeholder:
+  noTeam: '<gray>Nincs Csapat'
+  noDescription: ''
+  money: '{0}'
+  owner: Owner
+  admin: Admin
+  default: Default
+  name: '{0}'
+  tag: '{0}'
+  displayname: '{0}'
+  inteam: 'true'
+  notinteam: 'false'
+  noTitle: ''
+prefix:
+  owner: ' **'
+  admin: ' *'
+  default: ' '
+create:
+  exists: '<gold>Ez a csapat már létezik'
+  banned: '<dark_red>Ez a csapatnév tiltott'
+  maxLength: '<dark_red>Ez a csapatnév túl hosszú'
+  success: '<gold>Létrehoztad a csapatot'
+leave:
+  success: '<gold>Elhagytad a csapatot'
+  lastOwner: '<gold>Te vagy az egyetlen tulajdonos a csapatban. Lépj elő valakit másikra,
+    vagy használd a <aqua>/team disband <gold>parancsot a csapat feloszlatásához.'
+announce:
+  join: '<dark_aqua>{0} <gray>csatlakozott a {1} csapathoz'
+  leave: '<dark_aqua>{0} <gray>elhagyta a {1} csapatot'
+  disband: '<gray>A {0} csapat feloszlott'
+rank:
+  noTeam: '<dark_red>A csapat nem található'
+  info: '<gold>Csapat pozíció:'
+  infos: '<gold>Csapat rang: <aqua>{0} <gray>({1} pont szükséges a következő ranglépéshez)'
+  infom: '<gold>Csapat rang: <aqua>{0} <gray>(${1} szükséges a következő ranglépéshez)'
+  infomm: '<gold>Csapat rang: <aqua>{0} <gray>(Elérted a legmagasabb rangot)'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+delhome:
+  success: '<gold>A csapat otthona törölve lett'
+  noHome: '<dark_red>A csapatnak nincs beállított otthona'
+disband:
+  success: '<gold>Feloszlattad a csapatot'
+  confirm: '<gold>Írd be újra a <aqua>/team disband <gold>parancsot a megerősítéshez'
+description:
+  success: '<gold>Megváltoztattad a csapat leírását'
+  view: '<gold>Csapat leírása: {0}'
+  noDesc: '<gold>Nincs beállítva csapat leírás'
+  noPerm: '<dark_red>Nincs jogosultságod a leírás szerkesztéséhez'
+name:
+  success: '<gold>Megváltoztattad a csapat nevét'
+  view: '<gold>Csapat neve: {0}'
+  exists: '<dark_red>Ez a csapat már létezik'
+  noPerm: '<dark_red>Nincs jogosultságod a csapat nevének megváltoztatásához'
+invite:
+  success: '<gold>Az adott játékost meghívtad a csapathoz'
+  invite: '<gold>Meghívtak, hogy csatlakozz a(z) {0} csapathoz. Írd be a <aqua>/team join <csapat>
+    <gold>parancsot a csatlakozáshoz a csapathoz'
+  inTeam: '<gold>Az adott játékos már egy csapatban van'
+  banned: '<gold>Az adott játékos kitiltva van a csapatodból'
+  full: '<gold>A csapat maximum elérte maxlétszámot, távolíts el valakit, mielőtt újabb
+    meghívásokat küldesz'
+  expired: '<dark_red>Az <aqua>{0} <gold>által küldött meghívó lejárt'
+  hover: '<gold>Kattints a csatlakozáshoz <aqua>{0}'
+join:
+  success: '<gold>Csatlakoztál a csapathoz'
+  notify: '<gold>Üdvözöllek, <aqua>{0} <gold>a csapatban!'
+  notInvited: '<gold><dark_red>Nem kaptál meghívót ahhoz a csapathoz'
+  banned: '<gold><dark_red>Letiltva vagy ennek a csapatnak a tagjai között'
+  full: '<dark_red>Az adott csapat megtelt'
+open:
+  successopen: '<gold>A csapatod mostantól nyitott mindenki számára'
+  successclose: '<gold>A csapatod mostantól meghívás alapú'
+title:
+  change: '<gold>A címed megváltozott erre: <aqua>{0}'
+  remove: '<gold>Eltávolították a címedet'
+  success: '<gold>A cím megváltozott'
+  tooLong: '<dark_red>A cím túl hosszú'
+  noFormat: '<dark_red>Nincs jogosultságod a cím formázásához'
+  noColor: '<dark_red>Nincs jogosultságod a cím színezéséhez'
+  reset: '<gold>A címed visszaállítva'
+  noPerm: '<dark_red>Nincs jogosultságod a csapat címének megváltoztatásához'
+info:
+  needTeam: '<gold>Nincs ilyen nevű csapat vagy játékos'
+  name: '<gold>Név: <aqua>{0}'
+  description: '<gold>Leírás: <aqua>{0}'
+  open: '<gold>open: <aqua>{0}'
+  level: '<gold>Szint: <aqua>{0}'
+  owner: '<gold>Tulajdonosok: <aqua>{0}'
+  admin: '<gold>Staffok: <aqua>{0}'
+  default: '<gold>Tagok: <aqua>{0}'
+  tag: '<gold>Címke: <aqua>{0}'
+  fail: '<gold>Nincs ilyen nevű csapat vagy játékos'
+  score: '<gold>Pontszám: <aqua>{0}'
+  money: '<gold>Egyenleg: <aqua>{0}'
+  ally: '<gold>Szövetségesek: <aqua>{0}'
+  online: '<green>'
+  offline: '<red>'
+kick:
+  success: '<gold>Az adott játékost kirúgtad'
+  notify: '<gold>Kirúgtak a(z) {0} csapatból'
+  title: '<dark_red>Kirúgtak a csapatodból'
+  noPerm: '<gold>Nincs jogosultságod ahhoz, hogy kirúgd azt a személyt'
+ban:
+  success: '<gold>Az adott játékost kitiltottad'
+  notify: '<gold>Kitiltottak a(z) {0} csapatból'
+  title: '<dark_red>Kitiltottak a csapatodból'
+  noPerm: '<gold>Nincs jogosultságod ahhoz, hogy kitiltsd azt a személyt'
+  already: '<gold>Az adott játékos már kitiltva van'
+unban:
+  success: '<gold>Az adott játékos kitiltása feloldva'
+  notify: '<gold>Feloldották a kitiltásod a(z) {0} csapatból'
+  noPerm: '<gold>Nincs jogosultságod ahhoz, hogy felold a kitiltást'
+  not: '<gold>Az adott játékos nincs kitiltva'
+promote:
+  success: '<gold>Az adott játékos előléptetve'
+  noPerm: '<gold>Nincs jogosultságod ahhoz, hogy előléptesd azt a személyt'
+  max: '<gold>A személy már elérte a maximális előléptetést!'
+  notify: '<gold>Előléptettek téged!'
+  maxAdmins: '<dark_red>A csapatodnak már a maximális adminisztrátor száma van, lépj vissza
+    valakit vagy lépj a csapatod szintet'
+  maxOwners: '<dark_red>A csapatodnak már a maximális tulajdonos száma van, lépj vissza valakit
+    vagy lépj a csapatod szintet'
+demote:
+  success: '<gold>Az adott játékos visszaminősítve'
+  noPerm: '<gold>Nincs jogosultságod ahhoz, hogy visszaminősítsd azt a személyt'
+  min: '<gold>A személy már a legalacsonyabb rangon van'
+  notify: '<gold>Visszaminősítettek téged'
+  lastOwner: '<gold>Nem tudod visszaminősíteni az utolsó tulajdonost, előbb lépj valakit
+    elő'
+  maxAdmins: '<dark_red>A csapatodnak már a maximális adminisztrátor száma van, távolíts el
+    egy adminisztrátort vagy lépj a csapatod szintet'
+home:
+  success: '<gold>Teleportáltak'
+  noHome: '<gold>A csapatnak nincs beállított otthona'
+  world: '<dark_red>A csapat otthona nem található'
+sethome:
+  success: '<gold>A csapat otthona beállítva'
+  noPerm: '<gold>Nincs jogosultságod a csapat otthonának beállításához'
+chat:
+  enabled: '<gold>Az üzeneteid most a csapat csevegésben jelennek meg'
+  disabled: '<gold>Az üzeneteid most a globális csevegésben jelennek meg'
+  syntax: '<aqua>[Csapattárs]<white>{0}<white>: {1}'
+color:
+  success: '<gold>A csapat színe megváltozott'
+  fail: '<gold>Ez nem egy felismert csevegési szín'
+  banned: '<dark_red>Csak színeket használhatsz, nem formázási kódokat'
+deposit:
+  tooLittle: '<dark_red>Nem tudsz negatív összeget befizetni'
+  fail: '<dark_red>A befizetés sikertelen'
+  success: '<gold>Pénz befizetve'
+  max: '<dark_red>Az az összeg meghaladná a maximálisan megengedett csapat egyenlegedet'
+withdraw:
+  tooLittle: '<dark_red>Nem tudsz negatív összeget kivenni'
+  fail: '<dark_red>A kivétel sikertelen'
+  success: '<gold>Pénz kivéve'
+  notEnough: '<gold>A csapatodnak nincs elég pénze'
+ally:
+  already: '<dark_red>Már szövetségesek vagytok'
+  success: '<gold>A csapatok mostantól szövetségben vannak'
+  ally: '<gold>A csapatod mostantól szövetségben van a következő csapattal: <aqua>{0}'
+  requested: '<gold>Szövetségesi kérelem elküldve ennek a csapatnak'
+  request: '<aqua>{0} <gold>szövetségesi kérelmet küldött, használd a(z) <aqua>/team ally <csapat>
+    <gold>parancsot a elfogadáshoz'
+  self: '<dark_red>Nem tudod szövetségesíteni a saját csapatodat'
+  from: '<gold>Szövetségesi kérelmeket kaptál a következő csapatoktól: {0}'
+  noRequests: '<dark_red>Nincs szövetségesi kérelmed'
+  onJoin: '<gold>Új szövetségesi kérelmeket kaptál, használd a(z) <aqua>/team ally <gold>parancsot
+    a megtekintéshez'
+  limit: '<dark_red>Elértétek a szövetségesek maximális számát'
+  alreadyrequest: '<dark_red>Már kérelmeztél szövetséget ezzel a csapattal'
+allychat:
+  disabled: '<gold>Az üzeneteid már nem a szövetséges csevegésben jelennek meg'
+  enabled: '<gold>Az üzeneteid most a szövetséges csevegésben jelennek meg'
+  syntax: '<light_purple>[{0}]<white>{1}<white>: {2}'
+neutral:
+  self: '<gold>Az a saját csapatod'
+  requestremove: '<gold>Az szövetségesi kérelem eltávolítva'
+  reject: '<dark_red>Az szövetségesi kérelmedet a következő csapattól elutasították: <aqua>{0}'
+  notAlly: '<dark_red>Nem vagy szövetségben ezzel a csapattal'
+  success: '<dark_red>Nem vagy továbbra sem szövetségben ezzel a csapattal'
+  remove: '<dark_red>Már nem vagy szövetségben <aqua>{0} <dark_red>csapattal'
+list:
+  noPage: '<gold>Az oldal nem található'
+  header: '<gray>--- <aqua>Csapatlista {0}. oldal <gray>---'
+  body: '<gold>{0}: <aqua>{1}'
+  footer: '<gray>--- <gold>Használd a(z) <aqua>/team list [oldal] <gold>parancsot továbbiak megtekintéséhez
+    <gray>---'
+setowner:
+  use: '<gold>Nem tudod előléptetni azt a játékost, használd a(z) <aqua>/team setowner <játékos>
+    <gold>parancsot az előléptetéséhez tulajdonosnak'
+  success: '<gold>Az a játékos mostantól tulajdonos'
+  notify: '<gold>Te vagy mostantól a csapat tulajdonosa'
+  max: '<dark_red>Az a játékos már tulajdonos'
+setwarp:
+  exist: '<dark_red>Létezik ilyen warp'
+  max: '<dark_red>Elérted a maximális ugráspontot'
+  success: '<gold>Lértehoztad a warpot'
+  char: '<dark_red>A warp neve tiltott karaktereket tartalmaz'
+warp:
+  nowarp: '<dark_red>Warp nem létezik'
+  invalidPassword: '<dark_red>Helytelen jelszó a warphoz'
+  success: '<gold>Teleport a warphoz'
+  world: '<dark_red>Nem található a warp helyszíne'
+warps:
+  syntax: '<gold>Ugráspontok: <aqua>{0}'
+  none: '<dark_red>A csapatodnak nincsenek beállított warpja'
+delwarp:
+  success: '<dark_red>A warp Törölve'
+teleport:
+  fail: '<dark_red>A teleportálás sikertelen volt'
+  wait: '<gold>Várj <aqua>{0} <gold>másodpercet'
+chest:
+  noChest: '<dark_red>Nem állsz egy ládán sem'
+  limit: '<dark_red>A csapatod elért a maximális számú ládához'
+  claimed: '<dark_red>Az a láda már le lett foglalva'
+  success: '<gold>Lefoglaltad azt a ládát'
+  claim:
+    noChest: '<dark_red>You are not standing on a chest'
+    limit: '<dark_red>Your team has claimed the maximum number of chests'
+    claimed: '<dark_red>That chest has already been claimed'
+    success: '<gold>You have claimed that chest'
+  remove:
+    noChest: '<dark_red>You are not standing on a chest'
+    notClaimed: '<dark_red>Your team has not claimed that chest'
+    success: '<dark_red>Your team no longer has a claim to that chest'
+  all:
+    success: '<gold>Unclaimed all chests'
+remove:
+  noChest: '<dark_red>Nem állsz egy ládán sem'
+  notClaimed: '<dark_red>A csapatod nem foglalta le azt a ládát'
+  success: '<dark_red>A csapatod már nem rendelkezik igénnyel arra a ládára'
+all:
+  success: '<gold>Az összes láda lefoglalása megszűnt'
+  claimed: '<dark_red>Az a láda le van foglalva a következő csapat által: <green>{0}'
+echest:
+  
+  echest: Enderchest
+pvp:
+  
+  enabled: '<gold>A PvP engedélyezve lett a csapatod számára'
+  disabled: '<gold>A PvP letiltva lett a csapatod számára'
+rankup:
+  
+  max: '<dark_red>Már elérted a maximális rangot'
+  score: '<dark_red>{0} pont szükséges a ranglépéshez'
+  money: '<dark_red>{0} pénz szükséges a csapat egyenlegében a ranglépéshez'
+  success: '<gold>A csapatod felemelkedett a ranglistán'
+tag:
+  
+  banned: '<dark_red>Ez a címke tiltott'
+  success: '<gold>Sikeresen megváltoztattad a csapat címkéjét'
+  maxLength: '<dark_red>Ez a címke túl hosszú'
+  noPerm: '<dark_red>Nincs jogosultságod a csapat címke megváltoztatásához'
+admin:
+  cancel: '<dark_red>A parancsot egy másik bővítmény törölte'
+  tag:
+    success: '<gold>A csapat címkéje sikeresen megváltozott'
+  setrank:
+    success: '<gold>A csapat rangja be lett állítva'
+    'false': '<dark_red>Ez a rang vagy nem létezik, vagy nincs megfelelően beállítva'
+    'no': '<dark_red>That rank either does not exist or is not setup correctly'
+  config:
+    
+    reload: '<gold>A BetterTeams újratöltődött (Ha problémáid vannak ennek a parancsnak
+      a használatával, indítsd újra a szervert)'
+  holo:
+    create:
+      success: '<gold>A hologram létrejött'
+    remove:
+      noHolo: '<dark_red>Nem található hologram'
+      success: '<gold>A hologram törölve'
+  title:
+    success: '<gold>A játékos címe megváltozott'
+    reset: '<gold>A játékos címe visszaállításra került'
+  version: '<gold>Jelenlegi plugin verzió: <aqua>{0}'
+  versionstorage: '<gold>Tárolási módszer: <aqua>{0}'
+  versionversion: '<gold>Minecraft verzió: <aqua>{0}'
+  noTeam: '<dark_red>Ez nem egy csapat'
+  home:
+    success: '<gold>Át lettél teleportálva a csapat otthonába'
+    noHome: '<dark_red>Ez a csapat nem állított be otthont'
+  name:
+    success: '<gold>A csapat neve megváltozott'
+  description:
+    success: '<gold>A csapat neve megváltozott'
+  open:
+    successopen: '<gold>A csapat mostantól nyitott mindenki számára'
+    successclose: '<gold>A csapat mostantól csak meghívással látogatható'
+  invite:
+    success: '<gold>Az adott játékos meghívásra került a csapathoz'
+  create:
+    success: '<gold>A csapat létrejött'
+  join:
+    banned: '<dark_red>A játékos ki van tiltva a csapatból'
+    success: '<gold>A játékos csatlakozott a csapathoz'
+    notify: '<gold>Csatlakoztál a(z) <aqua>{0}<gold> csapathoz'
+    full: '<dark_red>A csapat megtelt'
+  notInTeam: '<gold>Az a játékos nem lehet csapatban, mielőtt ezt végrehajtaná'
+  inTeam: '<dark_red>Az a játékos nincs csapatban'
+  leave:
+    success: '<gold>Az a játékos kilépett a csapatból'
+    notify: '<gold>Kiléptél a csapatból'
+  demote:
+    notify: '<gold>Lerontottak'
+    success: '<gold>Az a játékos lerontott'
+    min: '<dark_red>Ez a játékos már nem lehet tovább lerontva'
+    maxAdmins: '<dark_red>A csapat már elérte az adminisztrátorok maximális számát, távolíts
+      el egyet, mielőtt lerontod ezt a játékost'
+  promote:
+    max: '<gold>Ez a játékos már a maximális rangon van'
+    notify: '<gold>Előléptettelek'
+    success: '<gold>A játékos sikeresen előléptetve'
+    owner: '<gold>Be van állítva, hogy a csapatoknak csak egy tulajdonosa lehet, írd be:
+      <aqua>/teama setowner <játékos>, <gold>hogy beállítsd a játékost tulajdonosnak'
+    maxAdmins: '<dark_red>A csapatnak már elérted a maximális adminisztrátorok számát, távolíts
+      el egyet, mielőtt előléptetnéd ezt a játékost'
+    maxOwners: '<dark_red>A csapatnak már elérted a maximális tulajdonosok számát, távolíts
+      el egyet, mielőtt előléptetnéd ezt a játékost'
+  setowner:
+    already: '<dark_red>Az a játékos már tulajdonos'
+    nonotify: '<gold>Nem vagy továbbra sem a csapat tulajdonosa'
+    success: '<gold>Az a játékos most a csapat tulajdonosa'
+    notify: '<gold>Mostantól te vagy a csapat tulajdonosa'
+  warps:
+    none: '<dark_red>Az a csapat nem állított be egyetlen warpot sem'
+  setwarp:
+    success: '<gold>Az a warp be lett állítva'
+    max: '<gold>Ez a csapat már elérte a maximális warpok számát'
+  purge:
+    confirm: '<gold>Futtasd ezt a parancsot a következő 10 másodpercen belül a megerősítéshez,
+      <dark_red>EZT NEM LEHET VISSZAVONNI ÉS MINDEN CSAPAT PONTJAIT VISSZAÁLLÍTJA'
+    success: '<gold>A csapatok ki lettek törölve'
+  score:
+    tooSmall: '<dark_red>Az eredménynek nagyobbnak kell lennie, mint 0'
+    success: '<gold>A csapat pontszáma megváltozott'
+  bal:
+    toSmall: '<dark_red>Az egyenlegnek nagyobbnak kell lennie, mint 0'
+    success: '<gold>A csapat Egyenlege megváltozott'
+  update: '<dark_red>Új verzió elérhető  update elérhető: https://www.spigotmc.org/resources/better-teams.17129/'
+  disband:
+    success: '<gold>A csapat sikeresen feloszlott'
+  color:
+    success: '<gold>A csapat színe sikeresen megváltozott'
+  chest:
+    claim:
+      success: '<gold>Te vagy az a csapat, amelyik igényt tartott erre a ládára'
+    remove:
+      success: '<gold>Sikeresen eltávolítottad a csapat igényét erről a ládáról'
+      notClaimed: '<dark_red>Ezt a ládát még egy csapat sem igényelte'
+    all:
+      success: '<gold>Minden igény törlése a csapattól'
+    disable:
+      already: '<dark_red>A ládaigények már letiltva vannak'
+      success: '<gold>A ládaigények letiltása sikeres volt'
+    disabled:
+      bc: '<gold><bold>Az összes igényelt láda mostmár megnyitható'
+    enable:
+      already: '<dark_red>A ládaigények már engedélyezve vannak'
+      success: '<gold>A ládaigények engedélyezése sikeres volt'
+    enabled:
+      bc: '<gold><bold>Az összes igényelt láda le van zárva'
+  teleport:
+    success: '<gold>Az adott csapat összes online tagja teleportálva lett'
+    noWorld: '<dark_red>A megadott világ nem található'
+    all.success: '<gold>Az összes csapat összes online tagját teleportálták'
+    all.home.success: '<gold>Az összes csapat összes online tagját, akiknek van otthonuk, teleportálták'
+    player.success: '<gold>A játékos el lett teleportáltatva'
+  versionlanguage: '<gold>Kiválasztott nyelv: <aqua>{0}'
+  versiononline: '<gold>Elérhető mód: <aqua>{ 0 }'
+  versionplayers: '<gold>Játékosszám: <aqua>{ 0 }'
+  ally:
+    already: '<dark_red>Ezek a csapatok már szövetségben vannak.'
+    success: '<gold>Ezek a csapatok mostantól szövetségben vannak.'
+  neutral:
+    same: '<dark_red>Nem léphetsz be ugyanabba a csapatba kétszer.'
+    not: '<dark_red>Azok a csapatok nem szövetségesek.'
+    success: '<gold>Azok a csapatok mostantól nem szövetségesek.'
+nametag:
+  
+  syntax: '<gold><bold>{0}<reset> '
+holo:
+  leaderboard: '<gold>Ranglista'
+  syntax: '<gold>{0}: <aqua>{1}'
+  msyntax: '<gold>{0}: <aqua>${1}'
+top:
+  leaderboard: '<gold>Leaderboard'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+  divide: '<white>...'
+baltop:
+  leaderboard: '<gold>Ranglista'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+  divide: '<white>...'
+spy:
+  stop: '<gold>Már nem figyelsz csapat üzenetekre'
+  start: '<gold>Mostantól figyeled a csapat üzeneteket'
+  team: '<gray>[<aqua>{0}<gray>]<white>{1}<white>: {2}'
+  ally: '<gray>[<light_purple>{0}<gray>]<white>{1}<white>: {2}'
+uclaim:
+  
+  team: '<dark_red>Csapatban kell lenned, hogy igényt nyújthass be'
+  member: '<dark_red>Nem hagyhatod el a csapat igényét'
+  kick: '<dark_red>Nem rúghatsz ki tagokat a saját csapatod igényéből'
+  ban: '<dark_red>Nem tilthatod el a saját csapatod tagjait az igényedből'
+  dissolve: '<dark_red>A csapatod feloszlatásra került, így az igényed is megszűnt'
+help:
+  header: '<gold>---- <aqua>BetterTeams Segítség <gold>----'
+  footer: '<gold>---- <aqua>Oldal { 0 }/{1} - /{2} help <oldal> <gold>----'
+  description: Tekintsd meg és változtasd meg a csapatod leírását
+  ban: A megadott játékost kitiltja a csapatodból
+  home: A csapatod otthonához teleportál téged
+  help: Tekintsd meg ezt az útmutató oldalt
+  promote: A megadott játékost előlépteti a csapatodon belül
+  demote: A megadott játékost lefokozza a csapatodon belül
+  unban: A megadott játékos kitiltását feloldja a csapatodból
+  kick: Kirúgja azt a játékost a csapatodból
+  leave: Elhagyod az aktuális csapatodat
+  chat: Csak a csapatodnak küldesz üzenetet
+  name: Tekintsd meg és változtasd meg a csapatod nevét
+  sethome: Beállítja a csapatod otthonát
+  create: Létrehoz egy csapatot a megadott névvel
+  invite: Meghívja a megadott játékost a csapatodba
+  disband: Feloszlatja az aktuális csapatodat
+  open: Váltás az invitációs rendszer be/ki állapotára a csapatban
+  info: Információk megtekintése a megadott játékos/csapatról
+  color: Változtasd meg a csapatod színét
+  deposit: Pénz befizetése a csapat egyenlegére
+  bal: Tekintsd meg a csapatod egyenlegét
+  withdraw: Pénz kivétele a csapat egyenlegéből
+  title: Változtasd meg annak a játékosnak a címét a csapatban
+  top: Tekintsd meg a legjobb csapatokat
+  rank: Tekintsd meg egy csapat rangját
+  join: Csatlakozz a megadott csapathoz
+  delhome: Töröld a csapatod otthonát
+  ally: Szövetséget kérsz egy másik csapattól
+  neutral: Szövetségesek eltávolítása és szövetségi kérelmek elutasítása
+  allychat: Üzenet küldése csak szövetségeseidnek
+  echest: Tekintsd meg a csapatod végzet ládáját
+  setwarp: Állíts be egy útvonalat a csapatod többi tagjának
+  warps: Tekintsd meg a csapatod útvonalainak listáját
+  rankup: Rangod emelése a csapatban, hogy több előnyt kapj
+  tag: Állítsd be a csapatod jelét
+  delwarp: Töröld azt az útvonalat a csapatodból
+  chest: ''
+  pvp: Kapcsold be/ki a csapatodnak a pvp-t
+  baltop: Tekintsd meg a leggazdagabb csapatokat
+  list: Tekintsd meg az összes csapatot a szerveren
+  warp: Ugrás egy helyre, amit a csapatod állított be
+command:
+  
+  create: create
+  leave: leave
+  disband: disband
+  description: description
+  invite: invite
+  join: join
+  name: name
+  open: open
+  info: info
+  kick: kick
+  promote: promote
+  demote: demote
+  home: home
+  sethome: sethome
+  ban: ban
+  unban: unban
+  chat: chat
+  color: color
+  title: title
+  top: top
+  baltop: baltop
+  rank: rank
+  delhome: delhome
+  ally: ally
+  neutral: neutral
+  allychat: allychat
+  list: list
+  warp: warp
+  setwarp: setwarp
+  delwarp: delwarp
+  warps: warps
+  echest: echest
+  rankup: rankup
+  tag: tag
+  pvp: pvp
+  claim: claim
+  remove: remove
+  removeall: removeall
+  chest: chest
+  reload: reload
+  chatspy: chatspy
+  version: version
+  purge: purge
+  setrank: setrank
+  add: add
+  set: set
+  score: score
+  enableclaims: enableclaims
+  disableclaims: disableclaims
+  teleport: teleport
+  money: money
+  deposit: deposit
+  bal: bal
+  withdraw: withdraw
+  holo: holo
+internalError: '<dark_red>Valami hiba történt a parancs végrehajtása közben. Kérlek, jelentsd
+  ezt a szerver tulajdonosainak.'

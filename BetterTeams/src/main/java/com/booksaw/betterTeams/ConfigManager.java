@@ -1,0 +1,263 @@
+package com.booksaw.betterTeams;
+
+import com.booksaw.betterTeams.extension.BetterTeamsExtension;
+import lombok.Getter;
+import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.file.YamlConfiguration;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+@Getter
+public class ConfigManager {
+
+	public final YamlConfiguration config;
+	private final String resourceName;
+	private final String filePath;
+
+	private final BetterTeamsExtension extension;
+
+	public ConfigManager(String resourceName, boolean updateChecks) {
+		this(resourceName, updateChecks, null);
+	}
+
+	public ConfigManager(String resourceName, boolean updateChecks, BetterTeamsExtension extension) {
+		this.extension = extension;
+
+		if (!resourceName.endsWith(".yml")) {
+			resourceName = resourceName + ".yml";
+		}
+
+		this.resourceName = resourceName;
+
+		File folder = (extension != null) ? extension.getDataFolder() : Main.plugin.getDataFolder();
+		File f = new File(folder, resourceName);
+		this.filePath = f.getPath();
+
+		if (!f.exists()) {
+			saveResource(resourceName, this.filePath, false);
+		}
+
+		config = YamlConfiguration.loadConfiguration(f);
+
+		if (updateChecks) {
+			updateFromDefaultSave();
+		}
+	}
+
+	public ConfigManager(String resourceName, String filePath, BetterTeamsExtension extension) {
+		this.extension = extension;
+
+		if (!resourceName.endsWith(".yml")) {
+			resourceName = resourceName + ".yml";
+		}
+
+		this.resourceName = resourceName;
+
+		if (!filePath.endsWith(".yml")) {
+			filePath = filePath + ".yml";
+		}
+
+		File folder = (extension != null) ? extension.getDataFolder() : Main.plugin.getDataFolder();
+		File f = new File(folder, filePath);
+
+		this.filePath = f.getPath();
+
+		if (!f.exists()) {
+			saveResource(resourceName, this.filePath, false);
+		}
+		config = YamlConfiguration.loadConfiguration(f);
+
+	}
+
+	public ConfigManager(String resourceName, String filePath) {
+		this(resourceName, filePath, null);
+	}
+
+	public void save() {
+		save(true);
+	}
+
+	public void save(boolean log) {
+		if (log) {
+			log(Level.INFO, "Saving new values to " + filePath);
+		}
+
+		File f = new File(filePath);
+		try {
+			config.save(f);
+		} catch (IOException ex) {
+			log(Level.SEVERE, "Could not save config to " + f, ex);
+		}
+	}
+
+	public void updateFromDefaultSave() {
+		updateFromDefaultSave(true);
+	}
+
+	public void updateFromDefaultSave(boolean log) {
+
+		if (log) {
+			log(Level.INFO, "Checking if the file " + resourceName + " is up to date");
+		}
+
+		InputStream resourceStream = (extension != null)
+				? extension.getResource(resourceName)
+				: Main.plugin.getResource(resourceName);
+
+		List<String> changes = updateFileConfig(resourceStream);
+		boolean migratedVariables = migrateVariables(log);
+
+		if (log) {
+			if (changes.isEmpty() && !migratedVariables) {
+				log(Level.INFO, "File is up to date");
+			}
+			if (!changes.isEmpty()) {
+				log(Level.INFO, "==================================================================");
+				log(Level.INFO, "File is not updated, adding values under the following references:");
+
+				for (String str : changes) {
+					log(Level.INFO, "- " + str);
+				}
+
+				log(Level.INFO, resourceName + " is now updated to the latest version, thank you for using BetterTeams");
+				log(Level.INFO, "==================================================================");
+
+			}
+		}
+
+		if (!changes.isEmpty() || migratedVariables) {
+			save(false);
+		}
+
+	}
+
+	private @NotNull List<String> updateFileConfig(@Nullable InputStream input) {
+		if (input == null) {
+			return new ArrayList<>();
+		}
+
+		try (BufferedReader reader = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8))) {
+			return updateFileConfig(reader);
+		} catch (IOException e) {
+			log(Level.WARNING, "Error reading default configuration from jar", e);
+			return new ArrayList<>();
+		}
+	}
+
+	private @NotNull List<String> updateFileConfig(@NotNull BufferedReader reader) {
+
+		List<String> addedPaths = new ArrayList<>();
+
+		YamlConfiguration internalConfig = YamlConfiguration.loadConfiguration(reader);
+		for (String str : internalConfig.getKeys(true)) {
+			if (!config.contains(str)) {
+				Object toSave = internalConfig.get(str);
+				if (toSave == null || toSave instanceof ConfigurationSection) {
+					continue;
+				}
+
+				config.set(str, toSave);
+				addedPaths.add(str);
+			}
+		}
+
+		return addedPaths;
+
+	}
+
+	private boolean migrateVariables(boolean log) {
+		if (!config.saveToString().contains("%s")) {
+			return false;
+		}
+		if (log) {
+			log(Level.INFO, resourceName + " is using legacy variables. Migration taking place.");
+		}
+		int migratedKeys = 0;
+		Pattern pattern = Pattern.compile("%s");
+		for (String key : config.getKeys(true)) {
+			Object keyVal = config.get(key);
+			if (keyVal instanceof String stringVal) {
+
+				if (!stringVal.contains("%s")) {
+					continue;
+				}
+				Matcher matcher = pattern.matcher(stringVal);
+
+				StringBuilder sb = new StringBuilder();
+				int count = 0;
+				while (matcher.find()) {
+					matcher.appendReplacement(sb, "{" + count++ + "}");
+				}
+				matcher.appendTail(sb);
+
+				config.set(key, sb.toString());
+				migratedKeys++;
+			}
+		}
+		if (log) {
+			log(Level.INFO, "Legacy variable migration is complete. " + migratedKeys + " keys were migrated.");
+		}
+		return migratedKeys != 0;
+	}
+
+	public void saveResource(String resourcePath, String resultPath, boolean replace) {
+		if (resourcePath == null || resourcePath.isEmpty())
+			throw new IllegalArgumentException("ResourcePath cannot be null or empty");
+		if (resultPath == null || resultPath.isEmpty())
+			throw new IllegalArgumentException("ResultPath cannot be null or empty");
+
+		resourcePath = resourcePath.replace('\\', '/');
+		File outFile = new File(resultPath);
+		if (outFile.exists() && !replace) {
+			log(Level.WARNING, "Could not save " + resourcePath + " to " + outFile
+					+ " because " + outFile.getName() + " already exists.");
+			return;
+		}
+
+		File outDir = outFile.getParentFile();
+		if (outDir != null && !outDir.exists())
+			outDir.mkdirs();
+
+		InputStream in = (extension != null)
+				? extension.getResource(resourcePath)
+				: Main.plugin.getResource(resourcePath);
+
+		if (in == null) {
+			File dataFolder = (extension != null) ? extension.getDataFolder() : Main.plugin.getDataFolder();
+			throw new IllegalArgumentException(
+					"The embedded resource '" + resourcePath + "' cannot be found in " + dataFolder);
+		}
+
+		try (InputStream inputStream = in) {
+			Files.copy(inputStream, outFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+		} catch (IOException ex) {
+			log(Level.SEVERE, "Could not save " + resourcePath + " to " + resultPath, ex);
+		}
+	}
+
+	private void log(Level level, String message) {
+		if (extension != null) {
+			extension.getLogger().log(level, message);
+		} else {
+			Main.plugin.getLogger().log(level, "[BetterTeams] " + message);
+		}
+	}
+	private void log(Level level, String message, Throwable ex) {
+		if (extension != null) {
+			extension.getLogger().log(level, message, ex);
+		} else {
+			Main.plugin.getLogger().log(level, "[BetterTeams] " + message, ex);
+		}
+	}
+
+}

@@ -1,0 +1,338 @@
+# All translations in this file are community made, this means there may be errors / missed translations, if you are able to improve upon any translation it would be greatly appreciated
+
+# Able to help with translations? Either improving a already existing language, or adding a whole new one. Join the discord server: https://discord.gg/JF9DNs3 
+# or message me on spigot: https://www.spigotmc.org/members/booksaw123.120955/
+
+
+# Any placeholders from placeholder API will work in this file
+invalidArg: '<red>Bilinmeyen komut.'
+inTeam: '<red>Bunu yapabilmek için takımda olmalısın.'
+internalError: '<red>Hata! Yetkililere bildir.'
+notInTeam: '<red>Bunu yapmadan önce takımdan ayrılmalısın.'
+needOwner: '<red>Bunu yapabilmek için takım sahibi olmalısın.'
+needAdmin: '<red>Bunu yapabilmek için admin ya da takım sahibi olmalısın.'
+needPlayer: '<red>Bunu yapabilmek için oyuncu olmalısın.'
+noPlayer: '<red>Oyuncu bulunamadı'
+notTeam: '<red>Takım bulunamadı. <aqua>/team create <isim> <red>komutu ile takım oluştur.'
+needSameTeam: '<red>Bu oyuncuyla aynı takımda değilsin.'
+noPerm: '<red>Yetkin yok!'
+prefixSyntax: '<gray>[{0}<gray>] <reset>{1}'
+bannedChar: '<red>Yasaklı karakter!'
+noTeam: '<red>Böyle bir takım yok.'
+loading: '<gold>Yükleniyor...'
+cooldown:
+  wait: '<red>Bunu yapabilmek için <gold>{0} <red>saniye beklemelisin!'
+cost:
+  tooPoor: '<red>Bakiyen yetersiz.'
+  run: '<dark_red><bold>-{0}'
+placeholder:
+  noTeam: ''
+  noDescription: ''
+  money: '{0}'
+  owner: Sahibi
+  admin: Admin
+  default: Üye
+  name: '{0}'
+  tag: '{0}'
+  displayname: '{0}'
+  inteam: takımda
+  notinteam: takımda değil
+  noTitle: ''
+prefix:
+  owner: ' **'
+  admin: ' *'
+  default: ' '
+create:
+  exists: '<gold>Böyle bir takım zaten var.'
+  success: '<gold>Takım oluşturuldu.'
+  banned: '<red>Bu isim yasaklanmış.'
+  maxLength: '<red>Bu isim çok uzun.'
+leave:
+  success: '<gold>Takımdan ayrıldın.'
+  lastOwner: '<red>Takımın tek sahibi sensin. Birilerini terfi et ya da <gold>/team disband
+    <red>komutu ile takımı kapat.'
+announce:
+  join: '<dark_aqua>{0} <gray>takıma katıldı: {1}'
+  leave: '<dark_aqua>{0} <gray>takımdan ayrıldı: {1}'
+  disband: '<gray>Takım {0} dağıtıldı'
+rank:
+  noTeam: '<dark_red>Takım bulunamadı.'
+  info: '<gold>Takım pozisyonu:'
+  infos: '<gold>Takım rütbesi: <aqua>{0} <gray>(Yeni rütbe için {1} puan gerekiyor.)'
+  infom: '<gold>Takım rütbesi: <aqua>{0} <gray>(Yeni rütbe için ${1} gerekiyor.)'
+  infomm: '<gold>Takım rütbesi: <aqua>{0} <gray>(En yüksek rütbedesin.)'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+delhome:
+  success: '<gold>Takım evi silindi.'
+  noHome: '<red>Takımının bir evi yok.'
+disband:
+  success: '<gold>Takımı kapattın.'
+  confirm: '<gold>Onaylamak için tekrar <aqua>/team disband <gold>komutunu kullanın.'
+description:
+  success: '<gold>Takım açıklamasını değiştirdin.'
+  view: '<gold>Takım Açıklaması: {0}'
+  noDesc: '<gold>Takım açıklaması yok.'
+  noPerm: '<red>Yetkin yok!'
+name:
+  success: '<gold>Takım adını değiştirdin.'
+  view: '<gold>Takım Adı: {0}'
+  exists: '<red>Böyle bir takım zaten var.'
+  noPerm: '<red>Yetkin yok!'
+invite:
+  success: '<gold>Oyuncu davet edildi.'
+  invite: '<gold>{0} adlı takıma davet edildin. Kabul etmek için <aqua>/team join <team> <gold>komutunu
+    kullan. the team'
+  inTeam: '<gold>Oyuncunun zaten bir takımı var'
+  banned: '<gold>Oyuncu bu takımdan uzaklaştırılmış.'
+  full: '<gold>Takımın dolu.'
+  expired: '<aqua>{0} <red>adlı takımdan gelen davetin süresi doldu.'
+join:
+  success: '<gold>Takıma katıldın.'
+  notify: '<gold>Takıma hoş geldin <aqua>{0}!'
+  notInvited: '<red>Takıma davet edilmemişsin.'
+  banned: '<red>Takımdan uzaklaştırıldın.'
+  full: '<red>Takım dolu.'
+open:
+  successopen: '<gold>Takımın herkese açık!'
+  successclose: '<gold>Takımın sadece davetlere açık!'
+title:
+  change: '<gold>Başlık <aqua>{0} <gold>olarak değiştirildi.'
+  remove: '<gold>Başlık silindi.'
+  success: '<gold>Başlık değiştirildi.'
+  tooLong: '<red>Başlık çok uzun.'
+  noFormat: '<red>Yetkin yok!'
+  noColor: '<red>Yetkin yok!'
+  reset: '<gold>Başlık temizlendi.'
+  noPerm: '<red>Yetkin yok!'
+info:
+  needTeam: '<gold>Bu isimde bir oyuncu ya da takım bulunamadı.'
+  name: '<gold>İsim: <aqua>{0}'
+  description: '<gold>Açıklama: <aqua>{0}'
+  open: '<gold>Açık: <aqua>{0}'
+  level: '<gold>Seviye: <aqua>{0}'
+  owner: '<gold>Sahibi: <aqua>{0}'
+  admin: '<gold>Admin: <aqua>{0}'
+  default: '<gold>Üyeler: <aqua>{0}'
+  tag: '<gold>Tag: <aqua>{0}'
+  fail: '<gold>Bu isimde bir oyuncu ya da takım bulunamadı.'
+  score: '<gold>Puan: <aqua>{0}'
+  money: '<gold>Bakiye: <aqua>{0}'
+  ally: '<gold>Müttefik: <aqua>{0}'
+kick:
+  success: '<gold>Oyuncu atıldı.'
+  notify: '<aqua>{0} <gold>adlı takımdan atıldın.'
+  title: '<red>Takımından atıldın.'
+  noPerm: '<red>Yetkin yok!'
+ban:
+  success: '<gold>Oyuncu uzaklaştırıldı.'
+  notify: '<aqua>{0} <red>adlı takımdan uzaklaştırıldın.'
+  title: '<red>Takımından uzaklaştırıldın.'
+  noPerm: '<red>Yetkin yok!'
+  already: '<gold>Bu oyuncu zaten uzaklaştırılmış.'
+unban:
+  success: '<gold>Oyuncunun uzaklaştırılması kaldırıldı.'
+  notify: '<aqua>{0} <gold>adlı takımdaki uzaklaştırılman kaldırıldı.'
+  noPerm: '<red>Yetkin yok!'
+  not: '<gold>Bu oyuncu uzaklaştırılmamış.'
+promote:
+  success: '<gold>Oyuncu terfi edildi.'
+  noPerm: '<red>Yetkin yok!'
+  max: '<gold>Bu oyuncu en üst terfide.'
+  notify: '<gold>Terfi edildin!'
+  maxAdmins: '<red>Takımın admin limitine ulaştı. Birilerinin terfisini düşür ya da takımına
+    level atlat.'
+  maxOwners: '<red>Takımın sahip limitine ulaştı. Birilerinin terfisini düşür ya da takımına
+    level atlat.'
+demote:
+  success: '<gold>Oyuncunun terfisi alındı.'
+  noPerm: '<red>Yetkin yok!'
+  min: '<gold>Bu oyuncu en düşük terfide.'
+  notify: '<gold>Terfin düşürüldü.'
+  lastOwner: '<gold>Son kişinin terfisini düşüremezsin. Birilerini terfi etmelisin.'
+  maxAdmins: '<red>Takımın maksimum admin sayısına ulaştı. Birilerini çıkar ya da takımına
+    level atlat.'
+home:
+  success: '<gold>Işınlandın.'
+  noHome: '<gold>Takımının bir evi yok.'
+  world: '<red>Takım evi bulunamadı.'
+sethome:
+  success: '<gold>Takım evi belirlendi.'
+  noPerm: '<gold>Ev belirlemek için yeteri kadar rütben yok.'
+chat:
+  enabled: '<gold>Takım sohbeti aktif!'
+  disabled: '<gold>Takım sohbeti devredışı!'
+  syntax: '<aqua>[Takım]<white>{0}<white>: {1}'
+color:
+  success: '<gold>Takım rengi değiştirildi.'
+  fail: '<gold>Bilinmeyen renk kodu.'
+  banned: '<red>Sadece renk kodu kullanabilirsin.'
+deposit:
+  tooLittle: '<red>Negatif miktar yatıramazsın.'
+  fail: '<red>Hata!'
+  success: '<gold>Para yatırıldı.'
+  max: '<red>İzin verilen maksimum takım bakiyenizi aştı.'
+withdraw:
+  tooLittle: '<red>Negatif miktar çekemezsin.'
+  fail: '<red>Hata!'
+  success: '<gold>Para çekildi!'
+  notEnough: '<gold>Takım bankasında yeterli para yok.'
+ally:
+  already: '<red>Zaten müttefiksiniz.'
+  success: '<gold>Takımın artık müttefik.'
+  ally: '<gold>Takımın <aqua>{0} <gold>takımı ile müttefik oldu.'
+  requested: '<gold>Takıma müttefik isteği gönderildi.'
+  request: '<aqua>{0} <gold>adlı takım müttefik isteği gönderdi. Kabul etmek için <aqua>/team ally
+    {0} <gold>komutunu kullanın.'
+  self: '<red>Kendi takımınla müttefik olamazsın.'
+  from: '<aqua>{0} <gold>adlı takımdan müttefik isteğin mevcut.'
+  noRequests: '<red>Herhangi bir müttefik isteğin yok.'
+  onJoin: '<gold>Yeni müttefik isteğin var. <aqua>/team ally <gold>komutunu kullanarak görüntüleyebilirsin.'
+  limit: '<red>Müttefik sınırına ulaştın.'
+  alreadyrequest: '<red>Bu takıma zaten müttefik isteği gönderdin.'
+allychat:
+  disabled: '<gold>Müttefik sohbeti devredışı.'
+  enabled: '<gold>Müttefik sohbeti aktif.'
+  syntax: '<light_purple>[{0}]<white>{1}<white>: {2}'
+neutral:
+  self: '<gold>Bu senin takımın'
+  requestremove: '<gold>Müttefik isteği reddedildi.'
+  reject: '<aqua>{0} <red>takımına gönderdiğin müttefik isteği reddedildi.'
+  notAlly: '<red>Artık bu takımla müttefik değilsin.'
+  success: '<red>Artık bu takımla müttefik değilsin.'
+  remove: '<aqua>{0} <red>adlı takımla müttefik değilsin.'
+list:
+  noPage: '<gold>Sayfa bulunamadı.'
+  header: '<gray>--- <aqua>Takım Listesi {0} <gray>---'
+  body: '<gold>{0}: <aqua>{1}'
+  footer: '<gray>--- <gold>Daha fazla görüntülemek için: <aqua>/team list [sayfa] <gray>---'
+setowner:
+  use: '<gold>Bu oyuncuyu terfi edemezsin. <aqua>/team setowner <oyuncu> <gold>komutu ile takım
+    sahibi yapabilirsin.'
+  success: '<gold>Bu oyuncu artık takım sahibi.'
+  notify: '<gold>Artık takımın sahibisin'
+  max: '<red>Bu oyuncu zaten takımın sahibi.'
+setwarp:
+  exist: '<red>Bu warp noktası zaten var.'
+  max: '<red>Maksimum warp noktası limitine ulaştın.'
+  success: '<gold>Warp noktası oluşturuldu.'
+  char: '<red>Warp noktası yasaklı karakterler içeriyor.'
+warp:
+  nowarp: '<red>Böyle bir warp noktası yok.'
+  invalidPassword: '<red>Hatalı şifre!'
+  success: '<gold>Işınlandın.'
+  world: '<red>Bu lokasyonda bir warp noktası bulunamadı.'
+warps:
+  syntax: '<gold>Warp noktaları: <aqua>{0}'
+  none: '<red>Takımının bir warp noktası yok.'
+delwarp:
+  success: '<red>Warp noktası silindi.'
+teleport:
+  fail: '<red>Işınlanma iptal edildi.'
+  wait: '<gold>Lütfen <aqua>{0} <gold>saniye bekleyin.'
+chest:
+  claim:
+    noChest: '<red>Bir sandığın üzerinde durmuyorsun.'
+    limit: '<red>Takımın maksimum sandık sınırına ulaştı.'
+    claimed: '<red>Bu sandık zaten belirlenmiş.'
+    success: '<gold>Bu sandığı sahiplendin.'
+  remove:
+    noChest: '<red>Sandığın üzerinde durmuyosun.'
+    notClaimed: '<red>Takımın bir sandığa sahip değil.'
+    success: '<red>Takımın artık bu sandığı sahiplenmiyor.'
+  all:
+    success: '<gold>Bütün sandıklar silindi.'
+  claimed: '<red>Bu sandık <green>{0} <red>tarafından sahipleniyor.'
+echest:
+  
+  echest: Enderchest
+pvp:
+  
+  enabled: '<gold>PvP ayarı aktif!'
+  disabled: '<gold>PvP ayarı devredışı!'
+rankup:
+  
+  max: '<red>Zaten en yüksek rütbedesin.'
+  score: '<red>Rütbe atlamak için <aqua>{0} <red>puana ihtiyacın var.'
+  money: '<red>Rütbe atlamak için <aqua>{0} <red>paraya ihtiyacın var'
+  success: '<gold>Takımın seviye atladı.'
+tag:
+  
+  banned: '<red>Bu tag yasaklanmış.'
+  success: '<gold>Tag değiştirildi.'
+  maxLength: '<red>Tag çok uzun.'
+  noPerm: '<red>Yetkin yok!'
+
+admin.teleport.noWorld: '<dark_red>Belirtilen dünya bulunamadı'
+admin.teleport.all.success: '<gold>Tüm takımların tüm çevrimiçi üyeleri teleporte edildi'
+admin.teleport.all.home.success: '<gold>Tüm takımların tüm çevrimiçi üyeleri evi olanlar teleporte edildi'
+
+nametag:
+  
+  syntax: '<gold><bold>{0}<reset> '
+holo:
+  leaderboard: '<gold>Liderler'
+  syntax: '<gold>{0}: <aqua>{1}'
+  msyntax: '<gold>{0}: <aqua>${1}'
+top:
+  leaderboard: '<gold>Liderler'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+  divide: '<white>...'
+baltop:
+  leaderboard: '<gold>Liderler'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+  divide: '<white>...'
+spy:
+  stop: '<gold>Takım mesajlarını görmüyosun.'
+  start: '<gold>Takım mesajlarını görüyorsun.'
+  team: '<gray>[<aqua>{0}<gray>]<white>{1}<white>: {2}'
+  ally: '<gray>[<light_purple>{0}<gray>]<white>{1}<white>: {2}'
+uclaim:
+  
+  team: '<red>Claim alabilmek için bir takımda olmalısın.'
+  member: '<red>Takımının claiminden çıkamazsın.'
+  kick: '<red>Takımındaki oyuncuları claimden atamazsın.'
+  ban: '<red>Takımdaki oyuncuları claimden uzaklaştıramazsın.'
+  dissolve: '<red>Takımın kapatıldığı için claimler silindi.'
+help:
+  
+  description: Takım açıklamasını görüntüler ya da değiştirir.
+  ban: Oyuncuyu takımdan uzaklaştırır.
+  home: Takım evine ışınlar.
+  help: Yardım sayfasını görüntüler.
+  promote: Oyuncuyu terfi eder.
+  demote: Oyuncunun terfisini alır.
+  unban: Oyuncunun uzaklaştırılmasını kaldırır.
+  kick: Oyuncuları takımdan atar.
+  leave: Takımdan ayrılır.
+  chat: Takım sohbetini açıp kapatır.
+  name: Takım adını değiştirir.
+  sethome: Takım evi belirler.
+  create: Takım oluşturur.
+  invite: Takıma oyuncu davet eder.
+  disband: Takımı kapatır
+  open: Davetleri açıp kapatır.
+  info: Oyuncu ya da takım hakkında bilgileri görüntüler.
+  color: Takım rengini değiştirir.
+  deposit: Takım bankasına para yatırır.
+  bal: Takım bankasını görüntüler.
+  withdraw: Takım bankasından para çeker.
+  title: Takımdaki oyuncuların başlığını değiştirir.
+  top: En iyi takımları görüntüler.
+  rank: En yüksek rütbeli takımları görüntüler.
+  join: Takıma katılır.
+  delhome: Takım evini siler.
+  ally: Başka bir takıma müttefik isteği gönderir.
+  neutral: Müttefikliği bozar.
+  allychat: Müttefik sohbetini açıp kapatır.
+  echest: Ender sandığını görüntüler.
+  setwarp: Takımın için warp noktası oluşturur.
+  warps: Warp noktalarını görüntüler.
+  rankup: Takıma rütbe atlatır.
+  tag: Takıma tag oluşturur.
+  delwarp: Warp noktasını siler.
+  chest: Takım sandığını açar.
+  pvp: PvP ayarını açıp kapatır.
+  baltop: En zengin takımları görüntüler.
+  list: Sunucudaki bütün takımları görüntüler.
+  warp: Warp noktasına ışınlanır.
+

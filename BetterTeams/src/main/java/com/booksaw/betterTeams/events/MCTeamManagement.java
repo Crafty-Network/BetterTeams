@@ -1,0 +1,163 @@
+package com.booksaw.betterTeams.events;
+
+import com.booksaw.betterTeams.Main;
+import com.booksaw.betterTeams.Team;
+import com.booksaw.betterTeams.customEvents.BelowNameChangeEvent;
+import com.booksaw.betterTeams.customEvents.BelowNameChangeEvent.ChangeType;
+import lombok.Getter;
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.scoreboard.Scoreboard;
+import org.bukkit.scoreboard.Team.Option;
+import org.bukkit.scoreboard.Team.OptionStatus;
+
+import java.util.Map.Entry;
+import java.util.Objects;
+import java.util.UUID;
+
+public class MCTeamManagement implements Listener {
+
+	final Scoreboard board;
+	@Getter
+	private final BelowNameType type;
+
+	public MCTeamManagement(BelowNameType type) {
+		this.type = type;
+
+		Objects.requireNonNull(Bukkit.getScoreboardManager()).getMainScoreboard();
+		board = Bukkit.getScoreboardManager().getMainScoreboard();
+
+	}
+
+	public void displayBelowNameForAll() {
+		for (Player p : Bukkit.getOnlinePlayers()) {
+			displayBelowName(p);
+		}
+	}
+
+	public void displayBelowName(Player player) {
+		player.setScoreboard(board);
+
+		Team team = Team.getTeam(player);
+		if (team == null) {
+			return;
+		}
+
+		if (!player.hasPermission("betterTeams.teamName")) {
+			
+			return;
+		}
+
+		BelowNameChangeEvent event = new BelowNameChangeEvent(player, ChangeType.ADD);
+		Bukkit.getPluginManager().callEvent(event);
+
+		try {
+			team.getScoreboardTeam(board).addEntry(player.getName());
+		} catch (IllegalStateException e) {
+			Main.plugin.getLogger().severe("Could not register the team name in the tab menu due to a conflict, see https:
+		}
+
+	}
+
+	public void removeAll() {
+		removeAll(true);
+	}
+
+	public void removeAll(boolean callEvent) {
+		for (Player p : Bukkit.getOnlinePlayers()) {
+			remove(p, callEvent);
+		}
+
+		for (Entry<UUID, Team> t : Team.getTeamManager().getLoadedTeamListClone().entrySet()) {
+			org.bukkit.scoreboard.Team team = t.getValue().getScoreboardTeamOrNull();
+
+			if (team != null) {
+				team.unregister();
+			}
+
+		}
+	}
+
+	public void remove(Player player) {
+		remove(player, true);
+	}
+
+	public void remove(Player player, boolean callEvent) {
+
+		if (player == null) {
+			return;
+		}
+
+		Team team = Team.getTeam(player);
+		if (team == null) {
+			return;
+		}
+
+		if (!team.getScoreboardTeam(board).hasEntry(player.getName())) {
+			return;
+		}
+
+		try {
+			team.getScoreboardTeam(board).removeEntry(player.getName());
+		} catch (Exception e) {
+			Main.plugin.getLogger().warning(
+					"Another plugin is conflicting with the functionality of the BetterTeams. See the wiki page: https:
+			return;
+		}
+
+		if (callEvent) {
+			BelowNameChangeEvent event = new BelowNameChangeEvent(player, ChangeType.REMOVE);
+			Bukkit.getPluginManager().callEvent(event);
+		}
+	}
+
+	@EventHandler
+	public void playerJoinEvent(PlayerJoinEvent e) {
+		Main.plugin.getFoliaLib().getScheduler().runAsync(task -> displayBelowName(e.getPlayer()));
+	}
+
+	public void setupTeam(org.bukkit.scoreboard.Team scoreboardTeam, String teamName) {
+		
+		if (type == BelowNameType.PREFIX) {
+			scoreboardTeam.setPrefix(teamName);
+		} else if (type == BelowNameType.SUFFIX) {
+			scoreboardTeam.setSuffix(" " + teamName);
+		}
+
+		if (!Main.plugin.getConfig().getBoolean("collide")) {
+			scoreboardTeam.setOption(Option.COLLISION_RULE, OptionStatus.FOR_OWN_TEAM);
+		}
+
+		if (Main.plugin.getConfig().getBoolean("privateDeath")) {
+			scoreboardTeam.setOption(Option.DEATH_MESSAGE_VISIBILITY, OptionStatus.FOR_OWN_TEAM);
+		}
+
+		if (Main.plugin.getConfig().getBoolean("privateName")) {
+			scoreboardTeam.setOption(Option.NAME_TAG_VISIBILITY, OptionStatus.FOR_OTHER_TEAMS);
+		}
+
+		scoreboardTeam.setCanSeeFriendlyInvisibles(Main.plugin.getConfig().getBoolean("canSeeFriendlyInvisibles"));
+
+	}
+
+	public enum BelowNameType {
+		PREFIX, SUFFIX, FALSE;
+
+		public static BelowNameType getType(String string) {
+
+			switch (string.toLowerCase()) {
+				case "prefix":
+				case "true":
+					return PREFIX;
+				case "suffix":
+					return SUFFIX;
+				default:
+					return FALSE;
+			}
+		}
+	}
+
+}

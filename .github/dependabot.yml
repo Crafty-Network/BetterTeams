@@ -1,0 +1,35 @@
+version: 2
+
+updates:
+  - package-ecosystem: maven
+    directory: "/"
+    schedule:
+      interval: weekly
+    groups:
+      maven-non-major:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+    ignore:
+      - dependency-name: "com.sk89q.worldguard:worldguard-bukkit"
+      - dependency-name: "com.sk89q.worldedit:worldedit-bukkit"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: weekly
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+
+  - package-ecosystem: "npm"
+    directory: "/wiki"
+    schedule:
+      interval: weekly
+    groups:
+      npm-packages:
+        patterns:
+          - "*"

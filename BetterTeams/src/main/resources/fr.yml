@@ -1,0 +1,585 @@
+# All translations in this file are community made, this means there may be errors / missed translations, if you are able to improve upon any translation it would be greatly appreciated
+
+# Able to help with translations? Either improving a already existing language, or adding a whole new one. Join the discord server: https://discord.gg/JF9DNs3 
+# or message me on spigot: https://www.spigotmc.org/members/booksaw123.120955/
+
+# Any placeholders from placeholder API will work in this file
+
+# Credit for contributions to this file: Timiliris_420, Silvex, DoZys, Xeikos
+
+
+invalidArg: '<dark_red>Arguments invalides, aide'
+inTeam: '<dark_red>Vous devez être dans une équipe pour faire cela'
+internalError: '<dark_red>Une erreur s''est produite lors de l''exécution de cette commande,
+  veuillez la signaler aux propriétaires du serveur'
+notInTeam: '<dark_red>Vous devez quitter votre équipe avant de faire cela'
+needOwner: '<dark_red>Vous devez être le propriétaire de l''équipe pour faire cela'
+needAdmin: '<dark_red>Vous devez être administrateur ou propriétaire de l''équipe pour faire
+  cela'
+needPlayer: '<dark_red>Vous devez être un joueur pour faire cela'
+noPlayer: '<dark_red>Joueur spécifié introuvable'
+notTeam: '<gold><dark_red>Cette équipe n''existe pas, essayez <aqua>/team create <nom>'
+needSameTeam: '<gold>Vous n''êtes pas dans la même équipe que cette personne'
+noPerm: '<dark_red>Vous n''avez pas la permission de faire cela'
+prefixSyntax: '<gray>[{0}<gray>] <reset>{1}'
+bannedChar: '<dark_red>Le caractère que vous avez essayé d''utiliser est interdit'
+noTeam: '<dark_red>Cette équipe n''existe pas'
+loading: '<gold>Chargement'
+cooldown:
+  wait: '<dark_red>Vous devez attendre encore {0} secondes avant d''exécuter cela !'
+cost:
+  tooPoor: '<dark_red>Vous êtes trop pauvre pour exécuter cette commande'
+  run: '<dark_red><bold>-{0}'
+placeholder:
+  noTeam: ''
+  noDescription: ''
+  money: '{0}'''
+  owner: Propriétaire
+  admin: Admin
+  default: Par défaut
+  name: '{0}'''
+  tag: '{0}'''
+  displayname: '{0}'''
+  inteam: true'
+  notinteam: false'
+  noTitle: ''''
+prefix:
+  owner: ' **'''
+  admin: ' *'
+  default: ' '
+create:
+  exists: '<gold>Cette équipe existe déjà'
+  success: '<gold>Votre équipe a été créée'
+  banned: '<dark_red>Ce nom d''équipe est interdit'
+  maxLength: '<dark_red>Ce nom d''équipe est trop long'
+  minLength: '<dark_red>Ce nom d''''équipe est trop court'
+leave:
+  success: '<gold>Vous avez quitté l''équipe'
+  lastOwner: '<gold>Vous êtes le seul propriétaire dans l''équipe. Promouvez quelqu''un
+    d''autre ou utilisez <aqua>/team disband <gold>pour dissoudre l''équipe'
+announce:
+  join: '<dark_aqua>{0} <gray>a rejoint l''équipe {1}'
+  leave: '<dark_aqua>{0} <gray>a quitté l''équipe {1}'
+  disband: '<gray>L''équipe {0} a été dissoute'
+rank:
+  noTeam: '<dark_red>Équipe introuvable'
+  info: '<gold>Position de l''équipe :'''
+  infos: '<gold>Rang de l''équipe : <aqua>{0} <gray>({1} points nécessaires pour passer au rang
+    suivant)'
+  infom: '<gold>Rang de l''équipe : <aqua>{0} <gray>({1} $ nécessaires pour passer au rang suivant)'
+  infomm: '<gold>Rang de l''équipe : <aqua>{0} <gray>(Vous êtes déjà au rang maximum)'
+  syntax: '<aqua>{0} : <gold>{1} <gray>({2})'
+delhome:
+  success: '<gold>Le point de spawn de votre équipe a été supprimé'
+  noHome: '<dark_red>Votre équipe n''a pas défini de point de spawn'
+disband:
+  success: '<gold>Vous avez dissous l''équipe'
+  confirm: '<gold>Tapez <aqua>/team disband <gold>à nouveau pour confirmer'
+description:
+  success: '<gold>Vous avez modifié la description de l''équipe'
+  view: '<gold>Description de l''équipe : {0}'
+  noDesc: '<gold>Aucune description d''équipe définie'
+  noPerm: '<dark_red>Vous n''avez pas la permission de modifier la description'
+name:
+  success: '<gold>Vous avez changé le nom de l''équipe'
+  view: '<gold>Nom de l''équipe : {0}'
+  exists: '<dark_red>Cette équipe existe déjà'
+  noPerm: '<dark_red>Vous n''avez pas la permission de changer le nom de votre équipe'
+invite:
+  success: '<gold>Ce joueur a été invité'
+  invite: '<gold>Vous avez été invité à rejoindre l''équipe {0}. Utilisez <aqua>/team join
+    <nom de l''équipe> <gold>pour rejoindre l''équipe'
+  inTeam: '<gold>Ce joueur est déjà dans une équipe'
+  banned: '<gold>Ce joueur est banni de votre équipe'
+  full: '<gold>Votre équipe est au maximum de sa capacité. Expulsez quelqu''un avant d''inviter
+    d''autres personnes'
+  expired: '<dark_red>L''invitation de <aqua>{0} <dark_red>a expiré'
+  hover: '<gold>Clique ici pour rejoindre <aqua>{0}'
+join:
+  success: '<gold>Vous avez rejoint cette équipe'
+  notify: '<gold>Bienvenue <aqua>{0} <gold>dans l''équipe !'
+  notInvited: '<gold><dark_red>Vous n''avez pas été invité dans cette équipe'
+  banned: '<gold><dark_red>Vous êtes banni de cette équipe'
+  full: '<dark_red>Cette équipe est complète'
+open:
+  successopen: '<gold>Votre équipe est maintenant ouverte à tous'
+  successclose: '<gold>Votre équipe est maintenant en mode invitation seulement'
+title:
+  change: '<gold>Votre titre a été modifié en <aqua>{0}'
+  remove: '<gold>Votre titre a été supprimé'
+  success: '<gold>Ce titre a été modifié'
+  tooLong: '<dark_red>Ce titre est trop long'
+  noFormat: '<dark_red>Vous n''avez pas la permission de formater les titres'
+  noColor: '<dark_red>Vous n''avez pas la permission de mettre des couleurs dans les titres'
+  reset: '<gold>Votre titre a été réinitialisé'
+  noPerm: '<dark_red>Vous n''avez pas la permission de changer le titre de votre équipe'
+info:
+  needTeam: '<gold>Aucune équipe ou joueur trouvé avec ce nom'
+  name: '<gold>Nom : <aqua>{0}'
+  description: '<gold>Description : <aqua>{0}'
+  open: '<gold>Ouvert : <aqua>{0}'
+  level: '<gold>Niveau : <aqua>{0}'
+  owner: '<gold>Propriétaires : <aqua>{0}'
+  admin: '<gold>Administrateurs : <aqua>{0}'
+  default: '<gold>Membres : <aqua>{0}'
+  tag: '<gold>Tag : <aqua>{0}'
+  fail: '<gold>Aucune équipe ou joueur trouvé avec ce nom'
+  score: '<gold>Score : <aqua>{0}'
+  money: '<gold>Solde : <aqua>{0}'
+  ally: '<gold>Alliés : <aqua>{0}'
+  online: '<green>'
+  offline: '<red>'
+kick:
+  success: '<gold>Ce joueur a été expulsé'
+  notify: '<gold>Vous avez été expulsé de l''équipe {0}'
+  title: '<dark_red>Vous avez été expulsé de votre équipe'
+  noPerm: '<gold>Vous n''avez pas la permission d''expulser cette personne'
+ban:
+  success: '<gold>Ce joueur a été banni'
+  notify: '<gold>Vous avez été banni de l''équipe {0}'
+  title: '<dark_red>Vous avez été banni de votre équipe'''
+  noPerm: '<gold>Vous n''avez pas la permission de bannir cette personne'
+  already: '<gold>Ce joueur est déjà banni'
+unban:
+  success: '<gold>Ce joueur a été débanni'
+  notify: '<gold>Vous avez été débanni de l''équipe {0}'
+  noPerm: '<gold>Vous n''avez pas la permission de débannir cette personne'
+  not: '<gold>Ce joueur n''est pas banni'
+promote:
+  success: '<gold>Ce joueur a été promu'
+  noPerm: '<gold>Vous n''avez pas la permission de promouvoir cette personne'
+  max: '<gold>Cette personne est déjà promue au maximum !'
+  notify: '<gold>Vous avez été promu !'
+  maxAdmins: '<dark_red>Votre équipe a déjà atteint le nombre maximum d''administrateurs,
+    rétrogradez quelqu''un ou améliorez le niveau de votre équipe'
+  maxOwners: '<dark_red>Votre équipe a déjà atteint le nombre maximum de propriétaires, rétrogradez
+    quelqu''un ou améliorez le niveau de votre équipe'
+demote:
+  success: '<gold>Ce joueur a été rétrogradé'
+  noPerm: '<gold>Vous n''avez pas la permission de rétrograder cette personne'
+  min: '<gold>Cette personne est déjà au rang le plus bas'
+  notify: '<gold>Vous avez été rétrogradé'
+  lastOwner: '<gold>Vous ne pouvez pas rétrograder le dernier propriétaire, promouvez
+    quelqu''un d''autre en premier'
+  maxAdmins: '<dark_red>Votre équipe a déjà atteint le nombre maximum d''administrateurs,
+    supprimez un administrateur ou améliorez le niveau de votre équipe'
+home:
+  success: '<gold>Vous avez été téléporté'
+  noHome: '<gold>Votre équipe n''a pas défini de point de spawn'
+  world: '<dark_red>Impossible de trouver le point de spawn de votre équipe'
+sethome:
+  success: '<gold>Le point de spawn de votre équipe a été défini'
+  noPerm: '<gold>Vous n''avez pas un grade suffisant pour définir le point de spawn de
+    votre équipe'
+chat:
+  enabled: '<gold>Vos messages sont maintenant envoyés dans le chat de l''équipe'
+  disabled: '<gold>Vos messages sont maintenant envoyés dans le chat global'
+  syntax: '<aqua>[Équipe]<white>{0}<white>: {1}'
+color:
+  success: '<gold>La couleur de votre équipe a été modifiée'
+  fail: '<gold>Cette couleur n''est pas reconnue'
+  banned: '<dark_red>Vous ne pouvez utiliser que des couleurs, pas des codes de formatage'
+deposit:
+  tooLittle: '<dark_red>Vous ne pouvez pas déposer des montants négatifs'
+  fail: '<dark_red>Le dépôt a échoué'
+  success: '<gold>Argent déposé'
+  max: '<dark_red>Cela dépasserait le solde maximum autorisé pour votre équipe'
+withdraw:
+  tooLittle: '<dark_red>Vous ne pouvez pas retirer des montants négatifs'
+  fail: '<dark_red>Le retrait a échoué'
+  success: '<gold>Argent retiré'
+  notEnough: '<gold>Votre équipe n''a pas assez d''argent'
+ally:
+  already: '<dark_red>Vous êtes déjà alliés'
+  success: '<gold>Vos équipes sont maintenant alliées'
+  ally: '<gold>Votre équipe est maintenant alliée avec <aqua>{0}'
+  requested: '<gold>Une demande d''alliance a été envoyée à cette équipe'
+  request: '<aqua>{0} <gold>a envoyé une demande d''alliance, utilisez <aqua>/team ally <team>
+    <gold>pour accepter'
+  self: '<dark_red>Vous ne pouvez pas vous allier avec votre propre équipe'
+  from: '<gold>Vous avez des demandes d''alliance de la part de : {0}'
+  noRequests: '<dark_red>Vous n''avez aucune demande d''alliance'
+  onJoin: '<gold>Vous avez de nouvelles demandes d''alliance, utilisez <aqua>/team ally <gold>pour
+    les afficher'
+  limit: '<dark_red>La limite d''alliés a été atteinte'
+  alreadyrequest: '<dark_red>Vous avez déjà demandé à être allié avec cette équipe'
+  ally_title: '<gold>Votre équipe est maintenant alliée avec <aqua>{0}'
+allychat:
+  disabled: '<gold>Vos messages ne sont plus envoyés dans le chat des alliés'
+  enabled: '<gold>Vos messages sont maintenant envoyés dans le chat des alliés'
+  syntax: '<light_purple>[{0}]<white>{1}<white>: {2}'
+neutral:
+  self: '<gold>C''est votre propre équipe'
+  requestremove: '<gold>Cette demande d''alliance a été supprimée'
+  reject: '<dark_red>Votre demande d''alliance avec <aqua>{0} <dark_red>a été rejetée'
+  notAlly: '<dark_red>Vous n''êtes pas allié avec cette équipe'
+  success: '<dark_red>Vous n''êtes plus allié avec cette équipe'
+  remove: '<dark_red>Vous n''êtes plus allié avec <aqua>{0}'
+  remove_title: '<dark_red>Vous n''''êtes plus alliée avec <aqua>{0}'
+list:
+  noPage: '<gold>Cette page n''existe pas'
+  header: '<gray>--- <aqua>Liste des équipes page {0} <gray>---'
+  body: '<gold>{0} : <aqua>{1}'
+  footer: '<gray>--- <gold>Utilisez <aqua>/team list [page] <gold>pour afficher plus <gray>---'
+setowner:
+  use: '<gold>Vous ne pouvez pas promouvoir ce joueur, utilisez <aqua>/team setowner <joueur>
+    <gold>pour promouvoir ce joueur en tant que propriétaire'
+  success: '<gold>Ce joueur est maintenant propriétaire'
+  notify: '<gold>Vous êtes maintenant propriétaire de votre équipe'
+  max: '<dark_red>Ce joueur est déjà propriétaire'
+setwarp:
+  exist: '<dark_red>Ce point de passage existe déjà'
+  max: '<dark_red>Votre équipe a déjà atteint le nombre maximum de points de passage'
+  success: '<gold>Ce point de passage a été créé'
+  char: '<dark_red>Ce nom de point de passage contient des caractères interdits'
+warp:
+  nowarp: '<dark_red>Ce point de passage n''existe pas'
+  invalidPassword: '<dark_red>Mot de passe incorrect pour ce point de passage'
+  success: '<gold>Vous avez été téléporté'
+  world: '<dark_red>Impossible de trouver l''emplacement de ce point de passage'
+  syntax: '<gold>Points de téléportation: <aqua>{0}'
+  none: '<dark_red>Votre team n''a pas de points de téléportation définis'
+warps:
+  syntax: '<gold>Points de passage : <aqua>{0}'
+  none: '<dark_red>Votre équipe n''a aucun point de passage'
+delwarp:
+  success: '<dark_red>Ce point de passage a été supprimé'
+teleport:
+  fail: '<dark_red>La téléportation a échoué'
+  wait: '<gold>Attendez <aqua>{0} <gold>secondes'
+chest:
+  claim:
+    noChest: '<dark_red>Vous n''êtes pas sur un coffre'
+    limit: '<dark_red>Votre équipe a atteint le nombre maximum de coffres revendiqués'
+    claimed: '<dark_red>Ce coffre a déjà été revendiqué'
+    success: '<gold>Vous avez revendiqué ce coffre'
+  remove:
+    noChest: '<dark_red>Vous n''êtes pas sur un coffre'
+    notClaimed: '<dark_red>Votre équipe n''a pas revendiqué ce coffre'
+    success: '<dark_red>Votre équipe n''a plus de revendication sur ce coffre'
+  all:
+    success: '<gold>Tous les coffres ont été non revendiqués'
+  claimed: '<dark_red>Ce coffre est revendiqué par <green>{0}'
+  check:
+    self: '<gold>Votre équipe a réclamé ce coffre'
+    notClaimed: '<gold>Ce coffre n''''a pas été réclamé'
+    claimed: '<gold>Ce coffre a été réclamé par <green>{0}'
+echest:
+  echest: EnderCoffre
+pvp:
+  enabled: '<gold>Le PvP a été activé pour votre team'
+  disabled: '<gold>Le PvP a été désactivé pour votre team'
+rankup:
+  max: '<dark_red>Vous êtes déjà au rang maximum'
+  score: '<dark_red>Vous avez besoin de {0} points pour passer au rang supérieur'
+  money: '<dark_red>Vous avez besoin de {0} argent dans la balance de l''équipe pour passer
+    au rang supérieur'
+  success: '<gold>Votre équipe a monté de niveau'
+tag:
+  banned: '<dark_red>Ce tag est interdit'
+  success: '<gold>Votre tag a été modifié avec succès'
+  maxLength: '<dark_red>Ce tag est trop long'
+  noPerm: '<dark_red>Vous n''avez pas la permission de modifier le tag de l''équipe'
+admin:
+  cancel: '<dark_red>La commande a été annulée par un autre plugin'
+  tag:
+    success: '<gold>Le tag de cette équipe a été modifié avec succès'
+  setrank:
+    success: '<gold>Le rang de cette équipe a été défini'
+    'no': '<dark_red>Ce rang n''existe pas ou n''est pas configuré correctement'
+  config:
+    reload: '<gold>BetterTeams a été rechargé (Si vous rencontrez des problèmes lors de
+      l''utilisation de cette commande, redémarrez le serveur)'
+  holo:
+    create:
+      success: '<gold>Hologramme créé'
+    remove:
+      noHolo: '<dark_red>Aucun hologramme trouvé'
+      success: '<gold>Hologramme supprimé'
+  title:
+    success: '<gold>Le titre de ce joueur a été modifié'
+    reset: '<gold>Le titre de ce joueur a été réinitialisé'
+  version: '<gold>Version actuelle du plugin : <aqua>{0}'
+  versionstorage: '<gold>Méthode de stockage : <aqua>{0}'
+  versionversion: '<gold>Version de Minecraft : <aqua>{0}'
+  versionlanguage: '<gold>Langue sélectionnée : <aqua>{0}'
+  noTeam: '<dark_red>Ce n''est pas une équipe'
+  home:
+    success: '<gold>Vous avez été téléporté à l''accueil de cette équipe'
+    noHome: "<dark_red>Cette équipe n'est pas défini d'accueil"
+  name:
+    success: '<gold>Le nom de l''équipe a été modifié'
+  description:
+    success: '<gold>Le nom de cette équipe a été modifié'
+  open:
+    successopen: '<gold>Cette équipe est maintenant ouverte à tous'
+    successclose: '<gold>Cette équipe est maintenant sur invitation seulement'
+  invite:
+    success: '<gold>Ce joueur a été invité dans cette équipe'
+  create:
+    success: '<gold>Cette équipe a été créée'
+  join:
+    banned: '<dark_red>Ce joueur est banni de cette équipe'
+    success: '<gold>Ce joueur a rejoint l''équipe'
+    notify: '<gold>Vous avez rejoint l''équipe <aqua>{0}'
+    full: '<dark_red>Cette équipe est complète'
+  notInTeam: '<gold>Ce joueur ne peut pas rejoindre une équipe avant cela'
+  inTeam: '<dark_red>Ce joueur n''appartient pas à une équipe'
+  leave:
+    success: '<gold>Ce joueur a quitté cette équipe'
+    notify: '<gold>Vous avez quitté cette équipe'
+  demote:
+    notify: '<gold>Vous avez été rétrogradé'
+    success: '<gold>Ce joueur a été rétrogradé'
+    min: '<dark_red>Ce joueur ne peut plus être rétrogradé'
+    maxAdmins: '<dark_red>Cette équipe a déjà atteint le nombre maximal d''administrateurs,
+      supprimez-en un avant de rétrograder ce joueur'
+  promote:
+    max: '<gold>Ce joueur est déjà au rang maximum'
+    notify: '<gold>Vous avez été promu'
+    success: '<gold>Ce joueur a été promu'
+    owner: '<gold>Il est configuré que les équipes ne peuvent avoir qu''un seul propriétaire,
+      utilisez <aqua>/teama setowner <joueur> <gold>pour définir le joueur en tant que propriétaire'
+    maxAdmins: '<dark_red>Cette équipe a déjà atteint le nombre maximum d''administrateurs,
+      supprimez-en un avant de promouvoir ce joueur'
+    maxOwners: '<dark_red>Cette équipe a déjà atteint le nombre maximum de propriétaires,
+      supprimez-en un avant de promouvoir ce joueur'
+  setowner:
+    already: '<dark_red>Ce joueur est déjà propriétaire'
+    nonotify: '<gold>Vous n''êtes plus propriétaire de l''équipe'
+    success: '<gold>Ce joueur est le nouveau propriétaire de l''équipe'
+    notify: '<gold>Vous êtes maintenant propriétaire de votre équipe'
+  warps:
+    none: '<dark_red>Cette équipe n''a défini aucun point de téléportation'
+  purge:
+    confirm: '<gold>Exécutez cette commande dans les 10 prochaines secondes pour confirmer,
+      <dark_red>CETTE ACTION NE PEUT PAS ÊTRE ANNULÉE ET RÉINITIALISERA LES SCORES DE TOUTES
+      LES ÉQUIPES'
+    success: '<gold>Les équipes ont été réinitialisées'
+  score:
+    tooSmall: '<dark_red>Le score doit être supérieur à 0'
+    success: '<gold>Le score de cette équipe a été modifié'
+  bal:
+    toSmall: '<dark_red>Le solde doit être supérieur à 0'
+    success: '<gold>Le solde de cette équipe a été modifié'
+  update: '<dark_red>Une nouvelle version de BetterTeams est disponible, mettez à jour ici
+    : https://www.spigotmc.org/resources/better-teams.17129/'
+  disband:
+    success: '<gold>Cette équipe a été dissoute avec succès'
+  color:
+    success: '<gold>La couleur de cette équipe a été modifiée'
+  chest:
+    claim:
+      success: '<gold>Vous avez revendiqué ce coffre au nom de l''équipe'
+    remove:
+      success: '<gold>Vous avez supprimé la revendication de ce coffre avec succès'
+      notClaimed: '<dark_red>Aucune équipe n''a revendiqué ce coffre'
+    all:
+      success: '<gold>Toutes les revendications ont été supprimées pour cette équipe'
+    disable:
+      already: '<dark_red>Les revendications de coffre sont déjà désactivées'
+      success: '<gold>La revendication de coffre a été désactivée'
+    disabled:
+      bc: '<gold><bold>Tous les coffres revendiqués peuvent être ouverts'
+    enable:
+      already: '<dark_red>Les revendications de coffre sont déjà activées'
+      success: '<gold>La revendication de coffre a été activée'
+    enabled:
+      bc: '<gold><bold>Tous les coffres revendiqués sont verrouillés'
+  teleport:
+    success: '<gold>Tous les membres en ligne de cette équipe ont été téléportés'
+    noWorld: '<dark_red>Monde spécifié introuvable'
+    all:
+      success: '<gold>Tous les membres en ligne de toutes les équipes ont été téléportés'
+      home:
+        success: '<gold>Tous les membres en ligne de toutes les équipes avec une base
+          ont été téléportés'
+    player:
+      success: '<gold>Ce joueur a été téléporté'
+  versiononline: '<gold>Mode En ligne: <aqua>{0}'
+  versionplayers: '<gold>Nombre de joueurs: <aqua>{0}'
+  setwarp:
+    success: '<gold>Ce warp a été défini'
+    max: "<gold>Cette équipe a déjà atteint le nombre maximum de warps"
+  ally:
+    same: '<dark_red>Vous ne pouvez pas faire d’une équipe une alliée d’elle-même'
+    already: '<dark_red>Ces équipes sont déjà alliées'
+    success: '<gold>Ces deux équipes sont maintenant alliées'
+  neutral:
+    same: '<dark_red>You cannot enter the same team twice'
+    not: '<dark_red>Ces équipes ne sont pas alliées'
+    success: '<gold>Ces équipes ne sont plus alliées'
+  import:
+    fail: '<dark_red>L''''importation des messages a échoué, vérifiez que la console ne contient
+      pas d''''erreurs'
+    success: '<gold>Les messages ont été importés avec succès'
+nametag:
+  syntax: '<gold><bold>{0}<reset> '
+holo:
+  leaderboard: '<gold>Classement'
+  syntax: '<gold>{0}: <aqua>{1}'
+  msyntax: '<gold>{0}: <aqua>{1} $'
+top:
+  leaderboard: '<gold>Classement'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+  divide: '<white>...'
+baltop:
+  leaderboard: '<gold>Classement'
+  syntax: '<aqua>{0}: <gold>{1} <gray>({2})'
+  divide: '<white>...'
+spy:
+  stop: '<gold>Vous n''espionnez plus les messages de l''équipe'
+  start: '<gold>Vous espionnez maintenant les messages de l''équipe'
+  team: '<gray>[<aqua>{0}<gray>]<white>{1}<white>: {2}'
+  ally: '<gray>[<light_purple>{0}<gray>]<white>{1}<white>: {2}'
+uclaim:
+  team: '<dark_red>Vous devez faire partie d''une équipe pour créer une revendication'
+  member: '<dark_red>Vous ne pouvez pas quitter la revendication de votre équipe'
+  kick: '<dark_red>Vous ne pouvez pas expulser les membres de votre propre équipe de votre
+    revendication'
+  ban: '<dark_red>Vous ne pouvez pas bannir les membres de votre propre équipe de votre revendication'
+  dissolve: '<dark_red>Votre équipe a été dissoute, donc votre revendication a été supprimée'
+help:
+  description: Afficher et modifier la description de votre équipe
+  ban: Bannit le joueur spécifié de votre équipe
+  home: Vous téléporte à la maison de votre équipe
+  help: Afficher cette page d'aide
+  promote: Promouvoir le joueur spécifié au sein de votre équipe
+  demote: Rétrograder le joueur spécifié au sein de votre équipe
+  unban: Débannit le joueur spécifié de votre équipe
+  kick: Exclure ce joueur de votre équipe
+  leave: Quitter votre équipe actuelle
+  chat: Envoyer un message uniquement à votre équipe
+  name: Afficher et modifier le nom de votre équipe
+  sethome: Définir la maison de votre équipe
+  create: Créer une équipe avec le nom spécifié
+  invite: Inviter le joueur spécifié dans votre équipe
+  disband: Dissoudre votre équipe actuelle
+  open: Basculer si l'équipe est uniquement sur invitation
+  info: Afficher des informations sur le joueur / l'équipe spécifié(e)
+  color: Changer la couleur de votre équipe
+  deposit: Déposer de l'argent dans le solde de l'équipe
+  bal: Voir le solde de votre équipe
+  withdraw: Retirer de l'argent du solde de l'équipe
+  title: Changer le titre de ce joueur au sein de l'équipe
+  top: Voir les meilleures équipes
+  rank: Voir le classement d'une équipe
+  join: Rejoindre l'équipe spécifiée
+  delhome: Supprimer la maison de votre équipe
+  ally: Utilisé pour demander une alliance avec une autre équipe
+  neutral: Supprimer les alliés et rejeter les demandes d'alliance
+  allychat: Envoyer un message uniquement à vos alliés
+
+
+
+  echest: Voir l'ender chest de votre team
+  setwarp: Définir un point de téléportation pour le reste de votre team
+  warps: Voir la liste des points de téléportation de votre team
+  rankup: Faire monter votre team en grade pour obtenir plus d'avantages
+  tag: Définir le tag de votre team
+  delwarp: Supprimer ce point de téléportation de votre team
+  pvp: Activer/Désactiver si le PvP est activé pour votre team
+  baltop: Voir les teams les plus riches
+  list: Obtenir une liste de toutes les teams sur le serveur
+  warp: Se téléporter à un emplacement défini par votre team
+  header: '<gold>---- <aqua>Aide BetterTeams <gold>----'
+  footer: '<gold>---- <aqua>Page {0}/{1} - /{2} help <page> <gold>----'
+command:
+  create: create
+  leave: leave
+  disband: disband
+  description: description
+  invite: invite
+  join: join
+  name: name
+  open: open
+  info: info
+  kick: kick
+  promote: promote
+  demote: demote
+  home: home
+  sethome: sethome
+  ban: ban
+  unban: unban
+  chat: chat
+  color: color
+  title: title
+  top: top
+  baltop: baltop
+  rank: rank
+  delhome: delhome
+  ally: ally
+  neutral: neutral
+  allychat: allychat
+  list: list
+  warp: warp
+  setwarp: setwarp
+  delwarp: delwarp
+  warps: warps
+  echest: echest
+  rankup: rankup
+  tag: tag
+  pvp: pvp
+  claim: claim
+  remove: remove
+  removeall: removeall
+  chest: chest
+  reload: reload
+  chatspy: chatspy
+  version: version
+  purge: purge
+  setrank: setrank
+  add: add
+  set: set
+  score: score
+  enableclaims: enableclaims
+  disableclaims: disableclaims
+  teleport: teleport
+  money: money
+  deposit: déposer
+  bal: solde
+  withdraw: retirer
+  check: check
+  debug: debug
+  importmessages: importmessages
+helpArg:
+  delhome: ''
+  echest: ''
+  color: <code couleur>
+  allychat: '[message]'
+  description: '[description]'
+  setwarp: <Nom> [Mot de passe]
+  title: '[Joueur/moi] [Titre]'
+  bal: ''
+  ban: <Joueur>
+  promote: <Joueur>
+  warps: ''
+  top: ''
+  ally: <team>
+  rankup: ''
+  leave: ''
+  sethome: ''
+  create: <name> [tag]
+  rank: '[équipe]'
+  join: <équipe>
+  tag: '[tag]'
+  disband: ''
+  info: '[équipe/Joueur]'
+  delwarp: <Nom> [Mot de passe]
+  chest: ''
+  neutral: <équipe>
+  pvp: ''
+  baltop: ''
+  list: '[page]'
+  home: ''
+  help: ''
+  unban: <Joueur>
+  demote: <Joueur>
+  kick: <Joueur>
+  chat: '[message]'
+  name: <Nom>
+  deposit: <Quantité>
+  invite: <Joueur>
+  open: ''
+  warp: <Nom>
+  withdraw: <Quantité>
