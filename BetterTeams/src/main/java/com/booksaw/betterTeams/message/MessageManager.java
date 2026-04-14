@@ -3,6 +3,9 @@ package com.booksaw.betterTeams.message;
 import com.booksaw.betterTeams.Main;
 import lombok.Getter;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.minimessage.MiniMessage;
+import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
+import net.kyori.adventure.text.minimessage.tag.standard.StandardTags;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -117,6 +120,10 @@ public class MessageManager {
 
 	public static void sendFullMessage(Collection<? extends CommandSender> senders, String message) {
 		sendFullMessage(senders, message, false);
+	}
+
+	public static void sendSafeMessage(CommandSender recipient, String message, boolean doPrefix) {
+		mainPluginService.sendSafeMessage(recipient, message, doPrefix);
 	}
 
 	public static void sendFullMessage(Collection<? extends CommandSender> recipients, String message, boolean doPrefix) {

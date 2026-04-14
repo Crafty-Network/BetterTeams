@@ -142,6 +142,13 @@ public class MessageService {
         sendFullMessage(recipient, message, false);
     }
 
+	public void sendSafeMessage(@Nullable CommandSender recipient, @Nullable String message, boolean doPrefix) {
+		if (recipient == null || message == null || message.isEmpty() || messageSender == null) return;
+
+		Component component = Formatter.safe().process(message);
+		messageSender.sendMessage(recipient, doPrefix ? combineWithPrefix(component) : component);
+	}
+
     public void sendFullMessage(@Nullable CommandSender recipient, @Nullable Component message, boolean doPrefix) {
         if (recipient == null || message == null || message.equals(Component.empty()) || messageSender == null) return;
 
