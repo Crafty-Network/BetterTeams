@@ -56,7 +56,7 @@ public class MessageManager {
 	}
 
 	public static String getPrefix() {
-		return mainPluginService == null ? "" : getPrefixComponent().insertion();
+		return mainPluginService == null ? "" : mainPluginService.getPrefix();
 	}
 
 	public static Component getPrefixComponent() {
