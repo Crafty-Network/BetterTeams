@@ -148,8 +148,8 @@ public class ApolloManager implements Listener {
 	private JsonObject createTeamMemberObject(Player member, Team team) {
 		JsonObject obj = new JsonObject();
 
-		Color awtColor = team.getColor().asBungee().getColor();
-		if (awtColor == null) awtColor = Color.WHITE;
+		net.kyori.adventure.text.format.TextColor tc = team.getColor();
+		Color awtColor = tc != null ? new Color(tc.red(), tc.green(), tc.blue()) : Color.WHITE;
 
 		int rgb = awtColor.getRGB();
 
