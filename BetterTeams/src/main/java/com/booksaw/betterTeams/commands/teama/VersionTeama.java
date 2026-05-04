@@ -8,7 +8,6 @@ import com.booksaw.betterTeams.extension.ExtensionWrapper;
 import com.booksaw.betterTeams.message.MessageManager;
 import com.booksaw.betterTeams.message.ReferencedFormatMessage;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
 import java.util.List;
@@ -33,7 +32,6 @@ public class VersionTeama extends SubCommand {
 		MessageManager.sendMessage(sender, "admin.versionextensions", getEnabledExtensions());
 		return new CommandResponse(true,
 				new ReferencedFormatMessage("admin.version", Main.plugin.getDescription().getVersion()));
-
 
 	}
 
@@ -73,14 +71,14 @@ public class VersionTeama extends SubCommand {
 
 	private String getPluginIntegrations() {
 
-		String placeholderAPI = (Main.placeholderAPI ? ChatColor.GREEN + "ENA-" : ChatColor.RED + "DIS-") + "PlaceholderAPI";
-		String ultimateClaims = (Main.plugin.isUltimateClaimsEnabled() ? ChatColor.GREEN + "ENA-" : ChatColor.RED + "DIS-") + "UltimateClaims";
-		String vault = (Main.econ != null ? ChatColor.GREEN + "ENA-" : ChatColor.RED + "DIS-") + "Vault";
-		String holograms = ChatColor.RED + "noHologram";
+		String placeholderAPI = (Main.placeholderAPI ? "<green>ENA-" : "<red>DIS-") + "PlaceholderAPI";
+		String ultimateClaims = (Main.plugin.isUltimateClaimsEnabled() ? "<green>ENA-" : "<red>DIS-") + "UltimateClaims";
+		String vault = (Main.econ != null ? "<green>ENA-" : "<red>DIS-") + "Vault";
+		String holograms = "<red>noHologram";
 		if (Bukkit.getPluginManager().isPluginEnabled("HolographicDisplays")) {
-			holograms = ChatColor.GREEN + "HolographicDisplays";
+			holograms = "<green>HolographicDisplays";
 		} else if (Bukkit.getPluginManager().isPluginEnabled("DecentHolograms")) {
-			holograms = ChatColor.GREEN + "DecentHolograms";
+			holograms = "<green>DecentHolograms";
 		}
 
 		return placeholderAPI + " " + ultimateClaims + " " + vault + " " + holograms;
@@ -114,14 +112,13 @@ public class VersionTeama extends SubCommand {
 		StringBuilder sb = new StringBuilder();
 		for (ExtensionWrapper wrapper : enabled) {
 			if (!sb.isEmpty()) {
-				sb.append(ChatColor.WHITE).append(", ");
+				sb.append("<white>, ");
 			}
-			sb.append(ChatColor.GREEN).append(wrapper.getInfo().getName());
-			sb.append(ChatColor.GRAY).append(" v").append(wrapper.getInfo().getVersion());
+			sb.append("<green>").append(wrapper.getInfo().getName());
+			sb.append("<gray> v").append(wrapper.getInfo().getVersion());
 		}
 
 		return sb.toString();
 	}
-
 
 }

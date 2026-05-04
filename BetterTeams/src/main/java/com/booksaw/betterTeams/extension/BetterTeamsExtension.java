@@ -16,7 +16,6 @@ import java.nio.file.StandardCopyOption;
 import java.util.Objects;
 import java.util.logging.Level;
 
-
 public abstract class BetterTeamsExtension {
 
 	private ExtensionInfo info;
@@ -27,51 +26,38 @@ public abstract class BetterTeamsExtension {
 	private ConfigManager configManager;
 	private ExtensionMessages extensionMessages;
 
-	/**
-	 * Called when the extension is enabled.
-	 */
+ /**
+ * Called when the extension is enabled.
+ */
 	public void onEnable() {}
 
-	/**
-	 * Called when the extension is disabled.
-	 */
+ /**
+ * Called when the extension is disabled.
+ */
 	public void onDisable() {}
 
-	/**
-	 * Called when the extension is loaded, before it is enabled.
-	 */
+ /**
+ * Called when the extension is loaded, before it is enabled.
+ */
 	public void onLoad() {}
 
-
-	/**
-	 * just let me disable from this server
-	 */
+ /**
+ * just let me disable from this server
+ */
 	public final void selfDisable() {
 		plugin.getExtensionManager().unloadExtension(this);
 	}
 
-	/**
-	 * Gets the main BetterTeams plugin instance.
-	 * @return The main plugin.
-	 */
 	@NotNull
 	public final Main getPlugin() {
 		return this.plugin;
 	}
 
-	/**
-	 * Gets the information about this extension, loaded from the extension.yml file.
-	 * @return The extension's info.
-	 */
 	@NotNull
 	public final ExtensionInfo getInfo() {
 		return this.info;
 	}
 
-	/**
-	 * Gets the logger for this extension.
-	 * @return The extension's logger.
-	 */
 	@NotNull
 	public final ExtensionLogger getLogger() {
 		if (extensionLogger == null) {
@@ -80,39 +66,28 @@ public abstract class BetterTeamsExtension {
 		return extensionLogger;
 	}
 
-	/**
-	 * Gets the data folder for this extension, located at /plugins/BetterTeams/extensions/{extension-name}/
-	 * @return The extension's dedicated data folder.
-	 */
 	@NotNull
 	public final File getDataFolder() {
 		return this.dataFolder;
 	}
 
-	/**
-	 * Gets the extension's configuration from config.yml.
-	 * @return The YamlConfiguration for this extension.
-	 */
 	@NotNull
 	public ConfigManager getConfig() {
 		if (configManager == null) {
+   /**
+   * Reloads the config.yml from disk.
+   */
 			reloadConfig();
 		}
 		return configManager;
 	}
 
-	/**
-	 * Gets the extension's message manager
-	 */
 	@NotNull
 	public ExtensionMessages getMessages()  {
 		String lang = MessageManager.getLanguage();
 		return getMessages(lang);
 	}
 
-	/**
-	 * Gets the extension's message manager
-	 */
 	@NotNull
 	public ExtensionMessages getMessages(@NotNull String fileName)  {
 		if (extensionMessages == null) {
@@ -123,26 +98,22 @@ public abstract class BetterTeamsExtension {
 		return extensionMessages;
 	}
 
-
-	/**
-	 * Reloads the config.yml from disk.
-	 */
 	public void reloadConfig() {
 		configManager = new ConfigManager("config", true, this);
 	}
 
-	/**
-	 * Reloads the extension's messages from the current file.
-	 */
+ /**
+ * Reloads the extension's messages from the current file.
+ */
 	public void reloadMessages() {
 		if (extensionMessages != null) {
 			extensionMessages.reload();
 		}
 	}
 
-	/**
-	 * Reloads the extension's messages from a different file.
-	 */
+ /**
+ * Reloads the extension's messages from a different file.
+ */
 	public void reloadMessages(@NotNull String fileName) {
 		if (extensionMessages != null) {
 			extensionMessages.reload(fileName);
@@ -151,21 +122,21 @@ public abstract class BetterTeamsExtension {
 		}
 	}
 
-	/**
-	 * Saves the current configuration to the config.yml file.
-	 */
+ /**
+ * Saves the current configuration to the config.yml file.
+ */
 	public void saveConfig() {
 		if (configManager != null) {
 			configManager.save(false);
 		}
 	}
 
-	/**
-	 * Saves any embedded resource to the extension’s data folder.
-	 * @param resourcePath path inside the jar (use '/' separators)
-	 * @param replace      overwrite existing file
-	 * @throws IllegalArgumentException if resource not found
-	 */
+ /**
+ * Saves any embedded resource to the extension’s data folder.
+ * @param resourcePath path inside the jar (use '/' separators)
+ * @param replace      overwrite existing file
+ * @throws IllegalArgumentException if resource not found
+ */
 	public void saveResource(@NotNull String resourcePath, boolean replace) {
 		if (resourcePath.isEmpty()) {
 			throw new IllegalArgumentException("ResourcePath cannot be empty");
@@ -192,11 +163,6 @@ public abstract class BetterTeamsExtension {
 		}
 	}
 
-	/**
-	 * Gets a raw resource from the extension jar.
-	 * @param filename path inside the jar
-	 * @return stream or null if not found
-	 */
 	@Nullable
 	public InputStream getResource(@NotNull String filename) {
 		if (filename.isEmpty()) {

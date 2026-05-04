@@ -17,11 +17,6 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Used to register a command which uses the sub command system
- *
- * @author booksaw
- */
 @Getter
 @Setter
 public class BooksawCommand extends BukkitCommand {
@@ -50,9 +45,9 @@ public class BooksawCommand extends BukkitCommand {
 
 	@Override
 	public boolean execute(@NotNull CommandSender sender, @NotNull String label, String[] args) {
-		// running custom command manager
+		
 		if (checkPointers(sender, label, args)) {
-			// if pointers were found and dealt with
+			
 			return true;
 		}
 
@@ -80,7 +75,7 @@ public class BooksawCommand extends BukkitCommand {
 				response.sendResponseMessage(sender);
 		} catch (Exception e) {
 			Main.plugin.getLogger().severe(
-					"Something went wrong while executing the command, please report this https://github.com/booksaw/BetterTeams/issues/new/choose");
+					"Something went wrong while executing the command, please report this https://github.com/booksaw/BetterTeams/issues");
 			e.printStackTrace();
 			MessageManager.sendMessage(sender, "internalError");
 		}
@@ -103,7 +98,7 @@ public class BooksawCommand extends BukkitCommand {
 			if (!str.startsWith("@")) {
 				continue;
 			}
-			// a selector is found
+			
 			boolean found = false;
 			try {
 				for (Entity e : Bukkit.selectEntities(sender, str)) {
@@ -127,7 +122,6 @@ public class BooksawCommand extends BukkitCommand {
 			return found;
 		}
 
-		// no selector was found
 		return false;
 	}
 }

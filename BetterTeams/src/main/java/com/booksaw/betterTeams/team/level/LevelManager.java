@@ -11,9 +11,9 @@ public class LevelManager {
 
 	private static final Map<Integer, TeamLevel> levels = new HashMap<>();
 
-	/**
-	 * Reloads all levels from the config.yml file.
-	 */
+ /**
+ * Reloads all levels from the config.yml file.
+ */
 	public static void reload() {
 		levels.clear();
 		FileConfiguration config = Main.plugin.getConfig();
@@ -21,7 +21,7 @@ public class LevelManager {
 
 		if (section == null) {
 			Main.plugin.getLogger().log(Level.SEVERE, "Section 'levels' not found in config.yml! using default level 1.");
-			// fallback level to prevent crashes
+			
 			levels.put(1, new TeamLevel(1, 10, 0, 0, 0, 1, 1, "0m", new ArrayList<>(), new ArrayList<>(), new ArrayList<>()));
 			return;
 		}
@@ -65,12 +65,11 @@ public class LevelManager {
 		}
 	}
 
-
-	/**
-	 * Retrieves a specific level object.
-	 * @param level The level number.
-	 * @return The TeamLevel object
-	 */
+ /**
+ * Retrieves a specific level object.
+ * @param level The level number.
+ * @return The TeamLevel object
+ */
 	public static TeamLevel getLevel(int level) {
 		return levels.get(level);
 	}
@@ -95,10 +94,10 @@ public class LevelManager {
 		return levels.containsKey(level);
 	}
 
-	/**
-	 * Returns an unmodifiable view of all loaded levels.
-	 * @return Map of Level ID -> TeamLevel
-	 */
+ /**
+ * Returns an unmodifiable view of all loaded levels.
+ * @return Map of Level ID -> TeamLevel
+ */
 	public static Map<Integer, TeamLevel> getLevels() {
 		return Collections.unmodifiableMap(levels);
 	}

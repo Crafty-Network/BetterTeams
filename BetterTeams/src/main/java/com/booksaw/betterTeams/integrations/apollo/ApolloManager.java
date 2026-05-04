@@ -17,6 +17,14 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
+/**
+* Integrates BetterTeams with the Apollo (Lunar Client) Team View module
+* using the lightweight JSON plugin messaging API.
+* <p>
+* Detects players on Lunar Client via the {@code lunar:apollo} channel and
+* sends periodic team-member location updates over the {@code apollo:json}
+* channel so teammates appear as markers on the minimap and direction HUD.
+*/
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerRegisterChannelEvent;

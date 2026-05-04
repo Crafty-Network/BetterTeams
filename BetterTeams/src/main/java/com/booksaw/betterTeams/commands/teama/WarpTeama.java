@@ -28,7 +28,7 @@ public class WarpTeama extends SubCommand {
 				replace.append(warp.getName()).append(", ");
 			}
 
-			if (replace.length() == 0) { // JDK 8 doesn't have StringBuilder::isEmpty yet
+			if (replace.length() == 0) { 
 				return new CommandResponse("admin.warps.none");
 			}
 
@@ -42,7 +42,6 @@ public class WarpTeama extends SubCommand {
 			return new CommandResponse("warp.nowarp");
 		}
 
-		// the user is allowed to go to the warp
 		try {
 			warp.execute((Player) sender);
 		} catch (Exception e) {

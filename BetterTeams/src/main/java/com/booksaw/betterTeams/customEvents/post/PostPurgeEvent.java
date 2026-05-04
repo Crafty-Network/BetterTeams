@@ -1,18 +1,18 @@
 package com.booksaw.betterTeams.customEvents.post;
 
 import com.booksaw.betterTeams.customEvents.PurgeEvent;
+/**
+* This event is called after a team purge has been completed.
+* This event cannot be cancelled since it occurs after the purge.
+* <p>
+* To modify or cancel the purge, use {@link PurgeEvent}.
+*
+* @author svaningelgem
+*/
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * This event is called after a team purge has been completed.
- * This event cannot be cancelled since it occurs after the purge.
- * <p>
- * To modify or cancel the purge, use {@link PurgeEvent}.
- *
- * @author svaningelgem
- */
 public class PostPurgeEvent extends Event {
 
 	private static final HandlerList HANDLERS = new HandlerList();

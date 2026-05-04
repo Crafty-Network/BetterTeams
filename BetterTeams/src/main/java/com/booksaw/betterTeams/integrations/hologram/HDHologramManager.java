@@ -6,17 +6,12 @@ import com.gmail.filoghost.holographicdisplays.api.HologramsAPI;
 import org.bukkit.Location;
 
 public class HDHologramManager extends HologramManager {
-	/*
-	 * Creates a new HolographicDisplays hologram.
-	 */
+	
 	@Override
 	public LocalHologram createLocalHolo(Location location, HologramType type) {
 		return new HDHologramImpl(HologramsAPI.createHologram(Main.plugin, location));
 	}
 
-	/*
-	 * A wrapper class for interfacing with HolographicDisplays holograms.
-	 */
 	private static class HDHologramImpl implements LocalHologram {
 		private final Hologram hologram;
 

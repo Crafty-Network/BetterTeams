@@ -76,7 +76,6 @@ public class HomeAnchorManagement implements Listener {
         if (plugin.getConfig().getBoolean("anchor.checkAnchoredPlayer")
 				&& !teamPlayer.isAnchored()) return;
 
-        // This goes before the team home for ensuring it exists even after this
         if (plugin.getConfig().getBoolean("anchor.checkUsePermission")
 				&& !e.getPlayer().hasPermission("betterteams.anchor.use")) return;
 

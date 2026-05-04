@@ -6,8 +6,8 @@ import com.booksaw.betterTeams.Team;
 import com.booksaw.betterTeams.TeamPlayer;
 import com.booksaw.betterTeams.commands.SubCommand;
 import com.booksaw.betterTeams.message.MessageManager;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
 import java.util.List;
@@ -42,7 +42,8 @@ public class TitleTeama extends SubCommand {
 			return new CommandResponse("bannedChar");
 		}
 
-		args[1] = ChatColor.translateAlternateColorCodes('&', args[1]);
+		args[1] = LegacyComponentSerializer.legacySection().serialize(
+				LegacyComponentSerializer.legacyAmpersand().deserialize(args[1]));
 
 		team.setTitle(toTitle, args[1]);
 

@@ -5,36 +5,35 @@ import com.booksaw.betterTeams.team.storage.StorageType;
 
 public abstract class Converter {
 
-	public static Converter getConverter(StorageType from, StorageType to) {
+    public static Converter getConverter(StorageType from, StorageType to) {
+        if (from == to) {
+            return null;
+        }
+        if (to == StorageType.SQLITE) {
+            if (from == StorageType.YAML) {
+                return new YamlToSQLite();
+            }
+            if (from == StorageType.SQL) {
+                return new SqlToSQLite();
+            }
+            if (from == StorageType.FLATFILE) {
+                Main.plugin.getLogger().warning(
+                        "[BetterTeams] Direct FLATFILE → SQLITE migration is not supported. " +
+                        "No data has been migrated. Starting with an empty SQLite database.");
+            }
+        }
+        return null;
+    }
 
-		if (from == to) {
-			return null;
-		}
+    protected void log(String message) {
+        Main.plugin.getLogger().info(message);
+    }
 
-		if (from == StorageType.FLATFILE) {
-			if (to == StorageType.YAML) {
-				return new FlatFileToYaml();
-			}
-		} else if (from == StorageType.YAML) {
-			if (to == StorageType.SQL) {
-				return new YamlToSql();
-			}
-		}
+    public void convertStorage() {
+        log("Starting storage conversion — this may take a while…");
+        convert();
+        log("Storage conversion complete.");
+    }
 
-		return null;
-
-	}
-
-	protected void log(String message) {
-		Main.plugin.getLogger().info(message);
-	}
-
-	public void convertStorage() {
-		log("Converting storage type, this may take a while");
-		convert();
-		log("Convertion complete");
-	}
-
-	protected abstract void convert();
-
+    protected abstract void convert();
 }

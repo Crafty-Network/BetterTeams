@@ -36,8 +36,7 @@ public class JoinCommand extends NoTeamSubCommand {
 		if (team.join(p)) {
 			return new CommandResponse(true, "join.success");
 		}
-		// join event was cancelled, whatever the cause of the event should handle
-		// notifying the user
+
 		return new CommandResponse(false);
 	}
 

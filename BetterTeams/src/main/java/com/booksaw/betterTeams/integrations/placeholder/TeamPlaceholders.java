@@ -7,6 +7,11 @@ import com.booksaw.betterTeams.message.MessageManager;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
+/**
+* This class is used to set the placeholder values for placeholder API
+*
+* @author booksaw
+*/
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.plugin.Plugin;
@@ -17,11 +22,6 @@ import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
-/**
- * This class is used to set the placeholder values for placeholder API
- *
- * @author booksaw
- */
 public class TeamPlaceholders extends PlaceholderExpansion {
 	private final Plugin plugin;
 
@@ -33,7 +33,6 @@ public class TeamPlaceholders extends PlaceholderExpansion {
 		CacheBuilder<Object, Object> builder = CacheBuilder.newBuilder()
 				.maximumSize(300);
 
-		// Keep old behavior
 		if (duration > 0) {
 			builder.expireAfterWrite(duration, TimeUnit.SECONDS);
 		}
@@ -112,7 +111,6 @@ public class TeamPlaceholders extends PlaceholderExpansion {
 	private String getStaticPlaceholder(String identifier) {
 		String[] split = identifier.split("_");
 
-		// more complex request though not individual player related so can be cached
 		return switch (split[0]) {
 			case "position" -> processRankedTeamDataPlaceholder(identifier, SortType.SCORE);
 			case "balanceposition" -> processRankedTeamDataPlaceholder(identifier, SortType.BALANCE);

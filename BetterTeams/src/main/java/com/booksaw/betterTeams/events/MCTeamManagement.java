@@ -24,11 +24,11 @@ public class MCTeamManagement implements Listener {
 	@Getter
 	private final BelowNameType type;
 
-	/**
-	 * Used to track a list of all listeners
-	 *
-	 * @param type The type prefixing that should be done
-	 */
+ /**
+ * Used to track a list of all listeners
+ *
+ * @param type The type prefixing that should be done
+ */
 	public MCTeamManagement(BelowNameType type) {
 		this.type = type;
 
@@ -51,9 +51,8 @@ public class MCTeamManagement implements Listener {
 			return;
 		}
 
-		// checking the player has the correct permission node
 		if (!player.hasPermission("betterTeams.teamName")) {
-			// player does not have permission to have their team name displayed.
+			
 			return;
 		}
 
@@ -63,24 +62,29 @@ public class MCTeamManagement implements Listener {
 		try {
 			team.getScoreboardTeam(board).addEntry(player.getName());
 		} catch (IllegalStateException e) {
-			Main.plugin.getLogger().severe("Could not register the team name in the tab menu due to a conflict, see https://betterteams.booksaw.dev/docs/configuration/Managing-the-TAB-Menu#plugin-conflicts error:" + e.getMessage());
+			Main.plugin.getLogger().severe("Could not register the team name in the tab menu due to a conflict, see https://github.com/booksaw/BetterTeams/wiki");
 		}
 
 	}
 
+ /**
+ * Used when the plugin is disabled
+ */
 	public void removeAll() {
 		removeAll(true);
 	}
 
-	/**
-	 * Used when the plugin is disabled
-	 */
 	public void removeAll(boolean callEvent) {
 		for (Player p : Bukkit.getOnlinePlayers()) {
+   /**
+   * Used to remove the prefix / suffix from the specified player
+   *
+   * @param player    the player to remove the prefix/suffix from
+   * @param callEvent if BelowNameChangeEvent should be called
+   */
 			remove(p, callEvent);
 		}
 
-		// only loaded teams will have a team manager
 		for (Entry<UUID, Team> t : Team.getTeamManager().getLoadedTeamListClone().entrySet()) {
 			org.bukkit.scoreboard.Team team = t.getValue().getScoreboardTeamOrNull();
 
@@ -95,12 +99,6 @@ public class MCTeamManagement implements Listener {
 		remove(player, true);
 	}
 
-	/**
-	 * Used to remove the prefix / suffix from the specified player
-	 *
-	 * @param player    the player to remove the prefix/suffix from
-	 * @param callEvent if BelowNameChangeEvent should be called
-	 */
 	public void remove(Player player, boolean callEvent) {
 
 		if (player == null) {
@@ -120,7 +118,7 @@ public class MCTeamManagement implements Listener {
 			team.getScoreboardTeam(board).removeEntry(player.getName());
 		} catch (Exception e) {
 			Main.plugin.getLogger().warning(
-					"Another plugin is conflicting with the functionality of the BetterTeams. See the wiki page: https://betterteams.booksaw.dev/docs/configuration/Managing-the-TAB-Menu#plugin-conflicts for more information");
+					"Another plugin is conflicting with the functionality of the BetterTeams. See the wiki page: https://github.com/booksaw/BetterTeams/wiki");
 			return;
 		}
 
@@ -136,7 +134,7 @@ public class MCTeamManagement implements Listener {
 	}
 
 	public void setupTeam(org.bukkit.scoreboard.Team scoreboardTeam, String teamName) {
-		// setting team name
+		
 		if (type == BelowNameType.PREFIX) {
 			scoreboardTeam.setPrefix(teamName);
 		} else if (type == BelowNameType.SUFFIX) {

@@ -3,6 +3,16 @@ package com.booksaw.betterTeams.customEvents.post;
 import com.booksaw.betterTeams.Team;
 import com.booksaw.betterTeams.TeamPlayer;
 import com.booksaw.betterTeams.customEvents.DisbandTeamEvent;
+/**
+* An event which is called after a team has been disbanded.
+* Contains information about the player who disbanded the team (if applicable),
+* the team's previous allies, and all former team members.
+* This event cannot be cancelled since it occurs after the disbanding.
+* <p>
+* To modify or cancel the disbanding, use {@link DisbandTeamEvent}.
+*
+* @author svaningelgem
+*/
 import com.booksaw.betterTeams.customEvents.TeamEvent;
 import lombok.Getter;
 import org.bukkit.entity.Player;
@@ -14,16 +24,6 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
 
-/**
- * An event which is called after a team has been disbanded.
- * Contains information about the player who disbanded the team (if applicable),
- * the team's previous allies, and all former team members.
- * This event cannot be cancelled since it occurs after the disbanding.
- * <p>
- * To modify or cancel the disbanding, use {@link DisbandTeamEvent}.
- *
- * @author svaningelgem
- */
 public class PostDisbandTeamEvent extends TeamEvent {
 
 	private static final HandlerList HANDLERS = new HandlerList();

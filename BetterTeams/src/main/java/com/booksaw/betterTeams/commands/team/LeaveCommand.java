@@ -4,16 +4,16 @@ import com.booksaw.betterTeams.CommandResponse;
 import com.booksaw.betterTeams.PlayerRank;
 import com.booksaw.betterTeams.Team;
 import com.booksaw.betterTeams.TeamPlayer;
+/**
+* This class handles the /team leave command
+*
+* @author booksaw
+*/
 import com.booksaw.betterTeams.commands.presets.TeamSubCommand;
 import org.bukkit.command.CommandSender;
 
 import java.util.List;
 
-/**
- * This class handles the /team leave command
- *
- * @author booksaw
- */
 public class LeaveCommand extends TeamSubCommand {
 
 	@Override
@@ -26,7 +26,7 @@ public class LeaveCommand extends TeamSubCommand {
 		if (team.removePlayer(teamPlayer.getPlayer())) {
 			return new CommandResponse(true, "leave.success");
 		}
-		// event has been cancelled
+		
 		return new CommandResponse(false);
 	}
 

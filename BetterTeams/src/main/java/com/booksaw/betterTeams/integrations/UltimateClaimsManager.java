@@ -52,8 +52,6 @@ public class UltimateClaimsManager implements Listener {
 		}
 		e.getClaim().setName(team.getName());
 
-		// they are owner of their team, adding the rest of the team members as members
-		// of the claim
 		for (TeamPlayer tp : team.getMembers().getClone()) {
 			if (tp.getPlayer() != p) {
 				ClaimMember member = e.getClaim().addMember(tp.getPlayer(), ClaimRole.MEMBER);
@@ -162,7 +160,6 @@ public class UltimateClaimsManager implements Listener {
 
 				c.destroy(ClaimDeleteReason.PLAYER);
 			});
-
 
 			if (player.getPlayer().isOnline()) {
 				MessageManager.sendMessage(player.getPlayer().getPlayer(), "uclaim.dissolve");

@@ -4,13 +4,15 @@ import com.booksaw.betterTeams.Main;
 import com.booksaw.betterTeams.Team;
 import com.booksaw.betterTeams.TeamPlayer;
 import com.booksaw.betterTeams.message.MessageManager;
-import com.booksaw.betterTeams.text.LegacyTextUtils;
+import com.booksaw.betterTeams.text.Formatter;
+import io.papermc.paper.event.player.AsyncChatEvent;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.util.ArrayList;
@@ -19,20 +21,14 @@ import java.util.List;
 public class ChatManagement implements Listener {
 
 	private static PrefixType doPrefix;
-	public final List<CommandSender> spy = new ArrayList<>();
+	private final List<CommandSender> spy = new ArrayList<>();
 
 	public static void enable() {
 		doPrefix = PrefixType.getType(Main.plugin.getConfig().getString("prefix"));
 	}
 
-	/**
-	 * This detects when the player speaks and either adds a prefix or puts the
-	 * message in the team chat
-	 *
-	 * @param event the chat event
-	 */
 	@EventHandler(priority = EventPriority.HIGH)
-	public void onChat(AsyncPlayerChatEvent event) {
+	public void onChat(AsyncChatEvent event) {
 
 		if (event.isCancelled()) {
 			return;
@@ -51,55 +47,56 @@ public class ChatManagement implements Listener {
 			throw new IllegalStateException("Player " + p.getName() + " is registered to be in a team, yet has no playerdata associated with that team");
 		}
 
+		String rawMessage = PlainTextComponentSerializer.plainText().serialize(event.message());
+
 		String anyChatToGlobalPrefix = Main.plugin.getConfig().getString("chatPrefixes.teamOrAllyToGlobal", "!");
 		String globalToTeamPrefix = Main.plugin.getConfig().getString("chatPrefixes.globalToTeam", "!");
 		String globalToAllyPrefix = Main.plugin.getConfig().getString("chatPrefixes.globalToAlly", "?");
 
 		if (teamPlayer.isInTeamChat() || teamPlayer.isInAllyChat()) {
-			if (!anyChatToGlobalPrefix.isEmpty() && event.getMessage().startsWith(anyChatToGlobalPrefix) && event.getMessage().length() > anyChatToGlobalPrefix.length()) {
-				event.setMessage(event.getMessage().substring(anyChatToGlobalPrefix.length()));
+			if (!anyChatToGlobalPrefix.isEmpty() && rawMessage.startsWith(anyChatToGlobalPrefix) && rawMessage.length() > anyChatToGlobalPrefix.length()) {
+				event.message(Component.text(rawMessage.substring(anyChatToGlobalPrefix.length())));
 			} else {
-				// Player is not sending to global chat
+				
 				event.setCancelled(true);
 
 				if (teamPlayer.isInTeamChat()) {
-					team.getTeamMessageController().sendTeamChatMessage(teamPlayer, event.getMessage());
+					team.getTeamMessageController().sendTeamChatMessage(teamPlayer, rawMessage);
 				} else {
-					team.getTeamMessageController().sendAllyChatMessage(teamPlayer, event.getMessage());
+					team.getTeamMessageController().sendAllyChatMessage(teamPlayer, rawMessage);
 				}
-				// Used as some chat plugins do not accept when a message is cancelled
-				event.setMessage("");
-				event.setFormat("");
 				return;
 			}
 		} else if (
-				(!globalToTeamPrefix.isEmpty() && event.getMessage().startsWith(globalToTeamPrefix) && event.getMessage().length() > globalToTeamPrefix.length())
-						|| (!globalToAllyPrefix.isEmpty() && event.getMessage().startsWith(globalToAllyPrefix) && event.getMessage().length() > globalToAllyPrefix.length())
+				(!globalToTeamPrefix.isEmpty() && rawMessage.startsWith(globalToTeamPrefix) && rawMessage.length() > globalToTeamPrefix.length())
+						|| (!globalToAllyPrefix.isEmpty() && rawMessage.startsWith(globalToAllyPrefix) && rawMessage.length() > globalToAllyPrefix.length())
 		) {
-			// Player is not sending to global chat
+			
 			event.setCancelled(true);
 
-			if (event.getMessage().startsWith(globalToTeamPrefix)) {
-				team.getTeamMessageController().sendTeamChatMessage(teamPlayer, event.getMessage().substring(globalToTeamPrefix.length()));
+			if (rawMessage.startsWith(globalToTeamPrefix)) {
+				team.getTeamMessageController().sendTeamChatMessage(teamPlayer, rawMessage.substring(globalToTeamPrefix.length()));
 			} else {
-				team.getTeamMessageController().sendAllyChatMessage(teamPlayer, event.getMessage().substring(globalToAllyPrefix.length()));
+				team.getTeamMessageController().sendAllyChatMessage(teamPlayer, rawMessage.substring(globalToAllyPrefix.length()));
 			}
-			// Used as some chat plugins do not accept when a message is cancelled
-			event.setMessage("");
-			event.setFormat("");
 			return;
 		}
 
 		if (doPrefix != PrefixType.NONE) {
-			event.setFormat(LegacyTextUtils.parseAllAdventure(doPrefix.getUpdatedFormat(p, event.getFormat(), team)));
-			// event.setFormat(ChatColor.AQUA + "[" + team.getName() + "] " + ChatColor.WHITE + event.getFormat());
+			Component prefix = Formatter.absolute().process(doPrefix.getUpdatedFormat(p, "", team));
+			event.renderer((src, displayName, message, viewer) ->
+					prefix.append(displayName).append(Component.text(": ")).append(message));
 		}
 
 	}
 
 	@EventHandler
 	public void spyQuit(PlayerQuitEvent e) {
-		spy.remove(e.getPlayer());
+		spy.removeIf(s -> s.equals(e.getPlayer()));
+	}
+
+	public List<CommandSender> getSpy() {
+		return spy;
 	}
 
 	enum PrefixType {
@@ -123,7 +120,8 @@ public class ChatManagement implements Listener {
 				case NAME:
 					return MessageManager.getMessage(p, "prefixSyntax", team.getDisplayName(), format);
 				case TAG:
-					return MessageManager.getMessage(p, "prefixSyntax", team.getColor() + team.getTag(), format);
+					
+					return MessageManager.getMessage(p, "prefixSyntax", team.getTag(), format);
 				default:
 					return format;
 			}

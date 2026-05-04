@@ -18,22 +18,25 @@ public class ExtensionClassLoader extends URLClassLoader {
 
 	@Override
 	protected Class<?> findClass(String name) throws ClassNotFoundException {
-		// Try to find the class inside THIS extension's jar
+		
 		try {
 			return super.findClass(name);
 		} catch (ClassNotFoundException ignored) {
 		}
 
 		for (ExtensionWrapper wrapper : manager.getStore().getAll()) {
-			// Don't check ourselves again
+			
 			if (wrapper.getInfo().getName().equals(info.getName())) {
 				continue;
 			}
 
-			// Only check if the other extension has a ClassLoader ready
 			ClassLoader otherLoader = wrapper.getClassLoader();
 			if (otherLoader instanceof ExtensionClassLoader extLoader) {
 				try {
+     /**
+     * Helper method to expose the protected findClass from URLClassLoader
+     * strictly for looking inside that specific JAR.
+     */
 					return extLoader.findClassInJar(name);
 				} catch (ClassNotFoundException ignored) {
 				}
@@ -42,10 +45,6 @@ public class ExtensionClassLoader extends URLClassLoader {
 		throw new ClassNotFoundException(name);
 	}
 
-	/**
-	 * Helper method to expose the protected findClass from URLClassLoader
-	 * strictly for looking inside that specific JAR.
-	 */
 	public Class<?> findClassInJar(String name) throws ClassNotFoundException {
 		return super.findClass(name);
 	}

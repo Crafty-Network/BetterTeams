@@ -9,10 +9,10 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Used to track how long of a cooldown is required for a command
- *
- * @author booksaw
- */
+* Used to track how long of a cooldown is required for a command
+*
+* @author booksaw
+*/
 public class CooldownManager {
 
 	final HashMap<String, CommandCooldown> cooldowns;
@@ -51,13 +51,13 @@ public class CooldownManager {
 		return new NoCooldown();
 	}
 
-	/**
-	 * This class is returned when a command does not have a cooldown, this is used
-	 * to avoid running many null checks throughout the program. The class is used
-	 * to stop any cooldown tracking for a specific command
-	 *
-	 * @author booksaw
-	 */
+ /**
+ * This class is returned when a command does not have a cooldown, this is used
+ * to avoid running many null checks throughout the program. The class is used
+ * to stop any cooldown tracking for a specific command
+ *
+ * @author booksaw
+ */
 	public static class NoCooldown extends CommandCooldown {
 
 		public NoCooldown() {

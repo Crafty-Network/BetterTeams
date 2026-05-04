@@ -43,7 +43,6 @@ class ExtensionLoaderTest {
 	@Mock
 	private PluginManager mockPluginManager;
 
-
 	@BeforeEach
 	void setUp() {
 		Server mockServer = mock(Server.class);
@@ -53,7 +52,7 @@ class ExtensionLoaderTest {
 		when(mockServer.getPluginManager()).thenReturn(mockPluginManager);
 
 		Main.plugin = mockPlugin;
-//		when(mockPlugin.getExtensionManager()).thenReturn(mockExtManager);
+
 		loader = new ExtensionLoader(mockPlugin);
 	}
 
@@ -62,9 +61,9 @@ class ExtensionLoaderTest {
 		Main.plugin = null;
 	}
 
-	/**
-	 * Helper method to create a valid, loadable extension info
-	 */
+ /**
+ * Helper method to create a valid, loadable extension info
+ */
 	private ExtensionInfo createValidInfo(String name) throws IOException {
 		String yml = createYml(name);
 		File jar = createFakeJar(name + ".jar", yml, TestExtensionImpl.class, tempDir.toFile());
@@ -134,7 +133,7 @@ class ExtensionLoaderTest {
 		@BeforeEach
 		void setUp() throws IOException, LoadingException {
 			ExtensionInfo info = createValidInfo("ValidExt");
-			validWrapper = loader.load(info); // This calls onLoad
+			validWrapper = loader.load(info); 
 			validImpl = (TestExtensionImpl) validWrapper.getInstance();
 		}
 
@@ -144,11 +143,9 @@ class ExtensionLoaderTest {
 
 			loader.enable(validWrapper);
 
-			// Then: It should be enabled
 			assertTrue(validWrapper.isEnabled());
 			assertTrue(validImpl.onEnableCalled);
 
-			// And: It should log success
 			verify(mockLogger).info("Enabled extension: ValidExt");
 		}
 
@@ -156,11 +153,10 @@ class ExtensionLoaderTest {
 		@DisplayName("Should not enable if already enabled")
 		void testEnableAlreadyEnabled() throws LoadingException {
 			validWrapper.setEnabled(true);
-			validImpl.onEnableCalled = false; // Reset for test
+			validImpl.onEnableCalled = false; 
 
 			ExtensionWrapper result = loader.enable(validWrapper);
 
-			// Should return the same wrapper and not call onEnable again
 			assertSame(validWrapper, result);
 			assertFalse(validImpl.onEnableCalled);
 		}
@@ -168,45 +164,37 @@ class ExtensionLoaderTest {
 		@Test
 		@DisplayName("Should throw LoadingException if a plugin dependency is missing")
 		void testEnableFailsMissingPluginDep() throws IOException {
-			// Given: An extension that depends on "Vault"
+			
 			String yml = createYml("DepExt") + "\nplugin-depend: [Vault]";
 			File jar = createFakeJar("depext.jar", yml, TestExtensionImpl.class, tempDir.toFile());
 			ExtensionInfo info = ExtensionInfo.fromYaml(jar);
 			ExtensionWrapper depWrapper = assertDoesNotThrow(() -> loader.load(info));
 
-			// And: The PluginManager says "Vault" is not enabled
 			when(mockPluginManager.getPlugin("Vault")).thenReturn(null);
 
-			// When: We try to enable it
 			LoadingException e = assertThrows(LoadingException.class, () -> {
 				loader.enable(depWrapper);
 			});
 
-			// Then: It should fail
 			assertEquals("Cannot enable 'DepExt': Missing Bukkit plugin dependencies", e.getMessage());
 			assertNotNull(depWrapper);
 			assertFalse(depWrapper.isEnabled());
 		}
 
-		// TODO
-//		@Test
 		@DisplayName("Should throw LoadingException if an extension dependency is missing")
 		void testEnableFailsMissingExtensionDep() throws IOException {
-			// Given: An extension that depends on "OtherExt"
+			
 			String yml = createYml("DepExt") + "\ndepend: [OtherExt]";
 			File jar = createFakeJar("depext.jar", yml, TestExtensionImpl.class, tempDir.toFile());
 			ExtensionInfo info = ExtensionInfo.fromYaml(jar);
 			ExtensionWrapper depWrapper = assertDoesNotThrow(() -> loader.load(info));
 
-			// And: The ExtensionManager says "OtherExt" is not enabled
 			when(mockExtManager.isEnabled("OtherExt")).thenReturn(false);
 
-			// When: We try to enable it
 			LoadingException e = assertThrows(LoadingException.class, () -> {
 				loader.enable(depWrapper);
 			});
 
-			// Then: It should fail
 			assertEquals("Cannot enable 'DepExt': Missing dependencies", e.getMessage());
 			assertNotNull(depWrapper);
 			assertFalse(depWrapper.isEnabled());
@@ -225,40 +213,34 @@ class ExtensionLoaderTest {
 			validWrapper = loader.load(info);
 			validImpl = (TestExtensionImpl) validWrapper.getInstance();
 
-			// Manually set as enabled for disable tests
 			validWrapper.setEnabled(true);
-			validImpl.onLoadCalled = false; // Reset flags
+			validImpl.onLoadCalled = false; 
 		}
 
 		@Test
 		@DisplayName("Should successfully disable an enabled extension")
 		void testDisableSuccess() {
-			// Given: An enabled extension
+			
 			assertTrue(validWrapper.isEnabled());
 
-			// When: We disable it
 			loader.disable(validWrapper);
 
-			// Then: It should be disabled
 			assertFalse(validWrapper.isEnabled());
 			assertTrue(validImpl.onDisableCalled);
 
-			// And: It should log success
 			verify(mockLogger).info("Disabled extension: ValidExt");
 		}
 
 		@Test
 		@DisplayName("Should do nothing if already disabled")
 		void testDisableAlreadyDisabled() {
-			// Given: An extension that is not enabled
+			
 			validWrapper.setEnabled(false);
 
-			// When: We disable it
 			loader.disable(validWrapper);
 
-			// Then: onDisable should not be called
 			assertFalse(validImpl.onDisableCalled);
-			// And: No log message
+			
 			verify(mockLogger, never()).info("Disabled extension: ValidExt");
 		}
 	}
@@ -270,23 +252,20 @@ class ExtensionLoaderTest {
 		@Test
 		@DisplayName("Should disable and unload a loaded extension")
 		void testUnloadSuccess() throws IOException, LoadingException {
-			// Given: A fully loaded and enabled extension
+			
 			ExtensionInfo info = createValidInfo("ValidExt");
 			ExtensionWrapper wrapper = loader.load(info);
 			TestExtensionImpl impl = (TestExtensionImpl) wrapper.getInstance();
 			loader.enable(wrapper);
 			assertTrue(wrapper.isEnabled());
 
-			// When: We unload it
 			loader.unload(wrapper);
 
-			// Then: It should be disabled
 			assertFalse(wrapper.isEnabled());
 			assertTrue(impl.onDisableCalled);
 
-			// And: It should log all 4 lifecycle steps
 			ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
-			verify(mockLogger, times(4)).info(captor.capture()); // 1.Load, 2.Enable, 3.Disable, 4.Unload
+			verify(mockLogger, times(4)).info(captor.capture()); 
 
 			List<String> logs = captor.getAllValues();
 			assertEquals("Loaded extension: ValidExt", logs.get(0));
@@ -294,7 +273,6 @@ class ExtensionLoaderTest {
 			assertEquals("Disabled extension: ValidExt", logs.get(2));
 			assertEquals("Unloaded extension: ValidExt", logs.get(3));
 
-			// And: The classloader should be closed (best-effort check)
 			URLClassLoader cl = wrapper.getClassLoader();
 			assertNotNull(cl);
 		}

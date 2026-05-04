@@ -13,7 +13,6 @@ import com.booksaw.betterTeams.util.StringUtil;
 import lombok.RequiredArgsConstructor;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -72,15 +71,18 @@ public class TeamMessageController {
 	}
 
 	private void sendTeamMessage(TeamPlayer sender, String message, Set<TeamPlayer> recipients, TeamMessageType messageType) {
-		recipients.removeIf(teamPlayer -> !teamPlayer.getPlayer().isOnline()); // Offline players won't be recipients
+		recipients.removeIf(teamPlayer -> !teamPlayer.getPlayer().isOnline()); 
+  /**
+  * Used to get the chat syntax and apply placeholders when possible
+  *
+  * @param sender - The team player who sent the command
+  */
 		String format = getChatSyntax(sender, messageType);
 
-		// Notify third party plugins that a team message is going to be sent
 		TeamSendMessageEvent teamSendMessageEvent = new TeamSendMessageEvent(team, sender, message, format,
 				sender.getPlayerPrefix() + getPreviousChatColor(format), recipients, messageType);
 		Bukkit.getPluginManager().callEvent(teamSendMessageEvent);
 
-		// Process any updates after the event has been dispatched
 		if (teamSendMessageEvent.isCancelled()) {
 			Main.plugin.getLogger().log(Level.FINE, "Team send message event is cancelled");
 			return;
@@ -91,19 +93,12 @@ public class TeamMessageController {
 		String prefix = teamSendMessageEvent.getSenderNamePrefix();
 		recipients = teamSendMessageEvent.getRecipients();
 
-
 		ChatMessage chatMsg = sendApprovedTeamMessage(sender, prefix, message, format, recipients, messageType);
 
 		String fMessage = LegacyTextUtils.serialize(chatMsg.getMessage());
-		// Notify third party plugins that a message has been dispatched
+		
 		Bukkit.getPluginManager().callEvent(new PostTeamSendMessageEvent(team, sender, fMessage, recipients, messageType));
 	}
-
-	/**
-	 * Used to get the chat syntax and apply placeholders when possible
-	 *
-	 * @param sender - The team player who sent the command
-	 */
 
 	public String getChatSyntax(TeamPlayer sender, TeamMessageType messageType) {
 		if (sender != null && sender.getPlayer() != null && sender.getPlayer().isOnline() && (sender.getPlayer().getPlayer() != null)) {
@@ -113,27 +108,36 @@ public class TeamMessageController {
 		return MessageManager.getMessage(messageType.chatFormat).replace("$name$", "{1}").replace("$message$", "{2}");
 	}
 
-	private static @NotNull ChatColor getPreviousChatColor(String toTest) {
+	private static final java.util.Set<Character> LEGACY_COLOR_CHARS;
+	static {
+		java.util.Set<Character> s = new java.util.HashSet<>();
+		for (char c : new char[]{'0','1','2','3','4','5','6','7','8','9',
+				'a','b','c','d','e','f','k','l','m','n','o','r',
+				'A','B','C','D','E','F','K','L','M','N','O','R'}) {
+			s.add(c);
+		}
+		LEGACY_COLOR_CHARS = java.util.Collections.unmodifiableSet(s);
+	}
+
+	private static @NotNull String getPreviousChatColor(String toTest) {
 		Matcher matcher = Pattern.compile("\\{\\d+}").matcher(toTest);
 		if (matcher.find()) {
 			int value = matcher.start();
 			if (value > 3) {
-				for (int i = value; i >= 0; i--) {
-					if (toTest.charAt(i) == ChatColor.COLOR_CHAR) {
-						ChatColor returnTo = ChatColor.getByChar(toTest.charAt(i + 1));
-						if (returnTo != null) {
-							return returnTo;
-						}
+				for (int i = value - 1; i >= 0; i--) {
+					if (toTest.charAt(i) == '§' && i + 1 < toTest.length()
+							&& LEGACY_COLOR_CHARS.contains(toTest.charAt(i + 1))) {
+						return "§" + toTest.charAt(i + 1);
 					}
 				}
 			}
 		}
 
-		return ChatColor.RESET;
+		return "§r"; 
 	}
 
 	private Collection<CommandSender> getOnlineChatSpyPlayers() {
-		return Main.plugin.chatManagement.spy.stream()
+		return Main.plugin.chatManagement.getSpy().stream()
 				.filter(Objects::nonNull)
 				.filter(temp -> !(temp instanceof Player && team.getTeamPlayer((Player) temp) != null))
 				.collect(Collectors.toList());

@@ -21,46 +21,32 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
+/**
+* Used to create a new teamManager
+*/
 public abstract class TeamManager {
-	/**
-	 * A list of all teams
-	 */
-	protected final HashMap<UUID, Team> loadedTeams;
+	
+ /**
+ * A list of all teams
+ */
+	protected final ConcurrentHashMap<UUID, Team> loadedTeams;
 
-	/**
-	 * If chat is being logged to the console
-	 */
 	@Getter
 	private final boolean logChat;
 
-	/**
-	 * Used to create a new teamManager
-	 */
 	protected TeamManager() {
 		logChat = Main.plugin.getConfig().getBoolean("logTeamChat");
 
-		loadedTeams = new HashMap<>();
+		loadedTeams = new ConcurrentHashMap<>();
 
 	}
 
-	/**
-	 * Used to get an clone of the loaded team list. The team objects are not
-	 * cloned, just the hashmap to avoid concurrent modification
-	 *
-	 * @return A clone of the team list
-	 */
-	@SuppressWarnings("unchecked")
 	public Map<UUID, Team> getLoadedTeamListClone() {
-		return (HashMap<UUID, Team>) loadedTeams.clone();
+		return new HashMap<>(loadedTeams);
 	}
 
-	/**
-	 * Used to get the team with the provided ID
-	 *
-	 * @param uuid the ID of the team
-	 * @return the team with that ID [null - the team does not exist]
-	 */
 	@Nullable
 	@Contract(pure = true, value = "null -> null")
 	public Team getTeam(@Nullable UUID uuid) {
@@ -83,12 +69,6 @@ public abstract class TeamManager {
 		}
 	}
 
-	/**
-	 * Used to get the team by it's display name or a player within it
-	 *
-	 * @param name the display name of the team or an online player within the team
-	 * @return the team which matches the data[null - no team could be found]
-	 */
 	@Nullable
 	@Contract(pure = true, value = "null -> null")
 	public Team getTeam(@Nullable String name) {
@@ -100,7 +80,6 @@ public abstract class TeamManager {
 			return team;
 		}
 
-		// trying to get team by a player name
 		OfflinePlayer player = Bukkit.getPlayer(name);
 		if (player == null) {
 			return null;
@@ -109,14 +88,6 @@ public abstract class TeamManager {
 
 	}
 
-	/**
-	 * Used to find the team that a specified player is in, this is the highest time
-	 * complexity search to find a team (O(n^2)) so only use when the other provided
-	 * methods are not possible
-	 *
-	 * @param player the player which is in a team
-	 * @return the team they are in [null - they are not in a team]
-	 */
 	@Nullable
 	@Contract(pure = true, value = "null -> null")
 	public Team getTeam(@Nullable OfflinePlayer player) {
@@ -124,7 +95,6 @@ public abstract class TeamManager {
 			return null;
 		}
 
-		// checking if the player is in a loaded team (save hitting secondary storage every time)
 		Optional<Team> possibleTeam = loadedTeams.values().stream().filter(team -> team.getMembers().contains(player)).findFirst();
 		if (possibleTeam.isPresent()) {
 			return possibleTeam.get();
@@ -134,6 +104,12 @@ public abstract class TeamManager {
 			return null;
 		}
 
+  /**
+  * Used to get the uuid of the team that the specified player is in
+  *
+  * @param player the plyaer to check for
+  * @return The team uuid
+  */
 		UUID uuid = getTeamUUID(player);
 		if (uuid == null) {
 			return null;
@@ -142,19 +118,18 @@ public abstract class TeamManager {
 		return getTeam(uuid);
 	}
 
-	/**
-	 * Used to get the team by its team name
-	 *
-	 * @param name The name of the team
-	 * @return The team with that display name [null - no team with that name could
-	 * be found]
-	 */
 	@Nullable
 	public Team getTeamByName(@NotNull String name) {
 		if (!isTeam(name)) {
 			return null;
 		}
 
+  /**
+  * Used to get the team uuid from the team name
+  *
+  * @param name The name of the team
+  * @return The UUID of the specified team
+  */
 		UUID uuid = getTeamUUID(name);
 
 		if (uuid == null) {
@@ -164,21 +139,21 @@ public abstract class TeamManager {
 		return getTeam(uuid);
 	}
 
-	/**
-	 * This method is used to create a new team with the specified name
-	 * <p>
-	 * Checks are not carried out to ensure that the name is available, so that
-	 * should be done before this method is called
-	 * </p>
-	 *
-	 * @param name  the name of the new team
-	 * @param owner the owner of the new team (the player who ran /team create)
-	 * @return The created team
-	 */
+ /**
+ * This method is used to create a new team with the specified name
+ * <p>
+ * Checks are not carried out to ensure that the name is available, so that
+ * should be done before this method is called
+ * </p>
+ *
+ * @param name  the name of the new team
+ * @param owner the owner of the new team (the player who ran /team create)
+ * @return The created team
+ */
 	public Team createNewTeam(String name, Player owner) {
 
 		UUID id = UUID.randomUUID();
-		// ensuring the ID is unique
+		
 		while (getTeam(id) != null) {
 			id = UUID.randomUUID();
 		}
@@ -192,6 +167,14 @@ public abstract class TeamManager {
 		}
 
 		loadedTeams.put(id, team);
+  /**
+  * Called when a new team is registered, this can be used to register it in any
+  * full team trackers The team file will be fully prepared with the members
+  * within the team
+  *
+  * @param team   The new team
+  * @param player The player that created the team
+  */
 		registerNewTeam(team, owner);
 
 		if (Main.plugin.teamManagement != null && owner != null) {
@@ -203,14 +186,21 @@ public abstract class TeamManager {
 		return team;
 	}
 
-	/**
-	 * Used to get the team which has claimed the provided chest, will return null
-	 * if that location is not claimed
-	 *
-	 * @param location the location of the chest - must already be normalised
-	 * @return The team which has claimed that chest
-	 */
+ /**
+ * Used to get the team which has claimed the provided chest, will return null
+ * if that location is not claimed
+ *
+ * @param location the location of the chest - must already be normalised
+ * @return The team which has claimed that chest
+ */
 	public Team getClaimingTeam(Location location) {
+  /**
+  * Used to get the UUID of the team which has claimed the provided chest, will
+  * return null if that location is not claimed
+  *
+  * @param location The location of the chest - must already be normalised
+  * @return the team which has claimed that chest
+  */
 		UUID claimingTeam = getClaimingTeamUUID(location);
 
 		if (claimingTeam == null) {
@@ -224,25 +214,18 @@ public abstract class TeamManager {
 		return getTeam(claimingTeam);
 	}
 
-	/**
-	 * Used to get the UUID of the team which has claimed the provided chest, will
-	 * return null if that location is not claimed
-	 *
-	 * @param location The location of the chest - must already be normalised
-	 * @return the team which has claimed that chest
-	 */
 	public abstract UUID getClaimingTeamUUID(Location location);
 
-	/**
-	 * Used to get the claiming team of a chest, will check both parts of a double
-	 * chest, it is assumed that the provided block is known to be a chest
-	 *
-	 * @param block The block being checked
-	 * @return The team which has claimed that block
-	 */
+ /**
+ * Used to get the claiming team of a chest, will check both parts of a double
+ * chest, it is assumed that the provided block is known to be a chest
+ *
+ * @param block The block being checked
+ * @return The team which has claimed that block
+ */
 	public Team getClaimingTeam(Block block) {
-		// player is opening a chest
-		if (block.getType() != Material.CHEST) return null; // Just in case, should be a light check
+		
+		if (block.getType() != Material.CHEST) return null; 
 
 		Location location1 = block.getLocation();
 		Location location2 = ChestManagement.getOtherSide(block);
@@ -261,15 +244,15 @@ public abstract class TeamManager {
 		return getClaimingTeam(location2);
 	}
 
-	/**
-	 * Used to get the claiming location, will check both parts of a double chest,
-	 * it is assumed that the provided block is known to be a chest
-	 *
-	 * @param block Part of the chest
-	 * @return The location of the claim
-	 */
+ /**
+ * Used to get the claiming location, will check both parts of a double chest,
+ * it is assumed that the provided block is known to be a chest
+ *
+ * @param block Part of the chest
+ * @return The location of the claim
+ */
 	public Location getClaimingLocation(Block block) {
-		// player is opening a chest
+		
 		if (block.getType() != Material.CHEST) return null;
 
 		Location location1 = block.getLocation();
@@ -292,13 +275,13 @@ public abstract class TeamManager {
 		return null;
 	}
 
-	/**
-	 * Used to reset all teams scores to 0
-	 *
-	 * @return If the teams were purged or not
-	 */
+ /**
+ * Used to reset all teams scores to 0
+ *
+ * @return If the teams were purged or not
+ */
 	public boolean purgeTeams(boolean money, boolean score) {
-		// calling custom bukkit event
+		
 		PurgeEvent event = new PurgeEvent();
 
 		Bukkit.getPluginManager().callEvent(event);
@@ -308,10 +291,16 @@ public abstract class TeamManager {
 
 		if (score) {
 			Main.plugin.getLogger().info("purging team score");
+   /**
+   * Used to reset the score of all teams
+   */
 			purgeTeamScore();
 		}
 		if (money) {
 			Main.plugin.getLogger().info("purging team score");
+   /**
+   * Used to reset the balance of all teams
+   */
 			purgeTeamMoney();
 		}
 
@@ -319,193 +308,153 @@ public abstract class TeamManager {
 		return true;
 	}
 
-	/**
-	 * Used to check if a team exists with that uuid
-	 *
-	 * @param uuid the UUID to check
-	 * @return If a team exists with that uuid
-	 */
 	@SuppressWarnings("BooleanMethodIsAlwaysInverted")
 	@Contract(pure = true, value = "null -> false")
 	public abstract boolean isTeam(@Nullable UUID uuid);
 
-	/**
-	 * Used to check if a team exists with that name
-	 *
-	 * @param name the name to check
-	 * @return If a team exists with that name
-	 */
 	@Contract(pure = true, value = "null -> false")
 	public abstract boolean isTeam(@Nullable String name);
 
-	/**
-	 * Used to check if the specified player is in a team
-	 *
-	 * @param player The player to check
-	 * @return If they are in a team
-	 */
+ /**
+ * Used to check if the specified player is in a team
+ *
+ * @param player The player to check
+ * @return If they are in a team
+ */
 	public abstract boolean isInTeam(OfflinePlayer player);
 
-	/**
-	 * Used to get the uuid of the team that the specified player is in
-	 *
-	 * @param player the plyaer to check for
-	 * @return The team uuid
-	 */
 	public abstract UUID getTeamUUID(OfflinePlayer player);
 
-	/**
-	 * Used to get the team uuid from the team name
-	 *
-	 * @param name The name of the team
-	 * @return The UUID of the specified team
-	 */
 	public abstract UUID getTeamUUID(String name);
 
-	/**
-	 * Used to load the stored values into the storage manager
-	 */
+ /**
+ * Used to load the stored values into the storage manager
+ */
 	public abstract void loadTeams();
 
 	public boolean isLoaded(UUID teamUUID) {
 		return loadedTeams.containsKey(teamUUID);
 	}
 
-	/**
-	 * Called when a new team is registered, this can be used to register it in any
-	 * full team trackers The team file will be fully prepared with the members
-	 * within the team
-	 *
-	 * @param team   The new team
-	 * @param player The player that created the team
-	 */
 	protected abstract void registerNewTeam(Team team, Player player);
 
-	/**
-	 * Used to disband a team
-	 *
-	 * @param team The team that is being disbanded
-	 */
+ /**
+ * Used to disband a team
+ *
+ * @param team The team that is being disbanded
+ */
 	public void disbandTeam(Team team) {
 		loadedTeams.remove(team.getID());
 
-		// if a team is being disbanded due to invalid team loading, the file should not
-		// be deleted to preserve data
 		if (team.getName() != null) {
+   /**
+   * Used when a team is disbanded, can be used to remove it from any team
+   * trackers
+   *
+   * @param team The team that is being disbanded
+   */
 			deleteTeamStorage(team);
 		}
 	}
 
-	/**
-	 * Used when a team is disbanded, can be used to remove it from any team
-	 * trackers
-	 *
-	 * @param team The team that is being disbanded
-	 */
 	protected abstract void deleteTeamStorage(Team team);
 
-	/**
-	 * Called when a team changes its name as this will effect the getTeam(String
-	 * teamName) method
-	 *
-	 * @param team    The new team
-	 * @param newName The name the team has changed to
-	 */
+ /**
+ * Called when a team changes its name as this will effect the getTeam(String
+ * teamName) method
+ *
+ * @param team    The new team
+ * @param newName The name the team has changed to
+ */
 	public abstract void teamNameChange(Team team, String newName);
 
-	/**
-	 * Called when a player joins a team, this can be used to track the players
-	 * location
-	 *
-	 * @param team   The team that the player has joined
-	 * @param player The player that has joined the team
-	 */
+ /**
+ * Called when a player joins a team, this can be used to track the players
+ * location
+ *
+ * @param team   The team that the player has joined
+ * @param player The player that has joined the team
+ */
 	public abstract void playerJoinTeam(Team team, TeamPlayer player);
 
-	/**
-	 * Called when a player leaves a team
-	 *
-	 * @param team   The team that the player has left
-	 * @param player The team that the player has left
-	 */
+ /**
+ * Called when a player leaves a team
+ *
+ * @param team   The team that the player has left
+ * @param player The team that the player has left
+ */
 	public abstract void playerLeaveTeam(Team team, TeamPlayer player);
 
-	/**
-	 * Called when a team needs a storage manager to manage all information, this is
-	 * called for preexisting teams
-	 *
-	 * @param team The team instance
-	 * @return The created team storage
-	 */
+ /**
+ * Called when a team needs a storage manager to manage all information, this is
+ * called for preexisting teams
+ *
+ * @param team The team instance
+ * @return The created team storage
+ */
 	public abstract TeamStorage createTeamStorage(Team team);
 
-	/**
-	 * Called when a new team is made
-	 *
-	 * @param team The team
-	 * @return The created team storage
-	 */
+ /**
+ * Called when a new team is made
+ *
+ * @param team The team
+ * @return The created team storage
+ */
 	public abstract TeamStorage createNewTeamStorage(Team team);
 
-	/**
-	 * This method is used to sort all the teams into an array ranking from highest
-	 * score to lowest
-	 *
-	 * @return the array of teams in order of their rank
-	 */
+ /**
+ * This method is used to sort all the teams into an array ranking from highest
+ * score to lowest
+ *
+ * @return the array of teams in order of their rank
+ */
 	public abstract String[] sortTeamsByScore();
 
-	/**
-	 * This method is used to sort all the team names into an array ranking from
-	 * highest to lowest
-	 *
-	 * @return The sorted array
-	 */
+ /**
+ * This method is used to sort all the team names into an array ranking from
+ * highest to lowest
+ *
+ * @return The sorted array
+ */
 	public abstract String[] sortTeamsByBalance();
 
-	/**
-	 * Used to sort all members from largest to smallest by number of members
-	 *
-	 * @return the sorted array
-	 */
+ /**
+ * Used to sort all members from largest to smallest by number of members
+ *
+ * @return the sorted array
+ */
 	public abstract String[] sortTeamsByMembers();
 
-	/**
-	 * Used to reset the score of all teams
-	 */
 	public abstract void purgeTeamScore();
 
-	/**
-	 * Used to reset the balance of all teams
-	 */
 	public abstract void purgeTeamMoney();
 
-	/**
-	 * @return The stored hologram details
-	 */
+ /**
+ * @return The stored hologram details
+ */
 	public abstract List<String> getHoloDetails();
 
-	/**
-	 * Used to store and save the updated hologram details
-	 *
-	 * @param details the details to save
-	 */
+ /**
+ * Used to store and save the updated hologram details
+ *
+ * @param details the details to save
+ */
 	public abstract void setHoloDetails(List<String> details);
 
 	public abstract void addChestClaim(Team team, Location loc);
 
 	public abstract void removeChestclaim(Location loc);
 
-	/**
-	 * Can be called by a config option if the server is having difficulties. Do not
-	 * call from anywhere else as it may cause problems depending on the storage
-	 * type
-	 */
+ /**
+ * Can be called by a config option if the server is having difficulties. Do not
+ * call from anywhere else as it may cause problems depending on the storage
+ * type
+ */
 	public abstract void rebuildLookups();
 
-	/**
-	 * this can be overritten if any code needs to be run when onDisable is called
-	 */
+ /**
+ * this can be overritten if any code needs to be run when onDisable is called
+ */
 	public void disable() {
 	}
 }

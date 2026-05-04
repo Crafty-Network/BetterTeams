@@ -8,17 +8,12 @@ import java.util.Collections;
 import java.util.UUID;
 
 public class DHHologramManager extends HologramManager {
-	/*
-	 * Creates a new DecentHolograms hologram.
-	 */
+	
 	@Override
 	public LocalHologram createLocalHolo(Location location, HologramType type) {
 		return new DHHologramImpl(DHAPI.createHologram(UUID.randomUUID().toString(), location));
 	}
 
-	/*
-	 * A wrapper class for interfacing with DecentHolograms holograms.
-	 */
 	private static final class DHHologramImpl implements LocalHologram {
 		private final Hologram hologram;
 

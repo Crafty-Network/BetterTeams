@@ -4,11 +4,10 @@ import com.booksaw.betterTeams.Team;
 import com.booksaw.betterTeams.TeamPlayer;
 
 /**
- * @author booksaw
- */
+* @author booksaw
+*/
 public interface IndividualTeamPlayerPlaceholderProvider {
 
 	String getPlaceholderForTeamPlayer(Team team, TeamPlayer player);
-
 
 }

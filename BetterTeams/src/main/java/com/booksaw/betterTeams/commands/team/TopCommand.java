@@ -67,7 +67,7 @@ public class TopCommand extends SubCommand {
 						}
 					}
 				} catch (ArrayIndexOutOfBoundsException e) {
-						// to save an additional check on arrays length
+						
 				}
 			}
 		});

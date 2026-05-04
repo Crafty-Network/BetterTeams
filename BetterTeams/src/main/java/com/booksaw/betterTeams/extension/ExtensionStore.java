@@ -89,11 +89,11 @@ public class ExtensionStore {
 		return extensions.isEmpty();
 	}
 
-	/**
-	 * Gets a list of extension instances based on their enabled state.
-	 * @param enabled true for enabled extensions, false for disabled (or not-yet-enabled) extensions.
-	 * @return A read-only list of matching extension instances.
-	 */
+ /**
+ * Gets a list of extension instances based on their enabled state.
+ * @param enabled true for enabled extensions, false for disabled (or not-yet-enabled) extensions.
+ * @return A read-only list of matching extension instances.
+ */
 	public List<BetterTeamsExtension> getByState(boolean enabled) {
 		return extensions.values().stream()
 				.filter(loaded -> loaded.isEnabled() == enabled)
@@ -101,11 +101,11 @@ public class ExtensionStore {
 				.toList();
 	}
 
-	/**
-	 * Gets a list of extension wrappers based on their enabled state.
-	 * @param enabled true for enabled wrappers, false for disabled (or not-yet-enabled) wrappers.
-	 * @return A read-only list of matching extension wrappers.
-	 */
+ /**
+ * Gets a list of extension wrappers based on their enabled state.
+ * @param enabled true for enabled wrappers, false for disabled (or not-yet-enabled) wrappers.
+ * @return A read-only list of matching extension wrappers.
+ */
 	public List<ExtensionWrapper> getWrappersByState(boolean enabled) {
 		return extensions.values().stream()
 				.filter(loaded -> loaded.isEnabled() == enabled)

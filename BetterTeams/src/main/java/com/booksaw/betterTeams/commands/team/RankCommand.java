@@ -44,6 +44,10 @@ public class RankCommand extends SubCommand {
 
 			int warpDiff = nextLevel.getMaxWarps() - currentLevel.getMaxWarps();
 			if (warpDiff > 0) {
+    /**
+    * Helper method to handle sending the header and perk message.
+    * Returns true to update the 'hasHeaderSent' status.
+    */
 				hasHeaderSent = sendPerkMessage(sender, hasHeaderSent, "rank.perks.warps", warpDiff);
 			}
 
@@ -85,10 +89,6 @@ public class RankCommand extends SubCommand {
 		return new CommandResponse(true);
 	}
 
-	/**
-	 * Helper method to handle sending the header and perk message.
-	 * Returns true to update the 'hasHeaderSent' status.
-	 */
 	private boolean sendPerkMessage(CommandSender sender, boolean hasHeaderSent, String key, Object... args) {
 		if (!hasHeaderSent) {
 			new ReferencedFormatMessage("rank.perks.header").sendMessage(sender);

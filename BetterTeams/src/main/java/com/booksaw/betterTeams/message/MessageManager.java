@@ -2,7 +2,6 @@ package com.booksaw.betterTeams.message;
 
 import com.booksaw.betterTeams.Main;
 import lombok.Getter;
-import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import net.kyori.adventure.text.Component;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
@@ -17,20 +16,18 @@ import java.io.File;
 import java.util.Collection;
 
 /**
- * Used to control all communications to the user
- *
- * @author booksaw
- */
+* Used to control all communications to the user
+*
+* @author booksaw
+*/
 public class MessageManager {
 
 	@Getter
 	private static MessageService mainPluginService;
 
-	private static BukkitAudiences audiences;
-
-	/**
-	 * Stopping this class being instantiated
-	 */
+ /**
+ * Stopping this class being instantiated
+ */
 	private MessageManager() {
 	}
 
@@ -40,19 +37,13 @@ public class MessageManager {
 
 		String prefix = Main.plugin.getConfig().getString("prefixFormat", "");
 		mainPluginService.setPrefix(prefix);
-		mainPluginService.setupMessageSender(audiences);
+		mainPluginService.setupMessageSender();
 	}
 
-	/**
-	 * Used to instantiate a new MessageSender.
-	 * <p>
-	 * Warning: This is not API, so it should never be used outside BetterTeams' package
-	 */
 	@Internal
-	public static void setupMessageSender(BukkitAudiences audiences) {
-		MessageManager.audiences = audiences;
+	public static void setupMessageSender() {
 		if (mainPluginService != null) {
-			mainPluginService.setupMessageSender(audiences);
+			mainPluginService.setupMessageSender();
 		}
 	}
 
@@ -80,18 +71,18 @@ public class MessageManager {
 		return mainPluginService == null ? Component.empty() : mainPluginService.getPrefixComponent();
 	}
 
+ /**
+ * This is used to get the message from the provided location in the
+ * Configuration file, this does not add a prefix to the message
+ *
+ * @param reference    the reference for the message
+ * @param replacements the replacements for the {n} placeholders ( {0}, {1}, {2}, ... )
+ * @return the message (without prefix)
+ */
 	public static @NotNull String getMessage(String reference) {
 		return mainPluginService.getMessage(reference);
 	}
 
-	/**
-	 * This is used to get the message from the provided location in the
-	 * Configuration file, this does not add a prefix to the message
-	 *
-	 * @param reference    the reference for the message
-	 * @param replacements the replacements for the {n} placeholders ( {0}, {1}, {2}, ... )
-	 * @return the message (without prefix)
-	 */
 	public static @NotNull String getMessage(String reference, Object... replacements) {
 		return mainPluginService.getMessage(reference, replacements);
 	}
@@ -100,18 +91,17 @@ public class MessageManager {
 		return mainPluginService.getMessage(player, reference, replacements);
 	}
 
+ /**
+ * Used to send a (formatted) message to the specified user
+ *
+ * @param recipient    the commandSender which the message should be sent to
+ * @param doPrefix     if the message should have prefix
+ * @param reference    the reference for the message
+ * @param replacements the value that the placeholder should be replaced with
+ */
 	public static void sendMessage(CommandSender recipient, String reference, Object... replacements) {
 		sendMessage(recipient, true, reference, replacements);
 	}
-
-	/**
-	 * Used to send a (formatted) message to the specified user
-	 *
-	 * @param recipient    the commandSender which the message should be sent to
-	 * @param doPrefix     if the message should have prefix
-	 * @param reference    the reference for the message
-	 * @param replacements the value that the placeholder should be replaced with
-	 */
 
 	public static void sendMessage(CommandSender recipient, boolean doPrefix, String reference, Object... replacements) {
 		mainPluginService.sendMessage(recipient, doPrefix, reference, replacements);
@@ -141,26 +131,40 @@ public class MessageManager {
 		mainPluginService.sendMessage(recipients, player, doPrefix, reference, replacements);
 	}
 
-	/**
-	 * Used when you are sending a user a message instead of a message loaded from a
-	 * file
-	 *
-	 * @param sender  the player who sent the command
-	 * @param message the message to send to that user
-	 */
+ /**
+ * Used when you are sending a user a message instead of a message loaded from a
+ * file
+ *
+ * @param sender  the player who sent the command
+ * @param message the message to send to that user
+ */
 	public static void sendFullMessage(CommandSender sender, String message) {
+  /**
+  * Used when you are sending a user a message instead of a message loaded from a
+  * file
+  *
+  * @param recipient The player who sent the command
+  * @param message   The message to send to that user
+  * @param doPrefix  If a prefix should be applied
+  */
 		sendFullMessage(sender, message, false);
 	}
 
-	/**
-	 * Used when you are sending a user a message instead of a message loaded from a
-	 * file
-	 *
-	 * @param recipient The player who sent the command
-	 * @param message   The message to send to that user
-	 * @param doPrefix  If a prefix should be applied
-	 */
+ /**
+ * Used when sending a raw message
+ * to a group of command senders.
+ *
+ * @param recipients
+ * @param message
+ * @param doPrefix
+ */
 	public static void sendFullMessage(CommandSender recipient, String message, boolean doPrefix) {
+  /**
+  * Sends a full {@link Component} message to the given {@link CommandSender}
+  *
+  * @param recipient the target to send the message to
+  * @param message   the Adventure {@link Component} to send
+  */
 		mainPluginService.sendFullMessage(recipient, message, doPrefix);
 	}
 
@@ -176,14 +180,6 @@ public class MessageManager {
 		mainPluginService.sendSafeMessage(recipient, message, doPrefix);
 	}
 
-	/**
-	 * Used when sending a raw message
-	 * to a group of command senders.
-	 *
-	 * @param recipients
-	 * @param message
-	 * @param doPrefix
-	 */
 	public static void sendFullMessage(Collection<? extends CommandSender> recipients, String message, boolean doPrefix) {
 		mainPluginService.sendFullMessage(recipients, message, doPrefix);
 	}
@@ -192,12 +188,6 @@ public class MessageManager {
 		sendFullMessage(recipient, message, false);
 	}
 
-	/**
-	 * Sends a full {@link Component} message to the given {@link CommandSender}
-	 *
-	 * @param recipient the target to send the message to
-	 * @param message   the Adventure {@link Component} to send
-	 */
 	public static void sendFullMessage(CommandSender recipient, Component message, boolean doPrefix) {
 		mainPluginService.sendFullMessage(recipient, message, doPrefix);
 	}
@@ -210,18 +200,27 @@ public class MessageManager {
 		mainPluginService.sendFullMessage(recipients, message, doPrefix);
 	}
 
+ /**
+ * Used to send a (formatted) title to the specified user
+ *
+ * @param recipient    the player which the message should be sent to
+ * @param doPrefix     if the message should include the prefix or not
+ * @param reference    the reference for the message
+ * @param replacements the value that the placeholder should be replaced with
+ */
 	public static void sendTitle(Player recipient, String reference, Object... replacements) {
+  /**
+  * Used to send a (formatted) title to the specified user
+  *
+  * @param recipient    the player which the message should be sent to
+  * @param player       the player to format this message around
+  * @param doPrefix     if the message should include the prefix or not
+  * @param reference    the reference for the message
+  * @param replacements the value that the placeholder should be replaced with
+  */
 		sendTitle(recipient, false, reference, replacements);
 	}
 
-	/**
-	 * Used to send a (formatted) title to the specified user
-	 *
-	 * @param recipient    the player which the message should be sent to
-	 * @param doPrefix     if the message should include the prefix or not
-	 * @param reference    the reference for the message
-	 * @param replacements the value that the placeholder should be replaced with
-	 */
 	public static void sendTitle(Player recipient, boolean doPrefix, String reference, Object... replacements) {
 		mainPluginService.sendTitle(recipient, doPrefix, reference, replacements);
 	}
@@ -230,15 +229,6 @@ public class MessageManager {
 		sendTitle(recipient, player, false, reference, replacement);
 	}
 
-	/**
-	 * Used to send a (formatted) title to the specified user
-	 *
-	 * @param recipient    the player which the message should be sent to
-	 * @param player       the player to format this message around
-	 * @param doPrefix     if the message should include the prefix or not
-	 * @param reference    the reference for the message
-	 * @param replacements the value that the placeholder should be replaced with
-	 */
 	public static void sendTitle(Player recipient, @Nullable OfflinePlayer player, boolean doPrefix, String reference, Object... replacements) {
 		mainPluginService.sendTitle(recipient, player, doPrefix, reference, replacements);
 	}
@@ -291,18 +281,27 @@ public class MessageManager {
 		mainPluginService.sendFullTitle(recipients, message, doPrefix);
 	}
 
+ /**
+ * Used to send a (formatted) subtitle to the specified user
+ *
+ * @param recipient    the player which the message should be sent to
+ * @param doPrefix     if the message should include the prefix or not
+ * @param reference    the reference for the message
+ * @param replacements the value that the placeholder should be replaced with
+ */
 	public static void sendSubTitle(Player recipient, String reference, Object... replacements) {
+  /**
+  * Used to send a (formatted) subtitle to the specified user
+  *
+  * @param recipient    the player which the message should be sent to
+  * @param player       the player to format this message around
+  * @param doPrefix     if the message should include the prefix or not
+  * @param reference    the reference for the message
+  * @param replacements the value that the placeholder should be replaced with
+  */
 		sendSubTitle(recipient, false, reference, replacements);
 	}
 
-	/**
-	 * Used to send a (formatted) subtitle to the specified user
-	 *
-	 * @param recipient    the player which the message should be sent to
-	 * @param doPrefix     if the message should include the prefix or not
-	 * @param reference    the reference for the message
-	 * @param replacements the value that the placeholder should be replaced with
-	 */
 	public static void sendSubTitle(Player recipient, boolean doPrefix, String reference, Object... replacements) {
 		mainPluginService.sendSubTitle(recipient, doPrefix, reference, replacements);
 	}
@@ -311,15 +310,6 @@ public class MessageManager {
 		sendSubTitle(recipient, player, false, reference, replacements);
 	}
 
-	/**
-	 * Used to send a (formatted) subtitle to the specified user
-	 *
-	 * @param recipient    the player which the message should be sent to
-	 * @param player       the player to format this message around
-	 * @param doPrefix     if the message should include the prefix or not
-	 * @param reference    the reference for the message
-	 * @param replacements the value that the placeholder should be replaced with
-	 */
 	public static void sendSubTitle(Player recipient, @Nullable OfflinePlayer player, boolean doPrefix, String reference, Object... replacements) {
 		mainPluginService.sendSubTitle(recipient, player, doPrefix, reference, replacements);
 	}

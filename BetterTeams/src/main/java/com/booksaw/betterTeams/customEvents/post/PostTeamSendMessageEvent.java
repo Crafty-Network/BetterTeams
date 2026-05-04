@@ -13,32 +13,28 @@ import org.jetbrains.annotations.Unmodifiable;
 import java.util.Collection;
 import java.util.Set;
 
-/**
- * An event which is called after a team message has been sent (notification only).
- */
 @Getter
 public class PostTeamSendMessageEvent extends TeamPlayerEvent {
 
-	/// The contents of the message which has been sent (with formatting).
 	@NotNull
 	private final String formattedMessage;
-	/// An immutable set of players which have received a copy of the message.
+	
 	@Unmodifiable
 	private final Set<TeamPlayer> recipients;
 
-	/**
-	 * If the message is being sent to the ally chat, false if only to the team chat
-	 */
+ /**
+ * If the message is being sent to the ally chat, false if only to the team chat
+ */
 	private final TeamMessageController.TeamMessageType messageType;
 
-	/**
-	 * Creates an event with the original data for the message.
-	 *
-	 * @param team             the team which the message is being sent to
-	 * @param sender           the sender of the message
-	 * @param formattedMessage the message which has been sent (with the included formatting)
-	 * @param recipients       the current recipients of the message
-	 */
+ /**
+ * Creates an event with the original data for the message.
+ *
+ * @param team             the team which the message is being sent to
+ * @param sender           the sender of the message
+ * @param formattedMessage the message which has been sent (with the included formatting)
+ * @param recipients       the current recipients of the message
+ */
 	public PostTeamSendMessageEvent(@NotNull Team team,
 									@NotNull TeamPlayer sender,
 									@NotNull String formattedMessage,
@@ -51,10 +47,10 @@ public class PostTeamSendMessageEvent extends TeamPlayerEvent {
 		this.messageType = messageType;
 	}
 
-	/**
-	 * @return The player who sent this message to their team.
-	 * @apiNote A more readable overload of {@link #getTeamPlayer()}.
-	 */
+ /**
+ * @return The player who sent this message to their team.
+ * @apiNote A more readable overload of {@link #getTeamPlayer()}.
+ */
 	public TeamPlayer getSender() {
 		return getTeamPlayer();
 	}

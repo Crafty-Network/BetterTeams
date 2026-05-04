@@ -14,12 +14,7 @@ public class SetOwnerCommand extends TeamSubCommand {
 
 	@Override
 	public CommandResponse onCommand(TeamPlayer teamPlayer, String label, String[] args, Team team) {
-		/*
-		 * method is depreciated as it does not guarantee the expected player, in most
-		 * use cases this will work and it will be down to the user if it does not due
-		 * to name changes This method is appropriate to use in this use case (so users
-		 * can view offline users teams by name not just by team name)
-		 */
+		
 		TeamPlayerResult teamPlayerResult = getTeamPlayer(team, args[0]);
 		if (teamPlayerResult.isCR()) {
 			return teamPlayerResult.getCr();
@@ -34,7 +29,6 @@ public class SetOwnerCommand extends TeamSubCommand {
 		if (promotePlayer.getRank() == PlayerRank.OWNER) {
 			return new CommandResponse("setowner.max");
 		}
-
 
 		team.promotePlayerToOwner(promotePlayer);
 		team.demotePlayer(teamPlayer);

@@ -6,12 +6,6 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * Used to track the details of a below name change event
- * Unlike most other events in BetterTeams, this one cannot be cancelled!
- *
- * @author booksaw
- */
 @Getter
 public class BelowNameChangeEvent extends Event {
 

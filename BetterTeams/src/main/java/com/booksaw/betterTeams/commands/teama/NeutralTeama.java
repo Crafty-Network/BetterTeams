@@ -1,6 +1,7 @@
+
 /**
- *
- */
+*
+*/
 package com.booksaw.betterTeams.commands.teama;
 
 import com.booksaw.betterTeams.CommandResponse;
@@ -75,6 +76,5 @@ public class NeutralTeama extends SubCommand {
 			addTeamStringList(options, args[1]);
 		}
 	}
-
 
 }

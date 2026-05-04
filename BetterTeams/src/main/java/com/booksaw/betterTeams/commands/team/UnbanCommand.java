@@ -13,12 +13,6 @@ public class UnbanCommand extends TeamSubCommand {
 	@Override
 	public CommandResponse onCommand(TeamPlayer teamPlayer, String label, String[] args, Team team) {
 
-		/*
-		 * method is depreciated as it does not guarantee the expected player, in most
-		 * use cases this will work and it will be down to the user if it does not due
-		 * to name changes This method is appropriate to use in this use case (so users
-		 * can view offline users teams by name not just by team name)
-		 */
 		OfflinePlayer player = Utils.getOfflinePlayer(args[0]);
 
 		if (player == null) {

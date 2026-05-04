@@ -8,15 +8,15 @@ import java.util.Objects;
 import java.util.function.Function;
 
 /**
- * @author booksaw
- * Class is defined to provide an individual team placeholder
- */
+* @author booksaw
+* Class is defined to provide an individual team placeholder
+*/
 public interface IndividualTeamPlaceholderProvider {
 
 	String getPlaceholderForTeam(Team team);
 
 	default String getPlaceholderForTeam(@NotNull Team team, @NotNull Function<TeamManager, String[]> sortingFunction) {
-		// Get the sorted teams using the provided sorting function
+		
 		String[] sortedTeams = sortingFunction.apply(Team.getTeamManager());
 		int position = 0;
 

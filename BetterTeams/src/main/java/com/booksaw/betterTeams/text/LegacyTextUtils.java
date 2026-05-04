@@ -1,12 +1,12 @@
 package com.booksaw.betterTeams.text;
 
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
-import net.md_5.bungee.api.ChatColor;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,7 +17,70 @@ public final class LegacyTextUtils {
 
 	private static final Pattern MOJANG_COLOR_PATTERN = Pattern.compile("(?i)&([0-9A-FK-OR])");
 	private static final Pattern STANDARD_HEX_PATTERN = Pattern.compile("(?i)&#([0-9A-F]{6})");
-	private static final Pattern BUNGEE_HEX_PATTERN = Pattern.compile("(?i)&x(&[0-9A-F]){6}");
+	private static final Pattern BUNGEE_HEX_PATTERN   = Pattern.compile("(?i)&x(&[0-9A-F]){6}");
+
+	private static final Map<Character, String> CHAR_TO_MINI_NAME;
+	
+	static final Map<Character, NamedTextColor> CHAR_TO_NAMED_COLOR;
+	
+	static final Map<NamedTextColor, Character> NAMED_COLOR_TO_CHAR;
+	
+	private static final Set<Character> COLOR_CHARS;
+
+	static {
+		Map<Character, String> names = new LinkedHashMap<>();
+		names.put('0', "black");       names.put('1', "dark_blue");
+		names.put('2', "dark_green");  names.put('3', "dark_aqua");
+		names.put('4', "dark_red");    names.put('5', "dark_purple");
+		names.put('6', "gold");        names.put('7', "gray");
+		names.put('8', "dark_gray");   names.put('9', "blue");
+		names.put('a', "green");       names.put('b', "aqua");
+		names.put('c', "red");         names.put('d', "light_purple");
+		names.put('e', "yellow");      names.put('f', "white");
+		names.put('k', "obfuscated");  names.put('l', "bold");
+		names.put('m', "strikethrough"); names.put('n', "underlined");
+		names.put('o', "italic");
+		CHAR_TO_MINI_NAME = Collections.unmodifiableMap(names);
+
+		Map<Character, NamedTextColor> colorsByChar = new LinkedHashMap<>();
+		colorsByChar.put('0', NamedTextColor.BLACK);
+		colorsByChar.put('1', NamedTextColor.DARK_BLUE);
+		colorsByChar.put('2', NamedTextColor.DARK_GREEN);
+		colorsByChar.put('3', NamedTextColor.DARK_AQUA);
+		colorsByChar.put('4', NamedTextColor.DARK_RED);
+		colorsByChar.put('5', NamedTextColor.DARK_PURPLE);
+		colorsByChar.put('6', NamedTextColor.GOLD);
+		colorsByChar.put('7', NamedTextColor.GRAY);
+		colorsByChar.put('8', NamedTextColor.DARK_GRAY);
+		colorsByChar.put('9', NamedTextColor.BLUE);
+		colorsByChar.put('a', NamedTextColor.GREEN);
+		colorsByChar.put('b', NamedTextColor.AQUA);
+		colorsByChar.put('c', NamedTextColor.RED);
+		colorsByChar.put('d', NamedTextColor.LIGHT_PURPLE);
+		colorsByChar.put('e', NamedTextColor.YELLOW);
+		colorsByChar.put('f', NamedTextColor.WHITE);
+		CHAR_TO_NAMED_COLOR = Collections.unmodifiableMap(colorsByChar);
+
+		Map<NamedTextColor, Character> reverse = new LinkedHashMap<>();
+		colorsByChar.forEach((ch, nc) -> reverse.put(nc, ch));
+		NAMED_COLOR_TO_CHAR = Collections.unmodifiableMap(reverse);
+
+		COLOR_CHARS = Collections.unmodifiableSet(new HashSet<>(colorsByChar.keySet()));
+	}
+
+	public static @Nullable NamedTextColor namedColorByChar(char c) {
+		return CHAR_TO_NAMED_COLOR.get(Character.toLowerCase(c));
+	}
+
+	public static char namedColorToChar(@NotNull NamedTextColor color) {
+		return NAMED_COLOR_TO_CHAR.getOrDefault(color, '6');
+	}
+
+	public static @Nullable NamedTextColor parseNamedColor(@NotNull String input) {
+		if (input.isEmpty()) return null;
+		if (input.length() == 1) return namedColorByChar(input.charAt(0));
+		return NamedTextColor.NAMES.value(input.toLowerCase());
+	}
 
 	public static String sectionToAmpersand(String s) {
 		return s.replace("§", "&");
@@ -55,56 +118,35 @@ public final class LegacyTextUtils {
 		return buffer.toString();
 	}
 
-	public static String colorToAdventure(ChatColor color) {
-		return colorToAdventure(color, false, new ArrayList<>());
-	}
-
-	public static String colorToAdventure(ChatColor color, boolean close) {
-		return colorToAdventure(color, close, new ArrayList<>());
-	}
-
-	private static String colorToAdventure(ChatColor color, boolean close, List<String> closeList) {
-		if (color == null) {
-			return "";
-		}
-		String colorName = color.getName();
-		if (colorName == "underline") {
-			colorName = "underlined";
-		}
-
-		if (colorName == "reset") {
-			return "<lr>";
-		} else {
-			if (!close) {
-				closeList.add("</" + colorName + ">");
-			}
-			return "<" + (close ? "/" : "") + colorName + ">";
-		}
-	}
-
 	public static String colorToAdventure(String input) {
 		Matcher matcher = MOJANG_COLOR_PATTERN.matcher(input);
 		StringBuffer buffer = new StringBuffer();
-
-		// All elements to be closed at the next color code
 		List<String> closeList = new ArrayList<>();
 
 		while (matcher.find()) {
 			char code = matcher.group(1).toLowerCase().charAt(0);
-			ChatColor color = ChatColor.getByChar(code);
+			String replacement;
 
-			if (color != null) {
-				String replacement = "";
-				if (Character.digit(code, 16) != -1) {
-					// if char is a color, must close all previous tags before opening the new color
-					// otherwise bold etc. will persist, reverting as inside tag must be closed first
+			if (code == 'r') {
+				
+				Collections.reverse(closeList);
+				replacement = String.join("", closeList) + "<lr>";
+				closeList.clear();
+			} else {
+				String name = CHAR_TO_MINI_NAME.get(code);
+				if (name == null) continue; 
+				if (COLOR_CHARS.contains(code)) {
+					
 					Collections.reverse(closeList);
-					replacement += String.join("", closeList);
+					replacement = String.join("", closeList);
 					closeList.clear();
+				} else {
+					replacement = "";
 				}
-				replacement += colorToAdventure(color, false, closeList);
-				matcher.appendReplacement(buffer, replacement);
+				closeList.add("</" + name + ">");
+				replacement += "<" + name + ">";
 			}
+			matcher.appendReplacement(buffer, replacement);
 		}
 		matcher.appendTail(buffer);
 		return buffer.toString();

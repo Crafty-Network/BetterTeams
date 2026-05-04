@@ -18,6 +18,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Getter
+/**
+* Used to load / create a config file where the resource name is different from
+* the destination path
+*
+* @param resourceName The name of the resource within the jar file
+* @param filePath     The path to save the resource to
+*/
 public class ConfigManager {
 
 	public final YamlConfiguration config;
@@ -54,13 +61,6 @@ public class ConfigManager {
 		}
 	}
 
-	/**
-	 * Used to load / create a config file where the resource name is different from
-	 * the destination path
-	 *
-	 * @param resourceName The name of the resource within the jar file
-	 * @param filePath     The path to save the resource to
-	 */
 	public ConfigManager(String resourceName, String filePath, BetterTeamsExtension extension) {
 		this.extension = extension;
 
@@ -173,7 +173,6 @@ public class ConfigManager {
 					continue;
 				}
 
-				// saving the new value to the config
 				config.set(str, toSave);
 				addedPaths.add(str);
 			}

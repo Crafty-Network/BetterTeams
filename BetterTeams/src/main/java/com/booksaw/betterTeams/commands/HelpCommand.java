@@ -6,7 +6,6 @@ import com.booksaw.betterTeams.message.MessageManager;
 import com.booksaw.betterTeams.text.Formatter;
 import com.booksaw.betterTeams.text.LegacyTextUtils;
 import net.kyori.adventure.text.Component;
-import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ClickEvent.Action;
 import net.md_5.bungee.api.chat.HoverEvent;
@@ -54,11 +53,17 @@ public class HelpCommand extends SubCommand {
 	public CommandResponse onCommand(CommandSender sender, String label, String[] args) {
 
 		if (fullyCustom) {
+   /**
+   * Used to send a fully custom help message which is stored in a file
+   *
+   * @param sender the CommandSender that called the help message
+   * @param label  the label for the message (the base command for example for
+   *               /teamadmin it could be /teama as well)
+   */
 			fullyCustom(sender, label);
 			return null;
 		}
 
-		// Send specific help message if command found
 		if (args.length != 0 && command.getSubCommands().containsKey(args[0])) {
 			SubCommand subcommand = command.getSubCommands().get(args[0]);
 			MessageManager.sendFullMessage(sender, createHelpMessage(label,
@@ -101,13 +106,6 @@ public class HelpCommand extends SubCommand {
 		return null;
 	}
 
-	/**
-	 * Used to send a fully custom help message which is stored in a file
-	 *
-	 * @param sender the CommandSender that called the help message
-	 * @param label  the label for the message (the base command for example for
-	 *               /teamadmin it could be /teama as well)
-	 */
 	public void fullyCustom(CommandSender sender, String label) {
 		File f = new File(Main.plugin.getDataFolder() + File.separator + command.getCommand() + ".txt");
 
@@ -147,18 +145,18 @@ public class HelpCommand extends SubCommand {
 		}
 	}
 
-	/**
-	 * Used to create a formatted help message to explain what a command does to the
-	 * user
-	 *
-	 * @param label       the base command
-	 * @param commandPath the rest of the command (i.e. help [param])
-	 * @param description the description of the command
-	 * @return the created message relating to that command
-	 */
+ /**
+ * Used to create a formatted help message to explain what a command does to the
+ * user
+ *
+ * @param label       the base command
+ * @param commandPath the rest of the command (i.e. help [param])
+ * @param description the description of the command
+ * @return the created message relating to that command
+ */
 	public String createHelpMessage(String label, String commandPath, String description) {
 
-		return prefix + "/" + label + " " + commandPath + ChatColor.WHITE + " - " + HelpCommand.description
+		return prefix + "/" + label + " " + commandPath + "<white> - " + HelpCommand.description
 				+ description;
 	}
 
@@ -166,7 +164,7 @@ public class HelpCommand extends SubCommand {
 
 		TextComponent message = new TextComponent(
 				LegacyTextUtils.parseAdventure(MessageManager.getPrefix() + prefix + "/" + label + " " + commandPath
-						+ ChatColor.WHITE + " - " + HelpCommand.description
+						+ "<white> - " + HelpCommand.description
 						+ description));
 		message.setClickEvent(new ClickEvent(Action.SUGGEST_COMMAND, "/" + label + " " + commandPath));
 		message.setHoverEvent(

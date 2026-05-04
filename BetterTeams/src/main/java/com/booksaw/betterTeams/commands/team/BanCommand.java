@@ -14,12 +14,6 @@ public class BanCommand extends TeamSubCommand {
 	@Override
 	public CommandResponse onCommand(TeamPlayer teamPlayer, String label, String[] args, Team team) {
 
-		/*
-		 * method is depreciated as it does not guarantee the expected player, in most
-		 * use cases this will work and it will be down to the user if it does not due
-		 * to name changes This method is appropriate to use in this use case (so users
-		 * can view offline users teams by name not just by team name)
-		 */
 		OfflinePlayer player = Utils.getOfflinePlayer(args[0]);
 
 		if (player == null) {
@@ -42,12 +36,10 @@ public class BanCommand extends TeamSubCommand {
 
 		TeamPlayer kickedPlayer = team.getTeamPlayer(player);
 
-		// ensuring the player they are banning has less perms than them
 		if (teamPlayer.getRank().value <= Objects.requireNonNull(kickedPlayer).getRank().value) {
 			return new CommandResponse("ban.noPerm");
 		}
 
-		// player is in the team, so removing them
 		team.removePlayer(player);
 		team.banPlayer(player);
 

@@ -6,10 +6,10 @@ import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Called when a player joins a team
- *
- * @author booksaw
- */
+* Called when a player joins a team
+*
+* @author booksaw
+*/
 public class PlayerJoinTeamEvent extends TeamPlayerEvent {
 
 	private static final HandlerList HANDLERS = new HandlerList();

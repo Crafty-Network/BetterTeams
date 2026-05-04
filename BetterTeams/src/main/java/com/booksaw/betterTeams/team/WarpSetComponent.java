@@ -46,7 +46,6 @@ public class WarpSetComponent extends SetTeamComponent<Warp> {
 		team.getStorage().removeWarp(component);
 	}
 
-
 	public Warp get(String name) {
 		for (Warp warp : new ArrayList<>(set)) {
 			if (warp.getName().equalsIgnoreCase(name)) {

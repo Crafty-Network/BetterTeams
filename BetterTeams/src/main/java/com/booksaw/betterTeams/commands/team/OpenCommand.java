@@ -4,19 +4,19 @@ import com.booksaw.betterTeams.CommandResponse;
 import com.booksaw.betterTeams.PlayerRank;
 import com.booksaw.betterTeams.Team;
 import com.booksaw.betterTeams.TeamPlayer;
+/**
+* This handles the command /team open
+* <p>
+* This toggles the team from being open to closed and back
+* </p>
+*
+* @author booksaw
+*/
 import com.booksaw.betterTeams.commands.presets.TeamSubCommand;
 import org.bukkit.command.CommandSender;
 
 import java.util.List;
 
-/**
- * This handles the command /team open
- * <p>
- * This toggles the team from being open to closed and back
- * </p>
- *
- * @author booksaw
- */
 public class OpenCommand extends TeamSubCommand {
 
 	@Override

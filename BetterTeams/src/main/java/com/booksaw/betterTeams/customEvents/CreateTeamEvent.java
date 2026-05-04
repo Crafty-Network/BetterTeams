@@ -6,9 +6,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * An event which is called right before the creation of a {@link Team}
- */
 @Getter
 public class CreateTeamEvent extends TeamEvent {
 

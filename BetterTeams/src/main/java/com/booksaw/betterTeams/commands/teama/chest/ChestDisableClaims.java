@@ -56,5 +56,4 @@ public class ChestDisableClaims extends SubCommand {
 	public void onTabComplete(List<String> options, CommandSender sender, String label, String[] args) {
 	}
 
-
 }

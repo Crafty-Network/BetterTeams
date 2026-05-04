@@ -13,7 +13,7 @@ public class ComponentUtil {
 		} else if (components.length == 1) {
 			return components[0] != null ? components[0] : Component.empty();
 		}
-		// From here on, Adventure Text handles possibly null Components
+		
 		return Component.join(JoinConfiguration.noSeparators(), components);
 	}
 

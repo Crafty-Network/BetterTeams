@@ -45,7 +45,8 @@ public class DepositCommand extends TeamSubCommand {
 		if (amount != event.getAmount())
 			amount = event.getAmount();
 
-		double result = team.getMoney() + amount;
+		double currentMoney = team.getMoney();
+		double result = currentMoney + amount;
 
 		if (result > team.getMaxMoney() && team.getMaxMoney() >= 0) {
 			return new CommandResponse("deposit.max");

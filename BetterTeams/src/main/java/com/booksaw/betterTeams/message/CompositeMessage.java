@@ -9,10 +9,10 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 /**
- * Used when the program needs to send multiple messages to the user
- *
- * @author booksaw
- */
+* Used when the program needs to send multiple messages to the user
+*
+* @author booksaw
+*/
 public class CompositeMessage implements Message {
 
 	private final List<Message> messages;

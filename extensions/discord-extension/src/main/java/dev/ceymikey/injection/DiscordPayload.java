@@ -1,18 +1,4 @@
-/*
- * Copyright 2024 Ceymikey. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+
 package dev.ceymikey.injection;
 
 import com.booksaw.betterTeams.Main;
@@ -45,17 +31,15 @@ public class DiscordPayload {
 		HttpURLConnection connection = null;
 
 		try {
-			// Build the JSON payload
+			
 			JsonObject payload = getPayload(builder);
 
-			// Set up HTTP connection
 			URL url = new URL(builder.getUrl());
 			connection = (HttpURLConnection) url.openConnection();
 			connection.setRequestMethod("POST");
 			connection.setRequestProperty("Content-Type", "application/json");
 			connection.setDoOutput(true);
 
-			// Send the payload
 			byte[] payloadBytes = payload.toString().getBytes(StandardCharsets.UTF_8);
 			connection.setFixedLengthStreamingMode(payloadBytes.length);
 
@@ -64,7 +48,6 @@ public class DiscordPayload {
 				os.flush();
 			}
 
-			// Get response code to ensure the request is complete
 			int responseCode = connection.getResponseCode();
 			if (responseCode < 200 || responseCode >= 300) {
 				Main.plugin.getLogger().severe("Could not send webhook. HTTP Error: " + responseCode);
@@ -101,7 +84,6 @@ public class DiscordPayload {
 		}
 		embed.put("fields", fieldsArray);
 
-		// Add footer if available
 		if (builder.getFooterText() != null && !builder.getFooterText().isEmpty()) {
 			JsonObject footer = new JsonObject();
 			footer.put("text", builder.getFooterText());

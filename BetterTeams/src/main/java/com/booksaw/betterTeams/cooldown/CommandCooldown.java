@@ -5,6 +5,12 @@ import org.bukkit.entity.Player;
 
 import java.util.HashMap;
 
+/**
+* Used within cooldown manager to track a new commands cooldown
+*
+* @param command  the reference for the command
+* @param cooldown how long of a cooldown that command has (in seconds)
+*/
 public class CommandCooldown {
 
 	final HashMap<Player, Long> nextTime;
@@ -14,24 +20,18 @@ public class CommandCooldown {
 	@Getter
 	private final String command;
 
-	/**
-	 * Used within cooldown manager to track a new commands cooldown
-	 *
-	 * @param command  the reference for the command
-	 * @param cooldown how long of a cooldown that command has (in seconds)
-	 */
 	public CommandCooldown(String command, int cooldown) {
 		this.command = command;
 		this.cooldown = cooldown * 1000;
 		nextTime = new HashMap<>();
 	}
 
-	/**
-	 * Run when a player runs the command to track when they can next run the
-	 * command
-	 *
-	 * @param player the player to add a cooldown for
-	 */
+ /**
+ * Run when a player runs the command to track when they can next run the
+ * command
+ *
+ * @param player the player to add a cooldown for
+ */
 	public void runCommand(Player player) {
 		if (player.hasPermission("betterteams.cooldown.bypass")) {
 			return;
@@ -39,13 +39,13 @@ public class CommandCooldown {
 		nextTime.put(player, System.currentTimeMillis() + cooldown);
 	}
 
-	/**
-	 * Used to get how long a player has remaining on the cooldown (to the nearest
-	 * second)
-	 *
-	 * @param player the player to test the cooldown length for
-	 * @return how long they have remaining (returns -1 if they can run the command)
-	 */
+ /**
+ * Used to get how long a player has remaining on the cooldown (to the nearest
+ * second)
+ *
+ * @param player the player to test the cooldown length for
+ * @return how long they have remaining (returns -1 if they can run the command)
+ */
 	public int getRemaining(Player player) {
 
 		if (player.hasPermission("betterteams.cooldown.bypass")) {

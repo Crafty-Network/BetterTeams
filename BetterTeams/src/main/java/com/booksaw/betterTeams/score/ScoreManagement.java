@@ -50,16 +50,15 @@ public class ScoreManagement implements Listener {
 			nextPurge = 0;
 		}
 
-		// if there are actually purges
 		if (!purges.isEmpty()) {
+   /**
+   * This class is used to schedule events
+   */
 			sched();
 		}
 
 	}
 
-	/**
-	 * This class is used to schedule events
-	 */
 	private void sched() {
 		FoliaLib scheduler = new FoliaLib(Main.plugin);
 		scheduler.getScheduler().runTimer(() -> {
@@ -78,7 +77,7 @@ public class ScoreManagement implements Listener {
 				}
 				return;
 			}
-			// clean pass so it can reset the tracker
+			
 			run = false;
 
 		}, 1, 20 * 60L);
@@ -99,7 +98,7 @@ public class ScoreManagement implements Listener {
 	@EventHandler
 	public void onKill(PlayerDeathEvent e) {
 		Player killed = e.getEntity().getPlayer();
-		// score decreases
+		
 		Team killedTeam = Team.getTeam(killed);
 		if (killedTeam != null) {
 			death(killed, killedTeam);
@@ -160,10 +159,10 @@ public class ScoreManagement implements Listener {
 			this.hours = hours;
 		}
 
-		/**
-		 * @param date the date to check if this date is before
-		 * @return if the event is before now
-		 */
+  /**
+  * @param date the date to check if this date is before
+  * @return if the event is before now
+  */
 		public boolean isBefore(Date date) {
 			if (date.date < this.date) {
 				return false;
@@ -175,19 +174,19 @@ public class ScoreManagement implements Listener {
 
 		}
 
-		/**
-		 * @return if the event is now
-		 */
+  /**
+  * @return if the event is now
+  */
 		public boolean isNow() {
 			LocalDateTime now = LocalDateTime.now();
 			return date == now.getDayOfMonth() && now.getHour() == hours;
 		}
 
-		/**
-		 * Used to check if the date is after the current time
-		 *
-		 * @return If the date is after the current time
-		 */
+  /**
+  * Used to check if the date is after the current time
+  *
+  * @return If the date is after the current time
+  */
 		public boolean isAfterNow() {
 			LocalDateTime now = LocalDateTime.now();
 			Date nowDate = new Date(now.getDayOfMonth(), now.getHour());

@@ -12,7 +12,6 @@ import java.util.List;
 
 public class SetrankTeama extends TeamSelectSubCommand {
 
-
 	private final ParentCommand parentCommand;
 
 	public SetrankTeama(ParentCommand parentCommand) {

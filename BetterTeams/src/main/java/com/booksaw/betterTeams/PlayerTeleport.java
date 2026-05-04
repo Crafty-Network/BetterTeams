@@ -6,10 +6,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerTeleportEvent;
 
 /**
- * A class to handle a teleport with a delay
- *
- * @author booksaw
- */
+* A class to handle a teleport with a delay
+*
+* @author booksaw
+*/
 public class PlayerTeleport {
 
 	final String reference;
@@ -17,15 +17,15 @@ public class PlayerTeleport {
 	private final Location location;
 	private final Location playerLoc;
 
-	/**
-	 * This will start the cooldown (there is no delay)
-	 *
-	 * @param player    The player to teleport
-	 * @param location  the location to teleport them to
-	 * @param reference the reference for the message that should be sent when the
-	 *                  player is teleported
-	 * @throws Exception Well, isn't this a generic one?
-	 */
+ /**
+ * This will start the cooldown (there is no delay)
+ *
+ * @param player    The player to teleport
+ * @param location  the location to teleport them to
+ * @param reference the reference for the message that should be sent when the
+ *                  player is teleported
+ * @throws Exception Well, isn't this a generic one?
+ */
 	public PlayerTeleport(Player player, Location location, String reference) throws Exception {
 		if (location == null || location.getWorld() == null) {
 			throw new Exception("Location or world is null");
@@ -36,7 +36,6 @@ public class PlayerTeleport {
 		this.reference = reference;
 
 		this.playerLoc = player.getLocation();
-
 
 		if (Main.plugin.getConfig().getBoolean("noTeleport")) {
 			MessageManager.sendMessage(player, "teleport.noTeleport", location.getWorld().getName(), location.getBlockX(), location.getBlockY(), location.getBlockZ());
@@ -55,7 +54,6 @@ public class PlayerTeleport {
 			return;
 		}
 
-		// sending the wait message
 		MessageManager.sendMessage(player, "teleport.wait", wait);
 
 		Main.plugin.getFoliaLib().getScheduler().runLater(task -> {

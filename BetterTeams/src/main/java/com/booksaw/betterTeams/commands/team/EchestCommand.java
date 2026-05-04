@@ -6,20 +6,31 @@ import com.booksaw.betterTeams.events.InventoryManagement;
 import org.bukkit.command.CommandSender;
 
 import java.util.List;
-import java.util.Objects;
 
 public class EchestCommand extends TeamSubCommand {
 
 	@Override
 	public CommandResponse onCommand(TeamPlayer player, String label, String[] args, Team team) {
 
-		InventoryManagement.adminViewers.put(player.getPlayer().getPlayer(), team);
+		org.bukkit.entity.Player onlinePlayer = player.getPlayer().getPlayer();
+		if (onlinePlayer == null) {
+			return new CommandResponse(true);
+		}
+
+		InventoryManagement.adminViewers.put(onlinePlayer, team);
 		if (team.getEchest() == null || team.getEchest().getSize() == 0) {
 			Main.plugin.getLogger().warning("EnderChest was found to be null or empty " + team.getEchest()
 					+ " this should never occur, report to booksaw");
 		}
 
-		Main.plugin.getFoliaLib().getScheduler().runAtEntity(player.getPlayer().getPlayer(), task -> Objects.requireNonNull(player.getPlayer().getPlayer()).openInventory(team.getEchest()));
+		Main.plugin.getFoliaLib().getScheduler().runAtEntity(onlinePlayer, task -> {
+			
+			if (onlinePlayer.isOnline()) {
+				onlinePlayer.openInventory(team.getEchest());
+			} else {
+				InventoryManagement.adminViewers.remove(onlinePlayer);
+			}
+		});
 
 		return new CommandResponse(true);
 	}

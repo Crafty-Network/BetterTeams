@@ -52,7 +52,6 @@ class TeamPlaceholdersTest {
 	@SuppressWarnings("ResultOfMethodCallIgnored")
 	void setUp() {
 		when(mockPlugin.getConfig()).thenReturn(mockConfig);
-//		when(mockConfig.getInt("invalidateCacheSeconds", 60)).thenReturn(60);
 
 		teamStatic = mockStatic(Team.class);
 		messageManagerStatic = mockStatic(MessageManager.class);
@@ -241,7 +240,7 @@ class TeamPlaceholdersTest {
 		@Test
 		@DisplayName("Should cache the result of a static placeholder request")
 		void testStaticPlaceholderIsCached() {
-			// --- First Request ---
+			
 			teamStatic.when(() -> Team.getTeam("myteam")).thenReturn(mockTeam);
 			placeholderServiceStatic.when(() -> TeamPlaceholderService.getPlaceholder("score", mockTeam, null))
 					.thenReturn("100");
@@ -249,14 +248,11 @@ class TeamPlaceholdersTest {
 			String result1 = teamPlaceholders.onRequest(null, "static_score_MyTeam");
 			assertEquals("100", result1);
 
-			// Verify the underlying service was called
 			placeholderServiceStatic.verify(() -> TeamPlaceholderService.getPlaceholder("score", mockTeam, null), times(1));
 
-			// --- Second Request ---
 			String result2 = teamPlaceholders.onRequest(null, "static_score_MyTeam");
 			assertEquals("100", result2);
 
-			// Verify the service was NOT called again, proving the cache was hit
 			placeholderServiceStatic.verify(
 					() -> TeamPlaceholderService.getPlaceholder("score", mockTeam, null),
 					times(1)
@@ -270,14 +266,11 @@ class TeamPlaceholdersTest {
 			placeholderServiceStatic.when(() -> TeamPlaceholderService.getPlaceholder("score", mockTeam, null))
 					.thenReturn("100");
 
-			// First request to populate the cache
 			teamPlaceholders.onRequest(null, "static_score_MyTeam");
 			placeholderServiceStatic.verify(() -> TeamPlaceholderService.getPlaceholder("score", mockTeam, null), times(1));
 
-			// Invalidate the cache
 			teamPlaceholders.invalidateCache();
 
-			// Second request should trigger the service call again
 			teamPlaceholders.onRequest(null, "static_score_MyTeam");
 			placeholderServiceStatic.verify(() -> TeamPlaceholderService.getPlaceholder("score", mockTeam, null), times(2));
 		}
@@ -290,13 +283,11 @@ class TeamPlaceholdersTest {
 			placeholderServiceStatic.when(() -> TeamPlaceholderService.getPlaceholder("name", mockTeam, mockTeamPlayer))
 					.thenReturn("TeamAlpha");
 
-			// First call
 			teamPlaceholders.onRequest(mockPlayer, "name");
 			placeholderServiceStatic.verify(() -> TeamPlaceholderService.getPlaceholder("name", mockTeam, mockTeamPlayer), times(1));
 
-			// Second call
 			teamPlaceholders.onRequest(mockPlayer, "name");
-			// The service should be called again, proving it was not cached
+			
 			placeholderServiceStatic.verify(() -> TeamPlaceholderService.getPlaceholder("name", mockTeam, mockTeamPlayer), times(2));
 		}
 	}

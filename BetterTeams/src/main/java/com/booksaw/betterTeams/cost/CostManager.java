@@ -9,10 +9,10 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Used to track how long of a cost is required for a command
- *
- * @author booksaw
- */
+* Used to track how long of a cost is required for a command
+*
+* @author booksaw
+*/
 public class CostManager {
 
 	public static boolean costFromTeam;
@@ -54,13 +54,13 @@ public class CostManager {
 		return new NoCost();
 	}
 
-	/**
-	 * This class is returned when a command does not have a cost, this is used to
-	 * avoid running many null checks throughout the program. The class is used to
-	 * stop any cost tracking for a specific command
-	 *
-	 * @author booksaw
-	 */
+ /**
+ * This class is returned when a command does not have a cost, this is used to
+ * avoid running many null checks throughout the program. The class is used to
+ * stop any cost tracking for a specific command
+ *
+ * @author booksaw
+ */
 	public static class NoCost extends CommandCost {
 
 		public NoCost() {

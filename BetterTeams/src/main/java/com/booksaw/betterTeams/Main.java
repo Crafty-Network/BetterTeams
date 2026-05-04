@@ -37,11 +37,9 @@ import com.booksaw.betterTeams.score.ScoreManagement;
 import com.booksaw.betterTeams.team.level.LevelManager;
 import com.booksaw.betterTeams.team.storage.StorageType;
 import com.booksaw.betterTeams.team.storage.convert.Converter;
-import com.booksaw.betterTeams.team.storage.storageManager.SeparatedYamlStorageManager;
-import com.booksaw.betterTeams.team.storage.storageManager.YamlStorageManager;
+import com.booksaw.betterTeams.team.storage.storageManager.SQLiteStorageManager;
 import com.tcoded.folialib.FoliaLib;
 import lombok.Getter;
-import net.kyori.adventure.platform.bukkit.BukkitAudiences;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
 import org.bstats.bukkit.Metrics;
@@ -52,6 +50,11 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.RegisteredServiceProvider;
+/**
+* Main class of the plugin, extends JavaPlugin
+*
+* @author booksaw
+*/
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
@@ -60,11 +63,6 @@ import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.logging.Level;
 
-/**
- * Main class of the plugin, extends JavaPlugin
- *
- * @author booksaw
- */
 public class Main extends JavaPlugin {
 
 	public static Main plugin;
@@ -90,36 +88,23 @@ public class Main extends JavaPlugin {
 	@Getter
 	ExtensionManager extensionManager;
 
-	/**
-	 * FoliaLib instance for Folia/Paper/Spigot support
-	 */
 	@Getter
 	public FoliaLib foliaLib;
 
-	/**
-	 * If the ultimateClaims expansion has been enabled
-	 */
 	@Getter
 	private boolean ultimateClaimsEnabled = false;
 
 	private Metrics metrics = null;
 
-	/**
-	 * This is used to store the config file in which the the teams data is stored
-	 */
+ /**
+ * This is used to store the config file in which the the teams data is stored
+ */
 	FileConfiguration teams;
 	private DamageManagement damageManagement;
 
 	private HomeAnchorManagement homeAnchorManagement;
 
 	private ConfigManager configManager;
-
-	@Getter
-	private BukkitAudiences adventure;
-
-	public boolean isAdventure() {
-		return adventure != null;
-	}
 
 	@Override
 	public void onLoad() {
@@ -144,14 +129,7 @@ public class Main extends JavaPlugin {
 		foliaLib = new FoliaLib(this);
 		setupMetrics();
 
-		if (adventure == null) try {
-			adventure = BukkitAudiences.create(this);
-		} catch (Exception e) {
-			getLogger().severe("Failed to create BukkitAudiences: " + e.getMessage());
-			adventure = null;
-		}
-
-		MessageManager.setupMessageSender(adventure);
+		MessageManager.setupMessageSender();
 
 		loadCustomConfigs();
 
@@ -206,10 +184,11 @@ public class Main extends JavaPlugin {
 			temp.getValue().saveEchest();
 		}
 
+		InventoryManagement.adminViewers.clear();
+
 		if (useHolograms) {
 			HologramManager.holoManager.disable();
 		}
-
 
 		if (teamManagement != null) {
 			teamManagement.removeAll(false);
@@ -221,18 +200,13 @@ public class Main extends JavaPlugin {
 			homeAnchorManagement = null;
 		}
 
-		HandlerList.unregisterAll(this); // unregister all Listeners
+		HandlerList.unregisterAll(this);
 		Bukkit.getServer().getMessenger().unregisterIncomingPluginChannel(this);
 
 		damageManagement = null;
 		chatManagement = null;
 
 		Team.disable();
-
-		if (adventure != null) {
-			adventure.close();
-			adventure = null;
-		}
 
 		configManager = null;
 	}
@@ -279,23 +253,17 @@ public class Main extends JavaPlugin {
 			}
 		}
 
-		// loading the fully custom help message option
 		HelpCommand.setupHelp();
 
 	}
 
-	/*
-	 * Determines which holograms plugin the server is running, then creates a new
-	 * HologramManager instance for the respective plugin.
-	 */
 	private boolean setupHolograms() {
 		boolean hdHolos = Bukkit.getPluginManager().isPluginEnabled("HolographicDisplays");
 		if (hdHolos) {
 			new HDHologramManager();
 		}
 		boolean dhHolos = Bukkit.getPluginManager().isPluginEnabled("DecentHolograms");
-		// Check to make sure the server isn't running both hologram plugins.
-		// We don't need two HologramManager instances.
+
 		if (!hdHolos && dhHolos) {
 			new DHHologramManager();
 		}
@@ -343,7 +311,7 @@ public class Main extends JavaPlugin {
 
 	public void setupCommands() {
 		teamCommand = new PermissionParentCommand(new CostManager("team"), new CooldownManager("team"), "team");
-		// add all sub commands here
+		
 		teamCommand.addSubCommands(new CreateCommand(teamCommand), new LeaveCommand(), new DisbandCommand(),
 				new DescriptionCommand(), new InviteCommand(), new JoinCommand(), new NameCommand(), new OpenCommand(),
 				new InfoCommand(teamCommand), new KickCommand(), new PromoteCommand(), new DemoteCommand(),
@@ -360,7 +328,7 @@ public class Main extends JavaPlugin {
 		if (getConfig().getBoolean("disableCombat")) {
 			teamCommand.addSubCommand(new PvpCommand());
 		}
-		// only used if a team is only allowed a single owner
+		
 		if (getConfig().getBoolean("singleOwner")) {
 			teamCommand.addSubCommand(new SetOwnerCommand());
 		}
@@ -381,7 +349,6 @@ public class Main extends JavaPlugin {
 				new DelwarpTeama(), new PurgeTeama(), new DisbandTeama(), new ColorTeama(), new EchestTeama(),
 				new SetrankTeama(teamaCommand), new TagTeama(), new TeleportTeama(teamaCommand), new AllyTeama(),
 				new NeutralTeama(), new ImportmessagesTeama());
-
 
 		if (getConfig().getBoolean("anchor.enable")) {
 			teamaCommand.addSubCommands(new AnchorTeama(), new SetAnchorTeama());
@@ -445,7 +412,6 @@ public class Main extends JavaPlugin {
 			}
 		}
 
-
 		getServer().getPluginManager().registerEvents((chatManagement = new ChatManagement()), this);
 		getServer().getPluginManager().registerEvents(new ScoreManagement(), this);
 		getServer().getPluginManager().registerEvents(new AllyManagement(), this);
@@ -455,8 +421,6 @@ public class Main extends JavaPlugin {
 			getServer().getPluginManager().registerEvents(new UpdateChecker(this), this);
 		}
 
-		// disabling the chest checks (hoppers most importantly) to reduce needless
-		// performance cost
 		if (teamCommand.isEnabled("chest")) {
 			getServer().getPluginManager().registerEvents(new ChestManagement(), this);
 		}
@@ -480,9 +444,9 @@ public class Main extends JavaPlugin {
 			metrics.addCustomChart(new SimplePie("language", () -> getConfig().getString("language")));
 			metrics.addCustomChart(new SimplePie("storage_type", () -> getConfig().getString("storageType")));
 			metrics.addCustomChart(new SimplePie("team_count", () -> {
-				if (Team.getTeamManager() instanceof SeparatedYamlStorageManager) {
-					return ((((SeparatedYamlStorageManager) Team.getTeamManager()).getTeamNameLookupSize() / 200) * 200) + "+";
-
+				if (Team.getTeamManager() instanceof SQLiteStorageManager) {
+					int count = Team.getTeamManager().getLoadedTeamListClone().size();
+					return ((count / 200) * 200) + "+";
 				}
 				return null;
 			}));
@@ -496,15 +460,16 @@ public class Main extends JavaPlugin {
 	}
 
 	public void setupStorage() {
-		File f = new File("plugins/BetterTeams/" + YamlStorageManager.TEAMLISTSTORAGELOC + ".yml");
+		File f = new File("plugins/BetterTeams/teams.yml");
 
 		if (!f.exists()) {
 			Main.plugin.saveResource("teams.yml", false);
 		}
 
 		YamlConfiguration teamStorage = YamlConfiguration.loadConfiguration(f);
-		StorageType from = StorageType.getStorageType(teamStorage.getString("storageType", "FLATFILE"));
-		StorageType to = StorageType.getStorageType(getConfig().getString("storageType", ""));
+		
+		StorageType from = StorageType.getStorageType(teamStorage.getString("storageType", "SQLITE"));
+		StorageType to = StorageType.getStorageType(getConfig().getString("storageType", "SQLITE"));
 
 		if (from != to) {
 			Converter converter = Converter.getConverter(from, to);
@@ -530,7 +495,7 @@ public class Main extends JavaPlugin {
 		if (enableTick <= 0) {
 			extensionManager.enableExtensions();
 		} else {
-			// Run later
+			
 			foliaLib.getScheduler().runLater(() -> {
 				extensionManager.enableExtensions();
 			}, enableTick);

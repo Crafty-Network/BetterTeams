@@ -18,13 +18,11 @@ public class CreateTeama extends SubCommand {
 		}
 
 		if (Team.getTeam(args[0]) != null) {
-			// team already exists
+			
 			return new CommandResponse("create.exists");
 		}
 
 		Team.getTeamManager().createNewTeam(args[0], null);
-//		Team team = Team.getTeam(args[0]);
-//		Objects.requireNonNull(team).removePlayer((Player) sender);
 
 		return new CommandResponse(true, "admin.create.success");
 	}

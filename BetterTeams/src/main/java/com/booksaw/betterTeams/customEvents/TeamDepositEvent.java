@@ -7,9 +7,6 @@ import lombok.Setter;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * An event which is called when a player deposits money into their {@link com.booksaw.betterTeams.Team}'s balance
- */
 @Setter
 @Getter
 public final class TeamDepositEvent extends TeamPlayerEvent implements TeamMoneyEvent {

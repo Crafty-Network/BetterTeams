@@ -19,7 +19,6 @@ public class MemberSetComponent extends TeamPlayerSetComponent {
 	@Override
 	public void add(Team team, TeamPlayer teamPlayer) {
 
-		// calling the event
 		PlayerJoinTeamEvent event = new PlayerJoinTeamEvent(team, teamPlayer);
 		Bukkit.getPluginManager().callEvent(event);
 		if (event.isCancelled()) {
@@ -35,11 +34,12 @@ public class MemberSetComponent extends TeamPlayerSetComponent {
 		Team.getTeamManager().playerJoinTeam(team, teamPlayer);
 		set.add(teamPlayer);
 
-		// if the player is offline there will be no player object for them
 		if (offlinePlayer.isOnline() && onlinePlayer != null) {
 			for (TeamPlayer player : set) {
-				if (player.getPlayer().isOnline()) {
-					MessageManager.sendMessage(player.getPlayer().getPlayer(), "join.notify", onlinePlayer.getDisplayName());
+
+				Player onlineTeammate = player.getPlayer().getPlayer();
+				if (onlineTeammate != null) {
+					MessageManager.sendMessage(onlineTeammate, "join.notify", onlinePlayer.getDisplayName());
 				}
 			}
 
@@ -65,8 +65,10 @@ public class MemberSetComponent extends TeamPlayerSetComponent {
 
 		OfflinePlayer p = teamPlayer.getPlayer();
 
-		if (Main.plugin.teamManagement != null && p.isOnline()) {
-			Main.plugin.teamManagement.remove(p.getPlayer());
+		Player onlineLeaver = p.getPlayer();
+
+		if (Main.plugin.teamManagement != null && onlineLeaver != null) {
+			Main.plugin.teamManagement.remove(onlineLeaver);
 		}
 		Team.getTeamManager().playerLeaveTeam(team, teamPlayer);
 		set.remove(teamPlayer);

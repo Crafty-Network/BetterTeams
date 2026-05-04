@@ -5,6 +5,6 @@ import com.booksaw.betterTeams.integrations.placeholder.IndividualTeamPlaceholde
 public class ColorNamePlaceholderProvider implements IndividualTeamPlaceholderProvider {
 	@Override
 	public String getPlaceholderForTeam(com.booksaw.betterTeams.Team team) {
-		return team.getColor().name();
+		return net.kyori.adventure.text.format.NamedTextColor.NAMES.key(team.getColor());
 	}
 }

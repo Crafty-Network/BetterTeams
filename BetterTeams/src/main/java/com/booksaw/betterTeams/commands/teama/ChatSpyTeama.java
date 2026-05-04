@@ -12,12 +12,12 @@ public class ChatSpyTeama extends SubCommand {
 	@Override
 	public CommandResponse onCommand(CommandSender sender, String label, String[] args) {
 
-		if (Main.plugin.chatManagement.spy.contains(sender)) {
-			Main.plugin.chatManagement.spy.remove(sender);
+		if (Main.plugin.chatManagement.getSpy().contains(sender)) {
+			Main.plugin.chatManagement.getSpy().remove(sender);
 			return new CommandResponse(true, "spy.stop");
 		}
 
-		Main.plugin.chatManagement.spy.add(sender);
+		Main.plugin.chatManagement.getSpy().add(sender);
 
 		return new CommandResponse(true, "spy.start");
 	}

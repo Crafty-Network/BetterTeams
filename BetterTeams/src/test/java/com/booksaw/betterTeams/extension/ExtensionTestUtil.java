@@ -21,14 +21,13 @@ public class ExtensionTestUtil {
 			 JarOutputStream jos = new JarOutputStream(fos)) {
 
 			if (ymlContent != null) {
-				// Add extension.yml entry
+				
 				JarEntry entry = new JarEntry("extension.yml");
 				jos.putNextEntry(entry);
 				jos.write(ymlContent.getBytes(StandardCharsets.UTF_8));
 				jos.closeEntry();
 			}
 
-			// Add all requested classes
 			for (Class<?> clazz : classes) {
 				if (clazz == null) continue;
 				String classPath = clazz.getName().replace('.', '/') + ".class";

@@ -30,7 +30,6 @@ public class ListCommand extends SubCommand {
 		Main.plugin.getFoliaLib().getScheduler().runAsync(task -> {
 			String[] teams = Team.getTeamManager().sortTeamsByMembers();
 
-			// displaying the page
 			if (page * 10 > teams.length) {
 				MessageManager.sendMessage(sender, "list.noPage");
 				return;

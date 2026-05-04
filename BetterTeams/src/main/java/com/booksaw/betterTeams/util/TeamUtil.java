@@ -5,7 +5,6 @@ import com.booksaw.betterTeams.Main;
 import com.booksaw.betterTeams.Team;
 import org.jetbrains.annotations.Nullable;
 
-
 public class TeamUtil {
 	private TeamUtil() {
 

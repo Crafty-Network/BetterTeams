@@ -8,14 +8,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * An event which is called immediately after a {@link Team} is successfully created.
- * This event cannot be cancelled since it occurs after the team creation.
- * <p>
- * To modify or cancel the team creation, use {@link CreateTeamEvent}.
- *
- * @author svaningelgem
- */
 @Getter
 public class PostCreateTeamEvent extends TeamEvent {
 

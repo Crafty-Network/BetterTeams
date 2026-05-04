@@ -27,7 +27,7 @@ final class LegacyTextTags {
 		public @Nullable Tag resolve(final @NotNull String name, final @NotNull ArgumentQueue args, final @NotNull Context ctx) {
 			if (!has(name)) return null;
 
-			final NamedTextColor[] color = { NamedTextColor.WHITE }; // default reset color
+			final NamedTextColor[] color = { NamedTextColor.WHITE }; 
 
 			if (args.hasNext()) {
 				NamedTextColor parsed = NamedTextColor.NAMES.value(args.pop().lowerValue());

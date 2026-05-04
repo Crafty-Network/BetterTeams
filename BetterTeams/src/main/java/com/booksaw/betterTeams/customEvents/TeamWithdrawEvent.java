@@ -7,9 +7,6 @@ import lombok.Setter;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * An event which is called when a player withdraws money from their {@link com.booksaw.betterTeams.Team}'s balance
- */
 @Getter
 @Setter
 public final class TeamWithdrawEvent extends TeamPlayerEvent implements TeamMoneyEvent {

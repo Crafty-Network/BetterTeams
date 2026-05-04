@@ -3,20 +3,17 @@ package com.booksaw.betterTeams.customEvents;
 import com.booksaw.betterTeams.Team;
 import lombok.Getter;
 import lombok.Setter;
-import org.bukkit.ChatColor;
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * An event which is called right before the recoloring of a {@link Team}
- */
 @Getter
 @Setter
 public class TeamColorChangeEvent extends TeamEvent {
-	private ChatColor newTeamColor;
+	private NamedTextColor newTeamColor;
 
 	public TeamColorChangeEvent(@NotNull Team team,
-								@NotNull ChatColor newColor) {
+								@NotNull NamedTextColor newColor) {
 		super(team, true);
 
 		this.newTeamColor = newColor;

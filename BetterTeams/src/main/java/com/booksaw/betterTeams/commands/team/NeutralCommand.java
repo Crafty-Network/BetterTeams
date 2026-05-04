@@ -14,13 +14,11 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
-
 public class NeutralCommand extends TeamSubCommand {
 
 	@Override
 	public CommandResponse onCommand(TeamPlayer player, String label, String[] args, Team team) {
 
-		// getting the referenced team
 		Team toNeutral = Team.getTeam(args[0]);
 		if (toNeutral == null) {
 			return new CommandResponse("noTeam");
@@ -28,12 +26,9 @@ public class NeutralCommand extends TeamSubCommand {
 			return new CommandResponse("neutral.self");
 		}
 
-		// if there is an ally request
 		if (team.hasRequested(toNeutral)) {
-			// removing the ally request
+			
 			team.removeAllyRequest(toNeutral);
-
-			// notifying the other team
 
 			Message message = new ReferencedFormatMessage("neutral.reject", team.getDisplayName());
 			toNeutral.getMembers().broadcastMessage(message);
@@ -41,7 +36,6 @@ public class NeutralCommand extends TeamSubCommand {
 			return new CommandResponse(true, "neutral.requestremove");
 		}
 
-		// if they are allies
 		if (toNeutral.isAlly(team)) {
 			toNeutral.becomeNeutral(team, false);
 			team.becomeNeutral(toNeutral, true);
@@ -85,7 +79,7 @@ public class NeutralCommand extends TeamSubCommand {
 	@Override
 	public void onTabComplete(List<String> options, CommandSender sender, String label, String[] args) {
 		if (args.length == 1) {
-			// Only be able to tab-complete allies
+			
 			Team myTeam = getMyTeam(sender);
 
 			Set<UUID> knownTeams = null, ignoreTeam = null;

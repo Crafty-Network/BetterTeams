@@ -46,7 +46,8 @@ public class WithdrawCommand extends TeamSubCommand {
 		if (amount != event.getAmount())
 			amount = event.getAmount();
 
-		if (team.getMoney() - amount < 0) {
+		double currentMoney = team.getMoney();
+		if (currentMoney - amount < 0) {
 			return new CommandResponse("withdraw.notEnough");
 		}
 
@@ -56,7 +57,7 @@ public class WithdrawCommand extends TeamSubCommand {
 			return new CommandResponse("withdraw.fail");
 		}
 
-		team.setMoney(team.getMoney() - amount);
+		team.setMoney(currentMoney - amount);
 
 		Bukkit.getPluginManager().callEvent(new PostTeamWithdrawEvent(team, player, amount));
 

@@ -9,34 +9,38 @@ import com.booksaw.betterTeams.team.storage.team.TeamStorage;
 public class AnchoredPlayerUUIDSetComponent extends UuidSetComponent {
 
     /**
-     * The result of using the add and remove methods of this enum's enclosing class
-     */
+    * The result of using the add and remove methods of this enum's enclosing class
+    */
     public enum AnchorResult {
+         
         /**
-         * The operation was successful
-         */ 
+        * The operation was successful
+        */
         SUCCESS,
+        
         /**
-         * The player is not in the team
-         */
+        * The player is not in the team
+        */
         NOT_IN_TEAM,
+        
         /**
-         * The player is already anchored
-         */
+        * The player is already anchored
+        */
         ALREADY_ANCHORED,
+        
         /**
-         * The player is not anchored
-         */
+        * The player is not anchored
+        */
         NOT_ANCHORED
     }
 
     /**
-     * Recommended to use this add over the void add,
-     * as it does the corresponding checks
-     * @param team The team that the player must be in for this to be successful
-     * @param player The team player
-     * @return AnchorResult
-     */
+    * Recommended to use this add over the void add,
+    * as it does the corresponding checks
+    * @param team The team that the player must be in for this to be successful
+    * @param player The team player
+    * @return AnchorResult
+    */
     public AnchorResult add(Team team, TeamPlayer player) {
         if (!team.getMembers().getClone().contains(player))
             return AnchorResult.NOT_IN_TEAM;
@@ -54,12 +58,12 @@ public class AnchoredPlayerUUIDSetComponent extends UuidSetComponent {
     }
 
     /**
-     * Recommended to use this remove over the void remove,
-     * as it does the corresponding checks
-     * @param team The team that the player must be in for this to be successful
-     * @param player The team player
-     * @return AnchorResult
-     */
+    * Recommended to use this remove over the void remove,
+    * as it does the corresponding checks
+    * @param team The team that the player must be in for this to be successful
+    * @param player The team player
+    * @return AnchorResult
+    */
     public AnchorResult remove(Team team, TeamPlayer player) {
         if (!team.getMembers().getClone().contains(player))
             return AnchorResult.NOT_IN_TEAM;

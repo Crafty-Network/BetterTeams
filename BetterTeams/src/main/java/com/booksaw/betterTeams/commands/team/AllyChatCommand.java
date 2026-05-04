@@ -20,7 +20,7 @@ public class AllyChatCommand extends TeamSubCommand {
 	public CommandResponse onCommand(TeamPlayer player, String label, String[] args, Team team) {
 
 		if (args.length == 0) {
-			// toggle chat
+			
 			if (!Main.plugin.getConfig().getBoolean("allowToggleTeamChat")) {
 				return new CommandResponse(new HelpMessage(this, label, parentCommand));
 			}

@@ -1,6 +1,11 @@
 package com.booksaw.betterTeams.commands.team;
 
 import com.booksaw.betterTeams.*;
+/**
+* This class handles the command /team promote [player]
+*
+* @author booksaw
+*/
 import com.booksaw.betterTeams.commands.presets.TeamSubCommand;
 import com.booksaw.betterTeams.message.MessageManager;
 import org.bukkit.command.CommandSender;
@@ -8,22 +13,11 @@ import org.bukkit.command.CommandSender;
 import java.util.List;
 import java.util.Objects;
 
-/**
- * This class handles the command /team promote [player]
- *
- * @author booksaw
- */
 public class PromoteCommand extends TeamSubCommand {
 
 	@Override
 	public CommandResponse onCommand(TeamPlayer teamPlayer, String label, String[] args, Team team) {
 
-		/*
-		 * method is depreciated as it does not guarantee the expected player, in most
-		 * use cases this will work and it will be down to the user if it does not due
-		 * to name changes This method is appropriate to use in this use case (so users
-		 * can view offline users teams by name not just by team name)
-		 */
 		TeamPlayerResult teamPlayerResult = getTeamPlayer(team, args[0]);
 		if (teamPlayerResult.isCR()) {
 			return teamPlayerResult.getCr();

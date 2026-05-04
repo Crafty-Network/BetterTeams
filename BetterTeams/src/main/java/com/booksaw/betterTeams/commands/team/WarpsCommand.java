@@ -17,7 +17,7 @@ public class WarpsCommand extends TeamSubCommand {
 			replace.append(warp.getName()).append(", ");
 		}
 
-		if (replace.length() == 0) { // JDK 8 doesn't have StringBuilder::isEmpty yet
+		if (replace.length() == 0) { 
 			return new CommandResponse("warps.none");
 		}
 

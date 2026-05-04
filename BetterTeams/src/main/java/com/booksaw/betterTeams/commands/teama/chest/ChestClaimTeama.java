@@ -31,7 +31,7 @@ public class ChestClaimTeama extends TeamSelectSubCommand {
 		if (claimedBy != null) {
 			return new CommandResponse("chest.claim.claimed");
 		}
-		// they can claim the chest
+		
 		team.addClaim(loc);
 
 		return new CommandResponse(true, "admin.chest.claim.success");

@@ -11,7 +11,6 @@ import org.bukkit.command.CommandSender;
 
 import java.util.List;
 
-
 public class PvpCommand extends TeamSubCommand {
 
 	@Override

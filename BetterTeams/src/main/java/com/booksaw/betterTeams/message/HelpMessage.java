@@ -3,13 +3,11 @@ package com.booksaw.betterTeams.message;
 import com.booksaw.betterTeams.commands.HelpCommand;
 import com.booksaw.betterTeams.commands.ParentCommand;
 import com.booksaw.betterTeams.commands.SubCommand;
-import net.md_5.bungee.api.ChatColor;
 
 import java.util.Collection;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
 
 public class HelpMessage implements Message {
 
@@ -47,17 +45,17 @@ public class HelpMessage implements Message {
 				command.getCommand() + " " + command.getArgMessage(parent), command.getHelpMessage(parent)));
 	}
 
-	/**
-	 * Used to create a formatted help message to explain what a command does to the
-	 * user
-	 *
-	 * @param label       the base command
-	 * @param commandPath the rest of the command (i.e. help [param])
-	 * @param description the description of the command
-	 * @return the created message relating to that command
-	 */
+ /**
+ * Used to create a formatted help message to explain what a command does to the
+ * user
+ *
+ * @param label       the base command
+ * @param commandPath the rest of the command (i.e. help [param])
+ * @param description the description of the command
+ * @return the created message relating to that command
+ */
 	public String createHelpMessage(String label, String commandPath, String description) {
-		return HelpCommand.prefix + "/" + label + " " + commandPath + ChatColor.WHITE + " - " + HelpCommand.description
+		return HelpCommand.prefix + "/" + label + " " + commandPath + "<white> - " + HelpCommand.description
 				+ description;
 	}
 

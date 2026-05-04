@@ -11,7 +11,7 @@ public class OwnersPlaceholderProvider implements IndividualTeamPlaceholderProvi
 
 	@Override
 	public String getPlaceholderForTeam(Team team) {
-		// Convert the List<TeamPlayer> to a List<String> of owner names
+		
 		List<String> ownerNamesList = team.getRank(PlayerRank.OWNER).stream().map(teamPlayer -> teamPlayer.getPlayer().getName()).collect(Collectors.toList());
 
 		return String.join(", ", ownerNamesList);

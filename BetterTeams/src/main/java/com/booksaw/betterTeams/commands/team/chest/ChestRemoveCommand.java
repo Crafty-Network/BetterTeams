@@ -28,7 +28,6 @@ public class ChestRemoveCommand extends TeamSubCommand {
 			return new CommandResponse("chest.remove.notClaimed");
 		}
 
-		// they can claim the chest
 		team.removeClaim(loc);
 
 		return new CommandResponse(true, "chest.remove.success");

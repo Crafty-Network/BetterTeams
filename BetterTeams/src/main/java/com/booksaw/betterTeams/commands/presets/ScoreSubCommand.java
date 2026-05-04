@@ -20,8 +20,6 @@ public abstract class ScoreSubCommand extends SubCommand {
 		if (team == null) {
 			return new CommandResponse("noTeam");
 		}
-		// team is not null
-		// getting the score change
 
 		int score;
 		try {

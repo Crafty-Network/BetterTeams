@@ -4,6 +4,11 @@ import com.booksaw.betterTeams.CommandResponse;
 import com.booksaw.betterTeams.PlayerRank;
 import com.booksaw.betterTeams.Team;
 import com.booksaw.betterTeams.TeamPlayer;
+/**
+* This class handles the /team disband command
+*
+* @author booksaw
+*/
 import com.booksaw.betterTeams.commands.presets.TeamSubCommand;
 import com.booksaw.betterTeams.message.CompositeMessage;
 import com.booksaw.betterTeams.message.ReferenceMessage;
@@ -13,17 +18,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * This class handles the /team disband command
- *
- * @author booksaw
- */
 public class DisbandCommand extends TeamSubCommand {
 
-	/**
-	 * This HashMap is used to track all confirm messages, to ensure that the user
-	 * wants to disband the team when they type the command
-	 */
+ /**
+ * This HashMap is used to track all confirm messages, to ensure that the user
+ * wants to disband the team when they type the command
+ */
 	final HashMap<UUID, Long> confirmation = new HashMap<>();
 
 	@Override

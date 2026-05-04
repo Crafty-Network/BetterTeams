@@ -36,7 +36,6 @@ public class LuckPermsManager implements ContextCalculator<Player> {
         }
         TeamPlayer teamPlayer = team.getTeamPlayer(player);
 
-        // Player specific
         if (config.getBoolean("contexts.bt_rank", true)) {
             addContext(consumer, "bt_rank", TeamPlaceholderOptionsEnum.RANK.applyPlaceholderProvider(team, teamPlayer));
         }
@@ -44,7 +43,6 @@ public class LuckPermsManager implements ContextCalculator<Player> {
             addContext(consumer, "bt_teamchat", TeamPlaceholderOptionsEnum.TEAMCHAT.applyPlaceholderProvider(team, teamPlayer));
         }
 
-        // Team info
         if (config.getBoolean("contexts.bt_level", true)) {
             addContext(consumer, "bt_level", TeamPlaceholderOptionsEnum.LEVEL.applyPlaceholderProvider(team, teamPlayer));
         }
@@ -58,7 +56,6 @@ public class LuckPermsManager implements ContextCalculator<Player> {
             addContext(consumer, "bt_hashome", String.valueOf(team.getTeamHome() != null));
         }
 
-        // Leaderboard positions
         if (config.getBoolean("contexts.bt_positionscore", true)) {
             addContext(consumer, "bt_positionscore", TeamPlaceholderOptionsEnum.POSITIONSCORE.applyPlaceholderProvider(team, teamPlayer));
         }
@@ -70,9 +67,6 @@ public class LuckPermsManager implements ContextCalculator<Player> {
         }
     }
 
-    /**
-     * Helper method to avoid passing null values to the context consumer.
-     */
     private void addContext(ContextConsumer consumer, String key, String value) {
         if (value != null) {
             consumer.accept(key, value);

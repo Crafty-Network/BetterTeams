@@ -28,14 +28,14 @@ public class ChestManagement implements Listener {
 		return new Location(chest.getWorld(), chest.getX(), chest.getY(), chest.getZ());
 	}
 
-	/**
-	 * Used to get the other side of a DoubleChest
-	 *
-	 * @param block A Chest (either DoubleChest or Single)
-	 * @return The other side Location
-	 */
+ /**
+ * Used to get the other side of a DoubleChest
+ *
+ * @param block A Chest (either DoubleChest or Single)
+ * @return The other side Location
+ */
 	public static Location getOtherSide(Block block) {
-		if (block.getType() != Material.CHEST) return null; // Just in case, should be a light check
+		if (block.getType() != Material.CHEST) return null; 
 
 		org.bukkit.block.data.type.Chest chest = (org.bukkit.block.data.type.Chest) block.getBlockData();
 
@@ -67,13 +67,13 @@ public class ChestManagement implements Listener {
 		return null;
 	}
 
-	/**
-	 * Used to check the two locations after they were passed to getOtherSide
-	 *
-	 * @param l1 One of the two sides
-	 * @param l2 One of the two sides
-	 * @return
-	 */
+ /**
+ * Used to check the two locations after they were passed to getOtherSide
+ *
+ * @param l1 One of the two sides
+ * @param l2 One of the two sides
+ * @return
+ */
 	public static boolean isSingleChest(Location l1, Location l2) {
 		return l1.equals(l2);
 	}
@@ -153,7 +153,7 @@ public class ChestManagement implements Listener {
 	}
 
 	private void cancelChestEvent(PlayerInteractEvent e, Team claimedBy) {
-		// checking if chest claims are currently enabled
+		
 		if (enableClaims) {
 			MessageManager.sendMessage(e.getPlayer(), "chest.claimed", claimedBy.getName());
 			e.setCancelled(true);
@@ -169,7 +169,7 @@ public class ChestManagement implements Listener {
 
 	@EventHandler
 	public void onJoin(PlayerJoinEvent e) {
-		// used to notifiy players if claimed chests can be opened
+		
 		if (!enableClaims)
 			MessageManager.sendMessage(e.getPlayer(), "admin.chest.disabled.bc");
 	}

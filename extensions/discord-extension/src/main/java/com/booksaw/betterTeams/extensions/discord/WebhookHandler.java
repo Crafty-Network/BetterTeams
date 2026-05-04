@@ -13,12 +13,6 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
-/**
- * This is where we listen for the events and define the info for the webhook.
- * There is some webhook events available not for all event
- *
- * @author ceymikey
- */
 public class WebhookHandler implements Listener {
 
 	private final DiscordExtension extension;
@@ -32,7 +26,7 @@ public class WebhookHandler implements Listener {
 	public WebhookHandler(DiscordExtension extension) {
 		this.extension = extension;
 		FileConfiguration config = extension.getConfig().getConfig();
-		extension.getMessages(); // for create message file
+		extension.getMessages(); 
 
 		configURL = config.getString("hookURL");
 		createHook = config.getBoolean("create-hook");
@@ -104,7 +98,6 @@ public class WebhookHandler implements Listener {
 		}
 	}
 
-	/* Sends the actual webhook message with the event info */
 	public void sendWebhookMessage(String title, String description) {
 		EmbedBuilder embed = new EmbedBuilder.Construct()
 				.setUrl(configURL)

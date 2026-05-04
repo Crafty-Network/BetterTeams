@@ -3,7 +3,6 @@ package com.booksaw.betterTeams.commands.teama;
 import com.booksaw.betterTeams.CommandResponse;
 import com.booksaw.betterTeams.Team;
 import com.booksaw.betterTeams.commands.presets.TeamSelectSubCommand;
-import net.md_5.bungee.api.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
@@ -34,7 +33,7 @@ public class DisbandTeama extends TeamSelectSubCommand {
 
 	@Override
 	public String getHelp() {
-		return "Disband the specified team" + ChatColor.RED + " THIS CANNOT BE UNDONE!!!!!";
+		return "Disband the specified team<red> THIS CANNOT BE UNDONE!!!!!";
 	}
 
 	@Override

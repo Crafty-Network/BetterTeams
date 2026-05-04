@@ -4,14 +4,14 @@ import com.booksaw.betterTeams.message.MessageManager;
 import com.booksaw.betterTeams.team.storage.team.TeamStorage;
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.Inventory;
+/**
+* Inventory holder class given to all Echests controlled by the plugin
+*/
 import org.bukkit.inventory.InventoryHolder;
 import org.jetbrains.annotations.NotNull;
 
 public class EChestComponent implements TeamComponent<Inventory> {
 
-	/**
-	 * Inventory holder class given to all Echests controlled by the plugin
-	 */
 	public class EchestInventoryHolder implements InventoryHolder {
 		@NotNull
 		@Override

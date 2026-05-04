@@ -36,7 +36,6 @@ public class TeleportTeama extends SubCommand {
 			return new CommandResponse(new HelpMessage(this, label, parentCommand));
 		}
 
-		// Either a single player or all players in all teams
 		List<Player> targetList = getTargetList(args);
 
 		if (targetList == null) {
@@ -51,20 +50,18 @@ public class TeleportTeama extends SubCommand {
 			}
 		}
 
-		// Splices the array to get the arguments after the target
-		// i.e. /teama team <team> anything here or /teama all anything here
 		String[] actionArgs = Arrays.copyOfRange(args, target.equals("all") ? 1 : 2, args.length);
 
 		boolean teleportedHome = false;
 
 		switch (actionArgs.length) {
-			case 0: // No arguments - Teleport to issuer (must be a player)
+			case 0: 
 				if (!(sender instanceof Player)) {
 					return new CommandResponse("needPlayer");
 				}
 				teleportTargets(targetList, ((Player) sender).getLocation());
 				break;
-			case 1: // home
+			case 1: 
 				if (!actionArgs[0].equalsIgnoreCase("home")) {
 					return new CommandResponse(new HelpMessage(this, label, parentCommand));
 				}
@@ -88,7 +85,7 @@ public class TeleportTeama extends SubCommand {
 					return null;
 				}).toArray(Location[]::new));
 				break;
-			case 2: // player <player>
+			case 2: 
 				if (!actionArgs[0].equalsIgnoreCase("player")) {
 					return new CommandResponse(new HelpMessage(this, label, parentCommand));
 				}
@@ -98,10 +95,10 @@ public class TeleportTeama extends SubCommand {
 				}
 				teleportTargets(targetList, targetPlayer.getLocation());
 				break;
-			case 4: // location <x> <y> <z>
-			case 5: // location <x> <y> <z> [yaw|world]
-			case 6: // location <x> <y> <z> [yaw] [pitch]
-			case 7: // location <x> <y> <z> [yaw] [pitch] [world]
+			case 4: 
+			case 5: 
+			case 6: 
+			case 7: 
 				if (!actionArgs[0].equalsIgnoreCase("location")) {
 					return new CommandResponse(new HelpMessage(this, label, parentCommand));
 				}
@@ -149,7 +146,7 @@ public class TeleportTeama extends SubCommand {
 				}
 				teleportTargets(targetList, new Location(world, x, y, z, yaw, pitch));
 				break;
-			default: // Invalid number of arguments provided
+			default: 
 				return new CommandResponse(new HelpMessage(this, label, parentCommand));
 
 		}
@@ -189,7 +186,7 @@ public class TeleportTeama extends SubCommand {
 			}
 			return targetList;
 		} else if (args[0].equalsIgnoreCase("all")) {
-			// Gets a List<Player> of all online members of all teams
+			
 			return Team.getTeamManager()
 					.getLoadedTeamListClone()
 					.values()
@@ -201,16 +198,16 @@ public class TeleportTeama extends SubCommand {
 	}
 
 	private void teleportTargets(List<Player> targetList, Location... locations) {
-		// Either one location for all or separate locations for each
+		
 		if (locations.length != 1 && locations.length != targetList.size()) {
-			// Should never happen
+			
 			throw new IllegalArgumentException("Invalid location array - Either one location for all or separate locations for each");
 		}
 
 		Main.plugin.getFoliaLib().getScheduler().runAsync(task -> {
 			if (locations.length != 1) {
 				for (int i = 0; i < targetList.size(); i++) {
-					if (locations[i] == null) continue; // Some teams may not have their home set
+					if (locations[i] == null) continue; 
 					targetList.get(i).teleport(locations[i]);
 				}
 				return;
@@ -244,7 +241,7 @@ public class TeleportTeama extends SubCommand {
 
 	@Override
 	public String getArguments() {
-		// This is confusing and complex, but it expresses all the options
+		
 		return "<team <team> | player <player> | all> [home | player <player> | location <x> <y> <z> [yaw] [pitch] [world]]";
 	}
 

@@ -19,7 +19,7 @@ public class AllySetComponent extends UuidSetComponent {
 		super.add(team, ally);
 
 		Team allyTeam = Team.getTeam(ally);
-		// notifying all online members of the team
+		
 		Message message = new ReferencedFormatMessage("ally.ally", allyTeam.getDisplayName());
 		team.getMembers().broadcastMessage(message);
 

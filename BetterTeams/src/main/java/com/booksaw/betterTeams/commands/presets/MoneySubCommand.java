@@ -22,8 +22,6 @@ public abstract class MoneySubCommand extends SubCommand {
 		if (team == null) {
 			return new CommandResponse("noTeam");
 		}
-		// team is not null
-		// getting the score change
 
 		double score;
 		try {

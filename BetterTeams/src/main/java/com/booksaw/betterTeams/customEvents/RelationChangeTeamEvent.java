@@ -7,9 +7,6 @@ import lombok.Setter;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * An event which is called right before the changing of a relation with a {@link Team} (ie: ally/neutral)
- */
 @SuppressWarnings("unused")
 @Getter
 @Setter

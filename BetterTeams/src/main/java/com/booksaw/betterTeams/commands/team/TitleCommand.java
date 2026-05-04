@@ -3,8 +3,8 @@ package com.booksaw.betterTeams.commands.team;
 import com.booksaw.betterTeams.*;
 import com.booksaw.betterTeams.commands.presets.TeamSubCommand;
 import com.booksaw.betterTeams.message.MessageManager;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
@@ -31,7 +31,7 @@ public class TitleCommand extends TeamSubCommand {
 		Player toTitlePlayer;
 
 		if (args[0].equals("me")) {
-			// player is online so this should not cause any issues
+			
 			toTitlePlayer = player.getPlayer().getPlayer();
 		} else {
 			toTitlePlayer = Bukkit.getPlayer(args[0]);
@@ -80,7 +80,8 @@ public class TitleCommand extends TeamSubCommand {
 
 		if (sender.hasPermission("betterteams.title.color.color")
 				|| sender.hasPermission("betterteams.title.color.format")) {
-			args[1] = ChatColor.translateAlternateColorCodes('&', args[1]);
+			args[1] = LegacyComponentSerializer.legacySection().serialize(
+					LegacyComponentSerializer.legacyAmpersand().deserialize(args[1]));
 		}
 
 		team.setTitle(toTitle, args[1]);

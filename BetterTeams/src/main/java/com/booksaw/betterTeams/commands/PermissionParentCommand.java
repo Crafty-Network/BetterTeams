@@ -35,8 +35,7 @@ public class PermissionParentCommand extends ParentCommand {
 	public void addSubCommand(SubCommand command) {
 
 		if (config.isConfigurationSection(command.getCommand())) {
-			// already exists
-			// checking if it is enabled
+
 			if (config.getBoolean(command.getCommand() + ".enabled")) {
 				super.addSubCommand(command);
 
@@ -53,7 +52,7 @@ public class PermissionParentCommand extends ParentCommand {
 
 			}
 		} else {
-			// needs generating
+			
 			super.addSubCommand(command);
 			config.set(command.getCommand() + ".enabled", true);
 

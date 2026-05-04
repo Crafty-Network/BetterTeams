@@ -40,7 +40,6 @@ public class InviteCommand extends TeamSubCommand {
 			return new CommandResponse("invite.full");
 		}
 
-		// player being invited is not in a team
 		team.invite(toInvite.getUniqueId());
 
 		String joinSubcommand = MessageManager.getMessage("command.join");

@@ -22,21 +22,15 @@ import java.util.Map.Entry;
 import java.util.logging.Level;
 
 /**
- * This is used for any parent commands across the system
- *
- * @author booksaw
- */
+* This is used for any parent commands across the system
+*
+* @author booksaw
+*/
 public class ParentCommand extends SubCommand {
 
-	/**
-	 * Used to store all applicable sub commands
-	 */
 	@Getter
 	private final HashMap<String, SubCommand> subCommands = new HashMap<>();
 
-	/**
-	 * Used to store what the parent command reference is
-	 */
 	@Getter
 	private final String command;
 
@@ -45,12 +39,12 @@ public class ParentCommand extends SubCommand {
 
 	private boolean runAsync = false;
 
-	/**
-	 * Creates a new parent command with a set of sub commands
-	 *
-	 * @param command the command which will be defaulted to if the user enters an
-	 *                incorrect command
-	 */
+ /**
+ * Creates a new parent command with a set of sub commands
+ *
+ * @param command the command which will be defaulted to if the user enters an
+ *                incorrect command
+ */
 	public ParentCommand(String command) {
 		this.command = command;
 		subCommands.put("help", new HelpCommand(this));
@@ -63,23 +57,23 @@ public class ParentCommand extends SubCommand {
 		this.runAsync = runAsync;
 	}
 
-	/**
-	 * Add multiple subcommands (see
-	 * {@link ParentCommand#addSubCommand(SubCommand)})
-	 *
-	 * @param commands The command(s) to add
-	 */
+ /**
+ * Add multiple subcommands (see
+ * {@link ParentCommand#addSubCommand(SubCommand)})
+ *
+ * @param commands The command(s) to add
+ */
 	public void addSubCommands(SubCommand... commands) {
 		for (SubCommand command : commands) {
+   /**
+   * this method adds another command to the parent command
+   *
+   * @param command the command to add
+   */
 			addSubCommand(command);
 		}
 	}
 
-	/**
-	 * this method adds another command to the parent command
-	 *
-	 * @param command the command to add
-	 */
 	public void addSubCommand(SubCommand command) {
 		subCommands.put(getReference(command), command);
 	}
@@ -91,9 +85,15 @@ public class ParentCommand extends SubCommand {
 
 	public CommandResponse onCommand(CommandSender sender, String label, String[] args, boolean first) {
 
-		// checking length
 		if (args.length == 0) {
-			// help command is not expected to return anything
+			
+   /**
+   * Used to display the help information to the user
+   *
+   * @param sender the user which called the command
+   * @param label  the label of the command
+   * @param args   the arguments that the user entered
+   */
 			displayHelp(sender, label, args);
 			return null;
 		}
@@ -113,8 +113,12 @@ public class ParentCommand extends SubCommand {
 			return null;
 		}
 
+  /**
+  * Used to remove the first element, this is used when sending commands into sub
+  * commands
+  */
 		String[] newArgs = removeFirstElement(args);
-		// checking enough arguments have been entered
+		
 		if (command.getMinimumArguments() > newArgs.length) {
 			MessageManager.sendMessage(sender, "invalidArg");
 			displayHelp(sender, label, args);
@@ -164,21 +168,10 @@ public class ParentCommand extends SubCommand {
 		return result;
 	}
 
-	/**
-	 * Used to display the help information to the user
-	 *
-	 * @param sender the user which called the command
-	 * @param label  the label of the command
-	 * @param args   the arguments that the user entered
-	 */
 	private void displayHelp(CommandSender sender, String label, String[] args) {
 		subCommands.get("help").onCommand(sender, label, args);
 	}
 
-	/**
-	 * Used to remove the first element, this is used when sending commands into sub
-	 * commands
-	 */
 	private String[] removeFirstElement(String[] args) {
 		String[] toReturn = new String[args.length - 1];
 		System.arraycopy(args, 1, toReturn, 0, toReturn.length);

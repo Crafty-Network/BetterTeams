@@ -4,6 +4,11 @@ import com.booksaw.betterTeams.CommandResponse;
 import com.booksaw.betterTeams.Main;
 import com.booksaw.betterTeams.Team;
 import com.booksaw.betterTeams.commands.ParentCommand;
+/**
+* This class handles the /team create [team] command
+*
+* @author booksaw
+*/
 import com.booksaw.betterTeams.commands.presets.NoTeamSubCommand;
 import com.booksaw.betterTeams.message.HelpMessage;
 import com.booksaw.betterTeams.message.ReferencedFormatMessage;
@@ -13,11 +18,6 @@ import org.bukkit.entity.Player;
 
 import java.util.List;
 
-/**
- * This class handles the /team create [team] command
- *
- * @author booksaw
- */
 public class CreateCommand extends NoTeamSubCommand {
 	private final ParentCommand parentCommand;
 	private final boolean enforceTag;

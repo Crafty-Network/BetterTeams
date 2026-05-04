@@ -26,19 +26,19 @@ public class ScoreChange {
 		spams.add(this);
 	}
 
+ /**
+ * Used to check if an action is a spam action, this will increase the timer if
+ * it is Returns false if it is not a spam kill
+ *
+ * @param type   The type of score change
+ * @param source The source player of the score change
+ * @param target The target player of the score change
+ * @return If the event is spam
+ */
 	public static boolean isSpam(ChangeType type, Player source) {
 		return isSpam(type, source, null);
 	}
 
-	/**
-	 * Used to check if an action is a spam action, this will increase the timer if
-	 * it is Returns false if it is not a spam kill
-	 *
-	 * @param type   The type of score change
-	 * @param source The source player of the score change
-	 * @param target The target player of the score change
-	 * @return If the event is spam
-	 */
 	public static boolean isSpam(ChangeType type, Player source, Player target) {
 
 		ScoreChange change = null;

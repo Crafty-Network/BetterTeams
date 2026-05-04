@@ -1,14 +1,15 @@
+
 /**
- *
- */
+*
+*/
 package com.booksaw.betterTeams.integrations.placeholder.provider;
 
 import com.booksaw.betterTeams.Team;
+/**
+* @author booksaw
+*/
 import com.booksaw.betterTeams.integrations.placeholder.IndividualTeamPlaceholderProvider;
 
-/**
- * @author booksaw
- */
 public class OfflineListPlaceholderProvider implements IndividualTeamPlaceholderProvider {
 
 	@Override

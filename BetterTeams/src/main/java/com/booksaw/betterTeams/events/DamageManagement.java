@@ -5,6 +5,12 @@ import com.booksaw.betterTeams.Team;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
+/**
+* This class is used to ensure that members of the same team cannot hit each
+* other
+*
+* @author booksaw
+*/
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.PotionSplashEvent;
@@ -15,12 +21,6 @@ import org.bukkit.projectiles.ProjectileSource;
 import java.util.Collection;
 import java.util.Objects;
 
-/**
- * This class is used to ensure that members of the same team cannot hit each
- * other
- *
- * @author booksaw
- */
 public class DamageManagement implements Listener {
 
 	private final boolean disablePotions;
@@ -31,12 +31,6 @@ public class DamageManagement implements Listener {
 		disableSelf = Main.plugin.getConfig().getBoolean("playerDamageSelf");
 	}
 
-	/**
-	 * This is used to cancel any events which would cause 2 players of the same
-	 * team to damage each other
-	 *
-	 * @param e the damage event
-	 */
 	@EventHandler(ignoreCancelled = true, priority = EventPriority.LOWEST)
 	public void onDamage(EntityDamageByEntityEvent e) {
 
@@ -51,7 +45,7 @@ public class DamageManagement implements Listener {
 			if (e.getDamager() instanceof Player) {
 				if (!Objects.requireNonNull(Team.getTeam((Player) e.getDamager())).canDamage(temp,
 						(Player) e.getDamager())) {
-					// they are on the same team
+					
 					e.setCancelled(true);
 				}
 			} else if (e.getDamager() instanceof Projectile && !(e.getDamager() instanceof ThrownPotion)) {
@@ -59,7 +53,7 @@ public class DamageManagement implements Listener {
 				ProjectileSource source = arrow.getShooter();
 				if (source instanceof Player
 						&& !Objects.requireNonNull(Team.getTeam((Player) source)).canDamage(temp, (Player) source)) {
-					// they are on the same team
+					
 					if (disableSelf && source == e.getEntity()) {
 						return;
 					}
@@ -70,7 +64,7 @@ public class DamageManagement implements Listener {
 				ProjectileSource source = arrow.getShooter();
 				if (source instanceof Player
 						&& !Objects.requireNonNull(Team.getTeam((Player) source)).canDamage(temp, (Player) source)) {
-					// they are on the same team
+					
 					e.setCancelled(true);
 				}
 			} else if (e.getDamager() instanceof TNTPrimed) {
@@ -78,7 +72,7 @@ public class DamageManagement implements Listener {
 				Entity source = explosive.getSource();
 				if (source instanceof Player
 						&& !Objects.requireNonNull(Team.getTeam((Player) source)).canDamage(temp, (Player) source)) {
-					// they are on the same team
+					
 					if (disableSelf && source == e.getEntity()) {
 						return;
 					}
@@ -86,16 +80,10 @@ public class DamageManagement implements Listener {
 				}
 			}
 		} catch (NullPointerException ex) {
-			// thrown if the players team is null
+			
 		}
 	}
 
-	/**
-	 * This method is used to detect if a negative potion is being thrown at members
-	 * of the same team
-	 *
-	 * @param e the potion splash event
-	 */
 	@EventHandler(ignoreCancelled = true)
 	public void onPotion(PotionSplashEvent e) {
 		if (!(e.getEntity().getShooter() instanceof Player) || !disablePotions) {
@@ -103,7 +91,7 @@ public class DamageManagement implements Listener {
 		}
 		Player thrower = (Player) e.getEntity().getShooter();
 		Team team = Team.getTeam(thrower);
-		// thrower is not in team
+		
 		if (team == null) {
 			return;
 		}
@@ -113,9 +101,9 @@ public class DamageManagement implements Listener {
 		for (PotionEffect effect : effects) {
 			String type = effect.getType().getName();
 			if (type.equals(PotionEffectType.BAD_OMEN.getName()) || type.equals(PotionEffectType.BLINDNESS.getName())
-					|| type.equals(PotionEffectType.CONFUSION.getName()) || type.equals(PotionEffectType.HARM.getName())
+					|| type.equals(PotionEffectType.NAUSEA.getName()) || type.equals(PotionEffectType.INSTANT_DAMAGE.getName())
 					|| type.equals(PotionEffectType.HUNGER.getName())
-					|| type.equals(PotionEffectType.SLOW_DIGGING.getName())
+					|| type.equals(PotionEffectType.MINING_FATIGUE.getName())
 					|| type.equals(PotionEffectType.UNLUCK.getName())
 					|| type.equals(PotionEffectType.WEAKNESS.getName())
 					|| type.equals(PotionEffectType.POISON.getName())) {
@@ -135,7 +123,7 @@ public class DamageManagement implements Listener {
 						e.setIntensity(entity, 0);
 					}
 				} catch (NullPointerException ex) {
-					// thrown if the players team is null
+					
 				}
 			}
 		}

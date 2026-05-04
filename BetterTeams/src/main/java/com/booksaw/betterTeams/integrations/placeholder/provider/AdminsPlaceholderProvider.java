@@ -11,7 +11,7 @@ public class AdminsPlaceholderProvider implements IndividualTeamPlaceholderProvi
 
 	@Override
 	public String getPlaceholderForTeam(Team team) {
-		// Convert the List<TeamPlayer> to a List<String> of admin names
+		
 		List<String> adminNamesList = team.getRank(PlayerRank.ADMIN).stream().map(teamPlayer -> teamPlayer.getPlayer().getName()).collect(Collectors.toList());
 
 		return String.join(", ", adminNamesList);

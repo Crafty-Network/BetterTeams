@@ -55,7 +55,7 @@ public class ChestRemoveallCommand extends TeamSubCommand {
 
 	@Override
 	public void onTabComplete(List<String> options, CommandSender sender, String label, String[] args) {
-		// no args are required so no tab completion is required
+		
 	}
 
 	@Override

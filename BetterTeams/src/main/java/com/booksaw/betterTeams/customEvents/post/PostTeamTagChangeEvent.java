@@ -7,15 +7,6 @@ import lombok.Getter;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * An event which is called after a {@link Team}'s tag has been changed.
- * Contains information about both the old and new team tags.
- * This event cannot be cancelled since it occurs after the tag change.
- * <p>
- * To modify or cancel the tag change, use {@link TeamTagChangeEvent}.
- *
- * @author svaningelgem
- */
 @Getter
 public class PostTeamTagChangeEvent extends TeamEvent {
 	private final String oldTag;

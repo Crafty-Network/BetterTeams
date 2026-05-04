@@ -8,11 +8,6 @@ import lombok.Getter;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * An event which is called right after the changing of a relation with a {@link Team} (ie: ally/neutral)
- * <p>
- * To modify or cancel the color change, use {@link RelationChangeTeamEvent}.
- */
 @SuppressWarnings("unused")
 @Getter
 public class PostRelationChangeTeamEvent extends TeamEvent {

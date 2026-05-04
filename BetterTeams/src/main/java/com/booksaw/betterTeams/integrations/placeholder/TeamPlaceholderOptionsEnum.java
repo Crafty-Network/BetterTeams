@@ -5,8 +5,8 @@ import com.booksaw.betterTeams.TeamPlayer;
 import com.booksaw.betterTeams.integrations.placeholder.provider.*;
 
 /**
- * @author booksaw
- */
+* @author booksaw
+*/
 public enum TeamPlaceholderOptionsEnum {
 	NAME(new NamePlaceholderProvider()), TAG(new TagPlaceholderProvider()),
 	DISPLAYNAME(new DisplayNamePlaceholderProvider()), DESCRIPTION(new DescriptionPlaceholderProvider()),
@@ -29,18 +29,18 @@ public enum TeamPlaceholderOptionsEnum {
 	private final IndividualTeamPlayerPlaceholderProvider teamPlayerProvider;
 	private final IndividualTeamWithDataPlaceholderProvider teamWithDataProvider;
 
-	/**
-	 * Constructor to take in an interface per enum value
-	 */
+ /**
+ * Constructor to take in an interface per enum value
+ */
 	TeamPlaceholderOptionsEnum(IndividualTeamPlaceholderProvider teamProvider) {
 		this.teamProvider = teamProvider;
 		this.teamPlayerProvider = null;
 		this.teamWithDataProvider = null;
 	}
 
-	/**
-	 * Constructor to take in an interface per enum value
-	 */
+ /**
+ * Constructor to take in an interface per enum value
+ */
 	TeamPlaceholderOptionsEnum(IndividualTeamPlayerPlaceholderProvider teamPlayerProvider) {
 		this.teamPlayerProvider = teamPlayerProvider;
 		this.teamProvider = null;
@@ -68,7 +68,7 @@ public enum TeamPlaceholderOptionsEnum {
 		if (teamWithDataProvider != null) {
 			return teamWithDataProvider.getPlaceholderForTeam(team, data);
 		}
-		// fallback
+		
 		return applyPlaceholderProvider(team, player);
 	}
 

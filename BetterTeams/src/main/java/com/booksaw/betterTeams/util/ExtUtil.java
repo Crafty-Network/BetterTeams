@@ -63,19 +63,16 @@ public class ExtUtil {
 	public static Set<ExtensionInfo> sort(Set<ExtensionInfo> input) {
 		if (input.isEmpty()) return Set.of();
 
-		// Build graph
 		Map<String, ExtensionInfo> extMap = input.stream()
 				.collect(Collectors.toMap(ExtensionInfo::getName, ext -> ext));
 		Map<String, Set<String>> dependencies = new HashMap<>();
 		Map<String, Integer> inDegree = new HashMap<>();
 
-		// Initialize
 		for (String name : extMap.keySet()) {
 			dependencies.put(name, new HashSet<>());
 			inDegree.put(name, 0);
 		}
 
-		// Build edges (hard + soft deps)
 		for (ExtensionInfo ext : input) {
 			String name = ext.getName();
 			List<String> allDeps = new ArrayList<>(ext.getExtensionDepend());
@@ -89,7 +86,6 @@ public class ExtUtil {
 			}
 		}
 
-		// Kahn's algorithm
 		Queue<String> queue = new LinkedList<>();
 		for (Map.Entry<String, Integer> entry : inDegree.entrySet()) {
 			if (entry.getValue() == 0) {
@@ -110,12 +106,10 @@ public class ExtUtil {
 			}
 		}
 
-		// Cycle detection
 		if (sortedList.size() != input.size()) {
 			return null;
 		}
 
-		// Preserve topological order in LinkedHashSet
 		return new LinkedHashSet<>(sortedList);
 	}
 }

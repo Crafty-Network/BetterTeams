@@ -11,7 +11,7 @@ public class AddMoney extends MoneySubCommand {
 	@Override
 	public CommandResponse onCommand(CommandSender sender, Team team, double change) {
 
-		team.setMoney(team.getMoney() + change);
+		team.setMoney(team.getMoney() + change); 
 
 		return new CommandResponse("admin.bal.success");
 	}

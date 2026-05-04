@@ -39,7 +39,6 @@ class ExtensionManagerTest {
 	private File mockExtensionsDir;
 	private ExtensionManager manager;
 
-
 	@BeforeEach
 	void setUp() {
 		Server mockServer = mock(Server.class);
@@ -56,8 +55,6 @@ class ExtensionManagerTest {
 	void tearDown() {
 		Main.plugin = null;
 	}
-
-
 
 	@Nested
 	@DisplayName("Full Lifecycle Integration Test")
@@ -103,25 +100,21 @@ class ExtensionManagerTest {
 			);
 			createFakeJar(
 					"ExtB.jar",
-					createYml("ExtB", "ExtA"), // ExtB depends on ExtA
+					createYml("ExtB", "ExtA"), 
 					TestExtensionImpl.class,
 					extensionsDir
 			);
 
-			// --- WHEN: Initialize ---
 			manager.initializeExtensions();
 
-			// --- THEN: Initialize ---
 			verify(mockLogger).info("Initializing extensions...");
 			verify(mockLogger).info("Loading extensions...");
 			assertEquals(2, store.size());
 
-			// Check load order (ExtA must be first)
 			List<String> loadOrder = store.getLoadOrder();
 			assertEquals("ExtA", loadOrder.get(0));
 			assertEquals("ExtB", loadOrder.get(1));
 
-			// Check that onLoad was called
 			TestExtensionImpl instA = (TestExtensionImpl) store.get("ExtA").getInstance();
 			TestExtensionImpl instB = (TestExtensionImpl) store.get("ExtB").getInstance();
 			assertTrue(instA.onLoadCalled, "ExtA.onLoad() should be called");
@@ -129,30 +122,24 @@ class ExtensionManagerTest {
 			assertFalse(instA.onEnableCalled, "ExtA.onEnable() should not be called yet");
 			assertFalse(instB.onEnableCalled, "ExtB.onEnable() should not be called yet");
 
-			// --- WHEN: Enable ---
 			manager.enableExtensions();
 
-			// --- THEN: Enable ---
 			verify(mockLogger).info("Enabling extensions...");
 			assertTrue(instA.onEnableCalled, "ExtA.onEnable() should be called");
 			assertTrue(instB.onEnableCalled, "ExtB.onEnable() should be called");
 			assertTrue(store.get("ExtA").isEnabled(), "ExtA should be marked as enabled");
 			assertTrue(store.get("ExtB").isEnabled(), "ExtB should be marked as enabled");
 
-			// --- WHEN: Disable ---
 			manager.disableExtensions();
 
-			// --- THEN: Disable ---
 			verify(mockLogger).info("Disabling extensions...");
 			assertTrue(instA.onDisableCalled, "ExtA.onDisable() should be called");
 			assertTrue(instB.onDisableCalled, "ExtB.onDisable() should be called");
 			assertFalse(store.get("ExtA").isEnabled(), "ExtA should be marked as disabled");
 			assertFalse(store.get("ExtB").isEnabled(), "ExtB should be marked as disabled");
 
-			// --- WHEN: Unload ---
 			manager.unloadExtensions();
 
-			// --- THEN: Unload ---
 			verify(mockLogger).info("Unloading extensions...");
 			assertTrue(store.isEmpty(), "Store should be empty after unload");
 		}

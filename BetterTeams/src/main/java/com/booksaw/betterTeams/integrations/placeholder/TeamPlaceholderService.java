@@ -4,10 +4,10 @@ import com.booksaw.betterTeams.Team;
 import com.booksaw.betterTeams.TeamPlayer;
 
 /**
- * Class to provide all placeholders in relation to a team
- *
- * @author booksaw
- */
+* Class to provide all placeholders in relation to a team
+*
+* @author booksaw
+*/
 public final class TeamPlaceholderService {
 
 	private TeamPlaceholderService() {
@@ -31,7 +31,6 @@ public final class TeamPlaceholderService {
 		}
 		return enumValue.applyPlaceholderProvider(team, player, data);
 	}
-
 
 	public static boolean requiresData(String placeholder) {
 		TeamPlaceholderOptionsEnum enumValue = TeamPlaceholderOptionsEnum.getEnumValue(placeholder);

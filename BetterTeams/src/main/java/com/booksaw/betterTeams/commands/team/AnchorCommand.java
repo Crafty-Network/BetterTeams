@@ -6,13 +6,13 @@ import com.booksaw.betterTeams.CommandResponse;
 import com.booksaw.betterTeams.PlayerRank;
 import com.booksaw.betterTeams.Team;
 import com.booksaw.betterTeams.TeamPlayer;
+/**
+* This class handles the '/team anchor' command
+*
+* @author gaboss44
+*/
 import com.booksaw.betterTeams.commands.presets.TeamSubCommand;
 
-/**
- * This class handles the '/team anchor' command
- * 
- * @author gaboss44
- */
 public class AnchorCommand extends TeamSubCommand {
 
     @Override

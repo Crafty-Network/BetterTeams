@@ -28,11 +28,9 @@ public class WorldGuardManagerV7 {
 		try {
 			StateFlag flag = new StateFlag("TeamPvp", false);
 			registry.register(flag);
-			TEAM_PVP_FLAG = flag; // only set our field if there was no error
+			TEAM_PVP_FLAG = flag; 
 		} catch (FlagConflictException e) {
-			// some other plugin registered a flag by the same name already.
-			// you can use the existing flag, but this may cause conflicts - be sure to
-			// check type
+
 			Flag<?> existing = registry.get("TeamPvp");
 			if (existing instanceof StateFlag) {
 				TEAM_PVP_FLAG = (StateFlag) existing;

@@ -37,7 +37,6 @@ public class MetaGetTeama extends TeamSelectSubCommand {
 		}
 		return new CommandResponse(false);
 
-
 	}
 
 	@Override

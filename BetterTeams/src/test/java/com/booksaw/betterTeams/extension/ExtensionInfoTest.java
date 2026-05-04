@@ -32,7 +32,7 @@ class ExtensionInfoTest {
                     version: 1.0.0
                     author: TestAuthor
                     description: A test extension
-                    website: https://example.com
+                    website: https://github.com/booksaw/BetterTeams
                     depend: [testExt]
                     softdepend: [TestExt2, TestExt3]
                     plugin-depend: [Vault, WorldEdit]
@@ -48,17 +48,15 @@ class ExtensionInfoTest {
 
 			ExtensionInfo info = ExtensionInfo.fromYaml(fakeJar);
 
-			// Assertions
 			assertNotNull(info);
 			assertEquals("TestExtension", info.getName());
 			assertEquals("com.booksaw.betterTeams.extension.TestExtensionImpl", info.getMainClass());
 			assertEquals("1.0.0", info.getVersion());
 			assertEquals("TestAuthor", info.getAuthor());
 			assertEquals("A test extension", info.getDescription());
-			assertEquals("https://example.com", info.getWebsite());
+			assertEquals("https://github.com/booksaw/BetterTeams", info.getWebsite());
 			assertEquals(fakeJar, info.getJarFile());
 
-			// Check lists
 			assertEquals(List.of("testExt"), info.getExtensionDepend());
 			assertEquals(List.of("TestExt2", "TestExt3"), info.getExtensionSoftDepend());
 			assertEquals(List.of("Vault", "WorldEdit"), info.getPluginDepend());
@@ -85,7 +83,7 @@ class ExtensionInfoTest {
 			assertNotNull(info);
 			assertEquals("MinimalExtension", info.getName());
 			assertEquals("com.booksaw.betterTeams.extension.TestExtensionImpl", info.getMainClass());
-			// Check defaults
+			
 			assertEquals("1.0", info.getVersion());
 			assertEquals("", info.getAuthor());
 			assertEquals("", info.getDescription());
@@ -99,10 +97,10 @@ class ExtensionInfoTest {
 		@Test
 		@DisplayName("Should throw IOException if extension.yml is missing")
 		void testMissingYml() throws IOException {
-			// Create a JAR with no yml content
+			
 			File fakeJar = createFakeJar(
 					"invalid.jar",
-					null, // No YML
+					null, 
 					TestExtensionImpl.class,
 					tempDir.toFile()
 			);
@@ -120,7 +118,7 @@ class ExtensionInfoTest {
 			String ymlContent = """
                     name: InvalidExt
                     version: 1.0
-                    """; // No 'main' key
+                    """; 
 
 			File fakeJar = createFakeJar(
 					"invalid-main.jar",
@@ -145,11 +143,10 @@ class ExtensionInfoTest {
                     version: 1.0
                     """;
 
-			// Create a JAR without the class file
 			File fakeJar = createFakeJar(
 					"missing-class.jar",
 					ymlContent,
-					null, // No class added to JAR
+					null, 
 					tempDir.toFile()
 			);
 

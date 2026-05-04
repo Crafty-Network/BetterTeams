@@ -12,15 +12,15 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
- * Used to manage the storage for a single team. All values in set using
- * {@code set(...)} will be automatically saved
- * <p>
- * <b>NOTE TO SUBCLASSES: Ensure you save any changes if they are not saved
- * automatically</b>
- * </p>
- *
- * @author booksaw
- */
+* Used to manage the storage for a single team. All values in set using
+* {@code set(...)} will be automatically saved
+* <p>
+* <b>NOTE TO SUBCLASSES: Ensure you save any changes if they are not saved
+* automatically</b>
+* </p>
+*
+* @author booksaw
+*/
 public abstract class TeamStorage {
 
 	protected final Team team;
@@ -29,44 +29,49 @@ public abstract class TeamStorage {
 		this.team = team;
 	}
 
-	/**
-	 * Used to store the given information at the given location
-	 *
-	 * @param location The location to store the information
-	 * @param value    The value to store
-	 */
+ /**
+ * Used to store the given information at the given location
+ *
+ * @param location The location to store the information
+ * @param value    The value to store
+ */
 	public void set(StoredTeamValue location, Object value) {
+  /**
+  * Used to store the given information at the given location
+  * <p>
+  * If possible use a StoredTeamValue
+  * </p>
+  * <p>
+  * This will assume the value type is a string
+  * </p>
+  *
+  * @param location The location to store the information
+  * @param value    the value to store
+  */
 		set(location.getReference(), location.getStorageType(), value);
 	}
 
-	/**
-	 * Used to store the given information at the given location
-	 * <p>
-	 * If possible use a StoredTeamValue
-	 * </p>
-	 * <p>
-	 * This will assume the value type is a string
-	 * </p>
-	 *
-	 * @param location The location to store the information
-	 * @param value    the value to store
-	 */
+ /**
+ * Used to store the given information at the given location
+ *
+ * @param location    The location to store the information
+ * @param storageType The storage type of the information
+ * @param value       The value to store
+ */
 	public void set(String location, Object value) {
 		set(location, TeamStorageType.STRING, value);
 	}
 
-	/**
-	 * Used to store the given information at the given location
-	 *
-	 * @param location    The location to store the information
-	 * @param storageType The storage type of the information
-	 * @param value       The value to store
-	 */
 	public void set(String location, TeamStorageType storageType, Object value) {
 
-		// if the object is to be stored as a string, converting to a string and
-		// bypassing checks
 		if (storageType == TeamStorageType.STRING) {
+   /**
+   * Used to set a value after checks have been made
+   *
+   * @param location    the location to store the value
+   * @param storageType The type of value that is being stored
+   * @param value       The value to store
+   */
 			setValue(location, storageType, value.toString());
 			return;
 		}
@@ -80,13 +85,6 @@ public abstract class TeamStorage {
 		setValue(location, storageType, value);
 	}
 
-	/**
-	 * Used to set a value after checks have been made
-	 *
-	 * @param location    the location to store the value
-	 * @param storageType The type of value that is being stored
-	 * @param value       The value to store
-	 */
 	protected abstract void setValue(String location, TeamStorageType storageType, Object value);
 
 	private void checkCorrectType(StoredTeamValue reference, TeamStorageType type) {

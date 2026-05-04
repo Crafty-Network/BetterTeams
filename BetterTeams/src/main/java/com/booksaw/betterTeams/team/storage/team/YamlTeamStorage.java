@@ -23,6 +23,9 @@ public abstract class YamlTeamStorage extends TeamStorage {
 	@Override
 	protected void setValue(String location, TeamStorageType storageType, Object value) {
 		getConfig().set(location, value);
+  /**
+  * Used to save whaver needs saving when a change is made
+  */
 		saveFile();
 	}
 

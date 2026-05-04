@@ -40,14 +40,15 @@ public abstract class HologramManager {
 		startUpdates();
 	}
 
-	// returns the location of a string
+ /**
+ * Returns the location of the hologram.
+ */
 	public static Location getLocation(String loc) {
 		String[] split = loc.split(":");
 		return new Location(Bukkit.getWorld(split[0]), Double.parseDouble(split[1]), Double.parseDouble(split[2]),
 				Double.parseDouble(split[3]));
 	}
 
-	// returns the string of a location
 	public static String getString(Location loc) {
 		return Objects.requireNonNull(loc.getWorld()).getName() + ":" + loc.getX() + ":" + loc.getY() + ":"
 				+ loc.getZ();
@@ -59,17 +60,20 @@ public abstract class HologramManager {
 		reloadHolo(holo, type);
 	}
 
-	/*
-	 * Creates a new LocalHologram using the available hologram plugin.
-	 */
 	public abstract LocalHologram createLocalHolo(Location location, HologramType type);
 
 	public void reloadHolo(LocalHologram holo, HologramType type) {
 		String[] teams = getSortedArray(type);
+  /**
+  * Clears all lines of text from the hologram.
+  */
 		holo.clearLines();
 
 		int maxHologramLines = Main.plugin.getConfig().getInt("maxHologramLines");
 
+  /**
+  * Appends a new line of text to the hologram.
+  */
 		holo.appendText(LegacyTextUtils.parseAdventure(MessageManager.getMessage("holo.leaderboard")));
 		for (int i = 0; i < maxHologramLines && i < teams.length; i++) {
 			Team team = Team.getTeam(teams[i]);
@@ -145,13 +149,6 @@ public abstract class HologramManager {
 	}
 
 	public boolean needsUpdating(HologramType type) {
-		// TODO reinstate this method
-		// switch (type) {
-		// case MONEY:
-		// return Team.moneyChanges;
-		// case SCORE:
-		// return Team.scoreChanges;
-		// }
 
 		return true;
 	}
@@ -167,6 +164,9 @@ public abstract class HologramManager {
 	}
 
 	public void removeHolo(LocalHologram toRemove) {
+  /**
+  * Removes the hologram from the world.
+  */
 		toRemove.delete();
 		holos.remove(toRemove);
 	}
@@ -180,24 +180,13 @@ public abstract class HologramManager {
 	}
 
 	public interface LocalHologram {
-		/**
-		 * Appends a new line of text to the hologram.
-		 */
+		
 		void appendText(String text);
 
-		/**
-		 * Clears all lines of text from the hologram.
-		 */
 		void clearLines();
 
-		/**
-		 * Removes the hologram from the world.
-		 */
 		void delete();
 
-		/**
-		 * Returns the location of the hologram.
-		 */
 		Location getLocation();
 	}
 

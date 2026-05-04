@@ -11,7 +11,7 @@ public class DefaultMembersPlaceholderProvider implements IndividualTeamPlacehol
 
 	@Override
 	public String getPlaceholderForTeam(Team team) {
-		// Convert the List<TeamPlayer> to a List<String> of default member names
+		
 		List<String> defaultMemberNamesList = team.getRank(PlayerRank.DEFAULT).stream().map(teamPlayer -> teamPlayer.getPlayer().getName()).collect(Collectors.toList());
 
 		return String.join(", ", defaultMemberNamesList);

@@ -4,6 +4,11 @@ import com.booksaw.betterTeams.CommandResponse;
 import com.booksaw.betterTeams.PlayerRank;
 import com.booksaw.betterTeams.Team;
 import com.booksaw.betterTeams.TeamPlayer;
+/**
+* This class handles the command /team demote [player]
+*
+* @author booksaw
+*/
 import com.booksaw.betterTeams.commands.presets.TeamSubCommand;
 import com.booksaw.betterTeams.message.MessageManager;
 import org.bukkit.OfflinePlayer;
@@ -12,22 +17,11 @@ import org.bukkit.command.CommandSender;
 import java.util.List;
 import java.util.Objects;
 
-/**
- * This class handles the command /team demote [player]
- *
- * @author booksaw
- */
 public class DemoteCommand extends TeamSubCommand {
 
 	@Override
 	public CommandResponse onCommand(TeamPlayer teamPlayer, String label, String[] args, Team team) {
 
-		/*
-		 * method is depreciated as it does not guarantee the expected player, in most
-		 * use cases this will work and it will be down to the user if it does not due
-		 * to name changes This method is appropriate to use in this use case (so users
-		 * can view offline users teams by name not just by team name)
-		 */
 		TeamPlayerResult teamPlayerResult = getTeamPlayer(team, args[0]);
 		if (teamPlayerResult.isCR()) {
 			return teamPlayerResult.getCr();
@@ -39,14 +33,13 @@ public class DemoteCommand extends TeamSubCommand {
 			return new CommandResponse("demote.min");
 		}
 
-		// checking there is another owner
 		if (demotePlayer.getRank() == PlayerRank.OWNER && team.getRank(PlayerRank.OWNER).size() == 1) {
 			return new CommandResponse("demote.lastOwner");
 		}
-		// all is good, continue to demotion
+		
 		if (demotePlayer.getRank().value >= teamPlayer.getRank().value
 				&& !demotePlayer.getPlayer().getUniqueId().equals(teamPlayer.getPlayer().getUniqueId())) {
-			// the other person is also an owner, players cannot demote other owners
+			
 			return new CommandResponse("demote.noPerm");
 		}
 

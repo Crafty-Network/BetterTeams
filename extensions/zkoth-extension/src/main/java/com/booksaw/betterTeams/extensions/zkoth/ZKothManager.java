@@ -5,7 +5,6 @@ import fr.maxlego08.koth.api.events.KothWinEvent;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
-
 public class ZKothManager implements Listener {
 
 	private final int pointsPerCapture;
@@ -22,7 +21,6 @@ public class ZKothManager implements Listener {
 			return;
 		}
 
-		// Use the value passed in the constructor
 		team.setScore(team.getScore() + this.pointsPerCapture);
 	}
 }

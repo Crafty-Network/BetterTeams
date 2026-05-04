@@ -1,7 +1,6 @@
 package com.booksaw.betterTeams;
 
 import com.booksaw.betterTeams.message.MessageManager;
-import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -44,9 +43,7 @@ public class UpdateChecker implements Listener {
 							UpdateChecker.this.spigotPluginVersion = reader.readLine();
 						}
 					} catch (IOException | URISyntaxException e) {
-						Bukkit.getServer().getConsoleSender().sendMessage(
-								ChatColor.translateAlternateColorCodes('&',
-										"&cUpdate checker failed! Disabling."));
+						Bukkit.getServer().getConsoleSender().sendMessage("§cUpdate checker failed! Disabling.");
 						task.cancel();
 						return;
 					}

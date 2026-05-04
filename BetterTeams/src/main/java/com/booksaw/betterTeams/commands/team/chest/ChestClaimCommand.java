@@ -11,7 +11,6 @@ import org.bukkit.command.CommandSender;
 import java.util.List;
 import java.util.Objects;
 
-
 public class ChestClaimCommand extends TeamSubCommand {
 
 	@Override
@@ -31,14 +30,11 @@ public class ChestClaimCommand extends TeamSubCommand {
 			return new CommandResponse("chest.claim.claimed");
 		}
 
-		// on a chest
-		// checking there is no limit on chests
 		int lim = team.getMaxChests();
 		if (lim != -1 && lim <= team.getClaimCount()) {
 			return new CommandResponse("chest.claim.limit");
 		}
 
-		// they can claim the chest
 		team.addClaim(loc);
 
 		return new CommandResponse(true, "chest.claim.success");

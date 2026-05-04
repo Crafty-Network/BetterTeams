@@ -2,11 +2,15 @@ package com.booksaw.betterTeams.commands.team;
 
 import com.booksaw.betterTeams.*;
 import com.booksaw.betterTeams.commands.ParentCommand;
+/**
+* This class handles the command /team info [team/player]
+*
+* @author booksaw
+*/
 import com.booksaw.betterTeams.commands.SubCommand;
 import com.booksaw.betterTeams.message.HelpMessage;
 import com.booksaw.betterTeams.message.MessageManager;
 import com.booksaw.betterTeams.team.SetTeamComponent;
-import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -16,11 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * This class handles the command /team info [team/player]
- *
- * @author booksaw
- */
 public class InfoCommand extends SubCommand {
 
 	private final ParentCommand parentCommand;
@@ -74,7 +73,7 @@ public class InfoCommand extends SubCommand {
 				continue;
 			}
 
-			tmp.append(ally.getDisplayName()).append(ChatColor.WHITE).append(", ");
+			tmp.append(ally.getDisplayName()).append("<white>, ");
 		}
 
 		if (tmp.length() > 2) {
@@ -122,8 +121,6 @@ public class InfoCommand extends SubCommand {
 			return new CommandResponse(true);
 		}
 
-		// player or team has been entered
-		// trying by team name
 		Team team = Team.getTeam(args[0]);
 
 		if (team != null) {
@@ -131,13 +128,6 @@ public class InfoCommand extends SubCommand {
 			return new CommandResponse(true);
 		}
 
-		// trying by player name
-		/*
-		 * method is depreciated as it does not guarantee the expected player, in most
-		 * use cases this will work and it will be down to the user if it does not due
-		 * to name changes This method is appropriate to use in this use case (so users
-		 * can view offline users teams by name not just by team name)
-		 */
 		OfflinePlayer player = Utils.getOfflinePlayer(args[0]);
 
 		if (player != null) {

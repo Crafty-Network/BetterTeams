@@ -7,13 +7,13 @@ import org.bukkit.Location;
 
 public abstract class LocationSetComponent extends SetTeamComponent<Location> {
 
-	/**
-	 * This method is used to convert a string into a location which can be stored
-	 * for later use
-	 *
-	 * @param loc the string to convert into a location
-	 * @return the location which that string reference
-	 */
+ /**
+ * This method is used to convert a string into a location which can be stored
+ * for later use
+ *
+ * @param loc the string to convert into a location
+ * @return the location which that string reference
+ */
 	public static Location getLocation(String loc) {
 		String[] split = loc.split(":");
 
@@ -25,13 +25,13 @@ public abstract class LocationSetComponent extends SetTeamComponent<Location> {
 				Double.parseDouble(split[3]), Float.parseFloat(split[4]), Float.parseFloat(split[5]));
 	}
 
-	/**
-	 * This method is used to convert a location into a string which can be stored
-	 * in a configuration file
-	 *
-	 * @param loc the location to convert into a string
-	 * @return the string which references that location
-	 */
+ /**
+ * This method is used to convert a location into a string which can be stored
+ * in a configuration file
+ *
+ * @param loc the location to convert into a string
+ * @return the string which references that location
+ */
 	public static String getString(Location loc) {
 		if (!loc.isWorldLoaded()) {
 			Main.plugin.getLogger().warning("Location " + loc + " is not in a loaded world so it will not be stored");
@@ -42,12 +42,12 @@ public abstract class LocationSetComponent extends SetTeamComponent<Location> {
 				+ ":" + loc.getPitch();
 	}
 
-	/**
-	 * Normalise the location to the 0,0,0 coords of the current block
-	 *
-	 * @param loc The location to normalise
-	 * @return The normalised location
-	 */
+ /**
+ * Normalise the location to the 0,0,0 coords of the current block
+ *
+ * @param loc The location to normalise
+ * @return The normalised location
+ */
 	public static Location normalise(Location loc) {
 		return new Location(loc.getWorld(), loc.getBlockX(), loc.getBlockY(), loc.getBlockZ());
 	}
@@ -64,22 +64,14 @@ public abstract class LocationSetComponent extends SetTeamComponent<Location> {
 
 	@Override
 	public void remove(Team team, Location component) {
-		for (Location loc : getClone()) {
-			if (loc.equals(component)) {
-				set.remove(loc);
-				return;
-			}
-		}
+
+		set.remove(component);
 	}
 
 	@Override
 	public boolean contains(Location component) {
-		for (Location loc : getClone()) {
-			if (loc.equals(component)) {
-				return true;
-			}
-		}
-		return false;
+		
+		return set.contains(component);
 	}
 
 }

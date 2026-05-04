@@ -3,33 +3,22 @@ package com.booksaw.betterTeams.commands.teama;
 import com.booksaw.betterTeams.CommandResponse;
 import com.booksaw.betterTeams.Team;
 import com.booksaw.betterTeams.commands.presets.TeamSelectSubCommand;
-import org.bukkit.ChatColor;
+import com.booksaw.betterTeams.text.LegacyTextUtils;
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.CommandSender;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class ColorTeama extends TeamSelectSubCommand {
 
-	final List<Character> banned = Arrays.asList('l', 'n', 'o', 'k', 'n', 'r');
+	private static final String BANNED_CHARS = "lmnkor";
 
 	@Override
 	public CommandResponse onCommand(CommandSender sender, String label, String[] args, Team team) {
+		NamedTextColor color = LegacyTextUtils.parseNamedColor(args[1]);
 
-		ChatColor color = null;
-		try {
-			color = ChatColor.valueOf(args[1].toUpperCase());
-		} catch (IllegalArgumentException e) {
-			// expected if they do not input a correct value, or a char
-		}
 		if (color == null) {
-			color = ChatColor.getByChar(args[1]);
-			if (color == null || args[1].length() > 1)
-				return new CommandResponse("color.fail");
-		}
-
-		if (banned.contains(color.getChar())) {
-			return new CommandResponse("color.banned");
+			return new CommandResponse("color.fail");
 		}
 
 		team.setColor(color);
@@ -70,9 +59,10 @@ public class ColorTeama extends TeamSelectSubCommand {
 	@Override
 	public void onTabComplete(List<String> options, CommandSender sender, String label, String[] args) {
 		if (args.length == 2) {
-			for (ChatColor c : ChatColor.values()) {
-				if (!banned.contains(c.getChar()) && c.name().toLowerCase().startsWith(args[1].toLowerCase())) {
-					options.add(c.name().toLowerCase());
+			for (NamedTextColor c : NamedTextColor.NAMES.values()) {
+				String name = NamedTextColor.NAMES.key(c);
+				if (name.startsWith(args[1].toLowerCase())) {
+					options.add(name);
 				}
 			}
 		} else if (args.length == 1) {

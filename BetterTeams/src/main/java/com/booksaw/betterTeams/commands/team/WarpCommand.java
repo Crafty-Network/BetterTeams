@@ -19,7 +19,7 @@ public class WarpCommand extends TeamSubCommand {
 				replace.append(warp.getName()).append(", ");
 			}
 
-			if (replace.length() == 0) { // JDK 8 doesn't have StringBuilder::isEmpty yet
+			if (replace.length() == 0) { 
 				return new CommandResponse("warps.none");
 			}
 
@@ -37,7 +37,6 @@ public class WarpCommand extends TeamSubCommand {
 			return new CommandResponse("warp.invalidPassword");
 		}
 
-		// the user is allowed to go to the warp
 		try {
 			warp.execute(player.getPlayer().getPlayer());
 		} catch (Exception e) {

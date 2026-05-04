@@ -21,7 +21,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-
 @DisplayName("ExtUtil Tests")
 class ExtUtilTest {
 
@@ -82,7 +81,7 @@ class ExtUtilTest {
 		@DisplayName("Should ignore JARs with duplicate extension names")
 		void testDuplicateNames() throws IOException {
 			File dir = tempDir.toFile();
-			// Both JARs declare the name "MyExtension"
+			
 			ExtensionTestUtil.createFakeJar(
 					"ext1.jar",
 					createYml("MyExtension"),
@@ -98,7 +97,6 @@ class ExtUtilTest {
 
 			Set<ExtensionInfo> result = ExtUtil.scanExtensions(dir);
 
-			// Only the first one found should be loaded
 			assertEquals(1, result.size());
 			assertEquals("MyExtension", result.iterator().next().getName());
 		}
@@ -108,7 +106,6 @@ class ExtUtilTest {
 		void testMixedValidAndInvalid() throws IOException {
 			File dir = tempDir.toFile();
 
-			// Valid JAR
 			ExtensionTestUtil.createFakeJar(
 					"valid.jar",
 					createYml("ValidExt"),
@@ -116,15 +113,14 @@ class ExtUtilTest {
 					dir
 			);
 
-			// Invalid JAR (no extension.yml)
 			ExtensionTestUtil.createFakeJar(
 					"invalid.jar",
-					null, // No YML content
+					null, 
 					TestExtensionImpl.class,
 					dir
 			);
 
-			String ymlContent = "name: InvalidMain\nversion: 1.0"; // No 'main' key
+			String ymlContent = "name: InvalidMain\nversion: 1.0"; 
 			ExtensionTestUtil.createFakeJar(
 					"noMain.jar",
 					ymlContent,
@@ -132,10 +128,8 @@ class ExtUtilTest {
 					dir
 			);
 
-
 			Set<ExtensionInfo> result = ExtUtil.scanExtensions(dir);
 
-			// The exception from the invalid JAR should be caught, and the valid one loaded
 			assertEquals(1, result.size());
 			assertEquals("ValidExt", result.iterator().next().getName());
 		}
@@ -179,10 +173,7 @@ class ExtUtilTest {
 		@Test
 		@DisplayName("Should correctly order a complex graph")
 		void testComplexGraph() {
-			// A -> B, C
-			// B -> C
-			// D -> C
-			// E (no deps)
+
 			ExtensionInfo extA = createSortStub("A", List.of("B", "C"), null);
 			ExtensionInfo extB = createSortStub("B", List.of("C"), null);
 			ExtensionInfo extD = createSortStub("D", List.of("C"), null);
@@ -195,13 +186,11 @@ class ExtUtilTest {
 
 			assertEquals(5, names.size());
 
-			// Check relative order
 			assertTrue(names.indexOf("C") < names.indexOf("A"), "C must be before A");
 			assertTrue(names.indexOf("C") < names.indexOf("B"), "C must be before B");
 			assertTrue(names.indexOf("C") < names.indexOf("D"), "C must be before D");
 			assertTrue(names.indexOf("B") < names.indexOf("A"), "B must be before A");
 
-			// E can be anywhere
 			assertTrue(names.contains("E"));
 		}
 

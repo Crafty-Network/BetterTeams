@@ -1,6 +1,12 @@
 package com.booksaw.betterTeams.commands.presets;
 
 import com.booksaw.betterTeams.*;
+/**
+* This class can be extended for any sub commands which require players to be
+* in a team
+*
+* @author booksaw
+*/
 import com.booksaw.betterTeams.commands.SubCommand;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
@@ -17,17 +23,14 @@ import java.util.Optional;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
-/**
- * This class can be extended for any sub commands which require players to be
- * in a team
- *
- * @author booksaw
- */
 public abstract class TeamSubCommand extends SubCommand {
 
 	protected boolean checkRank = true;
 	@Setter
 	@Getter
+ /**
+ * @return the rank that the player has to be by default for this command
+ */
 	PlayerRank requiredRank = getDefaultRank();
 
 	private final LoadingCache<CommandSender, Optional<Team>> teamCache =
@@ -56,6 +59,15 @@ public abstract class TeamSubCommand extends SubCommand {
 	}
 
 	@Override
+ /**
+ * This method is run if the player is in a team
+ *
+ * @param player the player who is in a team
+ * @param label  the label for the command
+ * @param args   the arguments for the command
+ * @param team   the team that the player is in
+ * @return the message reference to send to the user
+ */
 	public CommandResponse onCommand(CommandSender sender, String label, String[] args) {
 		Player player = (Player) sender;
 		Team team = Team.getTeam(player);
@@ -80,15 +92,6 @@ public abstract class TeamSubCommand extends SubCommand {
 		return onCommand(teamPlayer, label, args, team);
 	}
 
-	/**
-	 * This method is run if the player is in a team
-	 *
-	 * @param player the player who is in a team
-	 * @param label  the label for the command
-	 * @param args   the arguments for the command
-	 * @param team   the team that the player is in
-	 * @return the message reference to send to the user
-	 */
 	public abstract CommandResponse onCommand(TeamPlayer player, String label, String[] args, Team team);
 
 	@Override
@@ -96,9 +99,6 @@ public abstract class TeamSubCommand extends SubCommand {
 		return true;
 	}
 
-	/**
-	 * @return the rank that the player has to be by default for this command
-	 */
 	public abstract PlayerRank getDefaultRank();
 
 	public CommandResponse checkRank(TeamPlayer player) {

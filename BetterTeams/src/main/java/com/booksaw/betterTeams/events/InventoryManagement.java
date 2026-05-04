@@ -9,12 +9,12 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryType;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class InventoryManagement implements Listener {
 
-	public static final Map<Player, Team> adminViewers = new HashMap<>();
+	public static final Map<Player, Team> adminViewers = new ConcurrentHashMap<>();
 
 	private final String inventoryName;
 

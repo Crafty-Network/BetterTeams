@@ -2,41 +2,34 @@ package com.booksaw.betterTeams.commands.team;
 
 import com.booksaw.betterTeams.*;
 import com.booksaw.betterTeams.commands.presets.TeamSubCommand;
-import org.bukkit.ChatColor;
+import com.booksaw.betterTeams.text.LegacyTextUtils;
+import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.command.CommandSender;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class ColorCommand extends TeamSubCommand {
 
-	private final Set<Character> alwaysBanned = new HashSet<>(Arrays.asList('l', 'n', 'o', 'k', 'n', 'r'));
-	private final Set<Character> banned = new HashSet<>(alwaysBanned);
+	private final Set<NamedTextColor> banned = new HashSet<>();
 
 	public ColorCommand() {
-		banned.addAll(Main.plugin.getConfig().getString("bannedColors").chars().mapToObj(c -> (char) c)
-				.collect(Collectors.toList()));
+		for (char c : Main.plugin.getConfig().getString("bannedColors").toCharArray()) {
+			NamedTextColor nc = LegacyTextUtils.namedColorByChar(c);
+			if (nc != null) banned.add(nc);
+		}
 	}
 
 	@Override
 	public CommandResponse onCommand(TeamPlayer teamPlayer, String label, String[] args, Team team) {
+		NamedTextColor color = LegacyTextUtils.parseNamedColor(args[0]);
 
-		ChatColor color = null;
-		try {
-			color = ChatColor.valueOf(args[0].toUpperCase());
-		} catch (IllegalArgumentException e) {
-			// expected if they do not input a correct value, or a char
-		}
 		if (color == null) {
-			color = ChatColor.getByChar(args[0]);
-			if (color == null || args[0].length() > 1)
-				return new CommandResponse("color.fail");
+			return new CommandResponse("color.fail");
 		}
 
-		if (banned.contains(color.getChar())) {
+		if (banned.contains(color)) {
 			return new CommandResponse("color.banned");
 		}
 
@@ -78,9 +71,11 @@ public class ColorCommand extends TeamSubCommand {
 	@Override
 	public void onTabComplete(List<String> options, CommandSender sender, String label, String[] args) {
 		if (args.length == 1) {
-			for (ChatColor c : ChatColor.values()) {
-				if (!banned.contains(c.getChar()) && c.name().toLowerCase().startsWith(args[0].toLowerCase())) {
-					options.add(c.name().toLowerCase());
+			for (NamedTextColor c : NamedTextColor.NAMES.values()) {
+				if (banned.contains(c)) continue;
+				String name = NamedTextColor.NAMES.key(c);
+				if (name.startsWith(args[0].toLowerCase())) {
+					options.add(name);
 				}
 			}
 		}

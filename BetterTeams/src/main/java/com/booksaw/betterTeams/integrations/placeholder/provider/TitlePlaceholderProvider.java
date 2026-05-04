@@ -1,16 +1,17 @@
+
 /**
- *
- */
+*
+*/
 package com.booksaw.betterTeams.integrations.placeholder.provider;
 
 import com.booksaw.betterTeams.Team;
 import com.booksaw.betterTeams.TeamPlayer;
+/**
+* @author booksaw
+*/
 import com.booksaw.betterTeams.integrations.placeholder.IndividualTeamPlayerPlaceholderProvider;
 import com.booksaw.betterTeams.message.MessageManager;
 
-/**
- * @author booksaw
- */
 public class TitlePlaceholderProvider implements IndividualTeamPlayerPlaceholderProvider {
 
 	@Override

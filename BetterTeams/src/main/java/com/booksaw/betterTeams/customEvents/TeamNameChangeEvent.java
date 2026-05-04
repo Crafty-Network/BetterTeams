@@ -8,9 +8,6 @@ import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * An event which is called right before the renaming of a {@link Team}
- */
 @Getter
 @Setter
 public class TeamNameChangeEvent extends TeamEvent {

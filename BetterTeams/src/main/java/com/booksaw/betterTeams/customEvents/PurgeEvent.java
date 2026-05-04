@@ -7,11 +7,6 @@ import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * This command is called just before a purge occurs
- *
- * @author booksaw
- */
 @Getter
 @Setter
 public class PurgeEvent extends Event implements Cancellable {

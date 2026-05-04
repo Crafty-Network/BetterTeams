@@ -8,7 +8,6 @@ import com.booksaw.betterTeams.customEvents.post.PostPlayerLeaveTeamEvent;
 import com.booksaw.betterTeams.message.Message;
 import com.booksaw.betterTeams.message.ReferencedFormatMessage;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -37,7 +36,7 @@ public class MessagesManagement implements Listener {
 		}
 
 		Message message;
-		String coloredTeamName = team.getColor() + team.getName() + ChatColor.RESET;
+		String coloredTeamName = team.getAdventureDisplayName();
 
 		if (playerName != null) {
 			message = new ReferencedFormatMessage(type.messageKey, playerName, coloredTeamName);

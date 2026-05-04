@@ -21,6 +21,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+* Creates a MessageConfig for the main plugin.
+*
+* @param language The language code to load
+*/
 public class MessageConfig {
 
     private static final String MISSING_MESSAGES_SUFFIX = "_missingmessages.txt";
@@ -44,32 +49,27 @@ public class MessageConfig {
     private final BetterTeamsExtension extension;
 
     /**
-     * Creates a MessageConfig for the main plugin.
-     *
-     * @param language The language code to load
-     */
+    * Creates a MessageConfig for an extension.
+    *
+    * @param language  The language code to load
+    * @param extension The extension this config belongs to
+    */
     public MessageConfig(@NotNull String language) {
         this(language, Main.plugin.getDataFolder(), Main.plugin.getLogger(), "BetterTeams", null);
     }
 
     /**
-     * Creates a MessageConfig for an extension.
-     *
-     * @param language  The language code to load
-     * @param extension The extension this config belongs to
-     */
+    *
+    * @param language   The language code to load
+    * @param dataFolder The folder to load/save config files
+    * @param logger     The logger to use
+    * @param sourceName The name of the source (for logging)
+    * @param extension  The extension (null for main plugin)
+    */
     public MessageConfig(@NotNull String language, @NotNull BetterTeamsExtension extension) {
         this(language, extension.getDataFolder(), extension.getLogger().logger(), extension.getInfo().getName(), extension);
     }
 
-    /**
-     *
-     * @param language   The language code to load
-     * @param dataFolder The folder to load/save config files
-     * @param logger     The logger to use
-     * @param sourceName The name of the source (for logging)
-     * @param extension  The extension (null for main plugin)
-     */
     public MessageConfig(@NotNull String language, @NotNull File dataFolder, @NotNull Logger logger,
                          @NotNull String sourceName, @Nullable BetterTeamsExtension extension) {
         this.language = language;
@@ -96,18 +96,17 @@ public class MessageConfig {
 
         this.configManager = new ConfigManager(language, true, extension);
 
-        // Load messages into cache
+        /**
+        * Loads messages from a configuration file into the cache.
+        *
+        * @param file   The configuration file to load from
+        * @param backup Whether this is a backup/fallback file
+        */
         loadMessages(configManager.getConfig(), false);
 
         logger.info("[" + sourceName + "] Messages loaded from " + language + ".yml");
     }
 
-    /**
-     * Loads messages from a configuration file into the cache.
-     *
-     * @param file   The configuration file to load from
-     * @param backup Whether this is a backup/fallback file
-     */
     private void loadMessages(@NotNull FileConfiguration file, boolean backup) {
         List<String> missingMessages = new ArrayList<>();
 
@@ -127,33 +126,37 @@ public class MessageConfig {
         }
 
         if (!missingMessages.isEmpty()) {
+            /**
+            * Saves missing messages to a file for translation contribution.
+            *
+            * @param missingMessages List of missing message keys
+            */
             saveMissingMessages(missingMessages);
+            /**
+            * Logs missing messages to the console.
+            *
+            * @param missingMessages List of missing message keys
+            */
             logMissingMessages(missingMessages);
         }
     }
 
     /**
-     * Loads backup/fallback messages from a YamlConfiguration.
-     * Messages that are already loaded will not be overwritten.
-     *
-     * @param file The backup configuration file
-     */
+    * Loads backup/fallback messages from a YamlConfiguration.
+    * Messages that are already loaded will not be overwritten.
+    *
+    * @param file The backup configuration file
+    */
     public void loadBackupMessages(@NotNull YamlConfiguration file) {
         loadMessages(file, true);
     }
 
-    /**
-     * Saves missing messages to a file for translation contribution.
-     *
-     * @param missingMessages List of missing message keys
-     */
     private void saveMissingMessages(@NotNull List<String> missingMessages) {
         String fileName = language + MISSING_MESSAGES_SUFFIX;
         File file = new File(dataFolder, fileName);
 
         List<String> existingKeys = new ArrayList<>();
 
-        // Read existing keys from the file
         if (file.exists()) {
             try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
                 String line;
@@ -182,11 +185,10 @@ public class MessageConfig {
             }
         }
 
-        // Write new missing messages
         try (PrintWriter writer = new PrintWriter(new FileWriter(file, !existingKeys.isEmpty()))) {
             if (existingKeys.isEmpty()) {
                 writer.println("# Please translate these messages and submit them to the Booksaw Development Discord");
-                writer.println("# (https://discord.gg/JF9DNs3) in the #messages-submissions channel for a special rank");
+                writer.println("# (https://discord.gg/betterteams)");
                 writer.println("# Your translations will be included in the next update");
                 writer.println("# When done translating, run '/teama importmessages' to include the translated messages");
                 writer.println();
@@ -202,11 +204,6 @@ public class MessageConfig {
         }
     }
 
-    /**
-     * Logs missing messages to the console.
-     *
-     * @param missingMessages List of missing message keys
-     */
     private void logMissingMessages(@NotNull List<String> missingMessages) {
         logger.info("==================================================================");
         logger.info("Messages are missing from your selected language (" + language + ").");
@@ -218,19 +215,13 @@ public class MessageConfig {
 
         logger.info("");
         logger.info("If you can help with translation, please join the Discord server:");
-        logger.info("https://discord.gg/JF9DNs3");
+        logger.info("https://discord.gg/betterteams");
         logger.info("");
         logger.info("A file called '" + language + MISSING_MESSAGES_SUFFIX + "' has been created");
         logger.info("in the " + sourceName + " folder. Translate the messages and submit to Discord!");
         logger.info("==================================================================");
     }
 
-    /**
-     * Gets a raw message from the configuration.
-     *
-     * @param path The message path/key
-     * @return The message string, or empty string if not found
-     */
     @NotNull
     public String get(@NotNull String path) {
         String cached = cache.get(path);
@@ -307,25 +298,12 @@ public class MessageConfig {
             this.text = config.get(path);
         }
 
-        /**
-         * Replaces a named placeholder with a value.
-         *
-         * @param key   The placeholder key (without braces)
-         * @param value The replacement value
-         * @return This builder for chaining
-         */
         @NotNull
         public MessageBuilder with(@NotNull String key, @Nullable Object value) {
             this.text = this.text.replace("{" + key + "}", String.valueOf(value));
             return this;
         }
 
-        /**
-         * Replaces multiple placeholders from a map.
-         *
-         * @param placeholders Map of key-value pairs
-         * @return This builder for chaining
-         */
         @NotNull
         public MessageBuilder withAll(@NotNull Map<String, Object> placeholders) {
             for (Map.Entry<String, Object> entry : placeholders.entrySet()) {
@@ -334,12 +312,6 @@ public class MessageConfig {
             return this;
         }
 
-        /**
-         * Applies PlaceholderAPI placeholders for a player.
-         *
-         * @param player The player for PlaceholderAPI
-         * @return This builder for chaining
-         */
         @NotNull
         public MessageBuilder withPAPI(@Nullable Player player) {
             if (player != null) {
@@ -348,21 +320,11 @@ public class MessageConfig {
             return this;
         }
 
-        /**
-         * Builds the final message string.
-         *
-         * @return The formatted message
-         */
         @NotNull
         public String build() {
             return text;
         }
 
-        /**
-         * Gets the underlying MessageConfig.
-         *
-         * @return The message config
-         */
         @NotNull
         public MessageConfig getConfig() {
             return config;

@@ -5,7 +5,7 @@ import com.booksaw.betterTeams.team.storage.team.TeamStorage;
 
 public abstract class DoubleTeamComponent implements TeamComponent<Double>, VariableTeamComponent<Double> {
 
-	protected double value = 0;
+	protected volatile double value = 0;
 
 	@Override
 	public void add(Double amount) {

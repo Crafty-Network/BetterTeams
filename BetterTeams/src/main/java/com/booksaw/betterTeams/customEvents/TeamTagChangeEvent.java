@@ -6,9 +6,6 @@ import lombok.Setter;
 import org.bukkit.event.HandlerList;
 import org.jetbrains.annotations.NotNull;
 
-/**
- * An event which is called right before the tag of a {@link Team} is changed
- */
 @Getter
 @Setter
 public class TeamTagChangeEvent extends TeamEvent {

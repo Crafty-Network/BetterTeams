@@ -11,91 +11,88 @@ import java.util.List;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
-/**
- * Holds all the metadata for a BetterTeams extension, loaded from its
- * {@code extension.yml} file.
- */
 @Getter
 @ToString
 @EqualsAndHashCode
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 public class ExtensionInfo {
-	/**
-	 * The unique name of the extension.
-	 */
+	
+ /**
+ * The unique name of the extension.
+ */
 	private final String name;
 
-	/**
-	 * The fully qualified class path to the extension's main class.
-	 */
+ /**
+ * The fully qualified class path to the extension's main class.
+ */
 	private final String mainClass;
 
-	/**
-	 * The version of the extension.
-	 */
+ /**
+ * The version of the extension.
+ */
 	private final String version;
 
-	/**
-	 * The author(s) of the extension.
-	 */
+ /**
+ * The author(s) of the extension.
+ */
 	private final String author;
 
-	/**
-	 * A brief description of what the extension does.
-	 */
+ /**
+ * A brief description of what the extension does.
+ */
 	private final String description;
 
-	/**
-	 * The official website for the extension.
-	 */
+ /**
+ * The official website for the extension.
+ */
 	private final String website;
 
-	/**
-	 * A list of other BetterTeams extensions that this extension
-	 * *requires* to load (hard dependency).
-	 */
+ /**
+ * A list of other BetterTeams extensions that this extension
+ * *requires* to load (hard dependency).
+ */
 	private final List<String> extensionDepend;
 
-	/**
-	 * A list of other BetterTeams extensions that this extension
-	 * can optionally hook into (soft dependency).
-	 */
+ /**
+ * A list of other BetterTeams extensions that this extension
+ * can optionally hook into (soft dependency).
+ */
 	private final List<String> extensionSoftDepend;
 
-	/**
-	 * A list of Bukkit plugins that this extension
-	 * *requires* to load (hard dependency).
-	 */
+ /**
+ * A list of Bukkit plugins that this extension
+ * *requires* to load (hard dependency).
+ */
 	private final List<String> pluginDepend;
 
-	/**
-	 * A list of Bukkit plugins that this extension
-	 * can optionally hook into (soft dependency).
-	 */
+ /**
+ * A list of Bukkit plugins that this extension
+ * can optionally hook into (soft dependency).
+ */
 	private final List<String> pluginSoftDepend;
 
-	/**
-	 * The file handle for the extension's JAR file.
-	 */
+ /**
+ * The file handle for the extension's JAR file.
+ */
 	private final File jarFile;
 
-	/**
-	 * Provides a user-friendly string representation of the extension.
-	 * @return A formatted string
- 	*/
+ /**
+ * Provides a user-friendly string representation of the extension.
+ * @return A formatted string
+ */
 	public String getDisplayName() {
 		String trimmedAuthor = (author != null) ? author.trim() : "";
 		return name.trim() + " v" + version.trim() +
 				(trimmedAuthor.isEmpty() ? "" : " (author: " + trimmedAuthor + ")");
 	}
 
-	/**
-	 * Loads and parses an {@code extension.yml} file from a given JAR file
-	 * and constructs a new {@link ExtensionInfo} object.
-	 *
-	 * @param file The extension's JAR file.
-	 * @return A fully populated {@link ExtensionInfo} object.
-	 */
+ /**
+ * Loads and parses an {@code extension.yml} file from a given JAR file
+ * and constructs a new {@link ExtensionInfo} object.
+ *
+ * @param file The extension's JAR file.
+ * @return A fully populated {@link ExtensionInfo} object.
+ */
 	public static ExtensionInfo fromYaml(File file) throws IOException {
 		if (file == null || !file.exists()) {
 			throw new IOException("JAR file not found or invalid: " + (file != null ? file.getAbsolutePath() : "null"));
