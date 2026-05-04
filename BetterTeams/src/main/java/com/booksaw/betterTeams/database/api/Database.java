@@ -36,7 +36,7 @@ public class Database {
         Main.plugin.getLogger().info("Attempting to connect to MySQL database for migration");
         try {
             connection = DriverManager.getConnection(
-                    "jdbc:mysql:
+                    "jdbc:mysql://" + host + ":" + port + "/" + database
                     + "?autoReconnect=true" + additionalOptions,
                     user, password);
             if (connection == null || connection.isClosed()) {

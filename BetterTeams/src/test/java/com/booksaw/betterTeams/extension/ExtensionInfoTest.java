@@ -32,7 +32,7 @@ class ExtensionInfoTest {
                     version: 1.0.0
                     author: TestAuthor
                     description: A test extension
-                    website: https:
+                    website: https://github.com/booksaw/BetterTeams
                     depend: [testExt]
                     softdepend: [TestExt2, TestExt3]
                     plugin-depend: [Vault, WorldEdit]
@@ -54,7 +54,7 @@ class ExtensionInfoTest {
 			assertEquals("1.0.0", info.getVersion());
 			assertEquals("TestAuthor", info.getAuthor());
 			assertEquals("A test extension", info.getDescription());
-			assertEquals("https:
+			assertEquals("https://github.com/booksaw/BetterTeams", info.getWebsite());
 			assertEquals(fakeJar, info.getJarFile());
 
 			assertEquals(List.of("testExt"), info.getExtensionDepend());

@@ -70,6 +70,8 @@
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
+            <version>1.21.1-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>me.clip</groupId>
@@ -143,10 +145,6 @@
             <version>3.2.1</version>
             <scope>compile</scope>
         </dependency>
-
-        <!-- Adventure is bundled by Paper 1.19+; mark as provided so we use
-             Paper's own copy at runtime and avoid classpath conflicts when
-             passing Component objects across the API boundary. -->
         <dependency>
             <groupId>net.kyori</groupId>
             <artifactId>adventure-text-minimessage</artifactId>
@@ -165,8 +163,6 @@
             <version>4.26.1</version>
             <scope>provided</scope>
         </dependency>
-
-        <!-- JUnit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -177,39 +173,30 @@
             <artifactId>junit-jupiter-engine</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>5.23.0</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter -->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
             <version>5.23.0</version>
             <scope>test</scope>
         </dependency>
-
-        <!-- AssertJ -->
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>3.27.7</version>
             <scope>test</scope>
         </dependency>
-
-        <!--    https://repo.maven.apache.org/maven2/net/luckperms/api/-->
         <dependency>
             <groupId>net.luckperms</groupId>
             <artifactId>api</artifactId>
             <version>5.5</version>
             <scope>provided</scope>
         </dependency>
-
-        <!-- SQLite JDBC driver – shaded into the jar so no server-side install needed -->
         <dependency>
             <groupId>org.xerial</groupId>
             <artifactId>sqlite-jdbc</artifactId>
@@ -237,7 +224,6 @@
                             <pattern>com.tcoded.folialib</pattern>
                             <shadedPattern>com.booksaw.betterTeams.lib.folialib</shadedPattern>
                         </relocation>
-                        <!-- SQLite JDBC -->
                         <relocation>
                             <pattern>org.sqlite</pattern>
                             <shadedPattern>com.booksaw.betterTeams.lib.sqlite</shadedPattern>

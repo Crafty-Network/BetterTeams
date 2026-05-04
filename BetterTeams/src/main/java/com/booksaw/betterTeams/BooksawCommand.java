@@ -75,7 +75,7 @@ public class BooksawCommand extends BukkitCommand {
 				response.sendResponseMessage(sender);
 		} catch (Exception e) {
 			Main.plugin.getLogger().severe(
-					"Something went wrong while executing the command, please report this https:
+					"Something went wrong while executing the command, please report this https://github.com/booksaw/BetterTeams/issues");
 			e.printStackTrace();
 			MessageManager.sendMessage(sender, "internalError");
 		}

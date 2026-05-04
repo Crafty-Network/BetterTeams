@@ -147,7 +147,7 @@ public class MessageConfig {
         try (PrintWriter writer = new PrintWriter(new FileWriter(file, !existingKeys.isEmpty()))) {
             if (existingKeys.isEmpty()) {
                 writer.println("# Please translate these messages and submit them to the Booksaw Development Discord");
-                writer.println("# (https:
+                writer.println("# (https://discord.gg/betterteams)");
                 writer.println("# Your translations will be included in the next update");
                 writer.println("# When done translating, run '/teama importmessages' to include the translated messages");
                 writer.println();
@@ -174,7 +174,7 @@ public class MessageConfig {
 
         logger.info("");
         logger.info("If you can help with translation, please join the Discord server:");
-        logger.info("https:
+        logger.info("https://discord.gg/betterteams");
         logger.info("");
         logger.info("A file called '" + language + MISSING_MESSAGES_SUFFIX + "' has been created");
         logger.info("in the " + sourceName + " folder. Translate the messages and submit to Discord!");

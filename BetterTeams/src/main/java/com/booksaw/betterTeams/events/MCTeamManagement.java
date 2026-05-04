@@ -57,7 +57,7 @@ public class MCTeamManagement implements Listener {
 		try {
 			team.getScoreboardTeam(board).addEntry(player.getName());
 		} catch (IllegalStateException e) {
-			Main.plugin.getLogger().severe("Could not register the team name in the tab menu due to a conflict, see https:
+			Main.plugin.getLogger().severe("Could not register the team name in the tab menu due to a conflict, see https://github.com/booksaw/BetterTeams/wiki");
 		}
 
 	}
@@ -104,7 +104,7 @@ public class MCTeamManagement implements Listener {
 			team.getScoreboardTeam(board).removeEntry(player.getName());
 		} catch (Exception e) {
 			Main.plugin.getLogger().warning(
-					"Another plugin is conflicting with the functionality of the BetterTeams. See the wiki page: https:
+					"Another plugin is conflicting with the functionality of the BetterTeams. See the wiki page: https://github.com/booksaw/BetterTeams/wiki");
 			return;
 		}
 
